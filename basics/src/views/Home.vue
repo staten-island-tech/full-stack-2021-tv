@@ -2,10 +2,8 @@
 <!-- change home to icon  -->
   <section class="banner-home">
     <div class="home"></div>
-    <p id = "logo">logo</p>
     <p id = "tag-drop-down"> drop down tags </p>
     <p id = "make-blog"> blog </p>
-    <p id = "pf-button"> pf button </p>
   </section>
 
 </template>
@@ -18,27 +16,18 @@
   flex-direction: row;
   justify-content: flex-start;
 }
-#logo {
-  width: 5%;
-  border: 2px solid;
-}
 
 #tag-drop-down {
-  width: 87%;
+  width: 90%;
   border: 2px solid;
-  border-left: none;
 }
 
 #make-blog {
-    width: 3%;
+    width: 10%;
     border: 2px solid;
     border-left: none;
 }
-#pf-button {
-    width: 5%;
-    border: 2px solid;
-    border-left: none;
-}
+
 
 </style>
 
