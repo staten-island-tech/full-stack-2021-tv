@@ -12,7 +12,7 @@
                 <input type="password" class="form-control form-control-lg" />
             </div>
             <div class = "login-signup-btn">
-            <label id = "signUp-btn">Sign Up</label>
+            <label id = "signUp-btn">Make An Account</label>
             <button type="submit" class="btn btn-dark btn-lg btn-block" id ="login-btn">Login</button>
             </div>
         </form>
