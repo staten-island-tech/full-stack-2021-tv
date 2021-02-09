@@ -45,3 +45,28 @@
     width: 60%;
   }
 </style>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA59N6G1QldK2tKnDZug9sML6-e5_7MBBA",
+    authDomain: "full-stack-b060c.firebaseapp.com",
+    projectId: "full-stack-b060c",
+    storageBucket: "full-stack-b060c.appspot.com",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //make auth and firestore references 
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  db.settings({timestampsInSnapshots: true});
+
+</script>
+
