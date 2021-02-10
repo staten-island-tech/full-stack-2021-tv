@@ -8,6 +8,11 @@
             </div>
 
             <div class="form-group">
+                <label>Username</label>
+                <input type="username" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" class="form-control form-control-lg" />
             </div>
@@ -58,11 +63,4 @@
     projectId: "full-stack-b060c",
     storageBucket: "full-stack-b060c.appspot.com",
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  //make auth and firestore references 
-  const auth = firebase.auth();
-  const db = firebase.firestore();
-  db.settings({timestampsInSnapshots: true});
 </script>
