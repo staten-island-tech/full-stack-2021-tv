@@ -14,6 +14,9 @@ const firebaseConfig = {
   authDomain: "full-stack-b060c.firebaseapp.com",
   projectId: "full-stack-b060c",
   storageBucket: "full-stack-b060c.appspot.com",
+  messagingSenderId: "779739438237",
+  appId: "1:779739438237:web:a0a4e368f95ddc9db74874",
+  measurementId: "G-M7REYEVV0V"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
