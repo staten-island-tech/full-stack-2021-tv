@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import Secret from "../views/Secret.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import Profile from "../views/Profile.vue";
+import ProfileOther from "../views/ProfileOther.vue";
 
 import firebase from 'firebase'
 require('firebase/auth')
@@ -31,6 +33,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: Profile
+  },
+  {
+    path: "/profileother",
+    name: "profileother",
+    component: ProfileOther
   },
   {
     path: "/about",

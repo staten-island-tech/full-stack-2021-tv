@@ -8,6 +8,10 @@
                 <input type="email"  v-model = "email" class="form-control form-control-lg" />
             </div>
             <div class="form-group">
+                <label>Username</label>
+                <input type="username" v-model = "username" class="form-control form-control-lg" />
+            </div>
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" v-model = "password" class="form-control form-control-lg" />
             </div>
