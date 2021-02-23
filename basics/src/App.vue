@@ -4,7 +4,6 @@
       <div id="nav">
         <router-link to="/">Logo</router-link> |
         <router-link to="/login">Login </router-link> |
-        <router-link to="/about">Profile </router-link> |
         <router-link to="/secret"> Secret </router-link> |
         <router-link to="/profile"> Profile </router-link> |
        <router-link to="/profileOther"> Profile2 </router-link>
