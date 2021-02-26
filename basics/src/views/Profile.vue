@@ -2,9 +2,9 @@
     <div>
         <section class="user-banner-profile">
             <div class="user-profile"></div>
-            <p id="logo-for-feed"></p>
+            <p id="logo-for-feed">Logo</p>
             <p id="banner-profile-empty-space"></p>
-            <p id="settings"></p>
+            <p id="settings">Settings</p>
             </section> 
         
         <section class="info-about-user">
@@ -12,18 +12,18 @@
             <div class="user-profile-pic"></div>
             <div class="generic-info">
                 <div id="user-following-followers">
-                    <p id="user-following"></p>
-                    <p id="user-followers"></p>
+                    <p id="user-following">Following</p>
+                    <p id="user-followers">Followers</p>
                 </div>
-                <p id="user-username-n-bio"></p>
+                <p id="user-username-n-bio">Username/bio</p>
             </div>
         </section>
 
         <section class="user-banner-posts">
             <div class="user-posts/likes"></div>
-            <p id="user-public-post"></p>
-            <p id="user-private-post"></p>
-            <p id="user-liked-post"></p>
+            <p id="user-public-post">Public Posts</p>
+            <p id="user-private-post">Private Posts</p>
+            <p id="user-liked-post">Liked Posts</p>
         </section>
 
         <section class="user-posts">
@@ -180,7 +180,7 @@
     justify-content: space-evenly;
 }
 
-.user-post-column-1{
+.user-post-column{
     height: 25rem;
     width: 33.3%;
     margin: auto;
