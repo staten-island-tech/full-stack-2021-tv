@@ -1,7 +1,47 @@
 <template>
     <div>
-        profile 2
+        <section class="other-banner-profile">
+            <div class="other-profile"></div>
+            <p id="logo-for-feed">Logo</p>
+            <p id="other-profile-empty-space"></p>
+            <p id="settings">Settings</p>
+            </section> 
          
+        <section class="info-about-other">
+            <div class="other-profile-pic/generic-info"></div>
+            <div class="other-profile-pic"></div>
+            <div class="generic-info">
+                <div id="other-following-followers">
+                    <p id="other-following">Following</p>
+                    <p id="other-followers">Followers</p>
+                </div>
+                <p id="other-username-n-bio">Username/bio</p>
+            </div>
+        </section>
+
+        <section class="other-posts">
+            <div class="other-post-column">
+                <div id="other-actual-posts">
+                    <p id="other-settings-button"></p>
+                    <p id="other-likes"></p>
+                </div>
+            </div>
+
+            <div class="other-post-column">
+                <div id="other-actual-posts">
+                    <p id="other-settings-button"></p>
+                    <p id="other-likes"></p>
+                </div>
+            </div>
+
+            <div class="other-post-column-2">
+                <div id="other-actual-posts">
+                    <p id="other-settings-button"></p>
+                    <p id="other-likes"></p>
+                </div>
+            </div>
+            
+        </section>
     </div>
 </template>
 
@@ -13,4 +53,127 @@
 
 <style lang="scss" scoped>
 
+.other-banner-profile{
+    height: 6rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#logo-for-feed{
+    width: 5%;
+    border: 2px solid;
+}
+
+#other-profile-empty-space{
+    width: 90%;
+    border: 2px solid;
+    border-left: none;
+}
+
+#settings{
+    width: 5%;
+    border: 2px solid;
+}
+
+.info-about-other{
+    height: 15rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.other-profile-pic{
+    height: 8rem;
+    width: 8rem;
+    margin: auto;
+    display: flex;
+    border-radius: 3rem;
+    border: 2px solid;
+}
+
+.generic-info{
+    height: 15rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#other-following-followers{
+    height: 7rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#other-following{
+    height: 5rem;
+    width: 3rem;
+    margin: auto;
+    display: flex;
+    border-radius: 2rem;
+    border: 2px solid;
+}
+
+#other-followers{
+    height: 5rem;
+    width: 3rem;
+    margin: auto;
+    display: flex;
+    border-radius: 2rem;
+    border: 2px solid;
+}
+
+#other-username-n-bio{
+    height: 7rem;
+    width: 10rem;
+    margin: auto;
+    display: flex;
+    border-radius: 2rem;
+    border: 2px solid;
+}
+
+.other-posts{
+    height: 25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.other-post-column{
+    height: 25rem;
+    width: 33.3%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.other-post-column-2{
+   height: 25rem;
+    width: 33.4%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+
+#other-actual-post{
+    height: 5rem;
+    width: 33.3%;    
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    border: 2px solid;
+}
 </style>
