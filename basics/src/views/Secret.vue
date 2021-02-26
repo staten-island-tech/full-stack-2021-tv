@@ -1,7 +1,6 @@
 <template>
     <div>
-        profile 
-         
+        secret 
     </div>
 </template>
 

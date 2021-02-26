@@ -1,6 +1,6 @@
 <template>
     <div>
-        profile 
+        profile 2
          
     </div>
 </template>
