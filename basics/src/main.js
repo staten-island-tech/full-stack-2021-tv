@@ -1,9 +1,5 @@
 import Vue from "vue";
-
-import * as firebase from "firebase/app";
 import "firebase/auth";
-
-
 import App from "./App.vue";
 import router from "./router";
 import axios from "axios";
