@@ -8,13 +8,25 @@
     </section>
 
     <section class="feed">
-      <div class="post">
+      <div class="picture">
         <div class="post-button">...</div>
+        <div class="likes">O likes</div>
       </div>
-      <i id= "likes" class="fas fa-heart"></i>
-      <div class="description">
-        <router-link to="/ProfileOther" class="username"> Name : </router-link>
-        <p class="caption">caption</p>
+      <div class="description-comment">
+        <div class="description">
+          <router-link to="/ProfileOther" class="username"> Name </router-link>
+          <p class="caption">caption</p>
+        </div>
+        <div class="comment-section">
+          <router-link
+            to="/ProfileOther"
+            id="comment-username"
+            class="username"
+          >
+            Name
+          </router-link>
+          <p class="comment">comment</p>
+        </div>
       </div>
     </section>
   </section>
@@ -53,11 +65,22 @@ export default {};
 .feed {
   width: 90%;
   border: 1px solid;
-  height: 50rem;
+  height: 100%;
   margin: auto;
+  padding-bottom: 1rem;
 }
 
-.post {
+.likes {
+  margin-top: 27rem;
+  height: 3rem;
+  border-bottom: 1px solid;
+  padding-left: 0.5rem;
+  background-color: #f9f8eb;
+  padding-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.picture {
   border: 1px solid;
   height: 30rem;
   margin: 1rem;
@@ -75,19 +98,43 @@ export default {};
   border-right: none;
 }
 
-.description {
-  height: 5rem;
+.description-comment {
   margin-left: 1rem;
   margin-right: 1rem;
-  padding: 2px;
-  padding-top: 0rem;
+  border-left: 1px solid;
+  border-right: 1px solid;
 }
+
+.description {
+  height: 3rem;
+  padding-top: 0rem;
+  padding-left: 0.5rem;
+}
+
 .username {
   font-size: 1.5rem;
+  color: black;
 }
 
 .caption {
   font-size: 1.2rem;
+  display: inline-block;
+}
+
+.comment-section {
+  height: 3rem;
+  padding-top: 0rem;
+  margin-top: -1rem;
+  border-bottom: 1px solid;
+}
+
+#comment-username {
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+}
+
+.comment {
+  font-size: 1.1rem;
   display: inline-block;
 }
 </style>
