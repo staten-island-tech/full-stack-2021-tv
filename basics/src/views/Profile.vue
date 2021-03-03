@@ -52,6 +52,8 @@
 </template>
 
 <script>
+import settings_on_profile_modal from 'Modals-for-Profile'
+
 export default {};
 </script>
 
