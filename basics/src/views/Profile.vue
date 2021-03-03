@@ -56,8 +56,12 @@ import settings_on_profile_modal from '../components/Modals-for-Profile';
 
 export default {
   components: {
-    settings_on_profile,}
+    settings_on_profile,
+    }
 
+  data () {
+            
+        },
 };
 </script>
 
