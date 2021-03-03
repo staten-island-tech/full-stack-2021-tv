@@ -52,16 +52,13 @@
 </template>
 
 <script>
-import settings_on_profile_modal from '../components/Modals-for-Profile';
+import modalsForProfile from '../components/modalsForProfile';
 
 export default {
   components: {
     settings_on_profile,
     }
 
-  data () {
-            
-        },
 };
 </script>
 
