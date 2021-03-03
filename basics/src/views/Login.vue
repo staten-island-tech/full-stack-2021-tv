@@ -22,7 +22,7 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
   .login-box {
     width: 90vh;
     margin: auto;
@@ -47,6 +47,24 @@
   #signUp-btn {
     width: 60%;
   }
+
+/* media queries */
+@media (min-width: 300px) { //phone
+  .login-box {
+    width: 45vh;
+  }
+}
+@media (min-width: 768px) { //tablet
+  .login-box {
+    width: 70vh;
+  }
+}
+@media (min-width: 1024px) { //comp
+  .login-box {
+    width: 90vh;
+  }
+}
+
 </style>
 
 <script>

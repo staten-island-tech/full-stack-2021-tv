@@ -48,6 +48,25 @@
   #login-btn {
     width: 60%;
   }
+
+  /* media queries */
+@media (min-width: 300px) { /* phone */
+  .register-box {
+    width: 45vh;
+    padding: .5rem;
+  }
+}
+@media (min-width: 768px) { /* tablet */
+  .register-box {
+    width: 70vh;
+  }
+}
+@media (min-width: 1024px) { /* comp */
+  .register-box {
+    width: 90vh;
+  }
+}
+
 </style>
 
 <script>
