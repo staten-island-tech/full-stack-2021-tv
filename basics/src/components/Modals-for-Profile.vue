@@ -1,5 +1,5 @@
 <template>
-    <modal name="settings_on_profile_modal">
+    <modal name="settings_on_profile">
         Settings
     </modal>
 </template>
