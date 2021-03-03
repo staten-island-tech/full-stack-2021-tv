@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'settings-on-profile',
+    name: 'settings_on_profile',
     methods: {
         show () {
             this.$modal.show('settings_on_profile_modal');
