@@ -54,7 +54,11 @@
 <script>
 import settings_on_profile_modal from 'Modals-for-Profile'
 
-export default {};
+export default {
+  
+  components: {'settings-on-profile': Modals-for-Profile}
+
+};
 </script>
 
 <style lang="scss" scoped>
