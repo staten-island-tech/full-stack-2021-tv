@@ -6,13 +6,13 @@
 
 <script>
 export default {
-    name: 'MyComponent',
+    name: 'settings-on-profile',
     methods: {
         show () {
-            this.$modal.show('my-first-modal');
+            this.$modal.show('settings_on_profile_modal');
         },
         hide () {
-            this.$modal.hide('my-first-modal');
+            this.$modal.hide('settings_on_profile_modal');
         }
     },
     mount () {
