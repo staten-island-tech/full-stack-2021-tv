@@ -1,18 +1,18 @@
 <template>
-    <modal name="settings_on_profile">
+    <modal name="settings_on_profile_modal">
         Settings
     </modal>
 </template>
 
 <script>
 export default {
-    name: 'settings_on_profile',
+    name: 'MyComponent',
     methods: {
         show () {
-            this.$modal.show('settings_on_profile_modal');
+            this.$modal.show('my-first-modal');
         },
         hide () {
-            this.$modal.hide('settings_on_profile_modal');
+            this.$modal.hide('my-first-modal');
         }
     },
     mount () {
