@@ -52,17 +52,9 @@
 </template>
 
 <script>
-import settings_on_profile_modal from '../components/Modals-for-Profile';
+import settings_on_profile_modal from 'Modals-for-Profile'
 
-export default {
-  components: {
-    settings_on_profile,
-    }
-
-  data () {
-            
-        },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
