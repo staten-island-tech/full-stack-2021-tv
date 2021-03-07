@@ -3,17 +3,60 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed"></p>
-      <p id="banner-profile-empty-space"></p>
+      <select id="select-tag-container">
+        <option selected>Pick A Tag</option>
+        <option value="education">Education</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="sports">Sports</option>
+        <option value="music">Music</option>
+        <option value="games">Games</option>
+        <option value="others">Others</option>
+      </select>
       <p id="button-to-make-blog">
-        <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')"
+        <b-button id="show-btn" @click="$bvModal.show('making-blog')"
           >+</b-button
         >
-        <b-modal id="bv-modal-example" hide-footer>
-          <div>
-            <h3></h3>
+        <b-modal id="making-blog" hide-footer>
+          <div class="blog-picture"></div>
+          <div class="blog-comment">
+            <div role="group">
+              <b-form-input
+                v-model="caption"
+                :state="captionState"
+                placeholder="Caption"
+                trim
+              ></b-form-input>
+              <!-- This will only be shown if the preceding input has an invalid state -->
+              <b-form-invalid-feedback id="input-live-feedback">
+                More than 150 charactes.
+              </b-form-invalid-feedback>
+              <!-- This is a form text block (formerly known as help block) -->
+            </div>
+          </div>
+
+          <div class="blog-bottom-row">
+            <select class="blog-tag">
+              <option selected>Pick A Tag</option>
+              <option value="education">Education</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="sports">Sports</option>
+              <option value="music">Music</option>
+              <option value="games">Games</option>
+              <option value="others">Others</option>
+            </select>
+
+            <select class="blog-toggle-private-public">
+              <option value="1" selected>Public</option>
+              <option value="2">Private</option>
+            </select>
+
+            <div class="blog-post" @click="$bvModal.hide('making-blog')">
+              post
+            </div>
           </div>
         </b-modal>
       </p>
+
       <p id="settings"></p>
     </section>
 
@@ -57,7 +100,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    captionState() {
+      return this.caption.length < 150 ? true : false;
+    },
+  },
+  data() {
+    return {
+      caption: "",
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -74,11 +128,13 @@ export default {};
   border: 2px solid;
 }
 
-#banner-profile-empty-space {
+#select-tag-container {
   width: 84%;
   border: 2px solid;
   border-left: none;
+  margin-bottom: 1rem;
 }
+
 //make a blog button
 #button-to-make-blog {
   width: 6%;
@@ -88,6 +144,7 @@ export default {};
 .btn-secondary {
   background-color: white;
   color: black;
+  border: 0rem;
 }
 
 .btn[data-v-fae5bece] {
@@ -101,6 +158,55 @@ export default {};
   padding: 0rem;
 }
 
+//modal
+
+.form-control.is-valid {
+  border: 0rem;
+  background-image: none;
+  color: black;
+}
+
+.modal-dialog {
+  max-width: 80%;
+  height: 90%;
+}
+.modal-content {
+  height: 100%;
+}
+
+.blog-picture {
+  height: 75%;
+  border: 2px solid;
+  border-bottom: 0rem;
+}
+
+.blog-comment {
+  border: 2px solid;
+  height: 15%;
+  border-bottom: 0rem;
+}
+
+.blog-bottom-row {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+}
+.blog-tag {
+  border: 2px solid;
+  width: 80%;
+}
+
+.blog-toggle-private-public {
+  border: 2px solid;
+  border-left: none;
+  width: 10%;
+}
+
+.blog-post {
+  border: 2px solid;
+  border-left: none;
+  width: 10%;
+}
 //
 #settings {
   width: 5%;
@@ -142,6 +248,7 @@ export default {};
 .dropdown-menu {
   min-width: 5rem;
 }
+
 //
 
 .description-comment {
