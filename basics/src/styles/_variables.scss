@@ -8,21 +8,23 @@ $colors: (
   grey: #cfcec6,
   brown: #816852,
 );
+// color: map-get($colors, color-name);
 
-$dark: ( //dark mode
-  base: #121212,
+$dark: (
+  //dark mode
+    base: #121212,
   level-1: #292929,
-  accent: #b19cd9,
+  accent: #b19cd9
 );
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
-$fonts: (
-  primary: ,
-)
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+// $fonts: (
 
-// @function color($color-name) {
-//   @return map-get($colors, color-name);
-// }
+// )
+
+@function color($color-name) {
+  @return map-get($colors, color-name);
+}
 
 $phone: 600px;
 $tablet: 900px;
