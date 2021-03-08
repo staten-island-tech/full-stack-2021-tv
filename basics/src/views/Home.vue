@@ -167,13 +167,20 @@ export default {
   background-image: none;
   color: black;
 }
-
-.modal-dialog,
-.modal-md{
+.modal-dialog .modal-md {
   max-width: none;
   width: 80%;
   height: 90%;
 }
+
+// @media (min-width: 576px) {
+//   //from bootstrap
+//   .modal-dialog {
+//     max-width: none;
+//     width: 80%;
+//     height: 90%;
+//   }
+// }
 
 .modal-content {
   height: 100%;
