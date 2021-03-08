@@ -9,14 +9,16 @@
           >Settings</b-button
         >
         <b-modal id="settings-modal" hide-footer>
-          <div id="actual-settings">
-            <div id="pfp-change"></div>
-            <div id="edit-bio"></div>
-            <div id="dark-mode"></div>
-            <div id="pw-change"></div>
-            <div id="log-out"></div>
+          <div id="overall-settings-div">
+            <div id="actual-settings">
+              <div class="pfp-change" id="settings-element"></div>
+              <div class="edit-bio" id="settings-element"></div>
+              <div class="dark-mode" id="settings-element"></div>
+              <div class="pw-change" id="settings-element"></div>
+              <div class="log-out" id="settings-element"></div>
+            </div>
+            <div id="cancel-btn">X</div>
           </div>
-          <div id="cancel-btn"></div>
         </b-modal>
       </p>
     </section>
@@ -116,7 +118,7 @@ export default {
   width: 8rem;
   margin: auto;
   display: flex;
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   border: 2px solid;
 }
 
@@ -141,7 +143,7 @@ export default {
   width: 3rem;
   margin: auto;
   display: flex;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border: 2px solid;
 }
 
@@ -150,7 +152,7 @@ export default {
   width: 3rem;
   margin: auto;
   display: flex;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border: 2px solid;
 }
 
@@ -159,7 +161,7 @@ export default {
   width: 10rem;
   margin: auto;
   display: flex;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border: 2px solid;
 }
 
@@ -223,7 +225,40 @@ export default {
   margin: auto;
   display: flex;
   align-items: center;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border: 2px solid;
+}
+
+
+// modal css
+
+#actual-settings{
+  height: 40%;
+  border: 2px solid;
+  border-bottom: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#overall-settings-div{
+  height: 40%;
+  border: 2px solid;
+  border-bottom: 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#cancel-btn{
+  height: 5%;
+  border: 2px solid;
+  border-bottom: 0rem;
+}
+
+#settings-element{
+  height: 7%;
+  border: 2px solid;
+  border-bottom: 0rem;
 }
 </style>
