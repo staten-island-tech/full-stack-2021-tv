@@ -23,6 +23,8 @@ firebase.initializeApp(firebaseConfig);
 
 let app;
 
+
+
 firebase.auth().onAuthStateChanged(user=> {
   console.log(user);
   if (!app) {
@@ -32,3 +34,4 @@ firebase.auth().onAuthStateChanged(user=> {
     }).$mount("#app");
   }
 })
+
