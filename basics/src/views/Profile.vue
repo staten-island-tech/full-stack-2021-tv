@@ -4,7 +4,23 @@
       <div class="user-profile"></div>
       <p id="logo-for-feed"></p>
       <p id="banner-profile-empty-space"></p>
-      <p id="settings"></p>
+      <p id="settings">
+        <b-button id="settings-btn" @click="$bvModal.show('settings-modal')"
+          >Settings</b-button
+        >
+        <b-modal id="settings-modal" hide-footer>
+          <div id="overall-settings-div">
+            <div id="actual-settings">
+              <div class="pfp-change" id="settings-element">Change Profile Picture</div>
+              <div class="edit-bio" id="settings-element">Change Bio</div>
+              <div class="dark-mode" id="settings-element">Dark Mode</div>
+              <div class="pw-change" id="settings-element">Change Password</div>
+              <div class="log-out" id="settings-element">Log Out</div>
+            </div>
+            <div id="cancel-btn">X</div>
+          </div>
+        </b-modal>
+      </p>
     </section>
 
     <section class="info-about-user">
@@ -52,7 +68,14 @@
 </template>
 
 <script>
-export default {};
+import modalsForProfile from '../components/modalsForProfile';
+
+export default {
+  components: {
+    settings_on_profile,
+    }
+
+};
 </script>
 
 <style lang="scss" scoped>
@@ -87,15 +110,22 @@ export default {};
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  margin-bottom: 1rem;
 }
 
 .user-profile-pic {
-  height: 8rem;
-  width: 8rem;
+  height: 95%;
+  width: 20%;
   margin: auto;
   display: flex;
-  border-radius: 3rem;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  border-radius: 0.5rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+=======
+  border-radius: 0.5rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
@@ -104,41 +134,62 @@ export default {};
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  width: 70%;
 }
 
 #user-following-followers {
-  height: 7rem;
+  height: 100%;
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  width: 100%;
 }
 
 #user-following {
-  height: 5rem;
-  width: 3rem;
-  margin: auto;
+  height: 100%;
+  width: 90%;
+  margin-right: 1rem;
   display: flex;
-  border-radius: 2rem;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
 #user-followers {
-  height: 5rem;
-  width: 3rem;
+  height: 100%;
+  width: 90%;
   margin: auto;
   display: flex;
-  border-radius: 2rem;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
 #user-username-n-bio {
-  height: 7rem;
-  width: 10rem;
-  margin: auto;
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
   display: flex;
-  border-radius: 2rem;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
@@ -202,7 +253,46 @@ export default {};
   margin: auto;
   display: flex;
   align-items: center;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border: 2px solid;
+}
+
+
+// modal css
+
+#settings-btn{
+  font-size: 1.5rem;
+}
+
+#actual-settings{
+  height: 40%;
+  border: 2px solid;
+  border-bottom: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#overall-settings-div{
+  height: 40%;
+  border: 2px solid;
+  border-bottom: 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#cancel-btn{
+  height: 5%;
+  border: 2px solid;
+  border-bottom: 0rem;
+  font-size: 1rem;
+}
+
+#settings-element{
+  height: 7%;
+  border: 2px solid;
+  border-bottom: 0rem;
+  font-size: 1rem;
 }
 </style>
