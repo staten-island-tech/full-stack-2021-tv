@@ -85,7 +85,7 @@ export default {
 #settings {
   width: 5%;
   border: 2px solid;
-  border-left: 0px;
+  border-left: none;
 }
 
 .info-about-user {

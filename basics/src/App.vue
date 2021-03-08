@@ -7,7 +7,7 @@
         <router-link to="/secret"> Secret </router-link> |
         <router-link to="/profile"> Profile </router-link> |
        <router-link to="/profileOther"> Profile2 </router-link>
-
+    
       </div>
     <router-view />
   </div>

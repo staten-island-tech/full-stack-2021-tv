@@ -4,10 +4,16 @@ import App from "./App.vue";
 import router from "./router";
 import axios from "axios";
 import firebase from "firebase/app";
-import "bootstrap/dist/css/bootstrap.min.css";
+import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-vue/dist/bootstrap-vue.min.css";
+
 
 // web app's Firebase config
 const firebaseConfig = {
