@@ -4,7 +4,21 @@
       <div class="user-profile"></div>
       <p id="logo-for-feed"></p>
       <p id="banner-profile-empty-space"></p>
-      <p id="settings"></p>
+      <p id="settings">
+        <b-button id="settings-btn" @click="$bvModal.show('settings-modal')"
+          >Settings</b-button
+        >
+        <b-modal id="settings-modal" hide-footer>
+          <div id="actual-settings">
+            <div id="pfp-change"></div>
+            <div id="edit-bio"></div>
+            <div id="dark-mode"></div>
+            <div id="pw-change"></div>
+            <div id="log-out"></div>
+          </div>
+          <div id="cancel-btn"></div>
+        </b-modal>
+      </p>
     </section>
 
     <section class="info-about-user">
