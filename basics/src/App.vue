@@ -5,7 +5,7 @@
         <router-link to="/" >Logo</router-link> |
         <router-link to="/login" v-if="!loggedIn">Login </router-link> |
         <router-link to="/secret"> Secret </router-link> |
-        <router-link to="/profile"> Profile </router-link> |
+        <router-link to="/profile" v-if="loggedIn"> Profile </router-link> |
        <router-link to="/profileOther"> Profile2 </router-link>
 
       </div>
