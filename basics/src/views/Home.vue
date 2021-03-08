@@ -167,6 +167,7 @@ export default {
   background-image: none;
   color: black;
 }
+
 .modal-dialog .modal-md {
   max-width: none;
   width: 80%;
