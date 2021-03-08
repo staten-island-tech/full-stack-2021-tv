@@ -11,9 +11,7 @@
         <b-modal id="settings-modal" hide-footer>
           <div id="overall-settings-div">
             <div id="actual-settings">
-              <div class="pfp-change" id="settings-element">
-                Change Profile Picture
-              </div>
+              <div class="pfp-change" id="settings-element">Change Profile Picture</div>
               <div class="edit-bio" id="settings-element">Change Bio</div>
               <div class="dark-mode" id="settings-element">Dark Mode</div>
               <div class="pw-change" id="settings-element">Change Password</div>
@@ -70,12 +68,13 @@
 </template>
 
 <script>
-import modalsForProfile from "../components/modalsForProfile";
+import modalsForProfile from '../components/modalsForProfile';
 
 export default {
   components: {
     settings_on_profile,
-  },
+    }
+
 };
 </script>
 
@@ -119,12 +118,15 @@ export default {
   width: 20%;
   margin: auto;
   display: flex;
-  <<<<<<<head<<<<<<<HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
+  border-radius: 0.5rem;
 >>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
 =======
   border-radius: 0.5rem;
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7border: 2px solid;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+  border: 2px solid;
 }
 
 .generic-info {
@@ -148,13 +150,15 @@ export default {
   width: 90%;
   margin-right: 1rem;
   display: flex;
-  <<<<<<<head<<<<<<<HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   border-radius: 0.25rem;
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7=======border-radius: 0.25rem;
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7=======border-radius: 0.25rem;
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7border: 2px solid;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+  border: 2px solid;
 }
 
 #user-followers {
@@ -162,13 +166,15 @@ export default {
   width: 90%;
   margin: auto;
   display: flex;
-  <<<<<<<head<<<<<<<HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   border-radius: 0.25rem;
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7=======>>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7=======
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7border: 2px
-    solid;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+=======
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+  border: 2px solid;
 }
 
 #user-username-n-bio {
@@ -176,15 +182,15 @@ export default {
   width: 100%;
   margin-top: 1rem;
   display: flex;
-  <<<<<<<head<<<<<<<HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   border-radius: 0.25rem;
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7=======>>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
 =======
-  >>>>>>>28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
-  border: 2px
-    solid;
+  border-radius: 0.25rem;
+>>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
+  border: 2px solid;
 }
 
 .user-banner-posts {
@@ -251,13 +257,14 @@ export default {
   border: 2px solid;
 }
 
+
 // modal css
 
-#settings-btn {
+#settings-btn{
   font-size: 1.5rem;
 }
 
-#actual-settings {
+#actual-settings{
   height: 40%;
   border: 2px solid;
   border-bottom: 0rem;
@@ -266,7 +273,7 @@ export default {
   justify-content: space-evenly;
 }
 
-#overall-settings-div {
+#overall-settings-div{
   height: 40%;
   border: 2px solid;
   border-bottom: 0rem;
@@ -275,14 +282,14 @@ export default {
   justify-content: space-evenly;
 }
 
-#cancel-btn {
+#cancel-btn{
   height: 5%;
   border: 2px solid;
   border-bottom: 0rem;
   font-size: 1rem;
 }
 
-#settings-element {
+#settings-element{
   height: 7%;
   border: 2px solid;
   border-bottom: 0rem;
