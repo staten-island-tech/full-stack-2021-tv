@@ -11,11 +11,11 @@
         <b-modal id="settings-modal" hide-footer>
           <div id="overall-settings-div">
             <div id="actual-settings">
-              <div class="pfp-change" id="settings-element"></div>
-              <div class="edit-bio" id="settings-element"></div>
-              <div class="dark-mode" id="settings-element"></div>
-              <div class="pw-change" id="settings-element"></div>
-              <div class="log-out" id="settings-element"></div>
+              <div class="pfp-change" id="settings-element">Change Profile Picture</div>
+              <div class="edit-bio" id="settings-element">Change Bio</div>
+              <div class="dark-mode" id="settings-element">Dark Mode</div>
+              <div class="pw-change" id="settings-element">Change Password</div>
+              <div class="log-out" id="settings-element">Log Out</div>
             </div>
             <div id="cancel-btn">X</div>
           </div>
@@ -232,6 +232,10 @@ export default {
 
 // modal css
 
+#settings-btn{
+  font-size: 1.5rem;
+}
+
 #actual-settings{
   height: 40%;
   border: 2px solid;
@@ -254,11 +258,13 @@ export default {
   height: 5%;
   border: 2px solid;
   border-bottom: 0rem;
+  font-size: 1rem;
 }
 
 #settings-element{
   height: 7%;
   border: 2px solid;
   border-bottom: 0rem;
+  font-size: 1rem;
 }
 </style>
