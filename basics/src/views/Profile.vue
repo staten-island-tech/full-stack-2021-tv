@@ -11,11 +11,11 @@
         <b-modal id="settings-modal" hide-footer>
           <div id="overall-settings-div">
             <div id="actual-settings">
-              <div class="pfp-change" id="settings-element">Change Profile Picture</div>
-              <div class="edit-bio" id="settings-element">Change Bio</div>
-              <div class="dark-mode" id="settings-element">Dark Mode</div>
-              <div class="pw-change" id="settings-element">Change Password</div>
-              <div class="log-out" id="settings-element">Log Out</div>
+              <div class="pfp-change" id="settings-element"></div>
+              <div class="edit-bio" id="settings-element"></div>
+              <div class="dark-mode" id="settings-element"></div>
+              <div class="pw-change" id="settings-element"></div>
+              <div class="log-out" id="settings-element"></div>
             </div>
             <div id="cancel-btn">X</div>
           </div>
@@ -68,14 +68,13 @@
 </template>
 
 <script>
-import modalsForProfile from '../components/modalsForProfile';
+// import modalsForProfile from '../components/modalsForProfile';
 
-export default {
-  components: {
-    settings_on_profile,
-    }
-
-};
+// export default {
+//   components: {
+//     settings_on_profile,
+//   },
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -118,14 +117,6 @@ export default {
   width: 20%;
   margin: auto;
   display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  border-radius: 0.5rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
-=======
-  border-radius: 0.5rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
@@ -150,14 +141,6 @@ export default {
   width: 90%;
   margin-right: 1rem;
   display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  border-radius: 0.25rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
-=======
-  border-radius: 0.25rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
@@ -166,14 +149,6 @@ export default {
   width: 90%;
   margin: auto;
   display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  border-radius: 0.25rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
-=======
-  border-radius: 0.25rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
@@ -182,14 +157,6 @@ export default {
   width: 100%;
   margin-top: 1rem;
   display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  border-radius: 0.25rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
-=======
-  border-radius: 0.25rem;
->>>>>>> 28342f71ed14e1a51dcc2a5cac47f18d78e5b4c7
   border: 2px solid;
 }
 
@@ -257,14 +224,9 @@ export default {
   border: 2px solid;
 }
 
-
 // modal css
 
-#settings-btn{
-  font-size: 1.5rem;
-}
-
-#actual-settings{
+#actual-settings {
   height: 40%;
   border: 2px solid;
   border-bottom: 0rem;
@@ -273,7 +235,7 @@ export default {
   justify-content: space-evenly;
 }
 
-#overall-settings-div{
+#overall-settings-div {
   height: 40%;
   border: 2px solid;
   border-bottom: 0rem;
@@ -282,17 +244,15 @@ export default {
   justify-content: space-evenly;
 }
 
-#cancel-btn{
+#cancel-btn {
   height: 5%;
   border: 2px solid;
   border-bottom: 0rem;
-  font-size: 1rem;
 }
 
-#settings-element{
+#settings-element {
   height: 7%;
   border: 2px solid;
   border-bottom: 0rem;
-  font-size: 1rem;
 }
 </style>
