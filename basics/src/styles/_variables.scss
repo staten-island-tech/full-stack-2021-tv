@@ -6,14 +6,46 @@ $colors: (
   light-blue: #abc2cb,
   orange: #d67667,
   grey: #cfcec6,
-  brown: #816852;,
+  brown: #816852,
 );
 
-@function color($color-name) {
-  @return map-get($colors, color-name);
-}
+$dark: ( //dark mode
+  base: #121212,
+  level-1: #292929,
+  accent: #b19cd9,
+);
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+$fonts: (
+  primary: ,
+)
+
+// @function color($color-name) {
+//   @return map-get($colors, color-name);
+// }
 
 $phone: 600px;
 $tablet: 900px;
 $laptop: 1100px;
 $desktop: 1100px;
+
+@mixin phone {
+  @media (min-width: #{phone-min}) and (max-width: #{phone-max}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{tablet-min}) and (max-width: #{tablet-max}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: #{laptop-min}) and (max-width: #{laptop-max}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{desktop-min}) and (max-width: #{desktop-max}) {
+    @content;
+  }
+}
