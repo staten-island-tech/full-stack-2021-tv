@@ -68,14 +68,14 @@
 </template>
 
 <script>
-import modalsForProfile from '../components/modalsForProfile';
+// import modalsForProfile from '../components/modalsForProfile';
 
-export default {
-  components: {
-    settings_on_profile,
-    }
+// export default {
+//   components: {
+//     settings_on_profile,
+//     }
 
-};
+// };
 </script>
 
 <style lang="scss" scoped>
