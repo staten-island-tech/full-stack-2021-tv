@@ -37,7 +37,9 @@
           <div class="blog-bottom-row">
             <select class="blog-tag">
               <option selected>Pick A Tag</option>
-              <option value="education">Education</option>
+              <option class="blog-tag-option" value="education"
+                >Education</option
+              >
               <option value="entertainment">Entertainment</option>
               <option value="sports">Sports</option>
               <option value="music">Music</option>
@@ -166,10 +168,13 @@ export default {
   color: black;
 }
 
-.modal-dialog {
-  max-width: 80%;
+.modal-dialog,
+.modal-md{
+  max-width: none;
+  width: 80%;
   height: 90%;
 }
+
 .modal-content {
   height: 100%;
 }
@@ -207,6 +212,11 @@ export default {
   border-left: none;
   width: 10%;
 }
+
+.blog-tag-option {
+  width: 5rem;
+}
+
 //
 #settings {
   width: 5%;
