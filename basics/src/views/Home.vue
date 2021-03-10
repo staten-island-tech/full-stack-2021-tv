@@ -154,6 +154,13 @@ export default {
   border: 2px solid;
   border-left: none;
   margin-bottom: 1rem;
+  .vs--searchable {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+.vs--searchable .vs__dropdown-toggle {
+  border: none !important;
 }
 
 //make a blog button
@@ -304,7 +311,7 @@ export default {
 </style>
 
 <style>
-.v-select {
-  height: 100%;
+.vs--searchable .vs__dropdown-toggle {
+  border: none ;
 }
 </style>

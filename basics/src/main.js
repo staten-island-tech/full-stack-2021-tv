@@ -15,7 +15,7 @@ Vue.component("v-select", vSelect);
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.min.css";
-import "vue-select/src/scss/vue-select.scss";
+import "vue-select/dist/vue-select.css";
 
 // web app's Firebase config
 const firebaseConfig = {
