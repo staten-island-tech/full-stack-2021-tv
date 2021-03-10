@@ -3,20 +3,10 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed"></p>
-      <select id="select-tag-container" v-model="header.tag">
-        <option class="hTags" v-for="tag in hTags" v-bind:key="tag">
-          {{ tag }}
-        </option>
-      </select>
-      <!-- <select id="select-tag-container">
-        <option selected>Pick A Tag</option>
-        <option value="education">Education</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="sports">Sports</option>
-        <option value="music">Music</option>
-        <option value="games">Games</option>
-        <option value="others">Others</option>
-      </select> -->
+      <div id="select-tag-container">
+        <v-select id="mySelect" :options="options"></v-select>
+      </div>
+      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <p id="button-to-make-blog">
         <b-button id="show-btn" @click="$bvModal.show('making-blog')"
           >+</b-button
@@ -24,7 +14,9 @@
         <b-modal id="making-blog" size="xl" hide-footer>
           <div class="modal-body">
             <div class="blog-picture">
-              <b-form-file accept="image/jpeg, image/png, image/gif"></b-form-file>
+              <b-form-file
+                accept="image/jpeg, image/png, image/gif"
+              ></b-form-file>
             </div>
             <div class="blog-comment">
               <div role="group">
@@ -121,11 +113,7 @@ export default {
       blog: {
         tag: "",
       },
-      header: {
-        tag: "",
-      },
-      tags: [
-        "Pick a Tag",
+      options: [
         "Education",
         "Entertainment",
         "Sports",
@@ -133,7 +121,7 @@ export default {
         "Games",
         "Others",
       ],
-      hTags: [
+      tags: [
         "Pick a Tag",
         "Education",
         "Entertainment",
@@ -312,5 +300,11 @@ export default {
 .comment {
   font-size: 1.1rem;
   display: inline-block;
+}
+</style>
+
+<style>
+.v-select {
+  height: 100%;
 }
 </style>
