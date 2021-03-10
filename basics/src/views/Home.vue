@@ -23,7 +23,9 @@
         >
         <b-modal id="making-blog" size="xl" hide-footer>
           <div class="modal-body">
-            <div class="blog-picture"></div>
+            <div class="blog-picture">
+              <b-form-file accept="image/jpeg, image/png, image/gif"></b-form-file>
+            </div>
             <div class="blog-comment">
               <div role="group">
                 <b-form-input
@@ -78,7 +80,7 @@
           <template #button-content>
             <span>...</span>
           </template>
-          <b-dropdown-item href="#">Report Post</b-dropdown-item>
+          <b-dropdown-item href="#">Report</b-dropdown-item>
         </b-dropdown>
 
         <div class="likes">
@@ -311,5 +313,4 @@ export default {
   font-size: 1.1rem;
   display: inline-block;
 }
-
 </style>
