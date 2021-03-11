@@ -42,7 +42,8 @@
       </div>
 
       <div class="user-post-column-2">
-        <div id="user-actual-posts">Post
+        <div id="user-actual-posts">
+          Post
           <div id="post-settings-with-empty-space">
             <p id="post-settings-empty-space"></p>
             <p id="post-settings-button">...</p>
@@ -57,9 +58,7 @@
   </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style lang="scss" scoped>
 .user-banner-profile {
@@ -100,7 +99,7 @@
 
 .user-profile-pic {
   height: 25rem;
-  width: 35%;
+  width: 40%;
   margin: auto;
   display: flex;
   //border-radius: 0.25rem;
@@ -110,7 +109,7 @@
 
 .generic-info {
   height: 25rem;
-  width: 65%;
+  width: 50%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -118,7 +117,8 @@
 }
 
 #user-following-followers {
-  height: 55%;
+  height: 100%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -126,9 +126,8 @@
 }
 
 #user-following {
-  height: 95%;
-  width: 50%;
-  margin: 1rem;
+  height: 100%;
+  width: 90%;
   display: flex;
   //border-radius: 0.25rem;
   border: 2px solid;
@@ -136,8 +135,8 @@
 }
 
 #user-followers {
-  height: 95%;
-  width: 50%;
+  height: 100%;
+  width: 90%;
   margin: auto;
   display: flex;
   //border-radius: 0.25rem;
@@ -146,7 +145,8 @@
 }
 
 #user-username-n-bio {
-  height: 45%;
+  height: 100%;
+  width: 100%;
   //width: 10rem;
   margin: auto;
   display: flex;
@@ -225,7 +225,7 @@
   font-size: 0.75rem;
 }
 
-#post-settings-with-empty-space{
+#post-settings-with-empty-space {
   height: 5%;
   margin: auto;
   display: flex;
@@ -233,23 +233,23 @@
   justify-content: flex-start;
 }
 
-#post-settings-empty-space{
+#post-settings-empty-space {
   width: 90%;
   border: none;
 }
 
-#post-settings-button{
+#post-settings-button {
   width: 10%;
   border: 2px solid;
   border-right: none;
   font-size: 0.5rem;
 }
 
-#post-picture{
+#post-picture {
   height: 85%;
 }
 
-#post-likes{
+#post-likes {
   height: 10%;
   border: 2px solid;
   border-bottom: none;
