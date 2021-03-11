@@ -23,31 +23,11 @@
     </div>
 </template>
 
-<style>
-  .register-box {
-    width: 90vh;
-    margin: auto;
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    padding: 2rem;
-    margin-top: 8%;
-  }
-  
-  .register-title {
-    text-align: center;
-  }
+<style lang="scss">
 
-  .register-signup-btn{
-    display: flex;
-    flex-direction: row;
-  }
-  #register-btn {
-    width: 40%;
-  }
-  #login-btn {
-    width: 60%;
-  }
+@import "@/styles/_variables.scss";
+@import "@/styles/Register.scss";
+  
 </style>
 
 <script>

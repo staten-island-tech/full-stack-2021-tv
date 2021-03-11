@@ -22,31 +22,11 @@
     </div>
 </template>
 
-<style>
-  .login-box {
-    width: 90vh;
-    margin: auto;
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    padding: 2rem;
-    margin-top: 8%;
-  }
-  
-  .login-title {
-    text-align: center;
-  }
+<style lang="scss">
 
-  .login-signup-btn{
-    display: flex;
-    flex-direction: row;
-  }
-  #login-btn {
-    width: 40%;
-  }
-  #signUp-btn {
-    width: 60%;
-  }
+@import "@/styles/_variables.scss";
+@import "@/styles/Login.scss";
+
 </style>
 
 <script>
