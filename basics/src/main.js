@@ -13,7 +13,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyA59N6G1QldK2tKnDZug9sML6-e5_7MBBA",
   authDomain: "full-stack-b060c.firebaseapp.com",
   projectId: "full-stack-b060c",
-  storageBucket: "full-stack-b060c.appspot.com",
+  storageBucket: "gs://full-stack-b060c.appspot.com/",
   messagingSenderId: "779739438237",
   appId: "1:779739438237:web:a0a4e368f95ddc9db74874",
   measurementId: "G-M7REYEVV0V"

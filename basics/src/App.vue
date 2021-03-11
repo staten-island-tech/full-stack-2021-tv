@@ -19,7 +19,7 @@ import firebase from "firebase/app";
 import TopHeader from "./components/Top-Header"
 export default {
   components: {'top-header': TopHeader},
-  updated(){
+  mounted(){
     this.getUserStatus();
   },
   methods:{

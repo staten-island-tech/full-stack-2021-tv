@@ -65,15 +65,25 @@ export default {
   },
   methods: {
     pressed() {
+      var storage = firebase.storage();
+      var default_pfp_ref = storage.ref().child('User/pfp/iu.png');
+      
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
           console.log(this.username);
           let user = firebase.auth().currentUser;
-          user.updateProfile({
-            displayName: this.username
+          
+          default_pfp_ref.getDownloadURL().then((url) =>{
+            
+            user.updateProfile({
+            displayName: this.username,
+            photoURL: url
           })
+          });
+         
+          
           console.log("here");
           this.$router.replace({ name: "secret" });
         })
