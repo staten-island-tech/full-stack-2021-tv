@@ -3,57 +3,61 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed"></p>
-      <select id="select-tag-container">
-        <option selected>Pick A Tag</option>
-        <option value="education">Education</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="sports">Sports</option>
-        <option value="music">Music</option>
-        <option value="games">Games</option>
-        <option value="others">Others</option>
-      </select>
+      <div id="select-tag-container">
+        <v-select id="mySelect" :options="options"></v-select>
+      </div>
+      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <p id="button-to-make-blog">
         <b-button id="show-btn" @click="$bvModal.show('making-blog')"
           >+</b-button
         >
-        <b-modal id="making-blog" hide-footer>
-          <div class="blog-picture"></div>
-          <div class="blog-comment">
-            <div role="group">
-              <b-form-input
-                v-model="caption"
-                :state="captionState"
-                placeholder="Caption"
-                trim
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback id="input-live-feedback">
-                More than 150 charactes.
-              </b-form-invalid-feedback>
-              <!-- This is a form text block (formerly known as help block) -->
+        <b-modal id="making-blog" size="xl" hide-footer>
+          <div class="modal-body">
+            <div class="blog-picture">
+              <b-form-file
+                accept="image/jpeg, image/png, image/gif"
+              ></b-form-file>
             </div>
-          </div>
+            <div class="blog-comment">
+              <div role="group">
+                <b-form-input
+                  v-model="caption"
+                  :state="captionState"
+                  placeholder="Caption"
+                  trim
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback id="input-live-feedback">
+                  More than 150 charactes.
+                </b-form-invalid-feedback>
+                <!-- This is a form text block (formerly known as help block) -->
+              </div>
+            </div>
 
-          <div class="blog-bottom-row">
-            <select class="blog-tag">
-              <option selected>Pick A Tag</option>
-              <option class="blog-tag-option" value="education"
-                >Education</option
-              >
-              <option value="entertainment">Entertainment</option>
-              <option value="sports">Sports</option>
-              <option value="music">Music</option>
-              <option value="games">Games</option>
-              <option value="others">Others</option>
-            </select>
+            <div class="blog-bottom-row">
+              <select class="blog-tag" v-model="blog.tag">
+                <option v-for="tag in tags" v-bind:key="tag">
+                  {{ tag }}
+                </option>
+              </select>
+              <!-- <select class="blog-tag">
+                <option selected>Pick A Tag</option>
+                <option value="blog-education">Education</option>
+                <option value="blog-entertainment">Entertainment</option>
+                <option value="blog-sports">Sports</option>
+                <option value="blog-music">Music</option>
+                <option value="blog-games">Games</option>
+                <option value="blog-others">Others</option>
+              </select> -->
 
-            <select class="blog-toggle-private-public">
-              <option value="1" selected>Public</option>
-              <option value="2">Private</option>
-            </select>
+              <select class="blog-toggle-private-public">
+                <option value="1" selected>Public</option>
+                <option value="2">Private</option>
+              </select>
 
-            <div class="blog-post" @click="$bvModal.hide('making-blog')">
-              post
+              <div class="blog-post" @click="$bvModal.hide('making-blog')">
+                Post
+              </div>
             </div>
           </div>
         </b-modal>
@@ -64,12 +68,7 @@
 
     <section class="feed">
       <div class="picture">
-        <b-dropdown
-          variant="outline-dark"
-          class="report-button"
-          size="lg"
-          no-caret
-        >
+        <b-dropdown variant="none" class="report-button" size="lg" no-caret>
           <template #button-content>
             <span>...</span>
           </template>
@@ -111,6 +110,26 @@ export default {
   data() {
     return {
       caption: "",
+      blog: {
+        tag: "",
+      },
+      options: [
+        "Education",
+        "Entertainment",
+        "Sports",
+        "Music",
+        "Games",
+        "Others",
+      ],
+      tags: [
+        "Pick a Tag",
+        "Education",
+        "Entertainment",
+        "Sports",
+        "Music",
+        "Games",
+        "Others",
+      ],
     };
   },
 };
@@ -135,6 +154,13 @@ export default {
   border: 2px solid;
   border-left: none;
   margin-bottom: 1rem;
+  .vs--searchable {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+.vs--searchable .vs__dropdown-toggle {
+  border: none !important;
 }
 
 //make a blog button
@@ -150,14 +176,10 @@ export default {
 }
 
 .btn[data-v-fae5bece] {
-  font-size: 3rem;
+  font-size: 2rem;
   width: 100%;
   height: 100%;
   border-radius: 0rem;
-}
-
-.btn {
-  padding: 0rem;
 }
 
 //modal
@@ -183,27 +205,28 @@ export default {
 //   }
 // }
 
-.modal-content {
-  height: 100%;
+.modal-body {
+  height: 40rem;
 }
 
 .blog-picture {
-  height: 75%;
+  height: 90%;
   border: 2px solid;
   border-bottom: 0rem;
 }
 
 .blog-comment {
   border: 2px solid;
-  height: 15%;
   border-bottom: 0rem;
+  height: 6%;
 }
 
 .blog-bottom-row {
   display: flex;
   flex-direction: row;
-  height: 10%;
+  height: 5%;
 }
+
 .blog-tag {
   border: 2px solid;
   width: 80%;
@@ -219,10 +242,8 @@ export default {
   border: 2px solid;
   border-left: none;
   width: 10%;
-}
-
-.blog-tag-option {
-  width: 5rem;
+  padding-left: 7px;
+  cursor: pointer;
 }
 
 //
@@ -258,16 +279,10 @@ export default {
 }
 
 .report-button {
-  float: right;
+  float: left;
   width: 4rem;
   height: 4rem;
 }
-// css for bootstrap
-.dropdown-menu {
-  min-width: 5rem;
-}
-
-//
 
 .description-comment {
   margin-left: 1rem;
@@ -307,5 +322,11 @@ export default {
 .comment {
   font-size: 1.1rem;
   display: inline-block;
+}
+</style>
+
+<style>
+.vs--searchable .vs__dropdown-toggle {
+  border: none ;
 }
 </style>
