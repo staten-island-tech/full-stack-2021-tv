@@ -2,7 +2,9 @@
   <div>
     <section class="other-banner-profile">
       <div class="other-profile"></div>
-      <p id="logo-for-feed">Logo</p>
+      <p id="logo-for-feed">
+        <img src="tv.jpg" class="logo">
+      </p>
       <p id="other-profile-empty-space"></p>
       <p id="settings">Settings</p>
     </section>
