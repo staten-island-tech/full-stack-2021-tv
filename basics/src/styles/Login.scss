@@ -6,7 +6,8 @@
   border-width: 2px;
   padding: 2rem;
   margin-top: 8%;
-  background-color: map-get($colors, primary-light); //testing variable
+  background-color: map-get($colors, primary-light); //testing variables
+  font-family: $font;
 }
 
 .login-title {
