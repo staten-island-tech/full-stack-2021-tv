@@ -105,7 +105,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .user-profile-pic {
@@ -124,7 +124,7 @@ export default {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 #user-following-followers {
@@ -132,7 +132,7 @@ export default {
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 #user-following {
@@ -199,7 +199,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .user-post-column-1 {
@@ -209,7 +209,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .user-post-column-2 {
@@ -219,7 +219,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 #user-actual-post {
@@ -231,7 +231,7 @@ export default {
   //border-radius: 0.25rem;
   border: 2px solid;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   font-size: 0.75rem;
 }
 
