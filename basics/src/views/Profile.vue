@@ -47,7 +47,10 @@
             <p id="post-settings-empty-space"></p>
             <p id="post-settings-button">...</p>
           </div>
-          <p id="post-likes">Likes</p>
+          <div id="post-picture"></div>
+          <div id="post-likes">
+            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          </div>
         </div>
       </div>
     </section>
@@ -80,6 +83,7 @@ export default {
 #logo-for-feed {
   width: 5%;
   border: 2px solid;
+  font-size: 0.75rem;
 }
 
 #banner-profile-empty-space {
@@ -92,6 +96,7 @@ export default {
   width: 5%;
   border: 2px solid;
   border-left: 0px;
+  font-size: 0.75rem;
 }
 
 .info-about-user {
@@ -110,6 +115,7 @@ export default {
   display: flex;
   //border-radius: 0.25rem;
   border: 2px solid;
+  font-size: 0.75rem;
 }
 
 .generic-info {
@@ -136,6 +142,7 @@ export default {
   display: flex;
   //border-radius: 0.25rem;
   border: 2px solid;
+  font-size: 0.75rem;
 }
 
 #user-followers {
@@ -145,6 +152,7 @@ export default {
   display: flex;
   //border-radius: 0.25rem;
   border: 2px solid;
+  font-size: 0.75rem;
 }
 
 #user-username-n-bio {
@@ -154,6 +162,7 @@ export default {
   display: flex;
   //border-radius: 0.25rem;
   border: 2px solid;
+  font-size: 0.75rem;
 }
 
 .user-banner-posts {
@@ -167,18 +176,21 @@ export default {
 #user-public-post {
   width: 33.3%;
   border: 2px solid;
+  font-size: 0.75rem;
 }
 
 #user-private-post {
   width: 33.3%;
   border: 2px solid;
   border-left: none;
+  font-size: 0.75rem;
 }
 
 #user-liked-post {
   width: 33.4%;
   border: 2px solid;
   border-left: none;
+  font-size: 0.75rem;
 }
 
 .user-posts {
@@ -220,15 +232,15 @@ export default {
   border: 2px solid;
   flex-direction: column;
   justify-content: space-evenly;
+  font-size: 0.75rem;
 }
 
 #post-settings-with-empty-space{
-  height: 2rem;
+  height: 5%;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
 }
 
 #post-settings-empty-space{
@@ -240,5 +252,17 @@ export default {
   width: 10%;
   border: 2px solid;
   border-right: none;
+  font-size: 0.5rem;
+}
+
+#post-picture{
+  height: 85%;
+}
+
+#post-likes{
+  height: 10%;
+  border: 2px solid;
+  border-bottom: none;
+  font-size: 0.75rem;
 }
 </style>
