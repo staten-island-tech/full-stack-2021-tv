@@ -8,6 +8,16 @@
   margin-top: 8%;
   background-color: map-get($colors, primary-light); //testing variables
   font-family: $font;
+
+  @include phone {
+    width: 45vh;
+    background-color: map-get($colors, orange);
+  }
+  @include tablet {
+    width: 70vh;
+    background-color: map-get($colors, light-blue);
+    font-size: 2.5rem;
+  }
 }
 
 .login-title {
