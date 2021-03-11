@@ -2,44 +2,28 @@
   <div>
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"></p>
+      <p id="logo-for-feed">Logo</p>
       <p id="banner-profile-empty-space"></p>
-      <p id="settings">
-        <b-button id="settings-btn" @click="$bvModal.show('settings-modal')"
-          >Settings</b-button
-        >
-        <b-modal id="settings-modal" hide-footer>
-          <div id="overall-settings-div">
-            <div id="actual-settings">
-              <div class="pfp-change" id="settings-element">Change Profile Picture</div>
-              <div class="edit-bio" id="settings-element">Change Bio</div>
-              <div class="dark-mode" id="settings-element">Dark Mode</div>
-              <div class="pw-change" id="settings-element">Change Password</div>
-              <div class="log-out" id="settings-element">Log Out</div>
-            </div>
-            <div id="cancel-btn">X</div>
-          </div>
-        </b-modal>
-      </p>
+      <p id="settings">Settings</p>
     </section>
 
     <section class="info-about-user">
       <div class="user-profile-pic/generic-info"></div>
-      <div class="user-profile-pic"></div>
+      <div class="user-profile-pic">Profile Picture</div>
       <div class="generic-info">
         <div id="user-following-followers">
-          <p id="user-following"></p>
-          <p id="user-followers"></p>
+          <p id="user-following">Following</p>
+          <p id="user-followers">Followers</p>
         </div>
-        <p id="user-username-n-bio"></p>
+        <p id="user-username-n-bio">Username and Bio</p>
       </div>
     </section>
 
     <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
-      <p id="user-public-post"></p>
-      <p id="user-private-post"></p>
-      <p id="user-liked-post"></p>
+      <p id="user-public-post">Public Posts</p>
+      <p id="user-private-post">Private Posts</p>
+      <p id="user-liked-post">Liked Posts</p>
     </section>
 
     <section class="user-posts">
@@ -58,9 +42,12 @@
       </div>
 
       <div class="user-post-column-2">
-        <div id="user-actual-posts">
-          <p id="post-settings-button"></p>
-          <p id="post-likes"></p>
+        <div id="user-actual-posts">Post
+          <div id="post-settings-with-empty-space">
+            <p id="post-settings-empty-space"></p>
+            <p id="post-settings-button">...</p>
+          </div>
+          <p id="post-likes">Likes</p>
         </div>
       </div>
     </section>
@@ -68,14 +55,17 @@
 </template>
 
 <script>
-// import modalsForProfile from '../components/modalsForProfile';
+import settings_on_profile_modal from '../components/Modals-for-Profile';
 
-// export default {
-//   components: {
-//     settings_on_profile,
-//     }
+export default {
+  components: {
+    settings_on_profile,
+    }
 
-// };
+  // data () {
+            
+  //       },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -101,11 +91,11 @@
 #settings {
   width: 5%;
   border: 2px solid;
-  border-left: none;
+  border-left: 0px;
 }
 
 .info-about-user {
-  height: 15rem;
+  height: 30rem;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -114,16 +104,17 @@
 }
 
 .user-profile-pic {
-  height: 8rem;
-  width: 8rem;
+  height: 25rem;
+  width: 35%;
   margin: auto;
   display: flex;
-  border-radius: 0.5rem;
+  //border-radius: 0.25rem;
   border: 2px solid;
 }
 
 .generic-info {
-  height: 15rem;
+  height: 25rem;
+  width: 65%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -131,7 +122,7 @@
 }
 
 #user-following-followers {
-  height: 7rem;
+  height: 55%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -139,29 +130,29 @@
 }
 
 #user-following {
-  height: 5rem;
-  width: 3rem;
-  margin: auto;
+  height: 95%;
+  width: 50%;
+  margin: 1rem;
   display: flex;
-  border-radius: 0.25rem;
+  //border-radius: 0.25rem;
   border: 2px solid;
 }
 
 #user-followers {
-  height: 5rem;
-  width: 3rem;
+  height: 95%;
+  width: 50%;
   margin: auto;
   display: flex;
-  border-radius: 0.25rem;
+  //border-radius: 0.25rem;
   border: 2px solid;
 }
 
 #user-username-n-bio {
-  height: 7rem;
-  width: 10rem;
+  height: 45%;
+  //width: 10rem;
   margin: auto;
   display: flex;
-  border-radius: 0.25rem;
+  //border-radius: 0.25rem;
   border: 2px solid;
 }
 
@@ -220,51 +211,34 @@
 }
 
 #user-actual-post {
-  height: 5rem;
+  height: 33.3%;
   width: 33.3%;
   margin: auto;
   display: flex;
   align-items: center;
-  border-radius: 0.25rem;
+  //border-radius: 0.25rem;
   border: 2px solid;
-}
-
-
-// modal css
-
-#settings-btn{
-  font-size: 1.5rem;
-}
-
-#actual-settings{
-  height: 40%;
-  border: 2px solid;
-  border-bottom: 0rem;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-#overall-settings-div{
-  height: 40%;
-  border: 2px solid;
-  border-bottom: 0rem;
+#post-settings-with-empty-space{
+  height: 2rem;
+  margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+
 }
 
-#cancel-btn{
-  height: 5%;
-  border: 2px solid;
-  border-bottom: 0rem;
-  font-size: 1rem;
+#post-settings-empty-space{
+  width: 90%;
+  border: none;
 }
 
-#settings-element{
-  height: 7%;
+#post-settings-button{
+  width: 10%;
   border: 2px solid;
-  border-bottom: 0rem;
-  font-size: 1rem;
+  border-right: none;
 }
 </style>
