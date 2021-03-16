@@ -1,16 +1,27 @@
 @import "@/styles/_variables.scss";
 
 .user-banner-profile {
-  height: 6rem;
+  height: 7rem;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  // position: sticky; 
+  // top: 0;
+  background-color: map-get($colors, primary-light);
+  position: sticky;
+  top: 0;
 }
 
 #logo-for-feed {
   width: 5%;
   border: 2px solid;
+}
+#logo-jpg {
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
 }
 
 #select-tag-container {
@@ -34,7 +45,7 @@
   border-left: none;
 }
 .btn-secondary {
-  background-color: white;
+  background-color: map-get($colors, primary);
   color: black;
   border: 0rem;
 }

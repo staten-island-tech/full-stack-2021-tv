@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="profile">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">Logo</p>

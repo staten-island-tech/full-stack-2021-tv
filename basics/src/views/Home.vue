@@ -2,7 +2,7 @@
   <section class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"></p>
+      <p id="logo-for-feed"><img src="tv.jpg" id="logo-jpg"></p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
@@ -133,6 +133,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style lang="scss" scoped>
