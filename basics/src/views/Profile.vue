@@ -26,35 +26,32 @@
       <p id="user-liked-post">Liked Posts</p>
     </section>
 
-    <section class="user-posts">
-      <div class="user-post-column">
-        <div id="user-actual-posts">
-          <p id="post-settings-button"></p>
-          <p id="post-likes"></p>
-        </div>
-      </div>
+    <section class = "user-page-post"> 
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
 
-      <div class="user-post-column">
-        <div id="user-actual-posts">
-          <p id="post-settings-button"></p>
-          <p id="post-likes"></p>
-        </div>
-      </div>
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
 
-      <div class="user-post-column-2">
-        <div id="user-actual-posts">
-          Post
-          <div id="post-settings-with-empty-space">
-            <p id="post-settings-empty-space"></p>
-            <p id="post-settings-button">...</p>
-          </div>
-          <div id="post-picture"></div>
-          <div id="post-likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
-          </div>
-        </div>
-      </div>
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
+
+
     </section>
+
+
   </div>
 </template>
 
