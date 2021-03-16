@@ -8,9 +8,7 @@
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <p id="button-to-make-blog">
-        <b-button id="show-btn" @click="$bvModal.show('making-blog')"
-          >+</b-button
-        >
+        <b-button id="show-btn" @click="$bvModal.show('making-blog')">+</b-button>
         <b-modal id="making-blog" size="xl" hide-footer>
           <div class="modal-body">
             <div class="blog-picture">
@@ -62,8 +60,12 @@
           </div>
         </b-modal>
       </p>
-
-      <p id="settings"></p>
+      <p id="profile-icon">
+        <router-link to="/profile">
+          <b-avatar class="avatar"></b-avatar>
+        </router-link>
+      </p>
+      <!-- <p id="settings"></p> -->
     </section>
 
     <section class="feed">
