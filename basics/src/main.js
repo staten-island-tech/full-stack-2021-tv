@@ -6,6 +6,9 @@ import axios from "axios";
 import firebase from "firebase/app";
 import vSelect from "vue-select";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-vue/dist/bootstrap-vue.min.css";
+import "vue-select/dist/vue-select.css";
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
@@ -13,9 +16,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component("v-select", vSelect);
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-vue/dist/bootstrap-vue.min.css";
-import "vue-select/dist/vue-select.css";
+
 
 // web app's Firebase config
 const firebaseConfig = {
