@@ -26,11 +26,9 @@
                   placeholder="Caption"
                   trim
                 ></b-form-input>
-                <!-- This will only be shown if the preceding input has an invalid state -->
                 <b-form-invalid-feedback id="input-live-feedback">
                   More than 150 charactes.
                 </b-form-invalid-feedback>
-                <!-- This is a form text block (formerly known as help block) -->
               </div>
             </div>
 
@@ -40,16 +38,7 @@
                   {{ tag }}
                 </option>
               </select>
-              <!-- <select class="blog-tag">
-                <option selected>Pick A Tag</option>
-                <option value="blog-education">Education</option>
-                <option value="blog-entertainment">Entertainment</option>
-                <option value="blog-sports">Sports</option>
-                <option value="blog-music">Music</option>
-                <option value="blog-games">Games</option>
-                <option value="blog-others">Others</option>
-              </select> -->
-
+              
               <select class="blog-toggle-private-public">
                 <option value="1" selected>Public</option>
                 <option value="2">Private</option>
