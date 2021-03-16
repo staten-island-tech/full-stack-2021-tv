@@ -52,7 +52,6 @@ export default {};
 
 <style lang="scss" scoped>
 
-@import "@/styles/_variables.scss";
 @import "@/styles/ProfileOther.scss";
 
 </style>
