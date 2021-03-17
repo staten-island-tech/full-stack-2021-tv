@@ -27,12 +27,6 @@
     </section>
 
     <section class = "user-page-post"> 
-    <div class= "user-box-1">
-    <div class= "user-image-1"> image </div>
-    <h2 class = "user-likes">           
-      <b-icon variant="danger" icon="heart"></b-icon> 1 like
-      </h2>
-    </div>
 
     <div class= "user-box-1">
     <div class= "user-image-1"> image </div>
@@ -48,6 +42,12 @@
       </h2>
     </div>
 
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
 
     </section>
 
