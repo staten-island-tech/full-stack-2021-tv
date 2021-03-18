@@ -1,0 +1,53 @@
+$colors: (
+  primary: #b19cd9,
+  primary-light: #ddd3ee,
+  primary-dark: #8565c4,
+  //extra colors
+    dark-blue: #576079,
+  light-blue: #abc2cb,
+  orange: #d67667,
+  grey: #cfcec6,
+  brown: #816852,
+);
+
+$dark: (
+  //dark mode
+    base: #121212,
+  level-1: #292929,
+  accent: #b19cd9
+);
+
+@function color($color-name) {
+  @return map-get($colors, color-name);
+}
+// function syntax is color: map-get($colors, color-name);
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+$font: "Manrope", sans-serif;
+
+$phone: 600px;
+$tablet: 900px;
+$laptop: 1100px;
+$desktop: 1100px;
+
+@mixin phone {
+  @media (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: 1200px) and (max-width: 1600px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1200px) {
+    //and (max-width: #{desktop-max})
+    @content;
+  }
+}

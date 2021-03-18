@@ -7,7 +7,7 @@
         <router-link to="/secret"> Secret </router-link> |
         <router-link to="/profile" v-if="loggedIn"> Profile </router-link> |
        <router-link to="/profileOther"> Profile2 </router-link>
-
+    
       </div>
     <router-view />
   </div>
@@ -38,5 +38,6 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import "@/styles/App.scss";
+@import "@/styles/_variables.scss";
 </style>
