@@ -1,8 +1,3 @@
-@import "@/styles/_variables.scss";
-
-.profile {
-  font: $font;
-}
 .user-banner-profile {
   height: 6rem;
   margin: auto;
@@ -11,16 +6,11 @@
   justify-content: flex-start;
 }
 
-.logo {
-  width: 6vh;
-}
-
 #logo-for-feed {
   width: 5%;
   border: 2px solid;
   font-size: 0.75rem;
 }
-  
 
 #banner-profile-empty-space {
   width: 90%;
@@ -149,15 +139,12 @@
     border: 2px solid;
 }
 
-#user-actual-post {
-  height: 12rem;
+.user-likes {
   width: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  //border-radius: 0.25rem;
+  text-align: center;
   border: 2px solid;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 0.75rem;
+  border-top: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-top: 0rem;
 }
