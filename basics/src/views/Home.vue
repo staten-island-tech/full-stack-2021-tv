@@ -56,6 +56,7 @@
     </section>
 
     <section class="feed">
+      <div class ="feed-post">
       <div class="picture">
         <b-dropdown variant="none" class="report-button" size="lg" no-caret>
           <template #button-content>
@@ -84,6 +85,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
+      </div>
       </div>
     </section>
   </section>

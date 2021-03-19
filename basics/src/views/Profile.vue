@@ -66,3 +66,4 @@ export default {};
 @import "@/styles/Profile.scss";
 
 </style>
+
