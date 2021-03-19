@@ -38,7 +38,7 @@
                   {{ tag }}
                 </option>
               </select>
-              
+
               <select class="blog-toggle-private-public">
                 <option value="1" selected>Public</option>
                 <option value="2">Private</option>
@@ -56,26 +56,28 @@
     </section>
 
     <section class="feed">
-      <div class ="feed-post">
-      <div class="picture">
-        <b-dropdown variant="none" class="report-button" size="lg" no-caret>
-          <template #button-content>
-            <span>...</span>
-          </template>
-          <b-dropdown-item href="#">Report</b-dropdown-item>
-        </b-dropdown>
+      <div class="feed-post">
+        <div class="picture">
+          <b-dropdown variant="none" class="report-button" size="lg" no-caret>
+            <template #button-content>
+              <span>...</span>
+            </template>
+            <b-dropdown-item href="#">Report</b-dropdown-item>
+          </b-dropdown>
 
-        <div class="likes">
-          <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          <div class="likes">
+            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          </div>
         </div>
-      </div>
 
-      <div class="description-comment">
-        <div class="description">
-          <router-link to="/ProfileOther" class="username"> Name </router-link>
-          <p class="caption">caption</p>
-        </div>
-        <!-- <div class="comment-section">
+        <div class="description-comment">
+          <div class="description">
+            <router-link to="/ProfileOther" class="username">
+              Name
+            </router-link>
+            <p class="caption">caption</p>
+          </div>
+          <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
             id="comment-username"
@@ -85,7 +87,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-      </div>
+        </div>
       </div>
     </section>
   </section>
@@ -126,19 +128,18 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 @import "@/styles/Home.scss";
 </style>
 
 <style>
 .vs--searchable .vs__dropdown-toggle {
-  border: none ;
+  border: none;
 }
 .btn-secondary {
-    background-color: white;
-    color: black;
-    border: 0rem;
+  color: black  !important;
+  width: 100%;
+  height: 100%;
+  border: 0rem  !important;
 }
 </style>
-
