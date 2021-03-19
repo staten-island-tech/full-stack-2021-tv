@@ -5,11 +5,15 @@
     flex-direction: row;
     justify-content: flex-start;
 }
-  
-  #logo-for-feed {
-    width: 5%;
-    border: 2px solid;
-  }
+.logo {
+  width: 6vh;
+}
+
+#logo-for-feed {
+  width: 5%;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
   
   #select-tag-container {
     width: 84%;

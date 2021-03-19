@@ -2,7 +2,9 @@
   <section class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"></p>
+      <p id="logo-for-feed">
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+      </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
@@ -52,7 +54,9 @@
         </b-modal>
       </p> 
 
-      <p id="settings"></p>
+      <p id="settings">
+        <router-link to="/profile">Profile Picture</router-link>
+      </p>
     </section>
 
     <section class="feed">
