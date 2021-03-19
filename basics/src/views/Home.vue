@@ -7,12 +7,53 @@
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-      <p id="button-to-make-blog">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <div class="modal-body">
+            <div class="modal-header"> </div>
+            <div class="blog-picture">
+              <b-form-file
+                accept="image/jpeg, image/png, image/gif"
+              ></b-form-file>
+            </div>
+            <div class="blog-comment">
+                <textarea
+                  placeholder="Caption"
+                  class = "blog-caption"
+                ></textarea>
+            </div>
+
+            <div class="blog-bottom-row">
+              <select class="blog-tag" v-model="blog.tag">
+                <option v-for="tag in tags" v-bind:key="tag">
+                  {{ tag }}
+                </option>
+              </select>
+
+              <select class="blog-toggle-private-public">
+                <option value="1" selected>Public</option>
+                <option value="2">Private</option>
+              </select>
+
+              <div class="blog-post">
+                Post
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- <p id="button-to-make-blog">
         <b-button id="show-btn" @click="$bvModal.show('making-blog')"
           >+</b-button
-        >
-        <b-modal id="making-blog" size="xl" hide-footer>
-          <div class="modal-body">
+        > -->
+        <!-- <b-modal id="making-blog" size="xl" hide-footer> -->
+          <!-- <div class="modal-body">
             <div class="blog-picture">
               <b-form-file
                 accept="image/jpeg, image/png, image/gif"
@@ -38,7 +79,7 @@
                   {{ tag }}
                 </option>
               </select>
-              
+
               <select class="blog-toggle-private-public">
                 <option value="1" selected>Public</option>
                 <option value="2">Private</option>
@@ -48,9 +89,9 @@
                 Post
               </div>
             </div>
-          </div>
-        </b-modal>
-      </p>
+          </div> -->
+        <!-- </b-modal>
+      </p> -->
 
       <p id="settings"></p>
     </section>
@@ -63,11 +104,19 @@
           </template>
           <b-dropdown-item href="#">Report</b-dropdown-item>
         </b-dropdown>
+      <div class="feed-post">
+        <div class="picture">
+          <b-dropdown variant="none" class="report-button" size="lg" no-caret>
+            <template #button-content>
+              <span>...</span>
+            </template>
+            <b-dropdown-item href="#">Report</b-dropdown-item>
+          </b-dropdown>
 
-        <div class="likes">
-          <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          <div class="likes">
+            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          </div>
         </div>
-      </div>
 
       <div class="description-comment">
         <div class="description">
@@ -75,6 +124,14 @@
           <p class="caption">caption</p>
         </div>
         <div class="comment-section">
+        <div class="description-comment">
+          <div class="description">
+            <router-link to="/ProfileOther" class="username">
+              Name
+            </router-link>
+            <p class="caption">caption</p>
+          </div>
+          <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
             id="comment-username"
@@ -83,6 +140,7 @@
             Name
           </router-link>
           <p class="comment">comment</p>
+        </div> -->
         </div>
       </div>
     </section>
@@ -124,19 +182,18 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 @import "@/styles/Home.scss";
 </style>
 
 <style>
 .vs--searchable .vs__dropdown-toggle {
-  border: none ;
+  border: none;
 }
 .btn-secondary {
-    background-color: white;
-    color: black;
-    border: 0rem;
+  color: black  !important;
+  width: 100%;
+  height: 100%;
+  border: 0rem  !important;
 }
 </style>
-
