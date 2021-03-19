@@ -30,47 +30,7 @@
       padding: 1rem;
     }
   }
-  .vs--searchable .vs__dropdown-toggle {
-    border: none !important;
-  }
-  
-  //make a blog button
-  #button-to-make-blog {
-    width: 6%;
-    border: 2px solid;
-    border-left: none;
-  }
-  
-  .btn[data-v-fae5bece] {
-    font-size: 2rem;
-    width: 100%;
-    height: 100%;
-    border-radius: 0rem;
-  }
-  
-  //modal
-  
-  .form-control.is-valid {
-    border: 0rem;
-    background-image: none;
-    color: black;
-  }
-  
-  .modal-dialog .modal-md {
-    max-width: none;
-    width: 80%;
-    height: 90%;
-  }
-  
-  // @media (min-width: 576px) {
-  //   //from bootstrap
-  //   .modal-dialog {
-  //     max-width: none;
-  //     width: 80%;
-  //     height: 90%;
-  //   }
-  // }
-  
+
   .modal-body {
     height: 70rem;
   }
