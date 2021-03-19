@@ -89,10 +89,9 @@
   </section>
 </template>
 
-<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-
 <script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
   computed: {
     captionState() {
