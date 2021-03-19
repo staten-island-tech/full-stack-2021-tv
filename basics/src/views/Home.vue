@@ -2,7 +2,9 @@
   <section class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"></p>
+      <p id="logo-for-feed">
+        <img src="tv.jpg" class="logo" alt="logo">
+      </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
@@ -51,8 +53,11 @@
           </div>
         </b-modal>
       </p>
-
-      <p id="settings"></p>
+      <p id="avatar">
+        <router-link to="/profile">
+          <b-avatar class="avatar-icon" size="4em"></b-avatar>
+        </router-link>
+      </p>
     </section>
 
     <section class="feed">
@@ -124,6 +129,45 @@ export default {
     };
   },
 };
+
+
+// function checkPosition() {
+//   let scrollPos = 0;
+//   const banner = document.querySelector(".user-banner-profile");
+//   let windowY = window.scrollY;
+//   if (windowY < scrollPos) {
+//     // Scrolling up
+//     banner.classList.add("is-visible");
+//     banner.classList.remove("is-hidden");
+//     console.log("scrolled up");
+//   } else if (windowY > scrollPos) {
+//     // Scrolling down
+//     banner.classList.add("is-hidden");
+//     banner.classList.remove("is-visible");
+//     console.log("scrolled down");
+//   }
+//   scrollPos = windowY;
+// }
+// window.addEventListener("scroll", checkPosition);
+
+
+let scrollPos = 0;
+
+// adding scroll event
+window.addEventListener('scroll', function() {
+  const banner = document.querySelector('.user-banner-profile');
+  // detects new state and compares it with the new one
+  if ((document.body.getBoundingClientRect()).top > scrollPos) {
+		console.log('scrolled up');
+    banner.classList.remove('is-hidden');
+    banner.classList.add('is-visible');
+  } else {
+		console.log('scrolled down');
+    banner.classList.add('is-hidden');
+	// saves the new position for iteration.
+  }
+	scrollPos = (document.body.getBoundingClientRect()).top;
+});
 </script>
 
 
@@ -132,9 +176,7 @@ export default {
 </style>
 
 <style>
-.vs--searchable .vs__dropdown-toggle {
-  border: none ;
-}
+
 .btn-secondary {
     background-color: white;
     color: black;
