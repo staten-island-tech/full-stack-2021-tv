@@ -33,6 +33,7 @@
   align-items: center;
   justify-content: center;
   margin-top: -1rem;
+  width: 80%;
 }
 
 .user-profile-pic {
@@ -42,6 +43,7 @@
   display: flex;
   border: 2px solid;
   font-size: 0.75rem;
+  margin-left: 0rem
 }
 
 .generic-info {
@@ -51,6 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 0rem
 }
 
 #user-following-followers {
@@ -95,38 +98,20 @@
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   text-align: center;
+  width: 81.5%;
 }
 
-#user-public-post {
-  width: 33.3%;
+#user-banner-button {
+  width: 100%;
   border: 2px solid;
   font-size: 1.5rem;
-  border-left: 0rem;
   margin-bottom: 0rem;
-  padding: .7rem;
-}
-
-#user-private-post {
-  width: 33.3%;
-  border: 2px solid;
-  border-left: none;
-  font-size: 1.5rem;
-  margin-bottom: 0rem;
-  padding: .7rem;
-
-}
-
-#user-liked-post {
-  width: 33.4%;
-  border: 2px solid;
-  border-left: none;
-  font-size: 1.5rem;
-  border-right: 0rem;
-  margin-bottom: 0rem;
-  padding: .7rem;
-
+  padding: .7rem;  
+  margin-right: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 .user-page-post {
@@ -134,15 +119,19 @@
   flex-direction: row;
   justify-content: center;
   height: auto;
+  width: 81.5%;
+  margin: auto;
 }
 
 .user-box-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 31%;
-  margin: .8rem;
+  width: 33%;
+  margin-right: 1rem;
+  margin-left: 1rem;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 .user-image-1 {
@@ -157,4 +146,5 @@
   border-top: none;
   font-size: 1.5rem;
   padding: 10px;
+  margin-top: 0rem;
 }

@@ -74,7 +74,7 @@
           <router-link to="/ProfileOther" class="username"> Name </router-link>
           <p class="caption">caption</p>
         </div>
-        <div class="comment-section">
+        <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
             id="comment-username"
@@ -83,7 +83,7 @@
             Name
           </router-link>
           <p class="comment">comment</p>
-        </div>
+        </div> -->
       </div>
     </section>
   </section>

@@ -21,9 +21,9 @@
 
     <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
-      <p id="user-public-post">Public Posts</p>
-      <p id="user-private-post">Private Posts</p>
-      <p id="user-liked-post">Liked Posts</p>
+      <p id="user-banner-button">Public Posts</p>
+      <p id="user-banner-button">Private Posts</p>
+      <p id="user-banner-button">Liked Posts</p>
     </section>
 
     <section class = "user-page-post"> 
