@@ -49,8 +49,11 @@
       </div>
     </div>
   </div>
-
-      <p id="settings"></p>
+      <p id="avatar">
+        <router-link to="/profile">
+          <b-avatar class="avatar-icon" size="4em"></b-avatar>
+        </router-link>
+      </p>
     </section>
 
     <section class="feed">
@@ -186,4 +189,3 @@ window.addEventListener('scroll', function() {
     border: 0rem;
 } */
 </style>
-
