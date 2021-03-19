@@ -111,28 +111,34 @@
   }
   
   .feed {
-    width: 90%;
+    width: 70%;
     border: 1px solid;
     height: 100%;
     margin: auto;
     padding-bottom: 1rem;
   }
   
+  .feed-post {
+    height: 50rem;
+  }
+
   .likes {
-    margin-top: 27rem;
     height: 3rem;
-    border-bottom: 1px solid;
     padding-left: 0.5rem;
     background-color: #f9f8eb;
     padding-top: 0.5rem;
     font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%
   }
   
   .picture {
     border: 1px solid;
-    height: 30rem;
+    height: 80%;
     margin: 1rem;
     margin-bottom: 0;
+    position: relative;
   }
   
   .report-button {
@@ -146,6 +152,8 @@
     margin-right: 1rem;
     border-left: 1px solid;
     border-right: 1px solid;
+    border-bottom: 1px solid;
+    height: 10%;
   }
   
   .description {
@@ -181,5 +189,3 @@
     display: inline-block;
   }
 
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';

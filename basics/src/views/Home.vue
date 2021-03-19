@@ -56,6 +56,7 @@
     </section>
 
     <section class="feed">
+      <div class ="feed-post">
       <div class="picture">
         <b-dropdown variant="none" class="report-button" size="lg" no-caret>
           <template #button-content>
@@ -74,7 +75,7 @@
           <router-link to="/ProfileOther" class="username"> Name </router-link>
           <p class="caption">caption</p>
         </div>
-        <div class="comment-section">
+        <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
             id="comment-username"
@@ -83,7 +84,8 @@
             Name
           </router-link>
           <p class="comment">comment</p>
-        </div>
+        </div> -->
+      </div>
       </div>
     </section>
   </section>
