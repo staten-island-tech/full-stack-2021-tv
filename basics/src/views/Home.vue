@@ -38,8 +38,8 @@
                 <option value="1" selected>Public</option>
                 <option value="2">Private</option>
               </select>
-
-              <div class="blog-post">
+  
+              <div class="blog-post"> 
                 Post
               </div>
             </div>
