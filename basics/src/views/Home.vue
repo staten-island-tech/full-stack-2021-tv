@@ -54,7 +54,9 @@
         </b-modal>
       </p>
 
-      <p id="settings"></p>
+      <p id="settings">
+        <router-link to="/profile">Profile Picture</router-link>
+      </p>
     </section>
 
     <section class="feed">
