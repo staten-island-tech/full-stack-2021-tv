@@ -1,12 +1,5 @@
 <template>
-    <div>
-        <h1>profile </h1>
-        <h1>Name : {{dName}}</h1>
-        <p> this is the default pfp</p>
-        <img v-bind:src = "pfp" >
-
-         
-    </div>
+    
   <div>
     <section class="user-banner-profile">
       <div class="user-profile"></div>
@@ -17,13 +10,15 @@
 
     <section class="info-about-user">
       <div class="user-profile-pic/generic-info"></div>
-      <div class="user-profile-pic">Profile Picture</div>
+      <img class="user-profile-pic" v-bind:src = "pfp" :key="pfp" />
+      
       <div class="generic-info">
         <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
         </div>
-        <p id="user-username-n-bio">Username and Bio</p>
+        
+        <h1 id="user-username-n-bio">Name : {{dName}}</h1>
       </div>
     </section>
 
@@ -62,6 +57,10 @@
           </div>
         </div>
       </div>
+      <div>
+        <input type="file" id="pfpUpload" accept="image/*">
+        <button type = "button" id = "pfpUbutton" v-on:click="changePfp()">ok</button>
+      </div>
     </section>
   </div>
 </template>
@@ -69,9 +68,11 @@
 
 <script>
 import firebase from "firebase/app";
+require('firebase/auth');
 export default {
     mounted(){
-        this.getUserData()
+        this.getUserData(),
+        this.changePfp()
         
     },
     methods:{
@@ -81,6 +82,30 @@ export default {
             this.pfp = user.photoURL;
             console.log(this.pfp);
         },
+        changePfp(){
+          //let uplbtn = document.getElementById("pfpUbutton");
+          let imgInp = document.getElementById("pfpUpload");
+          let UID = firebase.storage();
+          let user = firebase.auth().currentUser;
+          
+            console.log('clicked')
+            let img = imgInp.files[0];
+            console.log(img);
+            
+            UID.ref().child('User/UID/' + user.uid + '/pfp').put(img);
+            let newpfp = UID.ref().child('User/UID/' + user.uid + '/pfp');
+            
+            newpfp.getDownloadURL().then((url) =>{
+              console.log(url);
+              user.updateProfile({
+                photoURL: url
+              });
+            })
+            
+           this.pfp = user.photoURL;
+          
+          
+        }
         
     },
 
