@@ -15,6 +15,7 @@
 
 <script> 
 import TopHeader from "./components/Top-Header"
+
 export default {
   components: {'top-header': TopHeader}
 }
@@ -23,4 +24,4 @@ export default {
 <style lang="scss">
 @import "@/styles/App.scss";
 @import "@/styles/_variables.scss";
-</style>
+</style> 
