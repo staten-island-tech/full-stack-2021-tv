@@ -48,51 +48,6 @@
     </div>
   </div>
 
-      <p id="button-to-make-blog">
-        <b-button id="show-btn" @click="$bvModal.show('making-blog')"
-          >+</b-button
-        >
-        <b-modal id="making-blog" size="xl" hide-footer>
-          <!-- <div class="modal-body">
-            <div class="blog-picture">
-              <b-form-file
-                accept="image/jpeg, image/png, image/gif"
-              ></b-form-file>
-            </div>
-            <div class="blog-comment">
-              <div role="group">
-                <b-form-input
-                  v-model="caption"
-                  :state="captionState"
-                  placeholder="Caption"
-                  trim
-                ></b-form-input>
-                <b-form-invalid-feedback id="input-live-feedback">
-                  More than 150 charactes.
-                </b-form-invalid-feedback>
-              </div>
-            </div>
-
-            <div class="blog-bottom-row">
-              <select class="blog-tag" v-model="blog.tag">
-                <option v-for="tag in tags" v-bind:key="tag">
-                  {{ tag }}
-                </option>
-              </select>
-
-              <select class="blog-toggle-private-public">
-                <option value="1" selected>Public</option>
-                <option value="2">Private</option>
-              </select>
-
-              <div class="blog-post" @click="$bvModal.hide('making-blog')">
-                Post
-              </div>
-            </div>
-          </div> -->
-        </b-modal>
-      </p>
-
       <p id="settings"></p>
     </section>
 
