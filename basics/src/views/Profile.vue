@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="profile">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed">Logo</p>
+      <p id="logo-for-feed">
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+        </p>
       <p id="banner-profile-empty-space"></p>
       <p id="settings">Settings</p>
     </section>
@@ -48,7 +50,6 @@
       <b-icon variant="danger" icon="heart"></b-icon> 1 like
       </h2>
     </div>
-
     </section>
 
 
@@ -62,7 +63,6 @@ export default {};
 
 <style lang="scss" scoped>
 
-@import "@/styles/_variables.scss";
 @import "@/styles/Profile.scss";
 
 </style>

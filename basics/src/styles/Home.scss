@@ -10,6 +10,15 @@
     width: 5%;
     border: 2px solid;
   }
+.logo {
+  width: 6vh;
+}
+
+#logo-for-feed {
+  width: 5%;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
   
   #select-tag-container {
     width: 84%;
@@ -111,6 +120,8 @@
     box-sizing: border-box;
     font-size: 16px;
     resize: none;  
+    padding-left: 7px;
+    cursor: pointer;
   }
   
   //
@@ -133,7 +144,9 @@
   }
 
   .likes {
+    margin-top: 27rem;
     height: 3rem;
+    border-bottom: 1px solid;
     padding-left: 0.5rem;
     background-color: #f9f8eb;
     padding-top: 0.5rem;
@@ -141,6 +154,7 @@
     position: absolute;
     bottom: 0;
     width: 100%
+
   }
   
   .picture {

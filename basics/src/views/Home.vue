@@ -2,7 +2,9 @@
   <section class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"></p>
+      <p id="logo-for-feed">
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+      </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
@@ -47,13 +49,13 @@
       </div>
     </div>
   </div>
-
+<!-- 
       <p id="button-to-make-blog">
         <b-button id="show-btn" @click="$bvModal.show('making-blog')"
           >+</b-button
         >
         <b-modal id="making-blog" size="xl" hide-footer>
-          <!-- <div class="modal-body">
+          <div class="modal-body">
             <div class="blog-picture">
               <b-form-file
                 accept="image/jpeg, image/png, image/gif"
@@ -79,7 +81,6 @@
                   {{ tag }}
                 </option>
               </select>
-
               <select class="blog-toggle-private-public">
                 <option value="1" selected>Public</option>
                 <option value="2">Private</option>
@@ -89,11 +90,13 @@
                 Post
               </div>
             </div>
-          </div> -->
+          </div>
         </b-modal>
-      </p>
+      </p> -->
 
-      <p id="settings"></p>
+      <p id="settings">
+        <router-link to="/profile">Profile Picture</router-link>
+      </p>
     </section>
 
     <section class="feed">
@@ -169,18 +172,26 @@ export default {
 };
 </script>
 
+
 <style lang="scss">
 @import "@/styles/Home.scss";
 </style>
 
 <style>
-.vs--searchable .vs__dropdown-toggle {
+/* .vs--searchable .vs__dropdown-toggle {
   border: none;
 }
 .btn-secondary {
   color: black  !important;
   width: 100%;
   height: 100%;
-  border: 0rem  !important;
+  border: none ;
 }
+
+.btn-secondary {
+    background-color: white;
+    color: black;
+    border: 0rem;
+} */
 </style>
+

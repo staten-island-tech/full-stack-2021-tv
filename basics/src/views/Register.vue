@@ -25,7 +25,6 @@
 
 <style lang="scss">
 
-@import "@/styles/_variables.scss";
 @import "@/styles/Register.scss";
   
 </style>
@@ -49,7 +48,7 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
           console.log("here");
-          this.$router.replace({ name: "secret" });
+          this.$router.replace({ name: "Home" });
         })
         .catch(error => (this.error = error));
     }

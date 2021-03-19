@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="profile-other">
     <section class="other-banner-profile">
       <div class="other-profile"></div>
       <p id="logo-for-feed">
-        <img src="tv.jpg" class="logo">
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
       </p>
       <p id="other-profile-empty-space"></p>
       <p id="settings">Settings</p>
@@ -24,22 +24,43 @@
     <section class="other-posts">
       <div class="other-post-column">
         <div id="other-actual-posts">
-          <p id="other-settings-button"></p>
-          <p id="other-likes"></p>
+          Post
+          <div id="post-settings-with-empty-space">
+            <p id="post-settings-empty-space"></p>
+            <p id="post-settings-button">...</p>
+          </div>
+          <div id="post-picture"></div>
+          <div id="post-likes">
+            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          </div>
         </div>
       </div>
 
       <div class="other-post-column">
         <div id="other-actual-posts">
-          <p id="other-settings-button"></p>
-          <p id="other-likes"></p>
+          Post
+          <div id="post-settings-with-empty-space">
+            <p id="post-settings-empty-space"></p>
+            <p id="post-settings-button">...</p>
+          </div>
+          <div id="post-picture"></div>
+          <div id="post-likes">
+            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          </div>
         </div>
       </div>
 
       <div class="other-post-column-2">
         <div id="other-actual-posts">
-          <p id="other-settings-button"></p>
-          <p id="other-likes"></p>
+          Post
+          <div id="post-settings-with-empty-space">
+            <p id="post-settings-empty-space"></p>
+            <p id="post-settings-button">...</p>
+          </div>
+          <div id="post-picture"></div>
+          <div id="post-likes">
+            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+          </div>
         </div>
       </div>
     </section>
@@ -52,7 +73,6 @@ export default {};
 
 <style lang="scss" scoped>
 
-@import "@/styles/_variables.scss";
 @import "@/styles/ProfileOther.scss";
 
 </style>
