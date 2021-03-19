@@ -2,13 +2,15 @@
   <section class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"><img src="tv.jpg" id="logo-jpg"></p>
+      <p id="logo-for-feed"></p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <p id="button-to-make-blog">
-        <b-button id="show-btn" @click="$bvModal.show('making-blog')">+</b-button>
+        <b-button id="show-btn" @click="$bvModal.show('making-blog')"
+          >+</b-button
+        >
         <b-modal id="making-blog" size="xl" hide-footer>
           <div class="modal-body">
             <div class="blog-picture">
@@ -24,11 +26,9 @@
                   placeholder="Caption"
                   trim
                 ></b-form-input>
-                <!-- This will only be shown if the preceding input has an invalid state -->
                 <b-form-invalid-feedback id="input-live-feedback">
                   More than 150 charactes.
                 </b-form-invalid-feedback>
-                <!-- This is a form text block (formerly known as help block) -->
               </div>
             </div>
 
@@ -38,16 +38,7 @@
                   {{ tag }}
                 </option>
               </select>
-              <!-- <select class="blog-tag">
-                <option selected>Pick A Tag</option>
-                <option value="blog-education">Education</option>
-                <option value="blog-entertainment">Entertainment</option>
-                <option value="blog-sports">Sports</option>
-                <option value="blog-music">Music</option>
-                <option value="blog-games">Games</option>
-                <option value="blog-others">Others</option>
-              </select> -->
-
+              
               <select class="blog-toggle-private-public">
                 <option value="1" selected>Public</option>
                 <option value="2">Private</option>
@@ -60,12 +51,8 @@
           </div>
         </b-modal>
       </p>
-      <p id="profile-icon">
-        <router-link to="/profile">
-          <b-avatar class="avatar"></b-avatar>
-        </router-link>
-      </p>
-      <!-- <p id="settings"></p> -->
+
+      <p id="settings"></p>
     </section>
 
     <section class="feed">
@@ -135,11 +122,21 @@ export default {
     };
   },
 };
-
 </script>
 
-<style lang="scss" scoped>
 
+<style lang="scss">
 @import "@/styles/Home.scss";
-
 </style>
+
+<style>
+.vs--searchable .vs__dropdown-toggle {
+  border: none ;
+}
+.btn-secondary {
+    background-color: white;
+    color: black;
+    border: 0rem;
+}
+</style>
+
