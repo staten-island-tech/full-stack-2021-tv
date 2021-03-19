@@ -2,7 +2,9 @@
   <div class="profile">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed">Logo</p>
+      <p id="logo-for-feed">
+        <router-link to="/">Logo</router-link>
+        </p>
       <p id="banner-profile-empty-space"></p>
       <p id="settings">Settings</p>
     </section>

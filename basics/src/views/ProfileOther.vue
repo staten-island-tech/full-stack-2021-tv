@@ -4,6 +4,7 @@
       <div class="other-profile"></div>
       <p id="logo-for-feed">
         <img src="tv.jpg" class="logo">
+        <router-link to="/">Logo</router-link>
       </p>
       <p id="other-profile-empty-space"></p>
       <p id="settings">Settings</p>

@@ -2,7 +2,9 @@
   <section class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed"></p>
+      <p id="logo-for-feed">
+        <router-link to="/"></router-link>
+      </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>

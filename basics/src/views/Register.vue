@@ -48,7 +48,7 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
           console.log("here");
-          this.$router.replace({ name: "secret" });
+          this.$router.replace({ name: "home" });
         })
         .catch(error => (this.error = error));
     }
