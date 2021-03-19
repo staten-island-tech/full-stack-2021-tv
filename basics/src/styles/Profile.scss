@@ -1,3 +1,8 @@
+@import "@/styles/_variables.scss";
+
+.profile {
+  font: $font;
+}
 .user-banner-profile {
   height: 6rem;
   margin: auto;

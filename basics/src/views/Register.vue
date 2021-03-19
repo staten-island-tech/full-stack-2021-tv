@@ -25,7 +25,6 @@
 
 <style lang="scss">
 
-@import "@/styles/_variables.scss";
 @import "@/styles/Register.scss";
   
 </style>
