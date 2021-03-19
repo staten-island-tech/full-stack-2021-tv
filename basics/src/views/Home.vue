@@ -50,7 +50,7 @@
             </div>
           </div>
         </b-modal>
-      </p>
+      </p> 
 
       <p id="settings"></p>
     </section>
