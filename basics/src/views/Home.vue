@@ -3,7 +3,7 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"></router-link>
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
       </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>

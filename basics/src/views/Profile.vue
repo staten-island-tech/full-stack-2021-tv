@@ -3,7 +3,7 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/">Logo</router-link>
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
         </p>
       <p id="banner-profile-empty-space"></p>
       <p id="settings">Settings</p>
