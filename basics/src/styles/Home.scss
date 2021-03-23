@@ -10,13 +10,15 @@
   top: 0;
   transition: transform 0.25s;
   z-index: 10;
+  background-color: lavender;
 }
-.user-banner-profile.is-visible {
-  transform: translateY(0%);
-}
-.user-banner-profile.is-hidden {
-  transform: translateY(-300%);
-}
+// .user-banner-profile.is-visible {
+//   transform: translateY(0%);
+// }
+// .user-banner-profile.is-hidden {
+//   transform: translateY(-300%);
+// }
+
 #logo-for-feed {
   width: 15%;
   padding-left: 5rem;
@@ -112,6 +114,7 @@
   height: 100%;
   margin: auto;
   padding-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .feed-post {
@@ -198,3 +201,4 @@
   margin-left: -.5rem;
   width: 4%;
 }
+
