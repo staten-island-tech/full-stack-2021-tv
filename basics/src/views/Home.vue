@@ -9,7 +9,7 @@
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">+</button>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
@@ -171,21 +171,4 @@ window.addEventListener('scroll', function() {
 
 <style lang="scss">
 @import "@/styles/Home.scss";
-</style>
-
-<style>
-/* .vs--searchable .vs__dropdown-toggle {
-  border: none;
-}
-.btn-secondary {
-  color: black  !important;
-  width: 100%;
-  height: 100%;
-  border: none ;
-}
-.btn-secondary {
-    background-color: white;
-    color: black;
-    border: 0rem;
-} */
 </style>
