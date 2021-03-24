@@ -1,9 +1,10 @@
 <template>
-    
-  <div>
+  <div class="profile">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
-      <p id="logo-for-feed">Logo</p>
+      <p id="logo-for-feed">
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+        </p>
       <p id="banner-profile-empty-space"></p>
       <p id="settings">Settings</p>
     </section>
@@ -24,25 +25,19 @@
 
     <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
-      <p id="user-public-post">Public Posts</p>
-      <p id="user-private-post">Private Posts</p>
-      <p id="user-liked-post">Liked Posts</p>
+      <p id="user-banner-button">Public Posts</p>
+      <p id="user-banner-button">Private Posts</p>
+      <p id="user-banner-button">Liked Posts</p>
     </section>
 
-    <section class="user-posts">
-      <div class="user-post-column">
-        <div id="user-actual-posts">
-          <p id="post-settings-button"></p>
-          <p id="post-likes"></p>
-        </div>
-      </div>
+    <section class = "user-page-post"> 
 
-      <div class="user-post-column">
-        <div id="user-actual-posts">
-          <p id="post-settings-button"></p>
-          <p id="post-likes"></p>
-        </div>
-      </div>
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
 
       <div class="user-post-column-2">
         <div id="user-actual-posts">
@@ -61,7 +56,22 @@
         <input type="file" id="pfpUpload" accept="image/*">
         <button type = "button" id = "pfpUbutton" v-on:click="changePfp()">ok</button>
       </div>
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
+
+    <div class= "user-box-1">
+    <div class= "user-image-1"> image </div>
+    <h2 class = "user-likes">           
+      <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      </h2>
+    </div>
     </section>
+
+
   </div>
 </template>
 
@@ -123,7 +133,7 @@ export default {
 
 <style lang="scss" scoped>
 
-@import "@/styles/_variables.scss";
 @import "@/styles/Profile.scss";
 
 </style>
+

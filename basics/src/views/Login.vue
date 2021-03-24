@@ -22,7 +22,7 @@
         </div>
         <div class="login-signup-btn">
           <label id="signUp-btn">
-            Need An Account? Click Here
+            Need An Account? Click Here to
             <router-link to="/register">register.</router-link>
           </label>
           <button
@@ -41,7 +41,6 @@
 
 <style lang="scss">
 
-@import "@/styles/_variables.scss";
 @import "@/styles/Login.scss";
 
 </style>
@@ -65,7 +64,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then((data) => {
           console.log(data);
-          this.$router.replace({ name: "secret" });
+          this.$router.replace({ name: "Home" });
         })
         .catch((error) => {
           this.error = error;
