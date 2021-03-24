@@ -18,9 +18,18 @@
           <div class="modal-body">
             <div class="modal-header"> </div>
             <div class="blog-picture">
-              <b-form-file
-                accept="image/jpeg, image/png, image/gif"
-              ></b-form-file>
+              <b-container class="mt-3" fluid>
+                <b-form @submit.stop.prevent="onSubmit">
+                  <div class="d-flex mb-3">
+                    <b-form-file v-model="image" placeholder="Choose an image" class="w-auto flex-grow-1"></b-form-file>
+                    <b-button v-if="hasImage" variant="danger" class="ml-3" @click="clearImage">Clear image</b-button>
+                  </div>
+                  <b-img v-if="hasImage" :src="imageSrc" class="mb-3" fluid block rounded></b-img>
+                  <b-button :disabled="!hasImage" variant="primary" type="submit">Upload image
+                  </b-button>
+                </b-form>
+              </b-container>
+              <!-- <b-form-file accept="image/jpeg, image/png, image/gif"></b-form-file> -->
             </div>
             <div class="blog-comment">
                 <textarea
@@ -97,12 +106,18 @@
 <script>
 export default {
   computed: {
+    hasImage() {
+      return !!this.image;
+    },
     captionState() {
       return this.caption.length < 150 ? true : false;
     },
   },
   data() {
     return {
+      image: null,
+      imageSrc: null,
+
       caption: "",
       blog: {
         tag: "",
@@ -126,35 +141,43 @@ export default {
       ],
     };
   },
+  watch: {
+    image(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        if (newValue) {
+          base64Encode(newValue)
+            .then(value => {
+              this.imageSrc = value;
+            })
+            .catch(() => {
+              this.imageSrc = null;
+            });
+        } else {
+          this.imageSrc = null;
+        }
+      }
+    }
+  },
+  methods: {
+    clearImage() {
+      this.image = null;
+    },
+
+    onSubmit() {
+      if (!this.image) {
+        alert("Please select an image.");
+        return;
+      }
+
+      alert("Form submitted!");
+    }
+  }
 };
 
-
-// function checkPosition() {
-//   let scrollPos = 0;
-//   const banner = document.querySelector(".user-banner-profile");
-//   let windowY = window.scrollY;
-//   if (windowY < scrollPos) {
-//     // Scrolling up
-//     banner.classList.add("is-visible");
-//     banner.classList.remove("is-hidden");
-//     console.log("scrolled up");
-//   } else if (windowY > scrollPos) {
-//     // Scrolling down
-//     banner.classList.add("is-hidden");
-//     banner.classList.remove("is-visible");
-//     console.log("scrolled down");
-//   }
-//   scrollPos = windowY;
-// }
-// window.addEventListener("scroll", checkPosition);
-
-
+//banner scroll effect
 let scrollPos = 0;
-
-// adding scroll event
 window.addEventListener('scroll', function() {
   const banner = document.querySelector('.user-banner-profile');
-  // detects new state and compares it with the new one
   if ((document.body.getBoundingClientRect()).top > scrollPos) {
 		console.log('scrolled up');
     banner.classList.remove('is-hidden');
@@ -162,30 +185,23 @@ window.addEventListener('scroll', function() {
   } else {
 		console.log('scrolled down');
     banner.classList.add('is-hidden');
-	// saves the new position for iteration.
   }
 	scrollPos = (document.body.getBoundingClientRect()).top;
 });
+
+//upload image preview
+const base64Encode = data =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(data);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+
 </script>
 
-
 <style lang="scss">
-@import "@/styles/Home.scss";
-</style>
 
-<style>
-/* .vs--searchable .vs__dropdown-toggle {
-  border: none;
-}
-.btn-secondary {
-  color: black  !important;
-  width: 100%;
-  height: 100%;
-  border: none ;
-}
-.btn-secondary {
-    background-color: white;
-    color: black;
-    border: 0rem;
-} */
+@import "@/styles/Home.scss";
+
 </style>
