@@ -10,11 +10,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.min.css";
 import "vue-select/dist/vue-select.css";
 
+
+
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component("v-select", vSelect);
+
+
+
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import "vue-select/dist/vue-select.css";
 
 
 
@@ -41,5 +50,10 @@ firebase.auth().onAuthStateChanged((user) => {
       render: (h) => h(App),
     }).$mount("#app");
   }
-})
+
+});
+
+
+
+
 
