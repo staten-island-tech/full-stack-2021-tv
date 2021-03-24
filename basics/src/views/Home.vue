@@ -18,9 +18,7 @@
           <div class="modal-body">
             <div class="modal-header"> </div>
             <div class="blog-picture">
-              <b-form-file
-                accept="image/jpeg, image/png, image/gif"
-              ></b-form-file>
+              <input type="file" id = "postImg"/>
             </div>
             <div class="blog-comment">
                 <textarea
@@ -41,9 +39,9 @@
                 <option value="2">Private</option>
               </select>
 
-              <div class="blog-post">
+              <button class="blog-post" v-on:click="post()">
                 Post
-              </div>
+              </button>
             </div>
           </div>
       </div>
@@ -95,6 +93,8 @@
 </template>
 
 <script>
+//import firebase from "firebase/app";
+
 export default {
   computed: {
     captionState() {
@@ -126,6 +126,19 @@ export default {
       ],
     };
   },
+  methods:{
+    // post(){
+    //   let user = firebase.auth().currentUser;
+    //   let storageRef = firebase.storage().ref();
+    //   console.log(user);
+
+    //   let p_img = document.getElementById("postImg").files[0];
+    //   let storagePic = storageRef.child('Posts/' + + user.uid + '_' + p_img.name);
+    //   storagePic.put(p_img);
+      
+      
+    // }
+  }
 };
 
 
