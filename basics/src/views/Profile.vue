@@ -6,7 +6,40 @@
         <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
         </p>
       <p id="banner-profile-empty-space"></p>
-      <p id="settings">Settings</p>
+      <div id="settings">
+        <div class="w3-container">
+          <button onclick="document.getElementById('id01').style.display='none'"
+      class="w3-button w3-display-topright"> ⚙ </button>
+
+          <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+              <header class="w3-container settings-header-color">
+                <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+              <h2 class="settings-header-font">Settings</h2>
+              </header> 
+
+              <div class="w3-container settings-body">
+                <div class="actual-settings sign-out-button">Sign-out</div>
+
+                <div class="actual-settings change/add-pfp">
+                  <button onclick="document.getElementById('id02').style.display='none'"
+      class="w3-button w3-display-topright">Change/Add Profile Picture</button>
+                  <div id="id02" class="w3-modal">
+                    <div class="w3-modal-content">
+                      <input type="file" id="pfpUpload" accept="image/*">
+                      <button type = "button" id = "pfpUbutton" v-on:click="changePfp()">ok</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="actual-settings change-bio">Change Bio</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="info-about-user">
@@ -52,10 +85,7 @@
           </div>
         </div>
       </div>
-      <div>
-        <input type="file" id="pfpUpload" accept="image/*">
-        <button type = "button" id = "pfpUbutton" v-on:click="changePfp()">ok</button>
-      </div>
+      
     <div class= "user-box-1">
     <div class= "user-image-1"> image </div>
     <h2 class = "user-likes">           

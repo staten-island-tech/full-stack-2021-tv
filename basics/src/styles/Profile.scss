@@ -1,3 +1,5 @@
+@import "@/styles/_variables.scss";
+
 .user-banner-profile {
   height: 6rem;
   margin: auto;
@@ -18,12 +20,32 @@
   border-left: none;
 }
 
+//settings modal
 #settings {
   width: 5%;
   border: 2px solid;
   border-left: 0px;
   font-size: 0.75rem;
 }
+
+.settings-header-color{
+  color: #ddd3ee;
+}
+
+.settings-header-font{
+  font-size: 3rem;  
+}
+
+.settings-body{
+  height: 65rem;
+}
+
+.actual-settings{
+  height: 33.3%;
+  border: 2px solid;
+  border-bottom: 0rem;
+}
+//
 
 .info-about-user {
   height: 30rem;
