@@ -31,7 +31,7 @@
     <section class = "user-page-post"> 
 
     <div class= "user-box-1">
-    <div class= "user-image-1"> image </div>
+    <div class= "user-image-1"></div>
     <h2 class = "user-likes">           
       <b-icon variant="danger" icon="heart"></b-icon> 1 like
       </h2>

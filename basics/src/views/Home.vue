@@ -74,7 +74,7 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-
+          <div class="feed-pic"></div>
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>
