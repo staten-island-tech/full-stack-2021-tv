@@ -6,10 +6,10 @@
         <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
         </p>
       <p id="banner-profile-empty-space"></p>
+
       <div id="settings">
         <div class="w3-container">
-          <button onclick="document.getElementById('id01').style.display='none'"
-      class="w3-button w3-display-topright"> ⚙ </button>
+          <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"> ⚙ </button>
 
           <div id="id01" class="w3-modal">
             <div class="w3-modal-content">
