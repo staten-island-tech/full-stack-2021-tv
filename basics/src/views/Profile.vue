@@ -16,14 +16,46 @@
         </button>
 
         <div id="id02" class="w3-modal">
-          <div class="w3-modal-content">
+          <div class="w3-modal-content" id="settings-container">
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id02').style.display='none'"
                 class="w3-button w3-display-topright"
                 >&times;</span
               >
-              <p>Some text. Some text. Some text.</p>
+              <div class="settings-button-content">
+                <div>changing profile picture</div>
+
+                <!-- changing bio button -->
+                <div id="bio-button-div" class="w3-container">
+                  <button
+                    onclick="document.getElementById('id03').style.display='block'"
+                    class="w3-button"
+                    id="bio-button-text"
+                  >
+                    Edit Bio
+                  </button>
+
+                  <div id="id03" class="w3-modal">
+                    <div class="w3-modal-content">
+                      <div class="w3-container">
+                        <span
+                          onclick="document.getElementById('id03').style.display='none'"
+                          class="w3-button w3-display-topright"
+                          >&times;</span
+                        >
+                        <textarea
+                          class="bio-input"
+                          placeholder="Write something.."
+                        ></textarea>
+                        <button>submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="but" @click="signOut">Sign out</button>
+              </div>
             </div>
           </div>
         </div>
@@ -249,7 +281,24 @@
 </template>
 
 <script>
-export default {};
+import firebase from "firebase";
+require("firebase/auth");
+
+export default {
+  mounted() {
+    this.setupFirebase();
+  },
+  methods: {
+    signOut() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace({ name: "login" });
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
