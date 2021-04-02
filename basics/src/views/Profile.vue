@@ -24,16 +24,35 @@
                 >&times;</span
               >
               <div class="settings-button-content">
-                <div>
-                  <div>
-                    <input type="file" id="pfpUpload" accept="image/*" />
-                    <button
-                      type="button"
-                      id="pfpUbutton"
-                      v-on:click="changePfp()"
-                    >
-                      ok
-                    </button>
+                <!-- change profile picture button  -->
+                <div id="change-pfp-button-div" class="w3-container">
+                  <button
+                    onclick="document.getElementById('id04').style.display='block'"
+                    class="w3-button w3-black"
+                  >
+                    Change Profile Picture
+                  </button>
+
+                  <div id="id04" class="w3-modal">
+                    <div id= "pfp-content" class="w3-modal-content">
+                      <div class="w3-container">
+                        <span
+                          onclick="document.getElementById('id04').style.display='none'"
+                          class="w3-button w3-display-topright"
+                          >&times;</span
+                        >
+                        <div>
+                          <input type="file" id="pfpUpload" accept="image/*" />
+                          <button
+                            type="button"
+                            id="pfpUbutton"
+                            v-on:click="changePfp()"
+                          >
+                            Change Profile
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
