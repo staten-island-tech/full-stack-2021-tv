@@ -6,14 +6,28 @@
         <router-link to="/"><img src="tv.jpg" class="logo"/></router-link>
       </p>
       <p id="banner-profile-empty-space"></p>
-      <b-button id="settings" v-b-modal.modal-1>
-        <b-icon icon="gear"></b-icon>
-      </b-button>
+      <div id="settings" class="w3-container">
+        <button
+          onclick="document.getElementById('id02').style.display='block'"
+          class="w3-button"
+          id="settings-button"
+        >
+          <b-icon icon="gear"></b-icon>
+        </button>
 
-      <b-modal id="modal-1" title="BootstrapVue">
-        <p class="my-4">Hello from modal!</p>
-      </b-modal>
-      
+        <div id="id02" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span
+                onclick="document.getElementById('id02').style.display='none'"
+                class="w3-button w3-display-topright"
+                >&times;</span
+              >
+              <p>Some text. Some text. Some text.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="info-about-user">
