@@ -7,6 +7,7 @@
       </p>
       <p id="banner-profile-empty-space"></p>
       <p id="settings">Settings</p>
+      
     </section>
 
     <section class="info-about-user">
