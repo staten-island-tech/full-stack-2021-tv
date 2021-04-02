@@ -38,15 +38,31 @@ export default {
     return {
       email: "",
       password: "",
-      error: ""
+      error: "",
+      username: ""
     };
   },
   methods: {
     pressed() {
+      var storage = firebase.storage();
+      var default_pfp_ref = storage.ref().child('User/pfp/iu.png');
+      
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
+          console.log(this.username);
+          let user = firebase.auth().currentUser;
+          
+          default_pfp_ref.getDownloadURL().then((url) =>{
+            
+            user.updateProfile({
+            displayName: this.username,
+            photoURL: url
+          })
+          });
+         
+          
           console.log("here");
           this.$router.replace({ name: "Home" });
         })

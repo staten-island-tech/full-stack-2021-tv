@@ -24,7 +24,18 @@
                 >&times;</span
               >
               <div class="settings-button-content">
-                <div>changing profile picture</div>
+                <div>
+                  <div>
+                    <input type="file" id="pfpUpload" accept="image/*" />
+                    <button
+                      type="button"
+                      id="pfpUbutton"
+                      v-on:click="changePfp()"
+                    >
+                      ok
+                    </button>
+                  </div>
+                </div>
 
                 <!-- changing bio button -->
                 <div id="bio-button-div" class="w3-container">
@@ -64,13 +75,15 @@
 
     <section class="info-about-user">
       <div class="user-profile-pic/generic-info"></div>
-      <div class="user-profile-pic">Profile Picture</div>
+      <img class="user-profile-pic" v-bind:src="pfp" :key="pfp" />
+
       <div class="generic-info">
         <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
         </div>
-        <p id="user-username-n-bio">Username and Bio</p>
+
+        <h1 id="user-username-n-bio">Name : {{ dName }}</h1>
       </div>
     </section>
 
@@ -281,12 +294,11 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from "firebase/app";
 require("firebase/auth");
-
 export default {
   mounted() {
-    this.setupFirebase();
+    this.getUserData(), this.changePfp(), this.setupFirebase();
   },
   methods: {
     signOut() {
@@ -297,6 +309,46 @@ export default {
           this.$router.replace({ name: "login" });
         });
     },
+    getUserData() {
+      let user = firebase.auth().currentUser;
+      this.dName = user.displayName;
+      this.pfp = user.photoURL;
+      console.log(this.pfp);
+    },
+    changePfp() {
+      //let uplbtn = document.getElementById("pfpUbutton");
+      let imgInp = document.getElementById("pfpUpload");
+      let UID = firebase.storage();
+      let user = firebase.auth().currentUser;
+
+      console.log("clicked");
+      let img = imgInp.files[0];
+      console.log(img);
+
+      UID.ref()
+        .child("User/UID/" + user.uid + "/pfp")
+        .put(img);
+      let newpfp = UID.ref().child("User/UID/" + user.uid + "/pfp");
+
+      newpfp.getDownloadURL().then((url) => {
+        console.log(url);
+        user.updateProfile({
+          photoURL: url,
+        });
+      });
+
+      this.pfp = user.photoURL;
+
+      console.log(this.pfp);
+      ///         IMAGE TAKES TWO RE-RENDERS TO CHANGE, RELOADING AFTER CLICKING THE BUTTON WORKS JUST FINE, WORST CASE IM RELOADING THE WHOLE PAGE AFTER PFP CHANGE
+    },
+  },
+
+  data() {
+    return {
+      dName: "",
+      pfp: null,
+    };
   },
 };
 </script>
