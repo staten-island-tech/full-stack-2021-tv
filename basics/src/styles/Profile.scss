@@ -138,7 +138,13 @@
     height: 30rem;
     border: 2px solid;
 }
-
+.placeholder {
+  display: block;
+  margin: auto;
+  padding-top: 2rem;
+  max-height: 27rem;
+  max-width: 27rem;
+}
 .user-likes {
   width: 100%;
   text-align: center;

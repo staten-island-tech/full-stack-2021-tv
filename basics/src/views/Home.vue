@@ -3,7 +3,7 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+        <router-link to="/"><img src="tv.jpg" class="logo"></router-link>
       </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
@@ -74,7 +74,9 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-          <div class="feed-pic"></div>
+          <div class="feed-pic">
+            <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+          </div>
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>

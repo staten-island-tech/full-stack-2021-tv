@@ -115,10 +115,17 @@
   padding-bottom: 1rem;
 }
 .feed-pic {
-  height: 90%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
+.placeholder{
+  margin-top: 3.5rem;
+  max-height: 30rem;
+  max-width: 30rem;
 }
 .feed-post {
   height: 50rem;
