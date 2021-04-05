@@ -39,7 +39,7 @@
                 <option value="2">Private</option>
               </select>
 
-              <button class="blog-post" v-on:click="post()">
+              <button class="blog-post" v-on:click="mPost()">
                 Post
               </button>
             </div>
@@ -93,14 +93,32 @@
 </template>
 
 <script>
-//import firebase from "firebase/app";
+import firebase from "firebase/app";
 
 export default {
+  mounted(){
+    this.mPost()
+
+  },
+   methods:{
+    mPost(){
+      let user = firebase.auth().currentUser;
+      let storageRef = firebase.storage().ref();
+      console.log(user);
+
+      let p_img = document.getElementById("postImg").files[0];
+      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name);
+      storagePic.put(p_img);
+      
+      
+    }
+  },
   computed: {
     captionState() {
       return this.caption.length < 150 ? true : false;
     },
   },
+  
   data() {
     return {
       caption: "",
@@ -126,19 +144,7 @@ export default {
       ],
     };
   },
-  methods:{
-    // post(){
-    //   let user = firebase.auth().currentUser;
-    //   let storageRef = firebase.storage().ref();
-    //   console.log(user);
-
-    //   let p_img = document.getElementById("postImg").files[0];
-    //   let storagePic = storageRef.child('Posts/' + + user.uid + '_' + p_img.name);
-    //   storagePic.put(p_img);
-      
-      
-    // }
-  }
+ 
 };
 
 
