@@ -97,7 +97,7 @@ import firebase from "firebase/app";
 
 export default {
   mounted(){
-    this.mPost()
+    
 
   },
    methods:{
@@ -110,7 +110,23 @@ export default {
       let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name);
       storagePic.put(p_img);
       
-      
+      let db = firebase.database();
+      let dbRef = db.ref("Posts/");
+      console.log(p_img.name);
+      storagePic.getMetadata().then((meta) =>{
+        
+     
+        storagePic.getDownloadURL().then((durl) =>{
+          dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
+            date: `${meta.timeCreated}`,
+            url: `${durl}`
+          })
+        })
+
+       
+        
+      })
+ 
     }
   },
   computed: {

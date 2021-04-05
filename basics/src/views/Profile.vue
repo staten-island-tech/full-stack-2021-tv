@@ -81,8 +81,8 @@ import firebase from "firebase/app";
 require('firebase/auth');
 export default {
     mounted(){
-        this.getUserData(),
-        this.changePfp()
+        this.getUserData()
+        
         
     },
     methods:{
