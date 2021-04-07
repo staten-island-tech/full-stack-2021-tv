@@ -49,11 +49,11 @@
       </div>
     </div>
   </div>
-      <p id="avatar">
+      <div id="avatar">
         <router-link to="/profile">
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
         </router-link>
-      </p>
+      </div>
     </section>
 
     <section class="feed">
