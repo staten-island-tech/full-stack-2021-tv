@@ -115,6 +115,9 @@
   margin: auto;
   padding-bottom: 1rem;
   margin-top: 1rem;
+  @include phone {
+  border: 0px solid;
+  }
 }
 
 .feed-post {
