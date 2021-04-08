@@ -3,13 +3,13 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="tv.jpg" class="logo"></router-link>
+        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
       </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">+</button>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
@@ -18,18 +18,9 @@
           <div class="modal-body">
             <div class="modal-header"> </div>
             <div class="blog-picture">
-              <b-container class="mt-3" fluid>
-                <b-form @submit.stop.prevent="onSubmit">
-                  <div class="d-flex mb-3">
-                    <b-form-file v-model="image" placeholder="Choose an image" class="w-auto flex-grow-1"></b-form-file>
-                    <b-button v-if="hasImage" variant="danger" class="ml-3" @click="clearImage">Clear image</b-button>
-                  </div>
-                  <b-img v-if="hasImage" :src="imageSrc" class="mb-3" fluid block rounded></b-img>
-                  <b-button :disabled="!hasImage" variant="primary" type="submit">Upload image
-                  </b-button>
-                </b-form>
-              </b-container>
-              <!-- <b-form-file accept="image/jpeg, image/png, image/gif"></b-form-file> -->
+              <b-form-file
+                accept="image/jpeg, image/png, image/gif"
+              ></b-form-file>
             </div>
             <div class="blog-comment">
                 <textarea
@@ -74,9 +65,7 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-          <div class="feed-pic">
-            <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
-          </div>
+
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>
@@ -108,18 +97,12 @@
 <script>
 export default {
   computed: {
-    hasImage() {
-      return !!this.image;
-    },
     captionState() {
       return this.caption.length < 150 ? true : false;
     },
   },
   data() {
     return {
-      image: null,
-      imageSrc: null,
-
       caption: "",
       blog: {
         tag: "",
@@ -143,43 +126,35 @@ export default {
       ],
     };
   },
-  watch: {
-    image(newValue, oldValue) {
-      if (newValue !== oldValue) {
-        if (newValue) {
-          base64Encode(newValue)
-            .then(value => {
-              this.imageSrc = value;
-            })
-            .catch(() => {
-              this.imageSrc = null;
-            });
-        } else {
-          this.imageSrc = null;
-        }
-      }
-    }
-  },
-  methods: {
-    clearImage() {
-      this.image = null;
-    },
-
-    onSubmit() {
-      if (!this.image) {
-        alert("Please select an image.");
-        return;
-      }
-
-      alert("Form submitted!");
-    }
-  }
 };
 
-//banner scroll effect
+
+// function checkPosition() {
+//   let scrollPos = 0;
+//   const banner = document.querySelector(".user-banner-profile");
+//   let windowY = window.scrollY;
+//   if (windowY < scrollPos) {
+//     // Scrolling up
+//     banner.classList.add("is-visible");
+//     banner.classList.remove("is-hidden");
+//     console.log("scrolled up");
+//   } else if (windowY > scrollPos) {
+//     // Scrolling down
+//     banner.classList.add("is-hidden");
+//     banner.classList.remove("is-visible");
+//     console.log("scrolled down");
+//   }
+//   scrollPos = windowY;
+// }
+// window.addEventListener("scroll", checkPosition);
+
+
 let scrollPos = 0;
+
+// adding scroll event
 window.addEventListener('scroll', function() {
   const banner = document.querySelector('.user-banner-profile');
+  // detects new state and compares it with the new one
   if ((document.body.getBoundingClientRect()).top > scrollPos) {
 		console.log('scrolled up');
     banner.classList.remove('is-hidden');
@@ -187,23 +162,13 @@ window.addEventListener('scroll', function() {
   } else {
 		console.log('scrolled down');
     banner.classList.add('is-hidden');
+	// saves the new position for iteration.
   }
 	scrollPos = (document.body.getBoundingClientRect()).top;
 });
-
-//upload image preview
-const base64Encode = data =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(data);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
-
 </script>
 
+
 <style lang="scss">
-
 @import "@/styles/Home.scss";
-
 </style>
