@@ -3,7 +3,7 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="tv.jpg" class="logo"/></router-link>
+        <router-link to="/"><img src="@/assets/tv.png" class="logo"/></router-link>
       </p>
       <p id="banner-profile-empty-space"></p>
       <div id="settings" class="w3-container">
@@ -12,7 +12,7 @@
           class="w3-button"
           id="settings-button"
         >
-          <b-icon icon="gear"></b-icon>
+          <b-icon icon="gear" aria-hidden="true"></b-icon>
         </button>
 
         <div id="id02" class="w3-modal">

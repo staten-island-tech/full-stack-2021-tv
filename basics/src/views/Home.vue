@@ -3,52 +3,58 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+        <router-link to="/"><img src="@/assets/tv.png" class="logo"/></router-link>
       </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">+</button>
+      <button
+        onclick="document.getElementById('id01').style.display='block'"
+        class="w3-button w3-black"
+      >
+        +
+      </button>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-          <div class="modal-body">
-            <div class="modal-header"> </div>
-            <div class="blog-picture">
-              <b-form-file
-                accept="image/jpeg, image/png, image/gif"
-              ></b-form-file>
-            </div>
-            <div class="blog-comment">
-                <textarea
-                  placeholder="Caption"
-                  class = "blog-caption"
-                ></textarea>
-            </div>
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span
+              onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright"
+              >&times;</span
+            >
+            <div class="modal-body">
+              <div class="modal-header"></div>
+              <div class="blog-picture">
+                <b-form-file
+                  accept="image/jpeg, image/png, image/gif"
+                ></b-form-file>
+              </div>
+              <div class="blog-comment">
+                <textarea placeholder="Caption" class="blog-caption"></textarea>
+              </div>
 
-            <div class="blog-bottom-row">
-              <select class="blog-tag" v-model="blog.tag">
-                <option v-for="tag in tags" v-bind:key="tag">
-                  {{ tag }}
-                </option>
-              </select>
+              <div class="blog-bottom-row">
+                <select class="blog-tag" v-model="blog.tag">
+                  <option v-for="tag in tags" v-bind:key="tag">
+                    {{ tag }}
+                  </option>
+                </select>
 
-              <select class="blog-toggle-private-public">
-                <option value="1" selected>Public</option>
-                <option value="2">Private</option>
-              </select>
+                <select class="blog-toggle-private-public">
+                  <option value="1" selected>Public</option>
+                  <option value="2">Private</option>
+                </select>
 
-              <div class="blog-post">
-                Post
+                <div class="blog-post">
+                  Post
+                </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
-  </div>
       <p id="avatar">
         <router-link to="/profile">
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
@@ -128,46 +134,21 @@ export default {
   },
 };
 
-
-// function checkPosition() {
-//   let scrollPos = 0;
-//   const banner = document.querySelector(".user-banner-profile");
-//   let windowY = window.scrollY;
-//   if (windowY < scrollPos) {
-//     // Scrolling up
-//     banner.classList.add("is-visible");
-//     banner.classList.remove("is-hidden");
-//     console.log("scrolled up");
-//   } else if (windowY > scrollPos) {
-//     // Scrolling down
-//     banner.classList.add("is-hidden");
-//     banner.classList.remove("is-visible");
-//     console.log("scrolled down");
-//   }
-//   scrollPos = windowY;
-// }
-// window.addEventListener("scroll", checkPosition);
-
-
 let scrollPos = 0;
 
-// adding scroll event
-window.addEventListener('scroll', function() {
-  const banner = document.querySelector('.user-banner-profile');
-  // detects new state and compares it with the new one
-  if ((document.body.getBoundingClientRect()).top > scrollPos) {
-		console.log('scrolled up');
-    banner.classList.remove('is-hidden');
-    banner.classList.add('is-visible');
+window.addEventListener("scroll", function() {
+  const banner = document.querySelector(".user-banner-profile");
+  if (document.body.getBoundingClientRect().top > scrollPos) {
+    console.log("scrolled up");
+    banner.classList.remove("is-hidden");
+    banner.classList.add("is-visible");
   } else {
-		console.log('scrolled down');
-    banner.classList.add('is-hidden');
-	// saves the new position for iteration.
+    console.log("scrolled down");
+    banner.classList.add("is-hidden");
   }
-	scrollPos = (document.body.getBoundingClientRect()).top;
+  scrollPos = document.body.getBoundingClientRect().top;
 });
 </script>
-
 
 <style lang="scss">
 @import "@/styles/Home.scss";

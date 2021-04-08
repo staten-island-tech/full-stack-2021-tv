@@ -7,28 +7,32 @@
 }
 
 #logo-for-feed {
-  width: 5%;
+  width: 15%;
+  padding-left: 5rem;
   border: 2px solid;
-  font-size: 0.75rem;
+  margin-bottom: 0rem;
 }
 
 #banner-profile-empty-space {
   width: 90%;
   border: 2px solid;
   border-left: none;
+  margin-bottom: 0rem;
 }
 
 #settings {
-  width: 5%;
+  width: 15%;
   border: 2px solid;
   border-left: 0px;
   font-size: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 #settings-button {
   height: 100%;
   width: 100%;
+  margin: auto;
+  font-size: 30px;
 }
 
 #settings-container {
