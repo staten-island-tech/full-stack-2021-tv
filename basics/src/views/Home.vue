@@ -87,6 +87,7 @@
           <p class="comment">comment</p>
         </div> -->
         </div>
+        <img v-bind:src = "i_sr" :key="i_sr">
       </div>
     </section>
   </section>
@@ -97,7 +98,7 @@ import firebase from "firebase/app";
 
 export default {
   mounted(){
-    
+    this.getPostImg()
 
   },
    methods:{
@@ -127,6 +128,16 @@ export default {
         
       })
  
+    },
+    getPostImg(){
+        let datRef = firebase.database().ref('Posts/PNG/');
+        datRef.once("value").then(sn => {
+          let dURL = sn.child('url').val();
+          console.log(dURL);
+          this.i_sr = dURL;
+        })
+
+        
     }
   },
   computed: {
@@ -141,6 +152,7 @@ export default {
       blog: {
         tag: "",
       },
+      i_sr: '',
       options: [
         "Education",
         "Entertainment",
