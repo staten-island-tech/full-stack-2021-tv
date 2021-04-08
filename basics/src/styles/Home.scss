@@ -138,11 +138,16 @@
   margin-bottom: 0;
   position: relative;
 }
+.placeholder {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .report-button {
   float: left;
   width: 4rem;
-  height: 4rem;
+  height: 0rem;
 }
 
 .description-comment {

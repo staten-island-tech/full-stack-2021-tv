@@ -120,7 +120,10 @@
             onclick="document.getElementById('id01').style.display='block'"
             class="w3-button w3-black"
           >
-            <div class="user-image-1">image</div>
+            <div class="user-image-1">
+              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+
+            </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
             </h2>
@@ -185,7 +188,9 @@
             onclick="document.getElementById('id01').style.display='block'"
             class="w3-button w3-black"
           >
-            <div class="user-image-1">image</div>
+            <div class="user-image-1">
+              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+            </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
             </h2>
@@ -250,7 +255,9 @@
             onclick="document.getElementById('id01').style.display='block'"
             class="w3-button w3-black"
           >
-            <div class="user-image-1">image</div>
+            <div class="user-image-1">
+              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+            </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
             </h2>

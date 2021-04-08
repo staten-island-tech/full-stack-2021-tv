@@ -71,7 +71,7 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-
+          <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>

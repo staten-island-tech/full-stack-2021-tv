@@ -192,11 +192,9 @@
   border: 2px solid;
 }
 .placeholder {
-  display: block;
-  margin: auto;
-  padding-top: 2rem;
-  max-height: 27rem;
-  max-width: 27rem;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .user-likes {
   width: 100%;
