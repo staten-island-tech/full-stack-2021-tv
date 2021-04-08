@@ -6,60 +6,208 @@
         <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
       </p>
       <p id="other-profile-empty-space"></p>
-      <p id="settings">Settings</p>
+      <b-button id="settings" v-b-modal.modal-1>
+        <b-icon icon="gear"></b-icon>
+      </b-button>
+
+      <b-modal id="modal-1" title="BootstrapVue">
+        <p class="my-4">Hello from modal!</p>
+      </b-modal>
+      
     </section>
 
-    <section class="info-about-other">
-      <div class="other-profile-pic/generic-info"></div>
-      <div class="other-profile-pic"></div>
-      <div class="generic-info">
-        <div id="other-following-followers">
-          <p id="other-following">Following</p>
-          <p id="other-followers">Followers</p>
+    <section class="other-page-post">
+      <div class="other-box-1">
+        <div class="w3-container">
+          <button
+            onclick="document.getElementById('id01').style.display='block'"
+            class="w3-button w3-black"
+          >
+            <div class="other-image-1">image</div>
+            <h2 class="other-likes">
+              <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            </h2>
+          </button>
         </div>
-        <p id="other-username-n-bio">Username/bio</p>
-      </div>
-    </section>
 
-    <section class="other-posts">
-      <div class="other-post-column">
-        <div id="other-actual-posts">
-          Post
-          <div id="post-settings-with-empty-space">
-            <p id="post-settings-empty-space"></p>
-            <p id="post-settings-button">...</p>
-          </div>
-          <div id="post-picture"></div>
-          <div id="post-likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-display-topright"
+                >&times;</span
+              >
+              <div class="modal-header"></div>
+              <div class="feed-post">
+                <div class="picture">
+                  <b-dropdown
+                    variant="none"
+                    class="report-button"
+                    size="lg"
+                    no-caret
+                  >
+                    <template #button-content>
+                      <span>...</span>
+                    </template>
+                    <b-dropdown-item href="#">Report</b-dropdown-item>
+                  </b-dropdown>
+
+                  <div class="likes">
+                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                  </div>
+                </div>
+
+                <div class="description-comment">
+                  <div class="description">
+                    <router-link to="/ProfileOther" class="username">
+                      Name
+                    </router-link>
+                    <p class="caption">caption</p>
+                  </div>
+                  <!-- <div class="comment-section">
+          <router-link
+            to="/ProfileOther"
+            id="comment-username"
+            class="username"
+          >
+            Name
+          </router-link>
+          <p class="comment">comment</p>
+        </div> -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="other-post-column">
-        <div id="other-actual-posts">
-          Post
-          <div id="post-settings-with-empty-space">
-            <p id="post-settings-empty-space"></p>
-            <p id="post-settings-button">...</p>
-          </div>
-          <div id="post-picture"></div>
-          <div id="post-likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      <div class="other-box-1">
+        <div class="w3-container">
+          <button
+            onclick="document.getElementById('id01').style.display='block'"
+            class="w3-button w3-black"
+          >
+            <div class="other-image-1">image</div>
+            <h2 class="other-likes">
+              <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            </h2>
+          </button>
+        </div>
+
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-display-topright"
+                >&times;</span
+              >
+              <div class="modal-header"></div>
+              <div class="feed-post">
+                <div class="picture">
+                  <b-dropdown
+                    variant="none"
+                    class="report-button"
+                    size="lg"
+                    no-caret
+                  >
+                    <template #button-content>
+                      <span>...</span>
+                    </template>
+                    <b-dropdown-item href="#">Report</b-dropdown-item>
+                  </b-dropdown>
+
+                  <div class="likes">
+                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                  </div>
+                </div>
+
+                <div class="description-comment">
+                  <div class="description">
+                    <router-link to="/ProfileOther" class="username">
+                      Name
+                    </router-link>
+                    <p class="caption">caption</p>
+                  </div>
+                  <!-- <div class="comment-section">
+          <router-link
+            to="/ProfileOther"
+            id="comment-username"
+            class="username"
+          >
+            Name
+          </router-link>
+          <p class="comment">comment</p>
+        </div> -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="other-post-column-2">
-        <div id="other-actual-posts">
-          Post
-          <div id="post-settings-with-empty-space">
-            <p id="post-settings-empty-space"></p>
-            <p id="post-settings-button">...</p>
-          </div>
-          <div id="post-picture"></div>
-          <div id="post-likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+      <div class="other-box-1">
+        <div class="w3-container">
+          <button
+            onclick="document.getElementById('id01').style.display='block'"
+            class="w3-button w3-black"
+          >
+            <div class="other-image-1">image</div>
+            <h2 class="other-likes">
+              <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            </h2>
+          </button>
+        </div>
+
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-display-topright"
+                >&times;</span
+              >
+              <div class="modal-header"></div>
+              <div class="feed-post">
+                <div class="picture">
+                  <b-dropdown
+                    variant="none"
+                    class="report-button"
+                    size="lg"
+                    no-caret
+                  >
+                    <template #button-content>
+                      <span>...</span>
+                    </template>
+                    <b-dropdown-item href="#">Report</b-dropdown-item>
+                  </b-dropdown>
+
+                  <div class="likes">
+                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                  </div>
+                </div>
+
+                <div class="description-comment">
+                  <div class="description">
+                    <router-link to="/ProfileOther" class="username">
+                      Name
+                    </router-link>
+                    <p class="caption">caption</p>
+                  </div>
+                  <!-- <div class="comment-section">
+          <router-link
+            to="/ProfileOther"
+            id="comment-username"
+            class="username"
+          >
+            Name
+          </router-link>
+          <p class="comment">comment</p>
+        </div> -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
