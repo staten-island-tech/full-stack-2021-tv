@@ -1,5 +1,8 @@
 @import "@/styles/_variables.scss";
 
+body.modal-open {
+    overflow: hidden;
+}
 .user-banner-profile {
   height: 6rem;
   margin: auto;
