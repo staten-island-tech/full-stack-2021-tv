@@ -13,7 +13,18 @@
       <b-modal id="modal-1" title="BootstrapVue">
         <p class="my-4">Hello from modal!</p>
       </b-modal>
-      
+    </section>
+
+    <section class="info-about-other">
+      <div class="other-profile-pic/generic-info"></div>
+      <div class="other-profile-pic">Profile Picture</div>
+      <div class="generic-info">
+        <div id="other-following-followers">
+          <p id="other-following">Following</p>
+          <p id="other-followers">Followers</p>
+        </div>
+        <p id="other-username-n-bio">Username and Bio</p>
+      </div>
     </section>
 
     <section class="other-page-post">
