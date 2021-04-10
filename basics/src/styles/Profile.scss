@@ -7,22 +7,75 @@
 }
 
 #logo-for-feed {
-  width: 5%;
+  width: 15%;
+  padding-left: 5rem;
   border: 2px solid;
-  font-size: 0.75rem;
+  margin-bottom: 0rem;
 }
 
 #banner-profile-empty-space {
   width: 90%;
   border: 2px solid;
   border-left: none;
+  margin-bottom: 0rem;
 }
 
 #settings {
-  width: 5%;
+  width: 15%;
   border: 2px solid;
   border-left: 0px;
   font-size: 0.75rem;
+  margin-bottom: 0rem;
+}
+
+#settings-button {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  font-size: 30px;
+}
+
+#settings-container {
+  width: 20rem;
+  height: 10rem;
+}
+
+.settings-button-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#bio-button-div {
+  width: 100%;
+  border: 2px solid black;
+}
+
+#change-pfp-button-div {
+  width: 100%;
+  border: 2px solid black;
+  border-bottom: none;
+}
+
+#pfp-content {
+  width: 20rem;
+  height: 10rem;
+}
+
+#bio-button-text {
+  width: 100%;
+}
+
+.bio-input {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 
 .info-about-user {
@@ -43,7 +96,7 @@
   display: flex;
   border: 2px solid;
   font-size: 0.75rem;
-  margin-left: 0rem
+  margin-left: 0rem;
 }
 
 .generic-info {
@@ -53,7 +106,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 0rem
+  margin-right: 0rem;
 }
 
 #user-following-followers {
@@ -90,7 +143,7 @@
   border: 2px solid;
   font-size: 0.75rem;
   margin-top: 1rem;
-  margin-bottom: 0rem
+  margin-bottom: 0rem;
 }
 
 .user-banner-posts {
@@ -108,7 +161,7 @@
   border: 2px solid;
   font-size: 1.5rem;
   margin-bottom: 0rem;
-  padding: .7rem;  
+  padding: 0.7rem;
   margin-right: 1rem;
   margin-left: 1rem;
   cursor: pointer;
@@ -127,18 +180,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 33%;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  width: 100%;
+  margin-right: 0rem;
+  margin-left: 0rem;
   margin-top: 2rem;
   cursor: pointer;
 }
 
 .user-image-1 {
-    height: 20rem;
-    border: 2px solid;
+  height: 20rem;
+  border: 2px solid;
 }
-
+.placeholder {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .user-likes {
   width: 100%;
   text-align: center;
@@ -147,4 +204,20 @@
   font-size: 1.5rem;
   padding: 10px;
   margin-top: 0rem;
+}
+
+//modal
+
+.w3-black {
+  border: none;
+  border-radius: 0rem;
+  margin-top: 0rem;
+  margin-left: 0rem;
+  margin: 0rem;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.w3-container {
+  padding: 0rem !important;
 }

@@ -3,50 +3,59 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="tv.jpg" class="logo" ></router-link>
+        <router-link to="/"><img src="@/assets/tv.png" class="logo"/></router-link>
       </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+      <button onclick="document.getElementById('id01').style.display='block'"
+      class="w3-button w3-black">
+        +
+      </button>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-          <div class="modal-body">
-            <div class="modal-header"> </div>
-            <div class="blog-picture">
-              <input type="file" id = "postImg"/>
-            </div>
-            <div class="blog-comment">
-                <textarea
-                  placeholder="Caption"
-                  class = "blog-caption"
-                ></textarea>
-            </div>
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">
+              &times;
+            </span>
+            <div class="modal-body">
+              <div class="modal-header"></div>
+              <div class="blog-picture">
+                <b-container class="mt-3" fluid>
+                  <b-form @submit.stop.prevent="onSubmit">
+                    <div class="d-flex mb-3">
+                      <b-form-file v-model="image" placeholder="Choose an image" class="w-auto flex-grow-1"></b-form-file>
+                      <b-button v-if="hasImage" variant="danger" class="ml-3" @click="clearImage">Clear image</b-button>
+                    </div>
+                    <b-img v-if="hasImage" :src="imageSrc" class="mb-3" fluid block rounded></b-img>
+                    <b-button :disabled="!hasImage" variant="primary" type="submit">Upload image</b-button>
+                  </b-form>
+                </b-container>
+              </div>
+              <div class="blog-comment">
+                <textarea placeholder="Caption" class="blog-caption"></textarea>
+              </div>
 
-            <div class="blog-bottom-row">
-              <select class="blog-tag" v-model="blog.tag">
-                <option v-for="tag in tags" v-bind:key="tag">
-                  {{ tag }}
-                </option>
-              </select>
+              <div class="blog-bottom-row">
+                <select class="blog-tag" v-model="blog.tag">
+                  <option v-for="tag in tags" v-bind:key="tag">
+                    {{ tag }}
+                  </option>
+                </select>
 
-              <select class="blog-toggle-private-public">
-                <option value="1" selected>Public</option>
-                <option value="2">Private</option>
-              </select>
+                <select class="blog-toggle-private-public">
+                  <option value="1" selected>Public</option>
+                  <option value="2">Private</option>
+                </select>
 
-              <button class="blog-post" v-on:click="mPost()">
-                Post
-              </button>
+                <button class="blog-post" v-on:click="mPost()">Post</button>
+              </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
-  </div>
       <p id="avatar">
         <router-link to="/profile">
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
@@ -63,7 +72,7 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-
+          <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>
@@ -141,6 +150,9 @@ export default {
     }
   },
   computed: {
+    hasImage() {
+      return !!this.image;
+    },
     captionState() {
       return this.caption.length < 150 ? true : false;
     },
@@ -148,6 +160,9 @@ export default {
   
   data() {
     return {
+      image: null,
+      imageSrc: null,
+
       caption: "",
       blog: {
         tag: "",
@@ -172,67 +187,63 @@ export default {
       ],
     };
   },
- 
+watch: {
+    image(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        if (newValue) {
+          base64Encode(newValue)
+            .then(value => {
+              this.imageSrc = value;
+            })
+            .catch(() => {
+              this.imageSrc = null;
+            });
+        } else {
+          this.imageSrc = null;
+        }
+      }
+    }
+  },
+  methods: {
+    clearImage() {
+      this.image = null;
+    },
+    onSubmit() {
+      if (!this.image) {
+        alert("Please select an image.");
+        return;
+      }
+      alert("Form submitted!");
+    }
+  }
 };
 
-
-// function checkPosition() {
-//   let scrollPos = 0;
-//   const banner = document.querySelector(".user-banner-profile");
-//   let windowY = window.scrollY;
-//   if (windowY < scrollPos) {
-//     // Scrolling up
-//     banner.classList.add("is-visible");
-//     banner.classList.remove("is-hidden");
-//     console.log("scrolled up");
-//   } else if (windowY > scrollPos) {
-//     // Scrolling down
-//     banner.classList.add("is-hidden");
-//     banner.classList.remove("is-visible");
-//     console.log("scrolled down");
-//   }
-//   scrollPos = windowY;
-// }
-// window.addEventListener("scroll", checkPosition);
-
-
+//banner scroll effect
 let scrollPos = 0;
 
-// adding scroll event
-window.addEventListener('scroll', function() {
-  const banner = document.querySelector('.user-banner-profile');
-  // detects new state and compares it with the new one
-  if ((document.body.getBoundingClientRect()).top > scrollPos) {
-		console.log('scrolled up');
-    banner.classList.remove('is-hidden');
-    banner.classList.add('is-visible');
+window.addEventListener("scroll", function() {
+  const banner = document.querySelector(".user-banner-profile");
+  if (document.body.getBoundingClientRect().top > scrollPos) {
+    console.log("scrolled up");
+    banner.classList.remove("is-hidden");
+    banner.classList.add("is-visible");
   } else {
-		console.log('scrolled down');
-    banner.classList.add('is-hidden');
-	// saves the new position for iteration.
+    console.log("scrolled down");
+    banner.classList.add("is-hidden");
   }
-	scrollPos = (document.body.getBoundingClientRect()).top;
+  scrollPos = document.body.getBoundingClientRect().top;
 });
-</script>
 
+//upload image preview
+const base64Encode = data =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(data);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+</script>
 
 <style lang="scss">
 @import "@/styles/Home.scss";
-</style>
-
-<style>
-/* .vs--searchable .vs__dropdown-toggle {
-  border: none;
-}
-.btn-secondary {
-  color: black  !important;
-  width: 100%;
-  height: 100%;
-  border: none ;
-}
-.btn-secondary {
-    background-color: white;
-    color: black;
-    border: 0rem;
-} */
 </style>

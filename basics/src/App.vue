@@ -7,32 +7,28 @@
   </div>
 </template>
 
-<script> 
-
+<script>
 import firebase from "firebase/app";
-import TopHeader from "./components/Top-Header"
+import TopHeader from "./components/Top-Header";
 export default {
-  components: {'top-header': TopHeader},
-  mounted(){
+  components: { "top-header": TopHeader },
+  mounted() {
     this.getUserStatus();
   },
-  methods:{
-    getUserStatus(){
-      this.loggedIn = firebase.auth().currentUser
+  methods: {
+    getUserStatus() {
+      this.loggedIn = firebase.auth().currentUser;
       console.log(this.loggedIn);
-    }
+    },
   },
   data() {
-    
     return {
-      loggedIn: false
+      loggedIn: false,
     };
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
-
 @import "@/styles/App.scss";
-
 </style>
