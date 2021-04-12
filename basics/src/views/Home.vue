@@ -3,21 +3,28 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="@/assets/tv.png" class="logo"/></router-link>
+        <router-link to="/"
+          ><img src="@/assets/tv.png" class="logo"
+        /></router-link>
       </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-      <button onclick="document.getElementById('id01').style.display='block'"
-      class="w3-button w3-black">
+      <button
+        onclick="document.getElementById('id01').style.display='block'"
+        class="w3-button w3-black"
+      >
         +
       </button>
 
       <div id="id01" class="w3-modal">
         <div class="w3-modal-content">
           <div class="w3-container">
-            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">
+            <span
+              onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright"
+            >
               &times;
             </span>
             <div class="modal-body">
@@ -26,11 +33,33 @@
                 <b-container class="mt-3" fluid>
                   <b-form @submit.stop.prevent="onSubmit">
                     <div class="d-flex mb-3">
-                      <b-form-file v-model="image" placeholder="Choose an image" class="w-auto flex-grow-1"></b-form-file>
-                      <b-button v-if="hasImage" variant="danger" class="ml-3" @click="clearImage">Clear image</b-button>
+                      <b-form-file
+                        v-model="image"
+                        placeholder="Choose an image"
+                        class="w-auto flex-grow-1"
+                      ></b-form-file>
+                      <b-button
+                        v-if="hasImage"
+                        variant="danger"
+                        class="ml-3"
+                        @click="clearImage"
+                        >Clear image</b-button
+                      >
                     </div>
-                    <b-img v-if="hasImage" :src="imageSrc" class="mb-3" fluid block rounded></b-img>
-                    <b-button :disabled="!hasImage" variant="primary" type="submit">Upload image</b-button>
+                    <b-img
+                      v-if="hasImage"
+                      :src="imageSrc"
+                      class="mb-3"
+                      fluid
+                      block
+                      rounded
+                    ></b-img>
+                    <b-button
+                      :disabled="!hasImage"
+                      variant="primary"
+                      type="submit"
+                      >Upload image</b-button
+                    >
                   </b-form>
                 </b-container>
               </div>
@@ -58,8 +87,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
       <div id="avatar">
         <router-link to="/profile">
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
@@ -76,7 +104,10 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-          <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+          <img
+            src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg"
+            class="placeholder"
+          />
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>
@@ -143,12 +174,12 @@ export default {
       ],
     };
   },
-watch: {
+  watch: {
     image(newValue, oldValue) {
       if (newValue !== oldValue) {
         if (newValue) {
           base64Encode(newValue)
-            .then(value => {
+            .then((value) => {
               this.imageSrc = value;
             })
             .catch(() => {
@@ -158,7 +189,7 @@ watch: {
           this.imageSrc = null;
         }
       }
-    }
+    },
   },
   methods: {
     clearImage() {
@@ -170,8 +201,8 @@ watch: {
         return;
       }
       alert("Form submitted!");
-    }
-  }
+    },
+  },
 };
 
 //banner scroll effect
@@ -191,12 +222,12 @@ window.addEventListener("scroll", function() {
 });
 
 //upload image preview
-const base64Encode = data =>
+const base64Encode = (data) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(data);
     reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
 </script>
 
