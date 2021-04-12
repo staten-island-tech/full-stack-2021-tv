@@ -105,6 +105,8 @@
         <h1 id="user-username-n-bio">Name : {{ dName }}</h1>
       </div>
     </section>
+    <h1 id="user-username-n-bio-phone">Name : {{ dName }}</h1>
+
 
     <section class="user-banner-posts">
       <div class="user-posts/likes"></div>

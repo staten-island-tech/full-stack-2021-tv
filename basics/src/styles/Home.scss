@@ -26,11 +26,21 @@ body.modal-open {
   width: 15%;
   padding-left: 5rem;
   //border: 2px solid;
+  @include phone {
+    padding-left: 0rem;
+  }
 }
+
 .logo {
   margin: 0.5rem;
-  height: 7.5vh;
+  height: 8vh;
+  @include phone {
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
 }
+
 
 #select-tag-container {
   width: 80%;
@@ -45,11 +55,20 @@ body.modal-open {
   width: 15%;
   //border: 2px solid;
   border-left: none;
+  @include phone {
+    height: 5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
 }
+
 .avatar-icon {
   margin-left: 5rem;
   font-size: 24px;
   color: black;
+  @include phone {
+    margin-left: 0rem;
+  }
 }
 
 
@@ -117,6 +136,10 @@ body.modal-open {
   margin: auto;
   padding-bottom: 1rem;
   margin-top: 1rem;
+  @include phone {
+  border: 0px solid;
+  width: 100%;
+  }
 }
 
 .feed-post {
@@ -208,5 +231,9 @@ body.modal-open {
   margin-top: 1rem;
   margin-left: -.5rem;
   width: 4%;
+  @include phone {
+    margin-right: 1rem;
+    width: 15%;
+  }
 }
 
