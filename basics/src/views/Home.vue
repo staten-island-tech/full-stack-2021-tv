@@ -63,48 +63,16 @@
       </p>
     </section>
 
-    <section class="feed">
-      <div class="feed-post">
-        <div class="picture">
-          <b-dropdown variant="none" class="report-button" size="lg" no-caret>
-            <template #button-content>
-              <span>...</span>
-            </template>
-            <b-dropdown-item href="#">Report</b-dropdown-item>
-          </b-dropdown>
-          <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
-          <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
-          </div>
-        </div>
-
-        <div class="description-comment">
-          <div class="description">
-            <router-link to="/ProfileOther" class="username">
-              Name
-            </router-link>
-            <p class="caption">caption</p>
-          </div>
-          <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
-        </div>
-        <img v-bind:src = "i_sr" :key="i_sr">
-      </div>
+    <section class="feed" id = 'feed'>
+      
+      
     </section>
   </section>
 </template>
 
 <script>
 import firebase from "firebase/app";
-
+import Vue from 'vue';
 export default {
   mounted(){
     this.getPostImg()
@@ -129,7 +97,8 @@ export default {
         storagePic.getDownloadURL().then((durl) =>{
           dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
             date: `${meta.timeCreated}`,
-            url: `${durl}`
+            url: `${durl}`,
+            UID: `${user.uid}`
           })
         })
 
@@ -139,15 +108,75 @@ export default {
  
     },
     getPostImg(){
-        let datRef = firebase.database().ref('Posts/PNG/');
+        let datRef = firebase.database().ref('Posts/');
+        let i = 0;
+        let feed = document.getElementById('feed');
         datRef.once("value").then(sn => {
-          let dURL = sn.child('url').val();
-          console.log(dURL);
-          this.i_sr = dURL;
+          
+          sn.forEach(postChild =>{
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            Vue.set(this.i_sr, i, dURL);
+            
+            feed.insertAdjacentHTML('beforeend', `<div class="feed-post">
+            <div class="picture">
+              <b-dropdown variant="none" class="report-button" size="lg" no-caret>
+                <template #button-content>
+                  <span>...</span>
+                </template>
+                <b-dropdown-item href="#">Report</b-dropdown-item>
+              </b-dropdown>
+              <img v-bind:src = i_sr[${i}] :key="i_sr[${i}]" class="placeholder">
+              <div class="likes">
+                <b-icon variant="danger" icon="heart"></b-icon> 1 like
+              </div>
+            </div>
+
+            <div class="description-comment">
+              <div class="description">
+                <router-link to="/ProfileOther" class="username">
+                Name
+                </router-link>
+                <p class="caption">caption</p>
+              </div>
+              <!-- <div class="comment-section">
+              <router-link
+                to="/ProfileOther"
+                id="comment-username"
+                class="username"
+              >
+               Name
+              </router-link>
+              <p class="comment">comment</p>
+            </div> -->
+            </div>
+        
+          </div>`);
+
+
+            console.log(i + "_-_" + this.i_sr[i]);
+            i++;
+
+          });
+          
+
+          
         })
 
         
+    },
+     clearImage() {
+      this.image = null;
+    },
+    onSubmit() {
+      if (!this.image) {
+        alert("Please select an image.");
+        return;
+      }
+      alert("Form submitted!");
     }
+  
   },
   computed: {
     hasImage() {
@@ -167,7 +196,7 @@ export default {
       blog: {
         tag: "",
       },
-      i_sr: '',
+      i_sr: [''],
       options: [
         "Education",
         "Entertainment",
@@ -204,18 +233,8 @@ watch: {
       }
     }
   },
-  methods: {
-    clearImage() {
-      this.image = null;
-    },
-    onSubmit() {
-      if (!this.image) {
-        alert("Please select an image.");
-        return;
-      }
-      alert("Form submitted!");
-    }
-  }
+  
+   
 };
 
 //banner scroll effect
