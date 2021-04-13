@@ -123,7 +123,7 @@
             class="w3-button w3-black"
           >
             <div class="user-image-1">
-              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+              <img src="https://www.petmd.com/sites/default/files/styles/breeds_image/public/2020-11/picture-of-golden-retriever-dog_0.jpg?itok=dLOdDNTI" class="placeholder">
 
             </div>
             <h2 class="user-likes">
@@ -191,7 +191,7 @@
             class="w3-button w3-black"
           >
             <div class="user-image-1">
-              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+              <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/07/09151754/Golden-Retriever-puppy-standing-outdoors-500x486.jpg" class="placeholder">
             </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -258,7 +258,7 @@
             class="w3-button w3-black"
           >
             <div class="user-image-1">
-              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+              <img src="https://vetstreet.brightspotcdn.com/dims4/default/b466b8e/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Ffa%2Fd15000a0d311e0a2380050568d634f%2Ffile%2FGolden-Retriever-3-645mk062111.jpg" class="placeholder">
             </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
