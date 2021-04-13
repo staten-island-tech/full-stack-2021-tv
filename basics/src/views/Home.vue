@@ -104,10 +104,33 @@
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown>
-          <img
-            src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg"
-            class="placeholder"
-          />
+
+          <button
+            onclick="document.getElementById('postedImg').style.display='block'"
+            class="w3-button"
+          >
+            <img
+              src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+              class="placeholder"
+            />
+          </button>
+
+          <div id="postedImg" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container">
+                <span
+                  onclick="document.getElementById('postedImg').style.display='none'"
+                  class="w3-button w3-display-topright"
+                  >&times;</span
+                >
+                <img
+                  class="image-popUp"
+                  src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                />
+              </div>
+            </div>
+          </div>
+
           <div class="likes">
             <b-icon variant="danger" icon="heart"></b-icon> 1 like
           </div>
