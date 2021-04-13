@@ -108,6 +108,7 @@
           <button
             onclick="document.getElementById('postedImg').style.display='block'"
             class="w3-button"
+            id="image-button-container"
           >
             <img
               src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
