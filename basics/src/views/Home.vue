@@ -46,7 +46,7 @@
                         >Clear image</b-button
                       >
                     </div>
-                    <b-img
+                    <b-img id="select-image-upload"
                       v-if="hasImage"
                       :src="imageSrc"
                       class="mb-3"
@@ -54,12 +54,12 @@
                       block
                       rounded
                     ></b-img>
-                    <b-button
+                    <!-- <b-button
                       :disabled="!hasImage"
                       variant="primary"
                       type="submit"
                       >Upload image</b-button
-                    >
+                    > -->
                   </b-form>
                 </b-container>
               </div>
@@ -98,12 +98,13 @@
     <section class="feed">
       <div class="feed-post">
         <div class="picture">
+        <!-- report button 
           <b-dropdown variant="none" class="report-button" size="lg" no-caret>
             <template #button-content>
               <span>...</span>
             </template>
             <b-dropdown-item href="#">Report</b-dropdown-item>
-          </b-dropdown>
+          </b-dropdown> -->
 
           <button
             onclick="document.getElementById('postedImg').style.display='block'"
@@ -117,7 +118,7 @@
           </button>
 
           <div id="postedImg" class="w3-modal">
-            <div class="w3-modal-content">
+            <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
                 <span
                   onclick="document.getElementById('postedImg').style.display='none'"

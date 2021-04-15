@@ -3,7 +3,9 @@
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"><img src="@/assets/tv.png" class="logo"/></router-link>
+        <router-link to="/"
+          ><img src="@/assets/tv.png" class="logo"
+        /></router-link>
       </p>
       <p id="banner-profile-empty-space"></p>
       <div id="settings" class="w3-container">
@@ -34,7 +36,7 @@
                   </button>
 
                   <div id="id04" class="w3-modal">
-                    <div id= "pfp-content" class="w3-modal-content">
+                    <div id="pfp-content" class="w3-modal-content">
                       <div class="w3-container">
                         <span
                           onclick="document.getElementById('id04').style.display='none'"
@@ -107,7 +109,6 @@
     </section>
     <h1 id="user-username-n-bio-phone">Name : {{ dName }}</h1>
 
-
     <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
@@ -123,8 +124,10 @@
             class="w3-button w3-black"
           >
             <div class="user-image-1">
-              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
-
+              <img
+                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                class="placeholder"
+              />
             </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -141,8 +144,14 @@
                 >&times;</span
               >
               <div class="modal-header"></div>
-              <div class="feed-post">
-                <div class="picture">
+              <div class= "feed-post-container">
+                <div class= "picture-container">
+                  <img
+                    class="expanded-image"
+                    src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                  />
+                  
+                  <!-- report button 
                   <b-dropdown
                     variant="none"
                     class="report-button"
@@ -153,7 +162,7 @@
                       <span>...</span>
                     </template>
                     <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown>
+                  </b-dropdown> -->
 
                   <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -191,7 +200,10 @@
             class="w3-button w3-black"
           >
             <div class="user-image-1">
-              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+              <img
+                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                class="placeholder"
+              />
             </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -208,8 +220,9 @@
                 >&times;</span
               >
               <div class="modal-header"></div>
-              <div class="feed-post">
-                <div class="picture">
+              <div class= "feed-post-container" >
+                <div class= "picture-container">
+                  <!-- report button 
                   <b-dropdown
                     variant="none"
                     class="report-button"
@@ -220,7 +233,7 @@
                       <span>...</span>
                     </template>
                     <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown>
+                  </b-dropdown> -->
 
                   <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -258,7 +271,10 @@
             class="w3-button w3-black"
           >
             <div class="user-image-1">
-              <img src="https://t4.ftcdn.net/jpg/02/07/87/79/360_F_207877921_BtG6ZKAVvtLyc5GWpBNEIlIxsffTtWkv.jpg" class="placeholder">
+              <img
+                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                class="placeholder"
+              />
             </div>
             <h2 class="user-likes">
               <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -275,8 +291,9 @@
                 >&times;</span
               >
               <div class="modal-header"></div>
-              <div class="feed-post">
-                <div class="picture">
+              <div class= "feed-post-container">
+                <div class= "picture-container">
+                  <!-- report button 
                   <b-dropdown
                     variant="none"
                     class="report-button"
@@ -287,7 +304,7 @@
                       <span>...</span>
                     </template>
                     <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown>
+                  </b-dropdown> -->
 
                   <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like

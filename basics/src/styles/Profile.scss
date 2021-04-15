@@ -278,3 +278,26 @@
 .w3-container {
   padding: 0rem !important;
 }
+
+.expanded-image {
+  width:100%;
+  height: auto; 
+}
+
+.picture-container {
+  border: 1px solid;
+  height: auto;
+  margin: 1rem;
+  margin-bottom: 0;
+  position: relative;
+  object-fit: cover;
+}
+
+.feed-post-container {
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.w3-container[data-v-ced23842] {
+    margin-bottom: 1rem;
+}
