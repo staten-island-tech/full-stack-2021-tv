@@ -262,11 +262,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  width: 100%;
-  margin-right: 0rem;
-  margin-left: 0rem;
+  width: 33%;
+  margin-right: 1rem;
+  margin-left: 1rem;
   margin-top: 2rem;
+  cursor: pointer;
+  // width: 100%;
+  // margin-right: 0rem;
+  // margin-left: 0rem;
+  // margin-top: 2rem;
   cursor: pointer;
   @include phone {
     margin-top: 1rem;
@@ -274,13 +278,15 @@
 }
 
 .user-image-1 {
-  height: 20rem;
-  border: 2px solid;
+    height: 30rem;
+    border: 2px solid;
 }
 .placeholder {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  display: block;
+  margin: auto;
+  padding-top: 2rem;
+  max-height: 27rem;
+  max-width: 27rem;
 }
 .user-likes {
   width: 100%;
@@ -290,21 +296,4 @@
   font-size: 1.5rem;
   padding: 10px;
   margin-top: 0rem;
-}
-
-//modal
-
-.w3-black {
-  border: none;
-  border-radius: 0rem;
-  margin-top: 0rem;
-  margin-left: 0rem;
-  margin: 0rem;
-  width: 100%;
-  margin-right: 1rem;
-}
-
-.w3-container {
-  padding: 0rem !important;
-  z-index: 10;
 }
