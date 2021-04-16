@@ -343,7 +343,7 @@ import firebase from "firebase/app";
 require("firebase/auth");
 export default {
   mounted() {
-    this.getUserData(), this.changePfp(), this.setupFirebase();
+    this.getUserData(), this.setupFirebase();
   },
   methods: {
     signOut() {
@@ -385,7 +385,7 @@ export default {
       this.pfp = user.photoURL;
 
       console.log(this.pfp);
-      ///         IMAGE TAKES TWO RE-RENDERS TO CHANGE, RELOADING AFTER CLICKING THE BUTTON WORKS JUST FINE, WORST CASE IM RELOADING THE WHOLE PAGE AFTER PFP CHANGE
+      
     },
   },
 

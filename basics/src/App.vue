@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <top-header></top-header>
-    <div id="nav"></div>
+      <div id="nav">
+      </div>
     <router-view />
   </div>
 </template>

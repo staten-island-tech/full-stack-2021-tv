@@ -79,9 +79,7 @@
                   <option value="2">Private</option>
                 </select>
 
-                <div class="blog-post">
-                  Post
-                </div>
+                <button class="blog-post" v-on:click="mPost()">Post</button>
               </div>
             </div>
           </div>
@@ -96,7 +94,7 @@
     </section>
 
     <section class="feed">
-      <div class="feed-post">
+      <div class="feed-post" v-for="sr in i_sr" :key="sr">
         <div class="picture">
         <!-- report button 
           <b-dropdown variant="none" class="report-button" size="lg" no-caret>
@@ -112,7 +110,8 @@
             id="image-button-container"
           >
             <img
-              src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+              v-bind:src = sr 
+              :key="sr"
               class="placeholder"
             />
           </button>
@@ -127,7 +126,8 @@
                 >
                 <img
                   class="image-popUp"
-                  src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                  v-bind:src = sr 
+                  :key="sr"
                 />
               </div>
             </div>
@@ -138,31 +138,106 @@
           </div>
         </div>
 
-        <div class="description-comment">
-          <div class="description">
-            <router-link to="/ProfileOther" class="username">
-              Name
-            </router-link>
-            <p class="caption">caption</p>
+            <div class="description-comment">
+              <div class="description">
+                <router-link to="/ProfileOther" class="username">
+                Name
+                </router-link>
+                <p class="caption">caption</p>
+              </div>
+              <!-- <div class="comment-section">
+              <router-link
+                to="/ProfileOther"
+                id="comment-username"
+                class="username"
+              >
+               Name
+              </router-link>
+              <p class="comment">comment</p>
+            </div> -->
+            </div>
+        
           </div>
-          <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
-        </div>
-      </div>
+      
     </section>
   </section>
 </template>
 
 <script>
+import firebase from "firebase/app";
+import Vue from 'vue';
 export default {
+  mounted(){
+    this.getPostImg()
+
+  },
+   methods:{
+    mPost(){
+      let user = firebase.auth().currentUser;
+      let storageRef = firebase.storage().ref();
+      console.log(user);
+
+      let p_img = document.getElementById("postImg").files[0];
+      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name);
+      storagePic.put(p_img);
+      
+      let db = firebase.database();
+      let dbRef = db.ref("Posts/");
+      console.log(p_img.name);
+      storagePic.getMetadata().then((meta) =>{
+        
+     
+        storagePic.getDownloadURL().then((durl) =>{
+          dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
+            date: `${meta.timeCreated}`,
+            url: `${durl}`,
+            UID: `${user.uid}`
+          })
+        })
+
+       
+        
+      })
+ 
+    },
+    getPostImg(){
+        let datRef = firebase.database().ref('Posts/');
+        let i = 0;
+        let feed = document.getElementById('feed');
+        datRef.once("value").then(sn => {
+          
+          sn.forEach(postChild =>{
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            Vue.set(this.i_sr, i, dURL);
+            
+            feed.insertAdjacentHTML('beforeend', ``);
+
+
+            console.log(i + "_-_" + this.i_sr[i]);
+            i++;
+
+          });
+          
+
+          
+        })
+
+        
+    },
+     clearImage() {
+      this.image = null;
+    },
+    onSubmit() {
+      if (!this.image) {
+        alert("Please select an image.");
+        return;
+      }
+      alert("Form submitted!");
+    }
+  
+  },
   computed: {
     hasImage() {
       return !!this.image;
@@ -171,6 +246,7 @@ export default {
       return this.caption.length < 150 ? true : false;
     },
   },
+  
   data() {
     return {
       image: null,
@@ -180,6 +256,7 @@ export default {
       blog: {
         tag: "",
       },
+      i_sr: [''],
       options: [
         "Education",
         "Entertainment",
