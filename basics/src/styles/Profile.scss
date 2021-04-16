@@ -5,7 +5,7 @@
 }
 
 .user-banner-profile {
-  height: 6rem;
+  height: 5.3rem;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -13,14 +13,18 @@
 }
 
 #logo-for-feed {
-  width: 15%;
+  padding-top: 0.25rem;
+  width: 14%;
   text-align: center;
   border: 2px solid;
-  margin-bottom: 0rem;
+}
+.logo {
+  height: 75%;
+  margin: 1.5% 0% 0% 10%;
 }
 
 #banner-profile-empty-space {
-  width: 90%;
+  width: 71%;
   border: 2px solid;
   border-left: none;
   margin-bottom: 0rem;
@@ -28,17 +32,13 @@
 
 #settings {
   width: 15%;
-  border: 2px solid;
-  border-left: none;
-  //text-align: center;
-  font-size: 0.5rem;
-  margin-bottom: 0rem;
+  //border: none;
 }
 
 #settings-button {
   height: 100%;
   width: 100%;
-  text-align: center;
+  padding-top: 0.5rem;
   font-size: 30px;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .info-about-user {
-  background-color: white;
+  //background-color: white;
   height: 30rem;
   margin: auto;
   display: flex;
@@ -102,11 +102,16 @@
 }
 
 .user-profile-pic {
+  background-color: white;
   height: 25rem;
   width: 40%;
   margin: 1rem;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-left: 0rem;
   @include phone {
@@ -144,10 +149,15 @@
 }
 
 #user-following {
+  background-color: white;
   height: 100%;
   width: 90%;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-right: 1rem;
   @include phone {
@@ -157,10 +167,15 @@
 }
 
 #user-followers {
+  background-color: white;
   height: 100%;
   width: 90%;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  border-color: #DBDBDB;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   font-size: 0.75rem;
   @include phone {
     width: 100%;
@@ -170,11 +185,16 @@
 }
 
 #user-username-n-bio {
+  background-color: white;
   height: 100%;
   width: 100%;
   margin: auto;
   display: flex;
-  border: 2px solid;
+   border: 1.2px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-top: 1rem;
   margin-bottom: 0rem;
@@ -232,6 +252,7 @@
   height: auto;
   width: 81.5%;
   margin: auto;
+  margin-bottom: 5rem;
   @include phone {
     width: 95%
   }
@@ -241,6 +262,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   width: 100%;
   margin-right: 0rem;
   margin-left: 0rem;
@@ -284,4 +306,5 @@
 
 .w3-container {
   padding: 0rem !important;
+  z-index: 10;
 }

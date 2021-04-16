@@ -1,24 +1,22 @@
 @import "@/styles/_variables.scss";
 
-body.modal-open {
-    overflow: hidden;
-}
-
 .home-page {
   background-color: map-get($colors, light);
+  padding-bottom: 5rem;
 }
 
 .user-banner-profile {
-  height: 5.5rem;
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   position: sticky;
-  top: 0;
-  transition: transform 0.25s;
   z-index: 10;
+  top: 0;
+  height: 5.3rem;
+  width: 100%;
+  margin: auto;
   background-color: lavender;
+  //transition: transform 0.25s;
 }
 // .user-banner-profile.is-visible {
 //   transform: translateY(0%);
@@ -30,15 +28,15 @@ body.modal-open {
 #logo-for-feed {
   padding-top: 0.25rem;
   text-align: center;
-  width: 15%;
-  //border: 2px solid;
+  height: 100%;
+  width: 14%;
   @include phone {
     padding-left: 0rem;
   }
 }
-
 .logo {
-  height: 8vh;
+  height: 75%;
+  margin: 1.5% 0% 0% 10%;
   @include phone {
     height: 3rem;
     margin-top: 1rem;
@@ -46,68 +44,85 @@ body.modal-open {
   }
 }
 
-
 #select-tag-container {
-  width: 80%;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  height: 100%;
+  width: 68%;
   .vs--searchable {
     font-size: 1.5rem;
     padding: 1rem;
   }
 }
 
-#avatar {
+#button-container{
+  height: 100%;
+  width: 3%;
   text-align: center;
-  width: 15%;
-  //border: 2px solid;
+}
+
+.w3-black {
+  margin-top: 0.9rem;
+  height: 62%;
+  width: 100%;
+  padding: 0rem;
+  border: #BABAC9 solid 1px;
+  background-color: white !important;
+  color: #91919B !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  border-radius: 5px;
   @include phone {
-    height: 5rem;
+    margin-right: 1rem;
+    width: 15%;
   }
 }
 
+#avatar {
+  text-align: center;
+  width: 15%;
+  @include phone {
+    height: 5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
+}
 .avatar-icon {
-  font-size: 24px;
+  padding-bottom: 0.4rem;
   color: black;
   @include phone {
     margin-left: 0rem;
   }
 }
 
-
 .modal-body {
   height: 70rem;
 }
-
+body.modal-open {
+    overflow: hidden;
+}
 .blog-picture {
   height: 85%;
   border: 2px solid;
   border-bottom: 0rem;
 }
-
 .blog-comment {
   border: 2px solid;
   border-bottom: 0rem;
   height: 6%;
 }
-
 .blog-bottom-row {
   display: flex;
   flex-direction: row;
   height: 5%;
 }
-
 .blog-tag {
   border: 2px solid;
   width: 80%;
 }
-
 .blog-toggle-private-public {
   border: 2px solid;
   border-left: none;
   width: 10%;
 }
-
 .blog-post {
   border: 2px solid;
   border-left: none;
@@ -126,86 +141,95 @@ body.modal-open {
   cursor: pointer;
 }
 
-#settings {
-  width: 5%;
-  border: 2px solid;
-  border-left: none;
+.feed {
+  width: 70%;
+  margin: auto;
+  margin-top: 2rem;
+  padding-bottom: 5rem;
+  background-color: white;
+  //filter: drop-shadow(0 0 0.25rem #91919B);
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  @include phone {
+    border: 0px solid;
+    width: 100%;
+  }
+}
+.feed:hover {
+  filter: drop-shadow(0 0 0.25rem #DBDBDB);
 }
 
-.feed {
-  background-color: white;
-  filter: drop-shadow(0 0 0.25rem lightgrey);
-  //color: map-get($colors, grey);
-  width: 70%;
-  //border: 1px solid;
-  height: 100%;
-  margin: auto;
-  padding-top: .25rem;
-  margin-top: 2rem;
-  @include phone {
-  border: 0px solid;
-  width: 100%;
-  }
+#poster-info {
+  margin: 0.5rem 0rem 0.5rem 1rem;
+}
+.poster-username {
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
 }
 
 .feed-post {
   height: 50rem;
 }
 
+.picture {
+  height: 85%;
+  position: relative;
+  object-fit: cover;
+}
+
+.report-button {
+  float: right;
+  height: 0rem;
+}
+
+.placeholder {
+  height: 100%;
+  width: 100%;
+  //border-radius: 3px;
+  object-fit: cover;
+}
+
 .likes {
   height: 3rem;
-  padding-left: 0.5rem;
+  padding: 0.5rem 0rem 0rem 1rem;
+  border-radius: 0px 0px 3px 3px;
   background-color: map-get($colors, orange);
-  padding-top: 0.5rem;
   font-size: 1.5rem;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.picture {
-  //border: 1px solid;
-  height: 80%;
-  margin: 1rem;
-  margin-bottom: 0;
-  position: relative;
-  object-fit: cover;
-}
-.placeholder {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.report-button {
-  float: left;
-  width: 4rem;
-  height: 0rem;
-}
-
 .description-comment {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  //border-left: 1px solid;
-  //border-right: 1px solid;
-  //border-bottom: 1px solid;
-  height: 10%;
+  height: 15%;
+  margin: 0rem 1rem 0rem 1rem;
 }
 
 .description {
   height: 3rem;
-  padding-top: 0rem;
-  padding-left: 0.5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
 }
 
 .username {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: black;
 }
 
 .caption {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   display: inline-block;
+}
+
+#settings {
+  width: 5%;
+  border: 2px solid;
+  border-left: none;
 }
 
 .comment-section {
@@ -223,21 +247,5 @@ body.modal-open {
 .comment {
   font-size: 1.1rem;
   display: inline-block;
-}
-
-//modal
-.w3-black {
-  background-color: white !important;
-  color: black !important;
-  border: lightgrey solid 1px;
-  border-radius: 5px;
-  margin-top: 0.9rem;
-  margin-right: 2rem;
-  height: 62%;
-  width: 4%;
-  @include phone {
-    margin-right: 1rem;
-    width: 15%;
-  }
 }
 
