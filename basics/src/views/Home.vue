@@ -64,7 +64,40 @@
     </section>
 
     <section class="feed" id = 'feed'>
-      
+      <div class="feed-post" v-for="sr in i_sr" :key="sr">
+            <div class="picture">
+              <b-dropdown variant="none" class="report-button" size="lg" no-caret>
+                <template #button-content>
+                  <span>...</span>
+                </template>
+                <b-dropdown-item href="#">Report</b-dropdown-item>
+              </b-dropdown>
+              <img v-bind:src = sr :key="sr" class="placeholder">
+              <div class="likes">
+                <b-icon variant="danger" icon="heart"></b-icon> 1 like
+              </div>
+            </div>
+
+            <div class="description-comment">
+              <div class="description">
+                <router-link to="/ProfileOther" class="username">
+                Name
+                </router-link>
+                <p class="caption">caption</p>
+              </div>
+              <!-- <div class="comment-section">
+              <router-link
+                to="/ProfileOther"
+                id="comment-username"
+                class="username"
+              >
+               Name
+              </router-link>
+              <p class="comment">comment</p>
+            </div> -->
+            </div>
+        
+          </div>
       
     </section>
   </section>
@@ -119,40 +152,7 @@ export default {
             console.log(dURL);
             Vue.set(this.i_sr, i, dURL);
             
-            feed.insertAdjacentHTML('beforeend', `<div class="feed-post">
-            <div class="picture">
-              <b-dropdown variant="none" class="report-button" size="lg" no-caret>
-                <template #button-content>
-                  <span>...</span>
-                </template>
-                <b-dropdown-item href="#">Report</b-dropdown-item>
-              </b-dropdown>
-              <img v-bind:src = i_sr[${i}] :key="i_sr[${i}]" class="placeholder">
-              <div class="likes">
-                <b-icon variant="danger" icon="heart"></b-icon> 1 like
-              </div>
-            </div>
-
-            <div class="description-comment">
-              <div class="description">
-                <router-link to="/ProfileOther" class="username">
-                Name
-                </router-link>
-                <p class="caption">caption</p>
-              </div>
-              <!-- <div class="comment-section">
-              <router-link
-                to="/ProfileOther"
-                id="comment-username"
-                class="username"
-              >
-               Name
-              </router-link>
-              <p class="comment">comment</p>
-            </div> -->
-            </div>
-        
-          </div>`);
+            feed.insertAdjacentHTML('beforeend', ``);
 
 
             console.log(i + "_-_" + this.i_sr[i]);
