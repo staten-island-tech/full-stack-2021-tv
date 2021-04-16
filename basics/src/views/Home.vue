@@ -125,10 +125,9 @@
                   >&times;</span
                 >
                 <img
+                  class="image-popUp"
                   v-bind:src = sr 
                   :key="sr"
-                  class="image-popUp"
-                  
                 />
               </div>
             </div>
@@ -204,7 +203,7 @@ export default {
     getPostImg(){
         let datRef = firebase.database().ref('Posts/');
         let i = 0;
-        
+        let feed = document.getElementById('feed');
         datRef.once("value").then(sn => {
           
           sn.forEach(postChild =>{
@@ -213,7 +212,7 @@ export default {
             console.log(dURL);
             Vue.set(this.i_sr, i, dURL);
             
-            
+            feed.insertAdjacentHTML('beforeend', ``);
 
 
             console.log(i + "_-_" + this.i_sr[i]);
@@ -294,7 +293,18 @@ export default {
       }
     },
   },
-  
+  methods: {
+    clearImage() {
+      this.image = null;
+    },
+    onSubmit() {
+      if (!this.image) {
+        alert("Please select an image.");
+        return;
+      }
+      alert("Form submitted!");
+    },
+  },
 };
 
 //banner scroll effect
