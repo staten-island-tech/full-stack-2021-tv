@@ -104,8 +104,8 @@
   font-size: 0.75rem;
   margin-left: 0rem;
   @include phone {
-    height: 10rem;
-    width: 50%;
+    height: 7rem;
+    width: 35%;
   }
 }
 
@@ -118,8 +118,8 @@
   justify-content: center;
   margin-right: 0rem;
   @include phone {
-    height: 10rem;
-    width: 50%;
+    height: 7rem;
+    width: 65%;
   }
 }
 
@@ -131,7 +131,7 @@
   flex-direction: row;
   justify-content: center;
   @include phone {
-    height: 10rem;
+    height: 7rem;
     width: 100%;
     flex-direction: column;
   }
@@ -199,6 +199,7 @@
   width: 81.5%;
   @include phone {
     width: 95%;
+    height: 2.5rem;
   }
 }
 
@@ -212,8 +213,8 @@
   margin-left: 1rem;
   cursor: pointer;
   @include phone {
-    margin-right: .1rem;
-    margin-left: .1rem; 
+    // margin-right: .1rem;
+    // margin-left: .1rem; 
     font-size: .75rem;
   }
 }
@@ -226,7 +227,10 @@
   width: 81.5%;
   margin: auto;
   @include phone {
-    width: 95%
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -240,7 +244,7 @@
   margin-top: 2rem;
   cursor: pointer;
   @include phone {
-    margin-top: 1rem;
+    // margin-top: 1rem;
   }
 }
 
