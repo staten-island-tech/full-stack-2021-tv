@@ -209,8 +209,8 @@
   margin-left: 1rem;
   cursor: pointer;
   @include phone {
-    margin-right: .1rem;
-    margin-left: .1rem; 
+    // margin-right: .1rem;
+    // margin-left: .1rem; 
     font-size: .75rem;
   }
 }
@@ -223,7 +223,10 @@
   width: 81.5%;
   margin: auto;
   @include phone {
-    width: 95%
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -237,7 +240,7 @@
   margin-top: 2rem;
   cursor: pointer;
   @include phone {
-    margin-top: 1rem;
+    // margin-top: 1rem;
   }
 }
 
