@@ -24,9 +24,8 @@
             <span
               onclick="document.getElementById('id01').style.display='none'"
               class="w3-button w3-display-topright"
-            >
-              &times;
-            </span>
+              >&times;</span
+              >
             <div class="modal-body">
               <div class="modal-header"></div>
               <div class="blog-picture">
@@ -293,6 +292,7 @@ export default {
       }
     },
   },
+  
   
 };
 

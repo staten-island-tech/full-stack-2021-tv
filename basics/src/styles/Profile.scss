@@ -39,7 +39,7 @@
 
 #settings-container {
   width: 20rem;
-  height: 10rem;
+  height: auto;
 }
 
 .settings-button-content {
@@ -56,7 +56,7 @@
 #change-pfp-button-div {
   width: 100%;
   border: 2px solid black;
-  border-bottom: none;
+  margin-top: 1rem;
 }
 
 #pfp-content {
@@ -304,4 +304,18 @@
 
 .w3-container[data-v-ced23842] {
     margin-bottom: 1rem;
+}
+
+.but{
+  padding: 8px 16px;
+  border-color: black;
+  background-color: white;
+}
+
+.but:hover {
+  background-color: lightgrey;
+}
+
+.modal-header {
+  padding: 1.5rem 1rem;
 }
