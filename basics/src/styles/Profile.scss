@@ -108,9 +108,9 @@
   margin: 1rem;
   display: flex;
   border: 1.2px solid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-left: 0rem;
@@ -154,9 +154,9 @@
   width: 90%;
   display: flex;
   border: 1.2px solid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-right: 1rem;
@@ -173,9 +173,9 @@
   display: flex;
   border: 1.2px solid;
   border-color: #DBDBDB;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   font-size: 0.75rem;
   @include phone {
     width: 100%;
@@ -190,10 +190,10 @@
   width: 100%;
   margin: auto;
   display: flex;
-   border: 1.2px solid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  border: 1.2px solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-top: 1rem;
@@ -232,6 +232,9 @@
   background-color: map-get($colors, primary);
   width: 100%;
   border: 2px solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   font-size: 1.5rem;
   margin-bottom: 0rem;
   padding: 0.7rem;
@@ -259,6 +262,7 @@
 }
 
 .user-box-1 {
+  //display: flex;
   flex-direction: column;
   justify-content: center;
   width: 33%;
@@ -273,7 +277,7 @@
 
 .user-image-1 {
   height: 20rem;
-  border: 2px solid;
+  border: 1.2px solid;
 }
 .placeholder {
   height: 100%;
@@ -288,7 +292,7 @@
   font-size: 1.5rem;
   padding: 10px;
   margin-top: 0rem;
-  background-color: red;
+  //background-color: red;
 }
 
 //modal
