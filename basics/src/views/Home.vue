@@ -34,6 +34,7 @@
                   <b-form @submit.stop.prevent="onSubmit">
                     <div class="d-flex mb-3">
                       <b-form-file
+                        id = "postImg"
                         v-model="image"
                         placeholder="Choose an image"
                         class="w-auto flex-grow-1"
@@ -136,7 +137,7 @@
             <div class="description-comment">
               <div class="description">
                 <router-link to="/ProfileOther" class="username">
-                Name
+                {{sr.dName}}
                 </router-link>
                 <p class="caption">caption</p>
               </div>
@@ -186,7 +187,8 @@ export default {
           dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
             date: `${meta.timeCreated}`,
             url: `${durl}`,
-            UID: `${user.uid}`
+            dName: `${user.displayName}`,
+
           })
         })
 
@@ -206,20 +208,24 @@ export default {
             console.log(i);
             let dURL = postChild.child('url').val();
             console.log(dURL);
+            let dn = postChild.child('dName').val();
             
-            Vue.set(this.i_sr, i, {disp: displ, durl: dURL});
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn});
             //Vue.set(this.i_sr, i, {});
 
 
             console.log(this.i_sr[i].durl);
             console.log(this.i_sr[i].disp);
+            console.log(this.i_sr[i].dName);
             i++;
 
           });
           
 
           
-        })
+        });
+      
+      
 
         
     },
