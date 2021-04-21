@@ -1,5 +1,5 @@
 <template>
-  <section class="home-page">
+  <section id= "home-page" class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
@@ -104,7 +104,9 @@
           </b-dropdown> -->
 
           <button
-            onclick="document.getElementById('postedImg').style.display='block'"
+            onclick="document.getElementById('postedImg').style.display='block', 
+            document.getElementById('home-page').style.overflowY='hidden',
+            document.getElementById('home-page').style.position='fixed'"
             class="w3-button"
             id="image-button-container"
           >
@@ -119,7 +121,10 @@
             <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
                 <span
-                  onclick="document.getElementById('postedImg').style.display='none'"
+                  onclick="document.getElementById('postedImg').style.display='none',
+                  document.getElementById('home-page').style.overflowY='scroll',
+                  document.getElementById('home-page').style.position='static'"
+                  
                   class="w3-button w3-display-topright"
                   >&times;</span
                 >
