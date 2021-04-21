@@ -94,7 +94,7 @@
     </section>
 
     <section class="feed">
-      <div class="feed-post" v-for="sr in i_sr" :key="sr">
+      <div class="feed-post" v-for="sr in i_sr" :key="sr.durl">
         <div class="picture">
         <!-- report button 
           <b-dropdown variant="none" class="report-button" size="lg" no-caret>
@@ -104,30 +104,25 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <button
-            onclick="document.getElementById('postedImg').style.display='block'"
-            class="w3-button"
-            id="image-button-container"
-          >
+          
             <img
-              v-bind:src = sr 
-              :key="sr"
+              :src = sr.durl 
+              :key="sr.durl"
               class="placeholder"
+              v-on:click = "sr.disp = 'block'"
+              
+              
             />
-          </button>
+          
 
-          <div id="postedImg" class="w3-modal">
+          <div class="w3-modal" :id= sr.durl  :style = "{display: sr.disp}">
             <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
-                <span
-                  onclick="document.getElementById('postedImg').style.display='none'"
-                  class="w3-button w3-display-topright"
-                  >&times;</span
-                >
+                
                 <img
                   class="image-popUp"
-                  v-bind:src = sr 
-                  :key="sr"
+                  v-bind:src = sr.durl 
+                  :key="sr.durl"
                 />
               </div>
             </div>
@@ -207,15 +202,17 @@ export default {
         datRef.once("value").then(sn => {
           
           sn.forEach(postChild =>{
+            let displ = 'none';
             console.log(i);
             let dURL = postChild.child('url').val();
             console.log(dURL);
-            Vue.set(this.i_sr, i, dURL);
             
-            
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL});
+            //Vue.set(this.i_sr, i, {});
 
 
-            console.log(i + "_-_" + this.i_sr[i]);
+            console.log(this.i_sr[i].durl);
+            console.log(this.i_sr[i].disp);
             i++;
 
           });
@@ -251,12 +248,12 @@ export default {
     return {
       image: null,
       imageSrc: null,
-
+      dispMode: [""],
       caption: "",
       blog: {
         tag: "",
       },
-      i_sr: [''],
+      i_sr: {},
       options: [
         "Education",
         "Entertainment",
