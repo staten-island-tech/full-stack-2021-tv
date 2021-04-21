@@ -21,6 +21,14 @@
   font-size: 0.75rem;
 }
 
+.logo{
+  // width: 5%;
+  @include phone{
+    height: 100%;
+    width: 100%;
+  }
+}
+
 #other-profile-empty-space {
   width: 90%;
   border: 2px solid;
@@ -35,11 +43,17 @@
   border-left: 0px;
   font-size: 0.75rem;
   margin-bottom: 1rem;
+  @include phone{
+    margin-bottom: none;
+  }
 }
 
 #settings-button {
   height: 100%;
   width: 100%;
+  @include phone{
+    margin-bottom: none;
+  }
 }
 
 #settings-container {
