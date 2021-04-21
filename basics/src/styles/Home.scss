@@ -31,7 +31,7 @@
   height: 100%;
   width: 14%;
   @include phone {
-    padding-left: 0rem;
+    padding: 0rem 0rem 0.25rem 0rem;
   }
 }
 .logo {
@@ -51,12 +51,19 @@
     font-size: 1.5rem;
     padding: 1rem;
   }
+  @include phone {
+    width: 61%;
+  }
 }
 
 #button-container{
   height: 100%;
   width: 3%;
   text-align: center;
+  @include phone {
+    width: 10%;
+    padding-right: 0.25rem;
+  }
 }
 
 .w3-black {
@@ -70,20 +77,11 @@
   font-weight: 800;
   font-size: 1.5em;
   border-radius: 5px;
-  @include phone {
-    margin-right: 1rem;
-    width: 15%;
-  }
 }
 
 #avatar {
   text-align: center;
   width: 15%;
-  @include phone {
-    height: 5rem;
-    margin-top: 1rem;
-    margin-right: 1rem;
-  }
 }
 .avatar-icon {
   padding-bottom: 0.4rem;
@@ -154,8 +152,12 @@ body.modal-open {
   border-radius: 10px;
   border-color: #DBDBDB;
   @include phone {
-    border: 0px solid;
-    width: 100%;
+    margin-top: 1rem;
+    padding-bottom: 0rem;
+    width: 97%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #DBDBDB;
   }
 }
 .feed:hover {
@@ -164,12 +166,18 @@ body.modal-open {
 
 #poster-info {
   margin: 0.5rem 0rem 0.5rem 1rem;
+  @include phone {
+    margin: 0rem 0rem 0rem 0rem;
+  }
 }
 .poster-username {
   display: inline;
   font-size: 1.6rem;
   font-weight: bold;
   color: black;
+  @include phone {
+    // font-size: 1rem;
+  }
 }
 
 .feed-post {
@@ -180,12 +188,15 @@ body.modal-open {
   height: 85%;
   position: relative;
   object-fit: cover;
+  @include phone{
+    height: 65%;
+  }
 }
 
-.report-button {
-  float: right;
-  height: 0rem;
-}
+// .report-button {
+//   float: right;
+//   height: 0rem;
+// }
 
 .placeholder {
   height: 100%;
@@ -198,7 +209,7 @@ body.modal-open {
   height: 3rem;
   padding: 0.5rem 0rem 0rem 1rem;
   border-radius: 0px 0px 3px 3px;
-  background-color: map-get($colors, orange);
+  background-color: map-get($colors, primary);
   font-size: 1.5rem;
   position: absolute;
   bottom: 0;

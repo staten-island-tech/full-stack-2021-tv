@@ -71,14 +71,14 @@
     <section class="feed">
       <section class="feed-post">
         <div id="poster-info">
-          <b-avatar class="poster-icon" size="3.5em"></b-avatar>
+          <b-avatar class="poster-icon" size="3.2em"></b-avatar>
           <p class="poster-username">Name</p>
-          <b-dropdown variant="none" class="report-button" size="lg" no-caret>
+          <!-- <b-dropdown variant="none" class="report-button" size="lg" no-caret>
             <template #button-content>
               <span>...</span>
             </template>
             <b-dropdown-item href="#"> Report </b-dropdown-item>
-          </b-dropdown>
+          </b-dropdown> -->
         </div>
 
         <div class="picture">
