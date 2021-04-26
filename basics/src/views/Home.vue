@@ -1,22 +1,20 @@
 <template>
   <section class="home-page">
     <section class="user-banner-profile">
-      <div class="user-profile"></div>
       <p id="logo-for-feed">
-        <router-link to="/"
-          ><img src="@/assets/tv.png" class="logo"
-        /></router-link>
+        <router-link to="/">
+          <img src="@/assets/tv.png" class="logo"/>
+        </router-link>
       </p>
-      <div id="select-tag-container">
+      <p id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
-      </div>
+      </p>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-      <button
-        onclick="document.getElementById('id01').style.display='block'"
-        class="w3-button w3-black"
-      >
-        +
-      </button>
+      <p id="button-container">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">
+          +
+        </button>
+      </p>
 
       <div id="id01" class="w3-modal">
         <div class="w3-modal-content">
