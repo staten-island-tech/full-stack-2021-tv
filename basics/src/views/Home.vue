@@ -65,7 +65,7 @@
                 </b-container>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption"></textarea>
+                <textarea placeholder="Caption" class="blog-caption" id = "p-caption"></textarea>
               </div>
 
               <div class="blog-bottom-row">
@@ -139,7 +139,7 @@
                 <router-link to="/ProfileOther" class="username">
                 {{sr.dName}}
                 </router-link>
-                <p class="caption">caption</p>
+                <p class="caption">{{sr.caption}}</p>
               </div>
               <!-- <div class="comment-section">
               <router-link
@@ -174,6 +174,7 @@ export default {
       console.log(user);
 
       let p_img = document.getElementById("postImg").files[0];
+      let p_caption = document.getElementById("p-caption").value;
       let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name);
       storagePic.put(p_img);
       
@@ -188,6 +189,7 @@ export default {
             date: `${meta.timeCreated}`,
             url: `${durl}`,
             dName: `${user.displayName}`,
+            caption: `${p_caption}`,
 
           })
         })
@@ -209,14 +211,16 @@ export default {
             let dURL = postChild.child('url').val();
             console.log(dURL);
             let dn = postChild.child('dName').val();
+            let cp = postChild.child('caption').val();
             
-            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn});
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp});
             //Vue.set(this.i_sr, i, {});
 
 
             console.log(this.i_sr[i].durl);
             console.log(this.i_sr[i].disp);
             console.log(this.i_sr[i].dName);
+            console.log(this.i_sr[i].caption);
             i++;
 
           });
