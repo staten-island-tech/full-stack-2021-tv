@@ -12,6 +12,9 @@
   width: 5%;
   border: 2px solid;
   font-size: 0.75rem;
+  @include phone{
+    width: 20%;
+  }
 }
 
 .logo{
@@ -19,6 +22,7 @@
   @include phone{
     height: 100%;
     width: 100%;
+    width: 20%;
   }
 }
 
@@ -26,6 +30,9 @@
   width: 90%;
   border: 2px solid;
   border-left: none;
+  @include phone{
+    width: 60%;
+  }
 }
 
 #settings {
@@ -36,14 +43,17 @@
   margin-bottom: 1rem;
   @include phone{
     margin-bottom: none;
+    width: 20%;
   }
 }
 
 #settings-button {
   height: 100%;
   width: 100%;
+  padding: 0rem;
   @include phone{
     margin-bottom: none;
+    padding: 0rem;
   }
 }
 
@@ -157,6 +167,8 @@
   @include phone {
     width: 100%;
     height: 50%;
+    margin-top: 0rem;
+    margin-right: 0rem;
   }
 }
 
@@ -170,6 +182,7 @@
     width: 100%;
     height: 50%;
     margin-bottom: 0rem;
+    margin-top: 0rem;
   }
 }
 
@@ -251,10 +264,10 @@
   width: 100%;
   margin-right: 0rem;
   margin-left: 0rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   cursor: pointer;
   @include phone {
-    // margin-top: 1rem;
+    margin-top: 0rem;
   }
 }
 
