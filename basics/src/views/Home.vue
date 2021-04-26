@@ -1,5 +1,5 @@
 <template>
-  <section id= "home-page" class="home-page">
+  <section id="home-page" class="home-page">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
@@ -12,7 +12,9 @@
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <button
-        onclick="document.getElementById('id01').style.display='block'"
+        onclick="document.getElementById('id01').style.display='block', 
+          document.getElementById('home-page').style.overflowY='hidden',
+          document.getElementById('home-page').style.position='fixed'"
         class="w3-button w3-black"
       >
         +
@@ -22,10 +24,12 @@
         <div class="w3-modal-content">
           <div class="w3-container">
             <span
-              onclick="document.getElementById('id01').style.display='none'"
+              onclick="document.getElementById('id01').style.display='none',
+                document.getElementById('home-page').style.overflowY='scroll',
+                document.getElementById('home-page').style.position='static'"
               class="w3-button w3-display-topright"
               >&times;</span
-              >
+            >
             <div class="modal-body">
               <div class="modal-header"></div>
               <div class="blog-picture">
@@ -45,7 +49,8 @@
                         >Clear image</b-button
                       >
                     </div>
-                    <b-img id="select-image-upload"
+                    <b-img
+                      id="select-image-upload"
                       v-if="hasImage"
                       :src="imageSrc"
                       class="mb-3"
@@ -95,7 +100,7 @@
     <section class="feed">
       <div class="feed-post" v-for="sr in i_sr" :key="sr">
         <div class="picture">
-        <!-- report button 
+          <!-- report button 
           <b-dropdown variant="none" class="report-button" size="lg" no-caret>
             <template #button-content>
               <span>...</span>
@@ -110,11 +115,7 @@
             class="w3-button"
             id="image-button-container"
           >
-            <img
-              v-bind:src = sr 
-              :key="sr"
-              class="placeholder"
-            />
+            <img v-bind:src="sr" :key="sr" class="placeholder" />
           </button>
 
           <div id="postedImg" class="w3-modal">
@@ -124,15 +125,10 @@
                   onclick="document.getElementById('postedImg').style.display='none',
                   document.getElementById('home-page').style.overflowY='scroll',
                   document.getElementById('home-page').style.position='static'"
-                  
                   class="w3-button w3-display-topright"
                   >&times;</span
                 >
-                <img
-                  class="image-popUp"
-                  v-bind:src = sr 
-                  :key="sr"
-                />
+                <img class="image-popUp" v-bind:src="sr" :key="sr" />
               </div>
             </div>
           </div>
@@ -142,14 +138,14 @@
           </div>
         </div>
 
-            <div class="description-comment">
-              <div class="description">
-                <router-link to="/ProfileOther" class="username">
-                Name
-                </router-link>
-                <p class="caption">caption</p>
-              </div>
-              <!-- <div class="comment-section">
+        <div class="description-comment">
+          <div class="description">
+            <router-link to="/ProfileOther" class="username">
+              Name
+            </router-link>
+            <p class="caption">caption</p>
+          </div>
+          <!-- <div class="comment-section">
               <router-link
                 to="/ProfileOther"
                 id="comment-username"
@@ -159,78 +155,59 @@
               </router-link>
               <p class="comment">comment</p>
             </div> -->
-            </div>
-        
+        </div>
       </div>
-      
     </section>
   </section>
 </template>
 
 <script>
 import firebase from "firebase/app";
-import Vue from 'vue';
+import Vue from "vue";
 export default {
-  mounted(){
-    this.getPostImg()
-
+  mounted() {
+    this.getPostImg();
   },
-   methods:{
-    mPost(){
+  methods: {
+    mPost() {
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
       console.log(user);
 
       let p_img = document.getElementById("postImg").files[0];
-      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name);
+      let storagePic = storageRef.child("Posts/" + user.uid + "_" + p_img.name);
       storagePic.put(p_img);
-      
+
       let db = firebase.database();
       let dbRef = db.ref("Posts/");
       console.log(p_img.name);
-      storagePic.getMetadata().then((meta) =>{
-        
-     
-        storagePic.getDownloadURL().then((durl) =>{
+      storagePic.getMetadata().then((meta) => {
+        storagePic.getDownloadURL().then((durl) => {
           dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
             date: `${meta.timeCreated}`,
             url: `${durl}`,
-            UID: `${user.uid}`
-          })
-        })
-
-       
-        
-      })
- 
-    },
-    getPostImg(){
-        let datRef = firebase.database().ref('Posts/');
-        let i = 0;
-        
-        datRef.once("value").then(sn => {
-          
-          sn.forEach(postChild =>{
-            console.log(i);
-            let dURL = postChild.child('url').val();
-            console.log(dURL);
-            Vue.set(this.i_sr, i, dURL);
-            
-            
-
-
-            console.log(i + "_-_" + this.i_sr[i]);
-            i++;
-
+            UID: `${user.uid}`,
           });
-          
-
-          
-        })
-
-        
+        });
+      });
     },
-     clearImage() {
+    getPostImg() {
+      let datRef = firebase.database().ref("Posts/");
+      let i = 0;
+
+      datRef.once("value").then((sn) => {
+        sn.forEach((postChild) => {
+          console.log(i);
+          let dURL = postChild.child("url").val();
+          console.log(dURL);
+          Vue.set(this.i_sr, i, dURL);
+
+          console.log(i + "_-_" + this.i_sr[i]);
+          i++;
+        });
+      });
+    },
+    clearImage() {
       this.image = null;
     },
     onSubmit() {
@@ -239,8 +216,7 @@ export default {
         return;
       }
       alert("Form submitted!");
-    }
-  
+    },
   },
   computed: {
     hasImage() {
@@ -250,7 +226,7 @@ export default {
       return this.caption.length < 150 ? true : false;
     },
   },
-  
+
   data() {
     return {
       image: null,
@@ -260,7 +236,7 @@ export default {
       blog: {
         tag: "",
       },
-      i_sr: [''],
+      i_sr: [""],
       options: [
         "Education",
         "Entertainment",
@@ -297,8 +273,6 @@ export default {
       }
     },
   },
-  
-  
 };
 
 //banner scroll effect
