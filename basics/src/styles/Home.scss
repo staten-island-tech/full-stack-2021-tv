@@ -2,7 +2,7 @@
 
 .home-page {
   background-color: map-get($colors, light);
-  padding-bottom: 5rem;
+  font-family: $font;
 }
 
 .user-banner-profile {
@@ -54,6 +54,9 @@
   @include phone {
     width: 61%;
   }
+  @include tablet {
+    width: 67%;
+  }
 }
 
 #button-container{
@@ -63,6 +66,9 @@
   @include phone {
     width: 10%;
     padding-right: 0.25rem;
+  }
+  @include tablet {
+    width: 5%;
   }
 }
 
@@ -142,26 +148,12 @@ body.modal-open {
 .feed {
   width: 70%;
   margin: auto;
-  margin-top: 2rem;
-  padding-bottom: 5rem;
-  background-color: white;
-  //filter: drop-shadow(0 0 0.25rem #91919B);
-  border: 1.35px solid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border-color: #DBDBDB;
+  margin-top: 2.5rem;
   @include phone {
     margin-top: 1rem;
     padding-bottom: 0rem;
     width: 97%;
-    border: 1px solid;
-    border-radius: 5px;
-    border-color: #DBDBDB;
   }
-}
-.feed:hover {
-  filter: drop-shadow(0 0 0.25rem #DBDBDB);
 }
 
 #poster-info {
@@ -181,7 +173,23 @@ body.modal-open {
 }
 
 .feed-post {
+  background-color: white;
+  margin-bottom: 2rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   height: 50rem;
+  @include phone {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #DBDBDB;
+    height: 45rem;
+  }
+}
+.feed-post:hover {
+  filter: drop-shadow(0 0 0.25rem #DBDBDB);
 }
 
 .picture {
@@ -189,7 +197,7 @@ body.modal-open {
   position: relative;
   object-fit: cover;
   @include phone{
-    height: 65%;
+    height: 75%;
   }
 }
 
@@ -203,12 +211,14 @@ body.modal-open {
   width: 100%;
   //border-radius: 3px;
   object-fit: cover;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .likes {
   height: 3rem;
   padding: 0.5rem 0rem 0rem 1rem;
-  border-radius: 0px 0px 3px 3px;
   background-color: map-get($colors, primary);
   font-size: 1.5rem;
   position: absolute;
@@ -259,4 +269,3 @@ body.modal-open {
   font-size: 1.1rem;
   display: inline-block;
 }
-

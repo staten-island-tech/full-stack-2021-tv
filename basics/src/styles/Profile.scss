@@ -2,6 +2,7 @@
 
 .profile {
   background-color: map-get($colors, light);
+  font-family: $font;
 }
 
 .user-banner-profile {
@@ -98,6 +99,9 @@
   @include phone {
     width: 95%;
     height: 12rem;
+  }
+  @include tablet {
+    width: 90%;
   }
 }
 
@@ -226,6 +230,9 @@
   @include phone {
     width: 95%;
   }
+  @include tablet {
+    width: 90%;
+  }
 }
 
 #user-banner-button {
@@ -258,6 +265,9 @@
   margin-bottom: 5rem;
   @include phone {
     width: 95%
+  }
+  @include tablet {
+    width: 90%;
   }
 }
 
