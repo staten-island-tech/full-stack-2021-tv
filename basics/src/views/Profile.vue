@@ -12,7 +12,7 @@
           class="w3-button"
           id="settings-button"
         >
-          <b-icon icon="gear"></b-icon>
+          <b-icon icon="gear" id="settings-button-png"></b-icon>
         </button>
 
         <div id="id02" class="w3-modal">
