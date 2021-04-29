@@ -1,19 +1,22 @@
 @import "@/styles/_variables.scss";
 
-body.modal-open {
-    overflow: hidden;
+.home-page {
+  background-color: map-get($colors, light);
+  font-family: $font;
 }
+
 .user-banner-profile {
-  height: 6rem;
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   position: sticky;
-  top: 0;
-  transition: transform 0.25s;
   z-index: 10;
+  top: 0;
+  height: 5.3rem;
+  width: 100%;
+  margin: auto;
   background-color: lavender;
+  //transition: transform 0.25s;
 }
 // .user-banner-profile.is-visible {
 //   transform: translateY(0%);
@@ -23,17 +26,17 @@ body.modal-open {
 // }
 
 #logo-for-feed {
-  width: 15%;
-  padding-left: 5rem;
-  //border: 2px solid;
+  padding-top: 0.25rem;
+  text-align: center;
+  height: 100%;
+  width: 14%;
   @include phone {
-    padding-left: 0rem;
+    padding: 0rem 0rem 0.25rem 0rem;
   }
 }
-
 .logo {
-  margin: 0.5rem;
-  height: 8vh;
+  height: 75%;
+  margin: 1.5% 0% 0% 10%;
   @include phone {
     height: 3rem;
     margin-top: 1rem;
@@ -41,37 +44,57 @@ body.modal-open {
   }
 }
 
-
 #select-tag-container {
-  width: 80%;
-  margin-bottom: 1rem;
+  height: 100%;
+  width: 68%;
   .vs--searchable {
     font-size: 1.5rem;
     padding: 1rem;
   }
-}
-
-#avatar {
-  width: 15%;
-  //border: 2px solid;
-  border-left: none;
-  margin-top: .7rem;
   @include phone {
-    height: 5rem;
-    margin-top: 1rem;
-    margin-right: 1rem;
+    width: 61%;
+  }
+  @include tablet {
+    width: 67%;
   }
 }
 
+#button-container{
+  height: 100%;
+  width: 3%;
+  text-align: center;
+  @include phone {
+    width: 10%;
+    padding-right: 0.25rem;
+  }
+  @include tablet {
+    width: 5%;
+  }
+}
+.w3-black {
+  margin-top: 0.9rem;
+  height: 62%;
+  width: 100%;
+  padding: 0rem;
+  border: #BABAC9 solid 1px;
+  background-color: white !important;
+  color: #91919B !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  border-radius: 5px;
+}
+
+#avatar {
+  text-align: center;
+  width: 15%;
+}
 .avatar-icon {
-  margin-left: 5rem;
-  font-size: 24px;
+  padding-bottom: 0.4rem;
   color: black;
   @include phone {
     margin-left: 0rem;
   }
 }
-
 
 .modal-body {
   height: 70rem;
@@ -132,74 +155,79 @@ body.modal-open {
 
 .feed {
   width: 70%;
-  border: 1px solid;
-  height: 100%;
   margin: auto;
-  padding-bottom: 1rem;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   @include phone {
-  border: 0px solid;
-  width: 100%;
+    margin-top: 1rem;
+    padding-bottom: 0rem;
+    width: 97%;
   }
 }
 
 .feed-post {
+  background-color: white;
+  margin-bottom: 2rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   height: 50rem;
+  @include phone {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #DBDBDB;
+    height: 45rem;
+  }
+}
+
+.picture {
+  height: 85%;
+  position: relative;
+  object-fit: cover;
+  @include phone{
+    height: 75%;
+  }
+}
+
+.placeholder {
+  height: 100%;
+  width: 100%;
+  //border-radius: 3px;
+  object-fit: cover;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .likes {
   height: 3rem;
-  padding-left: 0.5rem;
-  background-color: #f9f8eb;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0rem 0rem 1rem;
+  background-color: map-get($colors, primary);
   font-size: 1.5rem;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.picture {
-  border: 1px solid;
-  height: 80%;
-  margin: 1rem;
-  margin-bottom: 0;
-  position: relative;
-  object-fit: cover;
-}
-.placeholder {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.report-button {
-  float: left;
-  width: 4rem;
-  height: 0rem;
-}
-
 .description-comment {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  height: 10%;
+  height: 15%;
+  margin: 0rem 1rem 0rem 1rem;
 }
 
 .description {
   height: 3rem;
-  padding-top: 0rem;
-  padding-left: 0.5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
 }
 
 .username {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: black;
 }
 
 .caption {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   display: inline-block;
 }
 
@@ -218,24 +246,6 @@ body.modal-open {
 .comment {
   font-size: 1.1rem;
   display: inline-block;
-}
-
-
-
-//modal
-.w3-black {
-  margin: 2rem;
-  background-color: white !important;
-  color: black !important;
-  border: lightgrey solid 1px;
-  border-radius: 5px;
-  margin-top: 1rem;
-  margin-left: -.5rem;
-  width: 4%;
-  @include phone {
-    margin-right: 1rem;
-    width: 15%;
-  }
 }
 
 .image-popUp {

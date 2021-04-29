@@ -11,14 +11,16 @@
         <v-select id="mySelect" :options="options"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
-      <button
-        onclick="document.getElementById('id01').style.display='block', 
+      <div id="button-container">
+        <button
+          onclick="document.getElementById('id01').style.display='block', 
           document.getElementById('home-page').style.overflowY='hidden',
           document.getElementById('home-page').style.position='fixed'"
-        class="w3-button w3-black"
-      >
-        +
-      </button>
+          class="w3-button w3-black"
+        >
+          +
+        </button>
+      </div>
 
       <div id="id01" class="w3-modal">
         <div class="w3-modal-content">
@@ -58,12 +60,6 @@
                       block
                       rounded
                     ></b-img>
-                    <!-- <b-button
-                      :disabled="!hasImage"
-                      variant="primary"
-                      type="submit"
-                      >Upload image</b-button
-                    > -->
                   </b-form>
                 </b-container>
               </div>
