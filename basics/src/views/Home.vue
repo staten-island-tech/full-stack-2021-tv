@@ -134,7 +134,9 @@
           </div>
 
           <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            <b-icon variant="danger" icon="heart"
+            onclick=""
+            ></b-icon> 1 like
           </div>
         </div>
 
@@ -221,18 +223,13 @@ export default {
   computed: {
     hasImage() {
       return !!this.image;
-    },
-    captionState() {
-      return this.caption.length < 150 ? true : false;
-    },
+    }
   },
 
   data() {
     return {
       image: null,
       imageSrc: null,
-
-      caption: "",
       blog: {
         tag: "",
       },
