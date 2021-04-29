@@ -68,7 +68,7 @@
                 </b-container>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption"></textarea>
+                <textarea placeholder="Caption" class="blog-caption" maxlength="150"></textarea>
               </div>
 
               <div class="blog-bottom-row">

@@ -91,6 +91,7 @@
                         <textarea
                           class="bio-input"
                           placeholder="Write something.."
+                          maxlength="300"
                         ></textarea>
                         <button>submit</button>
                       </div>
