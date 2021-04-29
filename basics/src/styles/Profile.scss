@@ -45,7 +45,7 @@
 
 #settings-container {
   width: 20rem;
-  height: 10rem;
+  height: auto;
 }
 
 .settings-button-content {
@@ -62,7 +62,7 @@
 #change-pfp-button-div {
   width: 100%;
   border: 2px solid black;
-  border-bottom: none;
+  margin-top: 1rem;
 }
 
 #pfp-content {
@@ -319,4 +319,46 @@
 
 .w3-container {
   padding: 0rem !important;
+}
+
+.expanded-image {
+  width:100%;
+  height: auto; 
+}
+
+.picture-container {
+  border: 1px solid;
+  height: auto;
+  margin: 1rem;
+  margin-bottom: 0;
+  position: relative;
+  object-fit: cover;
+}
+
+.feed-post-container {
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.w3-container[data-v-ced23842] {
+    margin-bottom: 1rem;
+}
+
+.but{
+  padding: 8px 16px;
+  border-color: black;
+  background-color: white;
+}
+
+.but:hover {
+  background-color: lightgrey;
+}
+
+.modal-header {
+  padding: 1.5rem 1rem;
+}
+
+#bio-content {
+  height: 35vh;
+  padding-top: 3rem;
 }

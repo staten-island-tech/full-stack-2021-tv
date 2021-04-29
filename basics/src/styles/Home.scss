@@ -63,6 +63,13 @@
   height: 100%;
   width: 3%;
   text-align: center;
+}
+
+#avatar {
+  width: 15%;
+  //border: 2px solid;
+  border-left: none;
+  margin-top: .7rem;
   @include phone {
     width: 10%;
     padding-right: 0.25rem;
@@ -143,6 +150,7 @@ body.modal-open {
   resize: none;  
   padding-left: 7px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .feed {
@@ -269,3 +277,65 @@ body.modal-open {
   font-size: 1.1rem;
   display: inline-block;
 }
+
+
+
+//modal
+.w3-black {
+  margin: 2rem;
+  background-color: white !important;
+  color: black !important;
+  border: lightgrey solid 1px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-left: -.5rem;
+  width: 4%;
+  @include phone {
+    margin-right: 1rem;
+    width: 15%;
+  }
+}
+
+.image-popUp {
+  width: auto;
+}
+
+#image-button-container {
+  width: 100%;
+  height: 100%;
+  padding: 0rem;
+}
+
+.w3-container{
+  padding: 0rem;
+}
+
+#pop-up-container {
+  width: fit-content;
+}
+
+#select-image-upload {
+  height: 50rem;
+  width: 100%;
+}
+
+.w3-display-topright {
+  color: black;
+  background: lightgrey;
+}
+
+body#pop-up-container {
+  overflow: hidden;
+}
+
+.w3-modal-content {
+  height: 90vh;
+  padding: 1%;
+  overflow:scroll;
+  margin-bottom: 1rem;
+}
+
+// .home-page {
+//   overflow-y: hidden;
+//   position: fixed;
+// }
