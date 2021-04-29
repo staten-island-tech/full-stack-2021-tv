@@ -19,12 +19,27 @@
   width: 5%;
   border: 2px solid;
   font-size: 0.75rem;
+  @include phone{
+    width: 20%;
+  }
+}
+
+.logo{
+  // width: 5%;
+  @include phone{
+    height: 100%;
+    width: 100%;
+    width: 20%;
+  }
 }
 
 #other-profile-empty-space {
   width: 90%;
   border: 2px solid;
   border-left: none;
+  @include phone{
+    width: 60%;
+  }
 }
 
 //settings of other///
@@ -35,11 +50,19 @@
   border-left: 0px;
   font-size: 0.75rem;
   margin-bottom: 1rem;
+  @include phone{
+    margin-bottom: none;
+    width: 20%;
+  }
 }
 
 #settings-button {
   height: 100%;
   width: 100%;
+  @include phone{
+    margin-bottom: none;
+    padding: 0rem;
+  }
 }
 
 #settings-container {
@@ -154,6 +177,8 @@
   @include phone {
     width: 100%;
     height: 50%;
+    margin-top: 0rem;
+    margin-right: 0rem;
   }
 }
 
@@ -167,6 +192,7 @@
     width: 100%;
     height: 50%;
     margin-bottom: 0rem;
+    margin-top: 0rem;
   }
 }
 
@@ -197,7 +223,7 @@
   }
 }
 
-.user-page-post {
+.other-page-post {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -212,17 +238,17 @@
   }
 }
 
-.user-box-1 {
+.other-box-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   margin-right: 0rem;
   margin-left: 0rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   cursor: pointer;
   @include phone {
-    // margin-top: 1rem;
+    margin-top: 0rem;
   }
 }
 
