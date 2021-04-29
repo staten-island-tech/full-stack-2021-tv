@@ -33,7 +33,7 @@
               >&times;</span
             >
             <div class="modal-body">
-              <div class="modal-header"></div>
+              <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <b-container class="mt-3" fluid>
                   <b-form @submit.stop.prevent="onSubmit">
@@ -56,9 +56,7 @@
                       v-if="hasImage"
                       :src="imageSrc"
                       class="mb-3"
-                      fluid
-                      block
-                      rounded
+                    
                     ></b-img>
                   </b-form>
                 </b-container>
