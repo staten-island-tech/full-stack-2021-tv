@@ -128,7 +128,7 @@
           </div>
 
           <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            <b-icon variant="danger" icon="heart"></b-icon> {{sr.likes}} likes
           </div>
         </div>
 
@@ -183,11 +183,12 @@ export default {
         
      
         storagePic.getDownloadURL().then((durl) =>{
-          dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
+          dbRef.child(`${p_img.name.replace(/[,.-:]/g, '') + meta.timeCreated.toString().replace(/[.-]/g, '')}`).set({
             date: `${meta.timeCreated}`,
             url: `${durl}`,
             dName: `${user.displayName}`,
             caption: `${p_caption}`,
+            likes: 0
 
           })
         })
@@ -210,8 +211,10 @@ export default {
             console.log(dURL);
             let dn = postChild.child('dName').val();
             let cp = postChild.child('caption').val();
+            let key = postChild.key;
+            let hearts = postChild.child('likes').val()
             
-            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp});
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts});
             //Vue.set(this.i_sr, i, {});
 
 
@@ -219,6 +222,8 @@ export default {
             console.log(this.i_sr[i].disp);
             console.log(this.i_sr[i].dName);
             console.log(this.i_sr[i].caption);
+            console.log(this.i_sr[i].id);
+            console.log(this.i_sr[i].likes);
             i++;
 
           });
