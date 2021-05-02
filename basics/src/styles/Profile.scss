@@ -59,6 +59,9 @@
     padding: 0rem;
   }
 }
+#settings-button-x {
+  z-index: 2;
+}
 
 #settings-button-png{
   @include phone{
@@ -130,6 +133,9 @@
     height: 12rem;
     margin: -1rem 1rem -1rem;
   }
+  @include tablet {
+    width: 90%;
+  }
 }
 
 .user-profile-pic {
@@ -144,6 +150,9 @@
     height: 7rem;
     width: 35%;
   }
+  @include tablet {
+    width: 50%;
+  }
 }
 
 .generic-info {
@@ -157,6 +166,9 @@
   @include phone {
     height: 7rem;
     width: 65%;
+  }
+  @include tablet {
+    width: 50%;
   }
 }
 
@@ -244,6 +256,10 @@
     width: 95%;
     height: 2.5rem;
   }
+  @include tablet {
+    width: 94%;
+    margin-bottom: 2rem;
+  }
 }
 
 #user-banner-button {
@@ -276,6 +292,9 @@
     justify-content: center;
     margin: 2rem 1rem;
   }
+  @include tablet{
+    width: 91%;
+  }
 }
 
 .user-box-1 {
@@ -289,6 +308,9 @@
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
+  }
+  @include tablet {
+    padding: .3rem
   }
 }
 

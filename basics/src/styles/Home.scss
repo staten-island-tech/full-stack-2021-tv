@@ -107,6 +107,11 @@
   // width: 70%;
   // overflow:scroll;
   // margin-bottom: 1rem;
+  @include tablet {
+    width: 95%;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
 }
 .w3-container{
   padding: 0rem;
@@ -187,6 +192,9 @@
     margin-top: 1rem;
     padding-bottom: 0rem;
     width: 97%;
+  }
+  @include tablet {
+    width: 90%;
   }
 }
 
@@ -276,6 +284,10 @@
 
 .image-popUp {
   height: 100%;
+  @include tablet {
+    width: 100%;
+    height: auto;
+  }
 }
 
 #image-button-container {
@@ -287,6 +299,10 @@
 
 #pop-up-container {
   width: fit-content;
+  @include tablet {
+    margin: 1rem;
+    margin-top: 5rem;
+  }
 }
 
 #select-image-upload {

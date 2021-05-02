@@ -27,6 +27,7 @@
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
                 class="w3-button w3-display-topright"
+                id = "settings-button-x"
                 >&times;</span
               >
               <div class="settings-button-content">
@@ -48,7 +49,7 @@
                           onclick="document.getElementById('id04').style.display='none', 
                             document.getElementById('profile').style.overflowY='scroll',
                             document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright"
+                          class="w3-button w3-display-topright" 
                           >&times;</span
                         >
                         <div>

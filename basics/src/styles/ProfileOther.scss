@@ -126,6 +126,9 @@
     width: 95%;
     height: 12rem;
   }
+  @include tablet {
+    width: 90%;
+  }
 }
 
 .other-profile-pic {
@@ -140,6 +143,9 @@
     height: 7rem;
     width: 35%;
   }
+  @include tablet {
+    width: 50%;
+  }
 }
 
 .generic-info {
@@ -153,6 +159,9 @@
   @include phone {
     height: 7rem;
     width: 65%;
+  }
+  @include tablet{ 
+    width:50%;
   }
 }
 
@@ -239,6 +248,9 @@
     flex-direction: column;
     justify-content: center;
   }
+  @include tablet {
+    width: 91%;
+  }
 }
 
 .other-box-1 {
@@ -252,6 +264,9 @@
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
+  }
+  @include tablet {
+    padding: .3rem;
   }
 }
 
