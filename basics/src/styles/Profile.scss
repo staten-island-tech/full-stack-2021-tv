@@ -13,6 +13,7 @@
   padding-left: 5rem;
   border: 2px solid;
   font-size: 0.75rem;
+  padding-top: 1.25rem;
   @include phone{
     width: 20%;
     margin: 0 0 2px;
@@ -31,6 +32,7 @@
   width: 90%;
   border: 2px solid;
   border-left: none;
+  height: 100%;
   @include phone{
     width: 60%;
     margin: 0 0 2px;
@@ -43,6 +45,7 @@
   border-left: 0px;
   font-size: 0.75rem;
   margin-bottom: 1rem;
+  height: 100%;
   @include phone{
     margin-bottom: none;
     width: 20%;
@@ -61,6 +64,8 @@
 }
 
 #settings-button-png{
+  height: 40%;
+  width: 55%;
   @include phone{
     height: 45%;
     width: 50%;
@@ -232,9 +237,10 @@
   margin-bottom: 1rem;
   }
 }
+
 .user-banner-posts {
   height: 4rem;
-  margin: auto;
+  margin: 0rem 12rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -243,6 +249,10 @@
   @include phone {
     width: 95%;
     height: 2.5rem;
+    margin: 0rem 1rem 2rem;
+  }
+  @include laptop{
+    margin: 0rem 14rem 2rem;
   }
 }
 
