@@ -3,7 +3,9 @@
 .profile {
   background-color: map-get($colors, background-grey);
   font-family: $font;
+  padding-bottom: 2.5rem;
 }
+
 
 .user-banner-profile {
   display: flex;
@@ -80,6 +82,7 @@
   }
 }
 
+
 #settings-container {
   background-color: map-get($colors, accent1);
   width: 40%;
@@ -92,11 +95,12 @@
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  font-size: 2.5rem;
-  z-index: 0;
+  font-size: 2.3rem;
+  z-index: 1;
 }
 
 .settings-menu-header {
+  padding: 1rem 0 .5rem 0;
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
@@ -125,30 +129,37 @@
   border-radius: 10px;
 }
 
-
-#bio-button-div {
-  width: 100%;
-  border: 2px solid black;
+#bio-content {
+  height: 60%;
+  width: 40%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding-top: 3rem;
+  background-color: map-get($colors, accent3);
 }
-
-
-
-
-#bio-button-text {
-  width: 100%;
+.bio-content-container {
+  padding-top: 0rem;
 }
-
 .bio-input {
   width: 100%;
   height: 150px;
-  padding: 12px 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
   resize: none;
+  padding: 1rem;
+  font-size: 1.8rem;
 }
+.save-button {
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
 
 .info-about-user {
   height: 30rem;
@@ -157,7 +168,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: -1rem;
   width: 80%;
   @include phone {
     width: 95%;
@@ -171,8 +181,11 @@
   width: 40%;
   margin: 1rem;
   display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   margin-left: 0rem;
   @include phone {
     height: 7rem;
@@ -193,7 +206,6 @@
     width: 65%;
   }
 }
-
 #user-following-followers {
   height: 100%;
   width: 100%;
@@ -209,11 +221,17 @@
 }
 
 #user-following {
+  background-color: white;
   height: 100%;
   width: 90%;
   display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  padding: 1rem;
+  font-size: 1.35rem;
   margin-right: 1rem;
   @include phone {
     width: 100%;
@@ -223,13 +241,18 @@
     margin: 0 0 2px;
   }
 }
-
 #user-followers {
+  background-color: white;
   height: 100%;
   width: 90%;
   display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  padding: 1rem;
+  font-size: 1.35rem;
   @include phone {
     width: 100%;
     height: 50%;
@@ -238,22 +261,25 @@
     margin: 0 0 2px;
   }
 }
-
 #user-username-n-bio {
+  background-color: white;
   height: 100%;
   width: 100%;
   margin: auto;
   display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
   margin-top: 1rem;
-  margin-bottom: 0rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  padding: 1rem;
+  font-size: 1.35rem;
   @include phone {
     display: none;
     margin: 0rem 1rem 1rem;
   }
 }
-
 #user-username-n-bio-phone {
   display: none;
   @include phone {
@@ -266,6 +292,8 @@
   margin-bottom: 1rem;
   }
 }
+
+
 .user-banner-posts {
   height: 4rem;
   margin: auto;
@@ -273,6 +301,8 @@
   flex-direction: row;
   justify-content: space-evenly;
   text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   width: 81.5%;
   @include phone {
     width: 95%;
@@ -282,10 +312,17 @@
 
 #user-banner-button {
   width: 100%;
-  border: 2px solid;
-  font-size: 1rem;
+  background-color: map-get($colors, primary);
+  // border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  // border-color: #DBDBDB;
+  font-size: 1.7rem;
+  font-weight: bold;
   margin-bottom: 0rem;
-  padding: 0.7rem;
+  padding: 1rem;
+  margin: auto;
   margin-right: 1rem;
   margin-left: 1rem;
   cursor: pointer;
@@ -299,7 +336,7 @@
 .user-page-post {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   height: auto;
   width: 81.5%;
   margin: auto;
@@ -313,88 +350,71 @@
 }
 
 .user-box-1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
-  margin-right: 0rem;
-  margin-left: 0rem;
-  margin-top: 0rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
   }
 }
+.post-button {
+  background-color: white;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  padding: 0;
+  font-size: 1.8rem;
+}
+.post-button:hover {
+  background-color: #CCCCCC;
+}
 
 .user-image-1 {
   height: 20rem;
-  border: 2px solid;
 }
 .placeholder {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: none;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
 }
 .user-likes {
   width: 100%;
   text-align: center;
-  border: 2px solid;
-  border-top: none;
-  font-size: 1.5rem;
-  padding: 10px;
-  margin-top: 0rem;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-//modal
 
-.w3-black {
-  border: none;
-  border-radius: 0rem;
-  margin-top: 0rem;
-  margin-left: 0rem;
-  margin: 0rem;
-  width: 100%;
-  margin-right: 1rem;
+.feed-post-container {
+  height: 50rem;
+  margin-bottom: 3rem;
 }
-
-.expanded-image {
-  width:100%;
-  height: auto; 
-}
-
 .picture-container {
-  border: 1px solid;
-  height: auto;
   margin: 1rem;
   margin-bottom: 0;
   position: relative;
+}
+.expanded-image {
+  height: 40rem;
   object-fit: cover;
+  background-color:red;
 }
 
-.feed-post-container {
-  height: auto;
-  margin-bottom: 1rem;
-}
 
-.w3-container[data-v-ced23842] {
-    margin-bottom: 1rem;
-}
 
-.but{
-  padding: 8px 16px;
-  border-color: black;
-  background-color: white;
-}
 
-.but:hover {
-  background-color: lightgrey;
-}
+
+
+
 
 .modal-header {
   padding: 1.5rem 1rem;
 }
 
-#bio-content {
-  height: 35vh;
-  padding-top: 3rem;
-}
