@@ -1,16 +1,14 @@
 <template>
   <section id="home-page" class="home-page">
     <section class="user-banner-profile">
-      <div class="user-profile"></div>
-      <p id="logo-for-feed">
-        <router-link to="/"
-          ><img src="@/assets/tv.png" class="logo"
-        /></router-link>
-      </p>
+      <div id="logo-container">
+        <router-link to="/">
+          <img src="@/assets/tv.png" class="logo-png"/>
+        </router-link>
+      </div>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
-      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 

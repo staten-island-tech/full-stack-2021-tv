@@ -1,19 +1,17 @@
 <template>
-  <div id="profile" class="profile">
+  <section id="profile" class="profile">
     <section class="user-banner-profile">
-      <div class="user-profile"></div>
-      <p id="logo-for-feed">
-        <router-link to="/"
-          ><img src="@/assets/tv.png" class="logo"
-        /></router-link>
-      </p>
-      <p id="banner-profile-empty-space"></p>
-      <div id="settings" class="w3-container">
+      <div id="logo-container">
+        <router-link to="/">
+          <img src="@/assets/tv.png" class="logo-png"/>
+        </router-link>
+      </div>
+      <p id="banner-middle"></p>
+      <div id="settings" class="settings-button-container">
         <button
           onclick="document.getElementById('id02').style.display='block', 
             document.getElementById('profile').style.overflowY='hidden',
             document.getElementById('profile').style.position='fixed'"
-          class="w3-button"
           id="settings-button"
         >
           <b-icon icon="gear" id="settings-button-png"></b-icon>
@@ -26,19 +24,20 @@
                 onclick="document.getElementById('id02').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="w3-button w3-display-topright"
-                >&times;</span
+                class="close-button w3-button w3-display-topright"
               >
-              <div class="settings-button-content">
-                <!-- change profile picture button  -->
+              &times;
+              </span>
+              <p class="settings-menu-header">Account Settings</p>
+              <div class="settings-menu">
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
                     onclick="document.getElementById('id04').style.display='block', 
                       document.getElementById('profile').style.overflowY='hidden',
                       document.getElementById('profile').style.position='fixed'"
-                    class="w3-button w3-black"
+                    class="w3-button settings-menu-button"
                   >
-                    Change Profile Picture
+                    <b-icon icon="image" class="settings-menu-icon"></b-icon> Change Profile Picture
                   </button>
 
                   <div id="id04" class="w3-modal">
@@ -48,9 +47,10 @@
                           onclick="document.getElementById('id04').style.display='none', 
                             document.getElementById('profile').style.overflowY='scroll',
                             document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
+                          class="close-button w3-button w3-display-topright"
                         >
+                        &times;
+                        </span>
                         <div>
                           <input type="file" id="pfpUpload" accept="image/*" />
                           <button
@@ -72,10 +72,10 @@
                     onclick="document.getElementById('id03').style.display='block', 
                       document.getElementById('profile').style.overflowY='hidden',
                       document.getElementById('profile').style.position='fixed'"
-                    class="w3-button"
+                    class="w3-button settings-menu-button"
                     id="bio-button-text"
                   >
-                    Edit Bio
+                    <b-icon icon="pencil" class="settings-menu-icon"></b-icon> Edit Bio
                   </button>
 
                   <div id="id03" class="w3-modal">
@@ -98,7 +98,9 @@
                   </div>
                 </div>
 
-                <button class="but" @click="signOut">Sign out</button>
+                <button class="but settings-menu-button" @click="signOut">
+                  <b-icon icon="box-arrow-right" class="settings-menu-icon"></b-icon> Sign out
+                </button>
               </div>
             </div>
           </div>
@@ -351,7 +353,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </section>
 </template>
 
 <script>

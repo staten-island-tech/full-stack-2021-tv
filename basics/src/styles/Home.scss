@@ -1,7 +1,7 @@
 @import "@/styles/_variables.scss";
 
 .home-page {
-  background-color: map-get($colors, light);
+  background-color: map-get($colors, background-grey);
   font-family: $font;
 }
 
@@ -15,7 +15,7 @@
   height: 5.3rem;
   width: 100%;
   margin: auto;
-  background-color: lavender;
+  background-color: map-get($colors, primary);
   //transition: transform 0.25s;
 }
 // .user-banner-profile.is-visible {
@@ -25,16 +25,16 @@
 //   transform: translateY(-300%);
 // }
 
-#logo-for-feed {
+#logo-container {
   padding-top: 0.25rem;
-  text-align: center;
   height: 100%;
   width: 14%;
+  text-align: center;
   @include phone {
     padding: 0rem 0rem 0.25rem 0rem;
   }
 }
-.logo {
+.logo-png {
   height: 75%;
   margin: 1.5% 0% 0% 10%;
   @include phone {
