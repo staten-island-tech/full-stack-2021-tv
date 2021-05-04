@@ -151,7 +151,7 @@
         </div>
 
         <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
+          <div class="w3-modal-content w3-animate-zoom modal-container">
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none', 
@@ -166,19 +166,6 @@
                     class="expanded-image"
                     src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                   />
-                  
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
 
                   <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -217,7 +204,7 @@
           >
             <div class="user-image-1">
               <img
-                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                src="https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=1600&h=900"
                 class="placeholder"
               />
             </div>
@@ -232,10 +219,9 @@
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright"
-                >&times;</span
-              >
-              <div class="modal-header"></div>
+                class="w3-button w3-display-topright">
+                &times;
+              </span>
               <div class= "feed-post-container" >
                 <div class= "picture-container">
                   <!-- report button 
@@ -288,7 +274,7 @@
           >
             <div class="user-image-1">
               <img
-                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg"
                 class="placeholder"
               />
             </div>
@@ -303,10 +289,9 @@
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright"
-                >&times;</span
-              >
-              <div class="modal-header"></div>
+                class="w3-button w3-display-topright">
+                &times;
+              </span>
               <div class= "feed-post-container">
                 <div class= "picture-container">
                   <!-- report button 
