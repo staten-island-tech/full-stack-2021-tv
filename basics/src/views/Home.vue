@@ -67,8 +67,8 @@
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag">
-                  <option v-for="tag in tags" v-bind:key="tag">
+                <select class="blog-tag" v-model="blog.tag" id = "tag_select">
+                  <option v-for="tag in tags" v-bind:key="tag" >
                     {{ tag }}
                   </option>
                 </select>
@@ -128,7 +128,7 @@
           </div>
 
           <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> {{sr.likes}} likes
+            <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = sr.likes ></b-icon> {{sr.likes}} likes   
           </div>
         </div>
 
@@ -170,10 +170,12 @@ export default {
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
       console.log(user);
-
+      let c_tag = document.getElementById("tag_select").value;
       let p_img = document.getElementById("postImg").files[0];
       let p_caption = document.getElementById("p-caption").value;
-      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name);
+      let servertime = firebase.database.ServerValue.TIMESTAMP;
+      servertime = servertime.toString().replace(/[.-]/g, '');
+      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name + '_' + servertime);
       storagePic.put(p_img);
       
       let db = firebase.database();
@@ -188,7 +190,8 @@ export default {
             url: `${durl}`,
             dName: `${user.displayName}`,
             caption: `${p_caption}`,
-            likes: 0
+            likes: 0,
+            tag: `${c_tag}`
 
           })
         })
@@ -212,9 +215,10 @@ export default {
             let dn = postChild.child('dName').val();
             let cp = postChild.child('caption').val();
             let key = postChild.key;
-            let hearts = postChild.child('likes').val()
+            let hearts = postChild.child('likes').val();
+            let tag = postChild.child('tag').val();
             
-            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts});
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
             //Vue.set(this.i_sr, i, {});
 
 
@@ -224,6 +228,7 @@ export default {
             console.log(this.i_sr[i].caption);
             console.log(this.i_sr[i].id);
             console.log(this.i_sr[i].likes);
+            console.log(this.i_sr[i].tag);
             i++;
 
           });
@@ -236,7 +241,12 @@ export default {
 
         
     },
-     clearImage() {
+    likePress(id, c_likes){
+      let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+      let n_likes = c_likes + 1;
+      datRef.set(n_likes);
+    },
+    clearImage() {
       this.image = null;
     },
     onSubmit() {
