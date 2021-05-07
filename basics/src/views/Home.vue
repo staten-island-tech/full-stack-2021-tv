@@ -236,6 +236,38 @@ export default {
 
           
         });
+        datRef.on("value").then(sn => {
+          
+          sn.forEach(postChild =>{
+            let displ = 'none';
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            let dn = postChild.child('dName').val();
+            let cp = postChild.child('caption').val();
+            let key = postChild.key;
+            let hearts = postChild.child('likes').val();
+            let tag = postChild.child('tag').val();
+            
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
+            //Vue.set(this.i_sr, i, {});
+
+
+            console.log(this.i_sr[i].durl);
+            console.log(this.i_sr[i].disp);
+            console.log(this.i_sr[i].dName);
+            console.log(this.i_sr[i].caption);
+            console.log(this.i_sr[i].id);
+            console.log(this.i_sr[i].likes);
+            console.log(this.i_sr[i].tag);
+            i++;
+
+          });
+          
+
+          
+        });
+        
       
       
 
