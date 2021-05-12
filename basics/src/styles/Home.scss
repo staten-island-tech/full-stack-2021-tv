@@ -235,6 +235,8 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .description-comment {
@@ -306,4 +308,16 @@ body#pop-up-container {
 
 .b-avatar {
   margin-top: .5rem;
+}
+
+#enlargeText {
+  padding: 0rem;
+}
+
+.likes-container {
+  width: 90%;
+}
+
+.enlarge-container {
+  padding-right: 1rem;
 }

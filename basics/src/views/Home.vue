@@ -102,22 +102,33 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <button
-            onclick=" 
-            document.getElementById('home-page').style.overflowY='hidden',
-            document.getElementById('home-page').style.position='fixed'"
-            class="w3-button"
-            id="image-button-container"
-          >
             <img
               :src="sr.durl"
               :key="sr.durl"
               class="placeholder"
-              v-on:click="sr.disp = 'block'"
             />
-          </button>
 
-          <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
+          <div class="likes">
+          <div class = "likes-container">
+            <b-icon
+              variant="danger"
+              icon="heart"
+              v-on:click="likePress(sr.id, sr.likes)"
+              v-bind:key="sr.likes"
+            ></b-icon>
+            {{ sr.likes }} likes
+          </div>
+          <div class = "enlarge-container">
+            <button
+            onclick=" 
+            document.getElementById('home-page').style.overflowY='hidden',
+            document.getElementById('home-page').style.position='fixed'"
+            class="w3-button"
+            id="enlargeText"
+            v-on:click= "sr.disp = 'block'" 
+            > Full Image </button>
+            
+            <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
             <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
                 <span
@@ -132,15 +143,8 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="likes">
-            <b-icon
-              variant="danger"
-              icon="heart"
-              v-on:click="likePress(sr.id, sr.likes)"
-              v-bind:key="sr.likes"
-            ></b-icon>
-            {{ sr.likes }} likes
           </div>
         </div>
 
