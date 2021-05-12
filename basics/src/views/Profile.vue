@@ -1,19 +1,17 @@
 <template>
-  <div id="profile" class="profile">
+  <section id="profile" class="profile">
     <section class="user-banner-profile">
-      <div class="user-profile"></div>
-      <p id="logo-for-feed">
-        <router-link to="/"
-          ><img src="@/assets/tv.png" class="logo"
-        /></router-link>
-      </p>
-      <p id="banner-profile-empty-space"></p>
-      <div id="settings" class="w3-container">
+      <div id="logo-container">
+        <router-link to="/">
+          <img src="@/assets/tv.png" class="logo-png"/>
+        </router-link>
+      </div>
+      <p id="banner-middle"></p>
+      <div id="settings" class="settings-button-container">
         <button
           onclick="document.getElementById('id02').style.display='block', 
             document.getElementById('profile').style.overflowY='hidden',
             document.getElementById('profile').style.position='fixed'"
-          class="w3-button"
           id="settings-button"
         >
           <b-icon icon="gear" id="settings-button-png"></b-icon>
@@ -26,19 +24,20 @@
                 onclick="document.getElementById('id02').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="w3-button w3-display-topright"
-                >&times;</span
+                class="close-button w3-button w3-display-topright"
               >
-              <div class="settings-button-content">
-                <!-- change profile picture button  -->
+              &times;
+              </span>
+              <p class="settings-menu-header">Account Settings</p>
+              <div class="settings-menu">
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
                     onclick="document.getElementById('id04').style.display='block', 
                       document.getElementById('profile').style.overflowY='hidden',
                       document.getElementById('profile').style.position='fixed'"
-                    class="w3-button w3-black"
+                    class="w3-button settings-menu-button"
                   >
-                    Change Profile Picture
+                    <b-icon icon="image" class="settings-menu-icon"></b-icon> Change Profile Picture
                   </button>
 
                   <div id="id04" class="w3-modal">
@@ -48,9 +47,11 @@
                           onclick="document.getElementById('id04').style.display='none', 
                             document.getElementById('profile').style.overflowY='scroll',
                             document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
+                          class="close-button w3-button w3-display-topright"
                         >
+                        &times;
+                        </span>
+                        <p class="settings-menu-header"> Change Profile Picture </p>
                         <div>
                           <input type="file" id="pfpUpload" accept="image/*" />
                           <button
@@ -72,33 +73,36 @@
                     onclick="document.getElementById('id03').style.display='block', 
                       document.getElementById('profile').style.overflowY='hidden',
                       document.getElementById('profile').style.position='fixed'"
-                    class="w3-button"
+                    class="w3-button settings-menu-button"
                     id="bio-button-text"
                   >
-                    Edit Bio
+                    <b-icon icon="pencil" class="settings-menu-icon"></b-icon> Edit Bio
                   </button>
 
                   <div id="id03" class="w3-modal">
                     <div id="bio-content" class="w3-modal-content">
-                      <div class="w3-container">
+                      <div class="bio-content-container w3-container">
                         <span
                           onclick="document.getElementById('id03').style.display='none', 
                             document.getElementById('profile').style.overflowY='scrolled',
                             document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
-                        >
+                          class="close-button w3-button w3-display-topright">
+                          &times;
+                        </span>
+                        <p class="settings-menu-header">Edit Bio</p>
                         <textarea
                           class="bio-input"
-                          placeholder="Write something.."
-                        ></textarea>
-                        <button>submit</button>
+                          placeholder="Write Here...">
+                        </textarea>
+                        <button class="save-button w3-button w3-white w3-border"> Save </button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <button class="but" @click="signOut">Sign out</button>
+                <button class="settings-menu-button w3-button" @click="signOut">
+                  <b-icon icon="box-arrow-right" class="settings-menu-icon"></b-icon> Sign out
+                </button>
               </div>
             </div>
           </div>
@@ -107,19 +111,16 @@
     </section>
 
     <section class="info-about-user">
-      <div class="user-profile-pic/generic-info"></div>
       <img class="user-profile-pic" v-bind:src="pfp" :key="pfp" />
-
       <div class="generic-info">
         <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
         </div>
-
-        <h1 id="user-username-n-bio">Name : {{ dName }}</h1>
+        <h1 id="user-username-n-bio">Name: {{ dName }}</h1>
       </div>
     </section>
-    <h1 id="user-username-n-bio-phone">Name : {{ dName }}</h1>
+    <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
 
     <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
@@ -135,7 +136,7 @@
             onclick="document.getElementById('id01').style.display='block', 
               document.getElementById('profile').style.overflowY='hidden',
               document.getElementById('profile').style.position='fixed'"
-            class="w3-button w3-black"
+            class="post-button"
           >
             <div class="user-image-1">
               <img
@@ -150,35 +151,21 @@
         </div>
 
         <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
+          <div class="w3-modal-content w3-animate-zoom modal-container">
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="w3-button w3-display-topright"
-                >&times;</span
-              >
-              <div class="modal-header"></div>
-              <div class= "feed-post-container">
-                <div class= "picture-container">
+                class="close-button w3-button w3-display-topright">
+                &times;
+              </span>
+              <div class="feed-post-container">
+                <div class="picture-container">
                   <img
                     class="expanded-image"
                     src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                   />
-                  
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
 
                   <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -213,11 +200,11 @@
         <div class="w3-container">
           <button
             onclick="document.getElementById('id01').style.display='block'"
-            class="w3-button w3-black"
+            class="post-button"
           >
             <div class="user-image-1">
               <img
-                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                src="https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=1600&h=900"
                 class="placeholder"
               />
             </div>
@@ -232,10 +219,9 @@
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright"
-                >&times;</span
-              >
-              <div class="modal-header"></div>
+                class="w3-button w3-display-topright">
+                &times;
+              </span>
               <div class= "feed-post-container" >
                 <div class= "picture-container">
                   <!-- report button 
@@ -284,11 +270,11 @@
         <div class="w3-container">
           <button
             onclick="document.getElementById('id01').style.display='block'"
-            class="w3-button w3-black"
+            class="post-button"
           >
             <div class="user-image-1">
               <img
-                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg"
                 class="placeholder"
               />
             </div>
@@ -303,10 +289,9 @@
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright"
-                >&times;</span
-              >
-              <div class="modal-header"></div>
+                class="w3-button w3-display-topright">
+                &times;
+              </span>
               <div class= "feed-post-container">
                 <div class= "picture-container">
                   <!-- report button 
@@ -351,7 +336,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </section>
 </template>
 
 <script>
