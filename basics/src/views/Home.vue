@@ -157,49 +157,124 @@
 
 <script>
 import firebase from "firebase/app";
-import Vue from "vue";
+import Vue from 'vue';
 export default {
-  mounted() {
-    this.getPostImg();
+  mounted(){
+    this.getPostImg()
+
   },
-  methods: {
-    mPost() {
+   methods:{
+    mPost(){
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
       console.log(user);
-
+      let c_tag = document.getElementById("tag_select").value;
       let p_img = document.getElementById("postImg").files[0];
-      let storagePic = storageRef.child("Posts/" + user.uid + "_" + p_img.name);
+      let p_caption = document.getElementById("p-caption").value;
+      let servertime = firebase.database.ServerValue.TIMESTAMP;
+      servertime = servertime.toString().replace(/[.-]/g, '');
+      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name + '_' + servertime);
       storagePic.put(p_img);
-
+      
       let db = firebase.database();
       let dbRef = db.ref("Posts/");
       console.log(p_img.name);
-      storagePic.getMetadata().then((meta) => {
-        storagePic.getDownloadURL().then((durl) => {
-          dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
+      storagePic.getMetadata().then((meta) =>{
+        
+     
+        storagePic.getDownloadURL().then((durl) =>{
+          dbRef.child(`${p_img.name.replace(/[,.-:]/g, '') + meta.timeCreated.toString().replace(/[.-]/g, '')}`).set({
             date: `${meta.timeCreated}`,
             url: `${durl}`,
-            UID: `${user.uid}`,
-          });
-        });
-      });
+            dName: `${user.displayName}`,
+            caption: `${p_caption}`,
+            likes: 0,
+            tag: `${c_tag}`
+
+          })
+        })
+
+       
+        
+      })
+ 
     },
-    getPostImg() {
-      let datRef = firebase.database().ref("Posts/");
-      let i = 0;
+    getPostImg(){
+        let datRef = firebase.database().ref('Posts/');
+        let i = 0;
+        
+        datRef.once("value").then(sn => {
+          
+          sn.forEach(postChild =>{
+            let displ = 'none';
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            let dn = postChild.child('dName').val();
+            let cp = postChild.child('caption').val();
+            let key = postChild.key;
+            let hearts = postChild.child('likes').val();
+            let tag = postChild.child('tag').val();
+            
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
+            //Vue.set(this.i_sr, i, {});
 
-      datRef.once("value").then((sn) => {
-        sn.forEach((postChild) => {
-          console.log(i);
-          let dURL = postChild.child("url").val();
-          console.log(dURL);
-          Vue.set(this.i_sr, i, dURL);
 
-          console.log(i + "_-_" + this.i_sr[i]);
-          i++;
+            console.log(this.i_sr[i].durl);
+            console.log(this.i_sr[i].disp);
+            console.log(this.i_sr[i].dName);
+            console.log(this.i_sr[i].caption);
+            console.log(this.i_sr[i].id);
+            console.log(this.i_sr[i].likes);
+            console.log(this.i_sr[i].tag);
+            i++;
+
+          });
+          
+
+          
         });
-      });
+        datRef.on("value").then(sn => {
+          
+          sn.forEach(postChild =>{
+            let displ = 'none';
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            let dn = postChild.child('dName').val();
+            let cp = postChild.child('caption').val();
+            let key = postChild.key;
+            let hearts = postChild.child('likes').val();
+            let tag = postChild.child('tag').val();
+            
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
+            //Vue.set(this.i_sr, i, {});
+
+
+            console.log(this.i_sr[i].durl);
+            console.log(this.i_sr[i].disp);
+            console.log(this.i_sr[i].dName);
+            console.log(this.i_sr[i].caption);
+            console.log(this.i_sr[i].id);
+            console.log(this.i_sr[i].likes);
+            console.log(this.i_sr[i].tag);
+            i++;
+
+          });
+          
+
+          
+        });
+        
+      
+      
+
+        
+    },
+    likePress(id, c_likes){
+      let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+      let n_likes = c_likes + 1;
+      datRef.set(n_likes);
     },
     clearImage() {
       this.image = null;
@@ -210,7 +285,8 @@ export default {
         return;
       }
       alert("Form submitted!");
-    },
+    }
+  
   },
   computed: {
     hasImage() {
@@ -220,17 +296,17 @@ export default {
       return this.caption.length < 150 ? true : false;
     },
   },
-
+  
   data() {
     return {
       image: null,
       imageSrc: null,
-
+      dispMode: [""],
       caption: "",
       blog: {
         tag: "",
       },
-      i_sr: [""],
+      i_sr: {},
       options: [
         "Education",
         "Entertainment",
@@ -267,6 +343,7 @@ export default {
       }
     },
   },
+  
 };
 
 //banner scroll effect
