@@ -62,12 +62,12 @@
                 </b-container>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption"></textarea>
+                <textarea placeholder="Caption" class="blog-caption" id = "p-caption"></textarea>
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag">
-                  <option v-for="tag in tags" v-bind:key="tag">
+                <select class="blog-tag" v-model="blog.tag" id = "tag_select">
+                  <option v-for="tag in tags" v-bind:key="tag" >
                     {{ tag }}
                   </option>
                 </select>
@@ -128,18 +128,18 @@
           </div>
 
           <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = sr.likes ></b-icon> {{sr.likes}} likes   
           </div>
         </div>
 
-        <div class="description-comment">
-          <div class="description">
-            <router-link to="/ProfileOther" class="username">
-              Name
-            </router-link>
-            <p class="caption">caption</p>
-          </div>
-          <!-- <div class="comment-section">
+            <div class="description-comment">
+              <div class="description">
+                <router-link to="/ProfileOther" class="username">
+                {{sr.dName}}
+                </router-link>
+                <p class="caption">{{sr.caption}}</p>
+              </div>
+              <!-- <div class="comment-section">
               <router-link
                 to="/ProfileOther"
                 id="comment-username"
@@ -234,42 +234,6 @@ export default {
 
           
         });
-        datRef.on("value").then(sn => {
-          
-          sn.forEach(postChild =>{
-            let displ = 'none';
-            console.log(i);
-            let dURL = postChild.child('url').val();
-            console.log(dURL);
-            let dn = postChild.child('dName').val();
-            let cp = postChild.child('caption').val();
-            let key = postChild.key;
-            let hearts = postChild.child('likes').val();
-            let tag = postChild.child('tag').val();
-            
-            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
-            //Vue.set(this.i_sr, i, {});
-
-
-            console.log(this.i_sr[i].durl);
-            console.log(this.i_sr[i].disp);
-            console.log(this.i_sr[i].dName);
-            console.log(this.i_sr[i].caption);
-            console.log(this.i_sr[i].id);
-            console.log(this.i_sr[i].likes);
-            console.log(this.i_sr[i].tag);
-            i++;
-
-          });
-          
-
-          
-        });
-        
-      
-      
-
-        
     },
     likePress(id, c_likes){
       let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
