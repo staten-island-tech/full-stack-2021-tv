@@ -118,6 +118,7 @@
             ></b-icon>
             {{ sr.likes }} likes
           </div>
+          
           <div class = "enlarge-container">
             <button
             onclick=" 
@@ -142,11 +143,11 @@
                 <img class="image-popUp" v-bind:src="sr.durl" :key="sr.durl" />
               </div>
             </div>
+            </div>
           </div>
-        </div>
 
-          </div>
         </div>
+      </div>
 
         <div class="description-comment">
           <div class="description">
