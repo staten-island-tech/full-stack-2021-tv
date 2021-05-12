@@ -11,12 +11,7 @@
       </p>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <p id="button-container">
-        <button 
-          onclick="document.getElementById('id01').style.display='block', 
-          document.getElementById('home-page').style.overflowY='hidden',
-          document.getElementById('home-page').style.position='fixed'"
-          class="w3-button w3-black"
-          >
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">
           +
         </button>
       </p>
@@ -25,11 +20,10 @@
         <div class="w3-modal-content">
           <div class="w3-container">
             <span
-              onclick="document.getElementById('id01').style.display='none',
-                document.getElementById('home-page').style.overflowY='scroll',
-                document.getElementById('home-page').style.position='static'"
+              onclick="document.getElementById('id01').style.display='none'"
               class="w3-button w3-display-topright"
-              >&times;
+            >
+              &times;
             </span>
             <div class="modal-body">
               <div class="modal-header"></div>
@@ -69,12 +63,12 @@
                 </b-container>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption"></textarea>
+                <textarea placeholder="Caption" class="blog-caption" id = "p-caption"></textarea>
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag">
-                  <option v-for="tag in tags" v-bind:key="tag">
+                <select class="blog-tag" v-model="blog.tag" id = "tag_select">
+                  <option v-for="tag in tags" v-bind:key="tag" >
                     {{ tag }}
                   </option>
                 </select>
@@ -109,32 +103,21 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-            <button
-            onclick="document.getElementById('postedImg').style.display='block', 
-            document.getElementById('home-page').style.overflowY='hidden',
-            document.getElementById('home-page').style.position='fixed'"
-            class="w3-button"
-            id="image-button-container"
-          >
+          
             <img
               :src = sr.durl 
               :key="sr.durl"
               class="placeholder"
               v-on:click = "sr.disp = 'block'"
-            />          
-            </button>
+              
+              
+            />
           
 
           <div class="w3-modal" :id= sr.durl  :style = "{display: sr.disp}">
             <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
-                  <span
-                  onclick="document.getElementById('postedImg').style.display='none',
-                  document.getElementById('home-page').style.overflowY='scroll',
-                  document.getElementById('home-page').style.position='static'"
-                  class="w3-button w3-display-topright"
-                  >&times;</span
-                >
+                
                 <img
                   class="image-popUp"
                   v-bind:src = sr.durl 
@@ -145,18 +128,18 @@
           </div>
 
           <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = sr.likes ></b-icon> {{sr.likes}} likes   
           </div>
         </div>
 
-        <div class="description-comment">
-          <div class="description">
-            <router-link to="/ProfileOther" class="username">
-              Name
-            </router-link>
-            <p class="caption">caption</p>
-          </div>
-          <!-- <div class="comment-section">
+            <div class="description-comment">
+              <div class="description">
+                <router-link to="/ProfileOther" class="username">
+                {{sr.dName}}
+                </router-link>
+                <p class="caption">{{sr.caption}}</p>
+              </div>
+              <!-- <div class="comment-section">
               <router-link
                 to="/ProfileOther"
                 id="comment-username"
@@ -176,49 +159,124 @@
 
 <script>
 import firebase from "firebase/app";
-import Vue from "vue";
+import Vue from 'vue';
 export default {
-  mounted() {
-    this.getPostImg();
+  mounted(){
+    this.getPostImg()
+
   },
-  methods: {
-    mPost() {
+   methods:{
+    mPost(){
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
       console.log(user);
-
+      let c_tag = document.getElementById("tag_select").value;
       let p_img = document.getElementById("postImg").files[0];
-      let storagePic = storageRef.child("Posts/" + user.uid + "_" + p_img.name);
+      let p_caption = document.getElementById("p-caption").value;
+      let servertime = firebase.database.ServerValue.TIMESTAMP;
+      servertime = servertime.toString().replace(/[.-]/g, '');
+      let storagePic = storageRef.child('Posts/' + user.uid + '_' + p_img.name + '_' + servertime);
       storagePic.put(p_img);
-
+      
       let db = firebase.database();
       let dbRef = db.ref("Posts/");
       console.log(p_img.name);
-      storagePic.getMetadata().then((meta) => {
-        storagePic.getDownloadURL().then((durl) => {
-          dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
+      storagePic.getMetadata().then((meta) =>{
+        
+     
+        storagePic.getDownloadURL().then((durl) =>{
+          dbRef.child(`${p_img.name.replace(/[,.-:]/g, '') + meta.timeCreated.toString().replace(/[.-]/g, '')}`).set({
             date: `${meta.timeCreated}`,
             url: `${durl}`,
-            UID: `${user.uid}`,
-          });
-        });
-      });
+            dName: `${user.displayName}`,
+            caption: `${p_caption}`,
+            likes: 0,
+            tag: `${c_tag}`
+
+          })
+        })
+
+       
+        
+      })
+ 
     },
-    getPostImg() {
-      let datRef = firebase.database().ref("Posts/");
-      let i = 0;
+    getPostImg(){
+        let datRef = firebase.database().ref('Posts/');
+        let i = 0;
+        
+        datRef.once("value").then(sn => {
+          
+          sn.forEach(postChild =>{
+            let displ = 'none';
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            let dn = postChild.child('dName').val();
+            let cp = postChild.child('caption').val();
+            let key = postChild.key;
+            let hearts = postChild.child('likes').val();
+            let tag = postChild.child('tag').val();
+            
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
+            //Vue.set(this.i_sr, i, {});
 
-      datRef.once("value").then((sn) => {
-        sn.forEach((postChild) => {
-          console.log(i);
-          let dURL = postChild.child("url").val();
-          console.log(dURL);
-          Vue.set(this.i_sr, i, dURL);
 
-          console.log(i + "_-_" + this.i_sr[i]);
-          i++;
+            console.log(this.i_sr[i].durl);
+            console.log(this.i_sr[i].disp);
+            console.log(this.i_sr[i].dName);
+            console.log(this.i_sr[i].caption);
+            console.log(this.i_sr[i].id);
+            console.log(this.i_sr[i].likes);
+            console.log(this.i_sr[i].tag);
+            i++;
+
+          });
+          
+
+          
         });
-      });
+        datRef.on("value").then(sn => {
+          
+          sn.forEach(postChild =>{
+            let displ = 'none';
+            console.log(i);
+            let dURL = postChild.child('url').val();
+            console.log(dURL);
+            let dn = postChild.child('dName').val();
+            let cp = postChild.child('caption').val();
+            let key = postChild.key;
+            let hearts = postChild.child('likes').val();
+            let tag = postChild.child('tag').val();
+            
+            Vue.set(this.i_sr, i, {disp: displ, durl: dURL, dName: dn, caption: cp, id: key, likes: hearts, tag: tag});
+            //Vue.set(this.i_sr, i, {});
+
+
+            console.log(this.i_sr[i].durl);
+            console.log(this.i_sr[i].disp);
+            console.log(this.i_sr[i].dName);
+            console.log(this.i_sr[i].caption);
+            console.log(this.i_sr[i].id);
+            console.log(this.i_sr[i].likes);
+            console.log(this.i_sr[i].tag);
+            i++;
+
+          });
+          
+
+          
+        });
+        
+      
+      
+
+        
+    },
+    likePress(id, c_likes){
+      let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+      let n_likes = c_likes + 1;
+      datRef.set(n_likes);
     },
     clearImage() {
       this.image = null;
@@ -229,7 +287,8 @@ export default {
         return;
       }
       alert("Form submitted!");
-    },
+    }
+  
   },
   computed: {
     hasImage() {
@@ -239,17 +298,17 @@ export default {
       return this.caption.length < 150 ? true : false;
     },
   },
-
+  
   data() {
     return {
       image: null,
       imageSrc: null,
-
+      dispMode: [""],
       caption: "",
       blog: {
         tag: "",
       },
-      i_sr: [""],
+      i_sr: {},
       options: [
         "Education",
         "Entertainment",
@@ -286,6 +345,7 @@ export default {
       }
     },
   },
+  
 };
 
 //banner scroll effect
