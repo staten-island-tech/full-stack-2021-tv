@@ -1,94 +1,16 @@
 <template>
-  <div class="profile-other">
+  <div id="profile-other" class="profile-other">
     <section class="other-banner-profile">
       <div class="other-profile"></div>
       <p id="logo-for-feed">
         <router-link to="/"><img src="tv.jpg" class="logo"/></router-link>
       </p>
       <p id="other-profile-empty-space"></p>
-      <div id="settings" class="w3-container">
-        <button
-          onclick="document.getElementById('id02').style.display='block'"
-          class="w3-button"
-          id="settings-button"
-        >
-          <b-icon icon="gear"></b-icon>
-        </button>
-
-        <div id="id02" class="w3-modal">
-          <div class="w3-modal-content" id="settings-container">
-            <div class="w3-container">
-              <span
-                onclick="document.getElementById('id02').style.display='none'"
-                class="w3-button w3-display-topright"
-                >&times;</span
-              >
-              <div class="settings-button-content">
-                <!-- change profile picture button  -->
-                <div id="change-pfp-button-div" class="w3-container">
-                  <button
-                    onclick="document.getElementById('id04').style.display='block'"
-                    class="w3-button w3-black"
-                  >
-                    Change Profile Picture
-                  </button>
-
-                  <div id="id04" class="w3-modal">
-                    <div id= "pfp-content" class="w3-modal-content">
-                      <div class="w3-container">
-                        <span
-                          onclick="document.getElementById('id04').style.display='none'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
-                        >
-                        <div>
-                          <input type="file" id="pfpUpload" accept="image/*" />
-                          <button
-                            type="button"
-                            id="pfpUbutton"
-                            v-on:click="changePfp()"
-                          >
-                            Change Profile
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- changing bio button -->
-                <div id="bio-button-div" class="w3-container">
-                  <button
-                    onclick="document.getElementById('id03').style.display='block'"
-                    class="w3-button"
-                    id="bio-button-text"
-                  >
-                    Edit Bio
-                  </button>
-
-                  <div id="id03" class="w3-modal">
-                    <div class="w3-modal-content">
-                      <div class="w3-container">
-                        <span
-                          onclick="document.getElementById('id03').style.display='none'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
-                        >
-                        <textarea
-                          class="bio-input"
-                          placeholder="Write something.."
-                        ></textarea>
-                        <button>submit</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <button class="but" @click="signOut">Sign out</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <div id="avatar">
+        <router-link to="/profile">
+          <b-avatar class="avatar-icon" size="4em"></b-avatar>
+        </router-link>
       </div>
     </section>
 
@@ -107,7 +29,6 @@
     </section>
     <h1 id="other-username-n-bio-phone">Name : {{ dName }}</h1>
 
-
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
@@ -119,7 +40,9 @@
       <div class="other-box-1">
         <div class="w3-container">
           <button
-            onclick="document.getElementById('id01').style.display='block'"
+            onclick="document.getElementById('id01').style.display='block',
+                    document.getElementById('profile-other').style.overflowY='hidden',
+                    document.getElementById('profile-other').style.position='fixed'"
             class="w3-button w3-black"
           >
             <div class="other-image-1">image</div>
@@ -133,7 +56,9 @@
           <div class="w3-modal-content">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id01').style.display='none'"
+                onclick="document.getElementById('id01').style.display='none',
+                          document.getElementById('profile-other').style.overflowY='scroll',
+                          document.getElementById('profile-other').style.position='static'"
                 class="w3-button w3-display-topright"
                 >&times;</span
               >
@@ -319,7 +244,5 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-
 @import "@/styles/ProfileOther.scss";
-
 </style>
