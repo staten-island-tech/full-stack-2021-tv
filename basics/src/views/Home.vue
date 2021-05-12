@@ -1,14 +1,16 @@
 <template>
   <section id="home-page" class="home-page">
     <section class="user-banner-profile">
-      <div id="logo-container">
-        <router-link to="/">
-          <img src="@/assets/tv.png" class="logo-png"/>
-        </router-link>
-      </div>
+      <div class="user-profile"></div>
+      <p id="logo-for-feed">
+        <router-link to="/"
+          ><img src="@/assets/tv.png" class="logo"
+        /></router-link>
+      </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
+      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 
@@ -21,17 +23,17 @@
       </div>
 
       <div id="id01" class="w3-modal">
-        <div class="w3-modal-content" id="new-post-container">
+        <div class="w3-modal-content">
           <div class="w3-container">
             <span
               onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
                 document.getElementById('home-page').style.position='static'"
-              class="w3-button w3-display-topright">
-              &times;
-            </span>
+              class="w3-button w3-display-topright"
+              >&times;</span
+            >
             <div class="modal-body">
-              <p class="modal-header">New Post</p>
+              <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <b-container class="mt-3" fluid>
                   <b-form @submit.stop.prevent="onSubmit">
@@ -40,8 +42,7 @@
                         v-model="image"
                         placeholder="Choose an image"
                         class="w-auto flex-grow-1"
-                      >
-                      </b-form-file>
+                      ></b-form-file>
                       <b-button
                         v-if="hasImage"
                         variant="danger"
@@ -55,8 +56,8 @@
                       v-if="hasImage"
                       :src="imageSrc"
                       class="mb-3"
-                    >
-                    </b-img>
+                    
+                    ></b-img>
                   </b-form>
                 </b-container>
               </div>
@@ -112,15 +113,15 @@
           </button>
 
           <div id="postedImg" class="w3-modal">
-            <div class="w3-modal-content">
+            <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
                 <span
                   onclick="document.getElementById('postedImg').style.display='none',
                   document.getElementById('home-page').style.overflowY='scroll',
                   document.getElementById('home-page').style.position='static'"
-                  class="w3-button w3-display-topright">
-                  &times;
-                </span>
+                  class="w3-button w3-display-topright"
+                  >&times;</span
+                >
                 <img class="image-popUp" v-bind:src="sr" :key="sr" />
               </div>
             </div>
