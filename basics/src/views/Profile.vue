@@ -1,5 +1,5 @@
 <template>
-  <div id="profile" class="profile">
+  <div class="profile">
     <section class="user-banner-profile">
       <div class="user-profile"></div>
       <p id="logo-for-feed">
@@ -10,33 +10,26 @@
       <p id="banner-profile-empty-space"></p>
       <div id="settings" class="w3-container">
         <button
-          onclick="document.getElementById('id02').style.display='block', 
-            document.getElementById('profile').style.overflowY='hidden',
-            document.getElementById('profile').style.position='fixed'"
+          onclick="document.getElementById('id02').style.display='block'"
           class="w3-button"
           id="settings-button"
         >
-          <b-icon icon="gear" id="settings-button-png"></b-icon>
+          <b-icon icon="gear" aria-hidden="true"></b-icon>
         </button>
 
         <div id="id02" class="w3-modal">
           <div class="w3-modal-content" id="settings-container">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id02').style.display='none', 
-                  document.getElementById('profile').style.overflowY='scroll',
-                  document.getElementById('profile').style.position='static'"
+                onclick="document.getElementById('id02').style.display='none'"
                 class="w3-button w3-display-topright"
-                id = "settings-button-x"
                 >&times;</span
               >
               <div class="settings-button-content">
                 <!-- change profile picture button  -->
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
-                    onclick="document.getElementById('id04').style.display='block', 
-                      document.getElementById('profile').style.overflowY='hidden',
-                      document.getElementById('profile').style.position='fixed'"
+                    onclick="document.getElementById('id04').style.display='block'"
                     class="w3-button w3-black"
                   >
                     Change Profile Picture
@@ -46,10 +39,8 @@
                     <div id="pfp-content" class="w3-modal-content">
                       <div class="w3-container">
                         <span
-                          onclick="document.getElementById('id04').style.display='none', 
-                            document.getElementById('profile').style.overflowY='scroll',
-                            document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright" 
+                          onclick="document.getElementById('id04').style.display='none'"
+                          class="w3-button w3-display-topright"
                           >&times;</span
                         >
                         <div>
@@ -70,9 +61,7 @@
                 <!-- changing bio button -->
                 <div id="bio-button-div" class="w3-container">
                   <button
-                    onclick="document.getElementById('id03').style.display='block', 
-                      document.getElementById('profile').style.overflowY='hidden',
-                      document.getElementById('profile').style.position='fixed'"
+                    onclick="document.getElementById('id03').style.display='block'"
                     class="w3-button"
                     id="bio-button-text"
                   >
@@ -80,12 +69,10 @@
                   </button>
 
                   <div id="id03" class="w3-modal">
-                    <div id="bio-content" class="w3-modal-content">
+                    <div class="w3-modal-content">
                       <div class="w3-container">
                         <span
-                          onclick="document.getElementById('id03').style.display='none', 
-                            document.getElementById('profile').style.overflowY='scrolled',
-                            document.getElementById('profile').style.position='static'"
+                          onclick="document.getElementById('id03').style.display='none'"
                           class="w3-button w3-display-topright"
                           >&times;</span
                         >
@@ -133,9 +120,7 @@
       <div class="user-box-1">
         <div class="w3-container">
           <button
-            onclick="document.getElementById('id01').style.display='block', 
-              document.getElementById('profile').style.overflowY='hidden',
-              document.getElementById('profile').style.position='fixed'"
+            onclick="document.getElementById('id01').style.display='block'"
             class="w3-button w3-black"
           >
             <div class="user-image-1">
@@ -154,9 +139,7 @@
           <div class="w3-modal-content">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id01').style.display='none', 
-                  document.getElementById('profile').style.overflowY='scroll',
-                  document.getElementById('profile').style.position='static'"
+                onclick="document.getElementById('id01').style.display='none'"
                 class="w3-button w3-display-topright"
                 >&times;</span
               >

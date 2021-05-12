@@ -1,5 +1,5 @@
 <template>
-  <div id="profile-other" class="profile-other">
+  <div class="profile-other">
     <section class="other-banner-profile">
       <div class="other-profile"></div>
       <p id="logo-for-feed">
@@ -8,9 +8,7 @@
       <p id="other-profile-empty-space"></p>
       <div id="settings" class="w3-container">
         <button
-          onclick="document.getElementById('id02').style.display='block',
-          document.getElementById('profile-other').style.overflowY='hidden',
-          document.getElementById('profile-other').style.position='fixed'"
+          onclick="document.getElementById('id02').style.display='block'"
           class="w3-button"
           id="settings-button"
         >
@@ -21,9 +19,7 @@
           <div class="w3-modal-content" id="settings-container">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id02').style.display='none',
-                document.getElementById('profile-other').style.overflowY='scroll',
-                document.getElementById('profile-other').style.position='static'"
+                onclick="document.getElementById('id02').style.display='none'"
                 class="w3-button w3-display-topright"
                 >&times;</span
               >
@@ -38,7 +34,7 @@
                   </button>
 
                   <div id="id04" class="w3-modal">
-                    <div id="pfp-content" class="w3-modal-content">
+                    <div id= "pfp-content" class="w3-modal-content">
                       <div class="w3-container">
                         <span
                           onclick="document.getElementById('id04').style.display='none'"
@@ -111,6 +107,7 @@
     </section>
     <h1 id="other-username-n-bio-phone">Name : {{ dName }}</h1>
 
+
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
@@ -122,9 +119,7 @@
       <div class="other-box-1">
         <div class="w3-container">
           <button
-            onclick="document.getElementById('id01').style.display='block',
-                    document.getElementById('profile-other').style.overflowY='hidden',
-                    document.getElementById('profile-other').style.position='fixed'"
+            onclick="document.getElementById('id01').style.display='block'"
             class="w3-button w3-black"
           >
             <div class="other-image-1">image</div>
@@ -138,9 +133,7 @@
           <div class="w3-modal-content">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id01').style.display='none',
-                          document.getElementById('profile-other').style.overflowY='scroll',
-                          document.getElementById('profile-other').style.position='static'"
+                onclick="document.getElementById('id01').style.display='none'"
                 class="w3-button w3-display-topright"
                 >&times;</span
               >
@@ -326,5 +319,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+
 @import "@/styles/ProfileOther.scss";
+
 </style>

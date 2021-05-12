@@ -1,7 +1,12 @@
 @import "@/styles/_variables.scss";
 
+.profile {
+  background-color: map-get($colors, light);
+  font-family: $font;
+}
+
 .user-banner-profile {
-  height: 6rem;
+  height: 5.3rem;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -9,82 +14,44 @@
 }
 
 #logo-for-feed {
-  width: 15%;
-  padding-left: 5rem;
+  padding-top: 0.25rem;
+  width: 14%;
+  text-align: center;
   border: 2px solid;
-  font-size: 0.75rem;
-  @include phone{
-    width: 20%;
-    margin: 0 0 2px;
-  }
 }
-
-.logo{
-  margin: -0.5rem -5rem 0rem;
-  @include phone{
-    height: 70%;
-    width: 65%;
-  }
+.logo {
+  height: 75%;
+  margin: 1.5% 0% 0% 10%;
 }
 
 #banner-profile-empty-space {
-  width: 90%;
+  width: 71%;
   border: 2px solid;
   border-left: none;
-  @include phone{
-    width: 60%;
-    margin: 0 0 2px;
-  }
+  margin-bottom: 0rem;
 }
 
 #settings {
   width: 15%;
-  border: 2px solid;
-  border-left: 0px;
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
-  @include phone{
-    margin-bottom: none;
-    width: 20%;
-    margin: 0 0 2px;
-  }
+  //border: none;
 }
 
 #settings-button {
   height: 100%;
   width: 100%;
-  padding: 0rem;
-  @include phone{
-    margin-bottom: none;
-    padding: 0rem;
-  }
-}
-#settings-button-x {
-  z-index: 2;
-}
-
-#settings-button-png{
-  @include phone{
-    height: 45%;
-    width: 50%;
-  }
+  padding-top: 0.5rem;
+  font-size: 30px;
 }
 
 #settings-container {
   width: 20rem;
-  height: auto;
+  height: 10rem;
 }
 
 .settings-button-content {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-}
-
-#fixing-margin-errors{
-  @include phone{
-    margin: 0 0 2px;
-  }
 }
 
 #bio-button-div {
@@ -95,7 +62,7 @@
 #change-pfp-button-div {
   width: 100%;
   border: 2px solid black;
-  margin-top: 1rem;
+  border-bottom: none;
 }
 
 #pfp-content {
@@ -120,6 +87,7 @@
 }
 
 .info-about-user {
+  //background-color: white;
   height: 30rem;
   margin: auto;
   display: flex;
@@ -131,7 +99,6 @@
   @include phone {
     width: 95%;
     height: 12rem;
-    margin: -1rem 1rem -1rem;
   }
   @include tablet {
     width: 90%;
@@ -139,18 +106,20 @@
 }
 
 .user-profile-pic {
+  background-color: white;
   height: 25rem;
   width: 40%;
   margin: 1rem;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-left: 0rem;
   @include phone {
-    height: 7rem;
-    width: 35%;
-  }
-  @include tablet {
+    height: 10rem;
     width: 50%;
   }
 }
@@ -164,10 +133,7 @@
   justify-content: center;
   margin-right: 0rem;
   @include phone {
-    height: 7rem;
-    width: 65%;
-  }
-  @include tablet {
+    height: 10rem;
     width: 50%;
   }
 }
@@ -180,55 +146,64 @@
   flex-direction: row;
   justify-content: center;
   @include phone {
-    height: 7rem;
+    height: 10rem;
     width: 100%;
     flex-direction: column;
   }
 }
 
 #user-following {
+  background-color: white;
   height: 100%;
   width: 90%;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-right: 1rem;
   @include phone {
     width: 100%;
     height: 50%;
-    margin-top: 0rem;
-    margin-right: 0rem;
-    margin: 0 0 2px;
   }
 }
 
 #user-followers {
+  background-color: white;
   height: 100%;
   width: 90%;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  border-color: #DBDBDB;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   font-size: 0.75rem;
   @include phone {
     width: 100%;
     height: 50%;
     margin-bottom: 0rem;
-    margin-top: 0rem;
-    margin: 0 0 2px;
   }
 }
 
 #user-username-n-bio {
+  background-color: white;
   height: 100%;
   width: 100%;
   margin: auto;
   display: flex;
-  border: 2px solid;
+  border: 1.2px solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  border-color: #DBDBDB;
   font-size: 0.75rem;
   margin-top: 1rem;
   margin-bottom: 0rem;
   @include phone {
     display: none;
-    margin: 0rem 1rem 1rem;
   }
 }
 
@@ -254,26 +229,28 @@
   width: 81.5%;
   @include phone {
     width: 95%;
-    height: 2.5rem;
   }
   @include tablet {
-    width: 94%;
-    margin-bottom: 2rem;
+    width: 90%;
   }
 }
 
 #user-banner-button {
+  background-color: map-get($colors, primary);
   width: 100%;
   border: 2px solid;
-  font-size: 1rem;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  font-size: 1.5rem;
   margin-bottom: 0rem;
   padding: 0.7rem;
   margin-right: 1rem;
   margin-left: 1rem;
   cursor: pointer;
   @include phone {
-    // margin-right: .1rem;
-    // margin-left: .1rem; 
+    margin-right: .1rem;
+    margin-left: .1rem; 
     font-size: .75rem;
   }
 }
@@ -285,38 +262,32 @@
   height: auto;
   width: 81.5%;
   margin: auto;
+  margin-bottom: 5rem;
   @include phone {
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2rem 1rem;
+    width: 95%
   }
-  @include tablet{
-    width: 91%;
+  @include tablet {
+    width: 90%;
   }
 }
 
 .user-box-1 {
-  display: flex;
+  //display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  margin-right: 0rem;
-  margin-left: 0rem;
-  margin-top: 0rem;
+  width: 33%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
   cursor: pointer;
   @include phone {
-    margin-top: 0rem;
-  }
-  @include tablet {
-    padding: .3rem
+    margin-top: 1rem;
   }
 }
 
 .user-image-1 {
   height: 20rem;
-  border: 2px solid;
+  border: 1.2px solid;
 }
 .placeholder {
   height: 100%;
@@ -331,6 +302,7 @@
   font-size: 1.5rem;
   padding: 10px;
   margin-top: 0rem;
+  //background-color: red;
 }
 
 //modal
@@ -347,46 +319,4 @@
 
 .w3-container {
   padding: 0rem !important;
-}
-
-.expanded-image {
-  width:100%;
-  height: auto; 
-}
-
-.picture-container {
-  border: 1px solid;
-  height: auto;
-  margin: 1rem;
-  margin-bottom: 0;
-  position: relative;
-  object-fit: cover;
-}
-
-.feed-post-container {
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.w3-container[data-v-ced23842] {
-    margin-bottom: 1rem;
-}
-
-.but{
-  padding: 8px 16px;
-  border-color: black;
-  background-color: white;
-}
-
-.but:hover {
-  background-color: lightgrey;
-}
-
-.modal-header {
-  padding: 1.5rem 1rem;
-}
-
-#bio-content {
-  height: 35vh;
-  padding-top: 3rem;
 }
