@@ -39,8 +39,20 @@
 #settings-button {
   height: 100%;
   width: 100%;
-  padding-top: 0.5rem;
-  font-size: 30px;
+  padding: 0rem;
+  @include phone{
+    margin-bottom: none; 
+    padding: 0rem;
+  }
+}
+
+#settings-button-png{
+  height: 40%;
+  width: 55%;
+  @include phone{
+    height: 45%;
+    width: 50%;
+  }
 }
 
 #settings-container {
