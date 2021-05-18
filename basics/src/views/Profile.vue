@@ -123,14 +123,14 @@
     </section>
     <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
 
-    <!-- <section class="user-banner-posts">
+    <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
       <p id="user-banner-button">Private Posts</p>
       <p id="user-banner-button">Liked Posts</p>
-    </section> -->
+    </section>
 
-    <!-- <section class="user-page-post">
+    <section class="user-page-post">
       <div class="user-box-1">
         <div class="w3-container">
           <button
@@ -179,7 +179,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div> -->
+                  </div>
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -190,7 +190,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                <!-- </div>
+                </div>
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@
                 &times;
               </span>
               <div class= "feed-post-container" >
-                <div class= "picture-container"> -->
+                <div class= "picture-container">
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -238,7 +238,7 @@
                     <b-dropdown-item href="#">Report</b-dropdown-item>
                   </b-dropdown> -->
 
-                  <!-- <div class="likes">
+                  <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
@@ -249,7 +249,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div> -->
+                  </div>
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -260,7 +260,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                <!-- </div>
+                </div>
               </div>
             </div>
           </div>
@@ -294,7 +294,7 @@
                 &times;
               </span>
               <div class= "feed-post-container">
-                <div class= "picture-container"> -->
+                <div class= "picture-container">
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -308,7 +308,7 @@
                     <b-dropdown-item href="#">Report</b-dropdown-item>
                   </b-dropdown> -->
 
-                  <!-- <div class="likes">
+                  <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
@@ -319,7 +319,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div> -->
+                  </div>
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -330,13 +330,13 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                <!-- </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
   </section>
 </template>
 
