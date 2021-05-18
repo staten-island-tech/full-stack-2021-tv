@@ -1,14 +1,16 @@
 <template>
   <section id="home-page" class="home-page">
     <section class="user-banner-profile">
-      <div id="logo-container">
-        <router-link to="/">
-          <img src="@/assets/tv.png" class="logo-png"/>
-        </router-link>
-      </div>
+      <div class="user-profile"></div>
+      <p id="logo-for-feed">
+        <router-link to="/"
+          ><img src="@/assets/tv.png" class="logo"
+        /></router-link>
+      </p>
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options"></v-select>
       </div>
+      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 
@@ -21,17 +23,17 @@
       </div>
 
       <div id="id01" class="w3-modal">
-        <div class="w3-modal-content" id="new-post-container">
+        <div class="w3-modal-content">
           <div class="w3-container">
             <span
               onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
                 document.getElementById('home-page').style.position='static'"
-              class="w3-button w3-display-topright">
-              &times;
-            </span>
+              class="w3-button w3-display-topright"
+              >&times;</span
+            >
             <div class="modal-body">
-              <p class="modal-header">New Post</p>
+              <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <b-container class="mt-3" fluid>
                   <b-form @submit.stop.prevent="onSubmit">
@@ -40,8 +42,7 @@
                         v-model="image"
                         placeholder="Choose an image"
                         class="w-auto flex-grow-1"
-                      >
-                      </b-form-file>
+                      ></b-form-file>
                       <b-button
                         v-if="hasImage"
                         variant="danger"
@@ -55,8 +56,7 @@
                       v-if="hasImage"
                       :src="imageSrc"
                       class="mb-3"
-                    >
-                    </b-img>
+                    ></b-img>
                   </b-form>
                 </b-container>
               </div>
@@ -90,8 +90,9 @@
       </div>
     </section>
 
+    <!-- feed section = fixing popup -->
     <section class="feed">
-      <div class="feed-post" v-for="sr in i_sr" :key="sr">
+      <div class="feed-post" v-for="sr in i_sr" :key="sr.durl">
         <div class="picture">
           <!-- report button 
           <b-dropdown variant="none" class="report-button" size="lg" no-caret>
@@ -101,42 +102,59 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <button
-            onclick="document.getElementById('postedImg').style.display='block', 
+            <img
+              :src="sr.durl"
+              :key="sr.durl"
+              class="placeholder"
+            />
+
+          <div class="likes">
+          <div class = "likes-container">
+            <b-icon
+              variant="danger"
+              icon="heart"
+              v-on:click="likePress(sr.id, sr.likes)"
+              v-bind:key="sr.likes"
+            ></b-icon>
+            {{ sr.likes }} likes
+          </div>
+          
+          <div class = "enlarge-container">
+            <button
+            onclick=" 
             document.getElementById('home-page').style.overflowY='hidden',
             document.getElementById('home-page').style.position='fixed'"
             class="w3-button"
-            id="image-button-container"
-          >
-            <img v-bind:src="sr" :key="sr" class="placeholder" />
-          </button>
-
-          <div id="postedImg" class="w3-modal">
-            <div class="w3-modal-content">
+            id="enlargeText"
+            v-on:click= "sr.disp = 'block'" 
+            > Full Image </button>
+            
+            <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
+            <div class="w3-modal-content" id="pop-up-container">
               <div class="w3-container">
                 <span
-                  onclick="document.getElementById('postedImg').style.display='none',
+                  onclick="
                   document.getElementById('home-page').style.overflowY='scroll',
                   document.getElementById('home-page').style.position='static'"
-                  class="w3-button w3-display-topright">
-                  &times;
-                </span>
-                <img class="image-popUp" v-bind:src="sr" :key="sr" />
+                  class="w3-button w3-display-topright"
+                  v-on:click="sr.disp = 'none'"
+                  >&times;</span
+                >
+                <img class="image-popUp" v-bind:src="sr.durl" :key="sr.durl" />
               </div>
+            </div>
             </div>
           </div>
 
-          <div class="likes">
-            <b-icon variant="danger" icon="heart"></b-icon> 1 like
-          </div>
         </div>
+      </div>
 
         <div class="description-comment">
           <div class="description">
             <router-link to="/ProfileOther" class="username">
-              Name
+              {{ sr.dName }}
             </router-link>
-            <p class="caption">caption</p>
+            <p class="caption">{{ sr.caption }}</p>
           </div>
           <!-- <div class="comment-section">
               <router-link
@@ -166,9 +184,14 @@ export default {
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
       console.log(user);
-
+      let c_tag = document.getElementById("tag_select").value;
       let p_img = document.getElementById("postImg").files[0];
-      let storagePic = storageRef.child("Posts/" + user.uid + "_" + p_img.name);
+      let p_caption = document.getElementById("p-caption").value;
+      let servertime = firebase.database.ServerValue.TIMESTAMP;
+      servertime = servertime.toString().replace(/[.-]/g, "");
+      let storagePic = storageRef.child(
+        "Posts/" + user.uid + "_" + p_img.name + "_" + servertime
+      );
       storagePic.put(p_img);
 
       let db = firebase.database();
@@ -176,11 +199,19 @@ export default {
       console.log(p_img.name);
       storagePic.getMetadata().then((meta) => {
         storagePic.getDownloadURL().then((durl) => {
-          dbRef.child(`${p_img.name.replace(/[^a-zA-Z ]/g, "")}`).set({
-            date: `${meta.timeCreated}`,
-            url: `${durl}`,
-            UID: `${user.uid}`,
-          });
+          dbRef
+            .child(
+              `${p_img.name.replace(/[,.-:]/g, "") +
+                meta.timeCreated.toString().replace(/[.-]/g, "")}`
+            )
+            .set({
+              date: `${meta.timeCreated}`,
+              url: `${durl}`,
+              dName: `${user.displayName}`,
+              caption: `${p_caption}`,
+              likes: 0,
+              tag: `${c_tag}`,
+            });
         });
       });
     },
@@ -190,15 +221,75 @@ export default {
 
       datRef.once("value").then((sn) => {
         sn.forEach((postChild) => {
+          let displ = "none";
           console.log(i);
           let dURL = postChild.child("url").val();
           console.log(dURL);
-          Vue.set(this.i_sr, i, dURL);
+          let dn = postChild.child("dName").val();
+          let cp = postChild.child("caption").val();
+          let key = postChild.key;
+          let hearts = postChild.child("likes").val();
+          let tag = postChild.child("tag").val();
 
-          console.log(i + "_-_" + this.i_sr[i]);
+          Vue.set(this.i_sr, i, {
+            disp: displ,
+            durl: dURL,
+            dName: dn,
+            caption: cp,
+            id: key,
+            likes: hearts,
+            tag: tag,
+          });
+          //Vue.set(this.i_sr, i, {});
+
+          console.log(this.i_sr[i].durl);
+          console.log(this.i_sr[i].disp);
+          console.log(this.i_sr[i].dName);
+          console.log(this.i_sr[i].caption);
+          console.log(this.i_sr[i].id);
+          console.log(this.i_sr[i].likes);
+          console.log(this.i_sr[i].tag);
           i++;
         });
       });
+      datRef.on("value").then((sn) => {
+        sn.forEach((postChild) => {
+          let displ = "none";
+          console.log(i);
+          let dURL = postChild.child("url").val();
+          console.log(dURL);
+          let dn = postChild.child("dName").val();
+          let cp = postChild.child("caption").val();
+          let key = postChild.key;
+          let hearts = postChild.child("likes").val();
+          let tag = postChild.child("tag").val();
+
+          Vue.set(this.i_sr, i, {
+            disp: displ,
+            durl: dURL,
+            dName: dn,
+            caption: cp,
+            id: key,
+            likes: hearts,
+            tag: tag,
+          });
+          //Vue.set(this.i_sr, i, {});
+
+          console.log(this.i_sr[i].durl);
+          console.log(this.i_sr[i].disp);
+          console.log(this.i_sr[i].dName);
+          console.log(this.i_sr[i].caption);
+          console.log(this.i_sr[i].id);
+          console.log(this.i_sr[i].likes);
+          console.log(this.i_sr[i].tag);
+          i++;
+        });
+      });
+    },
+    likePress(id, c_likes) {
+      let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+      let n_likes = c_likes + 1;
+      datRef.set(n_likes);
     },
     clearImage() {
       this.image = null;
@@ -224,12 +315,12 @@ export default {
     return {
       image: null,
       imageSrc: null,
-
+      dispMode: [""],
       caption: "",
       blog: {
         tag: "",
       },
-      i_sr: [""],
+      i_sr: {},
       options: [
         "Education",
         "Entertainment",

@@ -6,6 +6,9 @@
 // .logo {
 //   width: 6vh;
 // }
+#profile-other{
+  width: 100%;
+}
 
 .other-banner-profile {
   height: 6rem;
@@ -13,23 +16,26 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  background-color: lavender;
 }
 
 #logo-for-feed {
-  width: 5%;
+  width: 15%;
+  padding-left: 5rem;
   border: 2px solid;
   font-size: 0.75rem;
+  padding-top: 1.25rem;
   @include phone{
     width: 20%;
+    margin: 0 0 2px;
   }
 }
 
 .logo{
-  // width: 5%;
+  margin: -0.5rem -5rem 0rem;
   @include phone{
-    height: 100%;
-    width: 100%;
-    width: 20%;
+    height: 70%;
+    width: 65%;
   }
 }
 
@@ -37,43 +43,38 @@
   width: 90%;
   border: 2px solid;
   border-left: none;
+  height: 100%;
   @include phone{
     width: 60%;
+    margin: 0 0 2px;
   }
 }
 
-//settings of other///
+//avatar///
 
-#settings {
-  width: 5%;
+#avatar {
+  text-align: center;
+  width: 15%;
   border: 2px solid;
-  border-left: 0px;
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
-  @include phone{
-    margin-bottom: none;
-    width: 20%;
+  border-left: none;
+}
+
+.avatar-icon {
+  padding-bottom: 0.4rem;
+  color: black;
+  @include phone {
+    margin-left: 0rem;
   }
 }
 
-#settings-button {
-  height: 100%;
-  width: 100%;
+.b-avatar {
+  margin-top: .5rem;
+}
+
+#fixing-margin-errors{
   @include phone{
-    margin-bottom: none;
-    padding: 0rem;
+    margin: 0 0 2px;
   }
-}
-
-#settings-container {
-  width: 20rem;
-  height: 10rem;
-}
-
-.settings-button-content {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
 }
 
 #bio-button-div {
@@ -122,6 +123,7 @@
   @include phone {
     width: 95%;
     height: 12rem;
+    margin: -1rem 1rem -1rem;
   }
 }
 
@@ -179,6 +181,7 @@
     height: 50%;
     margin-top: 0rem;
     margin-right: 0rem;
+    margin: 0 0 2px;
   }
 }
 
@@ -193,6 +196,7 @@
     height: 50%;
     margin-bottom: 0rem;
     margin-top: 0rem;
+    margin: 0 0 2px;
   }
 }
 
@@ -207,6 +211,7 @@
   margin-bottom: 0rem;
   @include phone {
     display: none;
+    margin: 0rem 1rem 1rem;
   }
 }
 
