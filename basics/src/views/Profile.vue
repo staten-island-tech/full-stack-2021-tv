@@ -123,12 +123,12 @@
     </section>
     <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
 
-    <section class="user-banner-posts">
+    <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
       <p id="user-banner-button">Private Posts</p>
       <p id="user-banner-button">Liked Posts</p>
-    </section>
+    </section> -->
 
     <section class="user-page-post">
       <div class="user-box-1">
