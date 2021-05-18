@@ -1,38 +1,56 @@
 @import "@/styles/_variables.scss";
 
+.profile {
+  height: 100vh;
+  width: 100%;
+  background-color: map-get($colors, background-grey);
+  font-family: $font;
+  padding-bottom: 2.5rem;
+}
+
+
 .user-banner-profile {
-  height: 6rem;
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  height: 5.3rem;
+  width: 100%;
+  margin: auto;
+  background-color: map-get($colors, primary);
+  //transition: transform 0.25s;
 }
+// .user-banner-profile.is-visible {
+//   transform: translateY(0%);
+// }
+// .user-banner-profile.is-hidden {
+//   transform: translateY(-300%);
+// }
 
-#logo-for-feed {
-  width: 15%;
-  padding-left: 5rem;
-  border: 2px solid;
-  font-size: 0.75rem;
-  padding-top: 1.25rem;
-  @include phone{
-    width: 20%;
-    margin: 0 0 2px;
-  }
-}
-
-.logo{
-  margin: -0.5rem -4.35rem 0rem;
-  @include phone{
-    height: 100%;
-    width: 160%;
-  }
-}
-
-#banner-profile-empty-space {
-  width: 90%;
-  border: 2px solid;
-  border-left: none;
+#logo-container {
+  padding: 0.25rem 1% 0 0;
   height: 100%;
+  width: 15%;
+  text-align: center;
+  @include phone {
+    padding: 0rem 0rem 0.25rem 0rem;
+  }
+}
+.logo-png {
+  height: 75%;
+  margin: 1.5% 0% 0% 10%;
+  @include phone {
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+#banner-middle {
+  height: 100%;
+  width: 70%;
   @include phone{
     width: 60%;
     margin: 0 0 2px;
@@ -40,86 +58,116 @@
 }
 
 #settings {
-  width: 15%;
-  border: 2px solid;
-  border-left: 0px;
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
+  border: none;
   height: 100%;
+  width: 15%;
   @include phone{
     margin-bottom: none;
     width: 20%;
     margin: 0 0 2px;
   }
 }
-
 #settings-button {
   height: 100%;
   width: 100%;
-  padding: 0rem;
+  background-color: map-get($colors, primary);
+  border: none;
   @include phone{
-    margin-bottom: none; 
-    padding: 0rem;
+    margin-bottom: none;
   }
 }
-
-#settings-button-png{
-  height: 40%;
-  width: 55%;
+#settings-button-png {
+  font-size: 3rem;
   @include phone{
     height: 45%;
     width: 50%;
   }
 }
 
+
 #settings-container {
-  width: 20rem;
-  height: auto;
+  background-color: map-get($colors, accent1);
+  width: 40%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  padding: 0px 10px 0px 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 3rem;
+  z-index: 1;
+}
+.close-button:hover {
+  background-color: lightgrey;
 }
 
-.settings-button-content {
+.settings-menu-header {
+  padding: 1rem 0 .5rem 0;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.settings-menu {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 }
-
-#fixing-margin-errors{
-  @include phone{
-    margin: 0 0 2px;
-  }
-}
-
-#bio-button-div {
+.settings-menu-button {
   width: 100%;
-  border: 2px solid black;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 1.8rem;
 }
-
-#change-pfp-button-div {
-  width: 100%;
-  border: 2px solid black;
-  margin-top: 1rem;
+.settings-menu-icon {
+  margin-right: 1rem;
 }
 
 #pfp-content {
-  width: 20rem;
-  height: 10rem;
+  height: 80%;
+  width: 40%;
+  background-color: map-get($colors, accent2);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
-#bio-button-text {
-  width: 100%;
+#bio-content {
+  height: 60%;
+  width: 40%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: map-get($colors, accent3);
 }
-
+.bio-content-container {
+  padding-top: 0rem;
+}
 .bio-input {
   width: 100%;
   height: 150px;
-  padding: 12px 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
   resize: none;
+  padding: 1rem;
+  font-size: 1.8rem;
 }
+.save-button {
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
 
 .info-about-user {
   height: 30rem;
@@ -128,7 +176,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: -1rem;
   width: 80%;
   @include phone {
     width: 95%;
@@ -142,8 +189,11 @@
   width: 40%;
   margin: 1rem;
   display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
   margin-left: 0rem;
   @include phone {
     height: 7rem;
@@ -154,77 +204,88 @@
 .generic-info {
   height: 25rem;
   width: 60%;
-  margin-right: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 0rem;
   @include phone {
     height: 7rem;
     width: 65%;
   }
 }
+// #user-following-followers {
+//   height: 100%;
+//   width: 100%;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   @include phone {
+//     height: 7rem;
+//     width: 100%;
+//     flex-direction: column;
+//   }
+// }
 
-#user-following-followers {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  @include phone {
-    height: 7rem;
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
-#user-following {
-  height: 100%;
-  width: 90%;
-  display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
-  margin-right: 1rem;
-  @include phone {
-    width: 100%;
-    height: 50%;
-    margin-top: 0rem;
-    margin-right: 0rem;
-    margin: 0 0 2px;
-  }
-}
-
-#user-followers {
-  height: 100%;
-  width: 90%;
-  display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
-  @include phone {
-    width: 100%;
-    height: 50%;
-    margin-bottom: 0rem;
-    margin-top: 0rem;
-    margin: 0 0 2px;
-  }
-}
-
+// #user-following {
+//   background-color: white;
+//   height: 100%;
+//   width: 90%;
+//   display: flex;
+//   border: 1.35px solid;
+//   -webkit-border-radius: 10px;
+//   -moz-border-radius: 10px;
+//   border-radius: 10px;
+//   border-color: #DBDBDB;
+//   padding: 1rem;
+//   font-size: 1.35rem;
+//   margin-right: 1rem;
+//   @include phone {
+//     width: 100%;
+//     height: 50%;
+//     margin-top: 0rem;
+//     margin-right: 0rem;
+//     margin: 0 0 2px;
+//   }
+// }
+// #user-followers {
+//   background-color: white;
+//   height: 100%;
+//   width: 90%;
+//   display: flex;
+//   border: 1.35px solid;
+//   -webkit-border-radius: 10px;
+//   -moz-border-radius: 10px;
+//   border-radius: 10px;
+//   border-color: #DBDBDB;
+//   padding: 1rem;
+//   font-size: 1.35rem;
+//   @include phone {
+//     width: 100%;
+//     height: 50%;
+//     margin-bottom: 0rem;
+//     margin-top: 0rem;
+//     margin: 0 0 2px;
+//   }
+// }
 #user-username-n-bio {
+  background-color: white;
   height: 100%;
   width: 100%;
   margin: auto;
   display: flex;
-  border: 2px solid;
-  font-size: 0.75rem;
-  margin-top: 1rem;
-  margin-bottom: 0rem;
+  // margin-top: 1rem;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  padding: 1rem;
+  font-size: 1.35rem;
   @include phone {
     display: none;
-    margin: -5% 3%;
+    margin: 0rem 1rem 1rem;
   }
 }
-
 #user-username-n-bio-phone {
   display: none;
   @include phone {
@@ -238,28 +299,38 @@
   }
 }
 
+.w3-container {
+  padding: revert;
+}
 .user-banner-posts {
   height: 4rem;
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   text-align: center;
-  width: 82%;
-  margin: auto;
+  margin-top: 1rem;
   margin-bottom: 2rem;
+  width: 81.5%;
   @include phone {
     width: 95%;
     height: 2.5rem;
-    margin: 0% 3% -1%;
   }
 }
 
 #user-banner-button {
   width: 100%;
-  border: 2px solid;
-  font-size: 1rem;
+  background-color: map-get($colors, primary);
+  // border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  // border-color: #DBDBDB;
+  font-size: 1.7rem;
+  font-weight: bold;
   margin-bottom: 0rem;
-  padding: 0.7rem;
+  padding: 1rem;
+  margin: auto;
   margin-right: 1rem;
   margin-left: 1rem;
   cursor: pointer;
@@ -273,7 +344,7 @@
 .user-page-post {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   height: auto;
   width: 81.5%;
   margin: auto;
@@ -287,92 +358,64 @@
 }
 
 .user-box-1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
-  margin-right: 0rem;
-  margin-left: 0rem;
-  margin-top: 0rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
   }
 }
+.post-button {
+  background-color: white;
+  border: 1.35px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: #DBDBDB;
+  padding: 0;
+  font-size: 1.8rem;
+}
+.post-button:hover {
+  background-color: #CCCCCC;
+}
 
 .user-image-1 {
   height: 20rem;
-  border: 2px solid;
 }
 .placeholder {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: revert;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
 }
 .user-likes {
   width: 100%;
   text-align: center;
-  border: 2px solid;
-  border-top: none;
-  font-size: 1.5rem;
-  padding: 10px;
-  margin-top: 0rem;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-//modal
 
-.w3-black {
-  border: none;
-  border-radius: 0rem;
-  margin-top: 0rem;
-  margin-left: 0rem;
-  margin: 0rem;
-  width: 100%;
-  margin-right: 1rem;
-}
-
-.w3-container {
-  padding: 0rem !important;
-}
-
-.expanded-image {
-  width:100%;
-  height: auto; 
+.modal-container {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 95%;
+  width: fit-content;
+  padding: 0;
 }
 
 .picture-container {
-  border: 1px solid;
-  height: auto;
-  margin: 1rem;
-  margin-bottom: 0;
   position: relative;
+
+}
+.expanded-image {
+  height: 40rem;
   object-fit: cover;
-}
-
-.feed-post-container {
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.w3-container[data-v-ced23842] {
-    margin-bottom: 1rem;
-}
-
-.but{
-  padding: 8px 16px;
-  border-color: black;
-  background-color: white;
-}
-
-.but:hover {
-  background-color: lightgrey;
-}
-
-.modal-header {
-  padding: 1.5rem 1rem;
-}
-
-#bio-content {
-  height: 35vh;
-  padding-top: 3rem;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
 }

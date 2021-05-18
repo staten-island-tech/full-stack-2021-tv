@@ -1,14 +1,14 @@
 <template>
-  <div id="profile" class="profile">
+  <section id="profile" class="profile">
+    <h1 style="display:none"> Profile Page </h1>
     <section class="user-banner-profile">
-      <div class="user-profile"></div>
-      <p id="logo-for-feed">
-        <router-link to="/"
-          ><img src="@/assets/tv.png" class="logo"
-        /></router-link>
-      </p>
-      <p id="banner-profile-empty-space"></p>
-      <div id="settings" class="w3-container">
+      <div id="logo-container">
+        <router-link to="/" alt="Link to Home Page">
+          <img src="@/assets/tv.png" class="logo" alt="Site Logo: purple television icon"/>
+        </router-link>
+      </div>
+      <p id="banner-middle"></p>
+      <div id="settings" class="settings-button-container">
         <button
           onclick="document.getElementById('id02').style.display='block', 
             document.getElementById('profile').style.overflowY='hidden',
@@ -26,19 +26,20 @@
                 onclick="document.getElementById('id02').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="w3-button w3-display-topright"
-                >&times;</span
+                class="close-button"
               >
-              <div class="settings-button-content">
-                <!-- change profile picture button  -->
+              &times;
+              </span>
+              <p class="settings-menu-header">Account Settings</p>
+              <div class="settings-menu">
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
                     onclick="document.getElementById('id04').style.display='block', 
                       document.getElementById('profile').style.overflowY='hidden',
                       document.getElementById('profile').style.position='fixed'"
-                    class="w3-button w3-black"
+                    class="w3-button settings-menu-button"
                   >
-                    Change Profile Picture
+                    <b-icon icon="image" class="settings-menu-icon"></b-icon> Change Profile Picture
                   </button>
 
                   <div id="id04" class="w3-modal">
@@ -48,9 +49,11 @@
                           onclick="document.getElementById('id04').style.display='none', 
                             document.getElementById('profile').style.overflowY='scroll',
                             document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
+                          class="close-button"
                         >
+                        &times;
+                        </span>
+                        <p class="settings-menu-header"> Change Profile Picture </p>
                         <div>
                           <input type="file" id="pfpUpload" accept="image/*" />
                           <button
@@ -72,33 +75,36 @@
                     onclick="document.getElementById('id03').style.display='block', 
                       document.getElementById('profile').style.overflowY='hidden',
                       document.getElementById('profile').style.position='fixed'"
-                    class="w3-button"
+                    class="w3-button settings-menu-button"
                     id="bio-button-text"
                   >
-                    Edit Bio
+                    <b-icon icon="pencil" class="settings-menu-icon"></b-icon> Edit Bio
                   </button>
 
                   <div id="id03" class="w3-modal">
                     <div id="bio-content" class="w3-modal-content">
-                      <div class="w3-container">
+                      <div class="bio-content-container w3-container">
                         <span
                           onclick="document.getElementById('id03').style.display='none', 
                             document.getElementById('profile').style.overflowY='scrolled',
                             document.getElementById('profile').style.position='static'"
-                          class="w3-button w3-display-topright"
-                          >&times;</span
-                        >
+                          class="close-button">
+                          &times;
+                        </span>
+                        <p class="settings-menu-header">Edit Bio</p>
                         <textarea
                           class="bio-input"
-                          placeholder="Write something.."
-                        ></textarea>
-                        <button>submit</button>
+                          placeholder="Write Here...">
+                        </textarea>
+                        <button class="save-button w3-button w3-white w3-border"> Save </button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <button class="but" @click="signOut">Sign out</button>
+                <button class="settings-menu-button w3-button" @click="signOut">
+                  <b-icon icon="box-arrow-right" class="settings-menu-icon"></b-icon> Sign out
+                </button>
               </div>
             </div>
           </div>
@@ -107,28 +113,24 @@
     </section>
 
     <section class="info-about-user">
-      <div class="user-profile-pic/generic-info"></div>
-      <img class="user-profile-pic" v-bind:src="pfp" :key="pfp" />
-
+      <img class="user-profile-pic" alt="User's Profile Picture" v-bind:src="pfp" :key="pfp" />
       <div class="generic-info">
-        <div id="user-following-followers">
+        <!-- <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
-        </div>
-
-        <h1 id="user-username-n-bio">Name : {{ dName }}</h1>
+        </div> -->
+        <h1 id="user-username-n-bio" alt="Profile Username">Name: {{ dName }}</h1>
       </div>
     </section>
-    <h1 id="user-username-n-bio-phone">Name : {{ dName }}</h1>
 
-    <section class="user-banner-posts">
+    <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
       <p id="user-banner-button">Private Posts</p>
       <p id="user-banner-button">Liked Posts</p>
-    </section>
+    </section> -->
 
-    <section class="user-page-post">
+    <!-- <section class="user-page-post">
       <div class="user-box-1">
         <div class="w3-container">
           <button
@@ -167,18 +169,7 @@
                     src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                   />
                   
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
+                  
 
                   <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
@@ -191,7 +182,8 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div>
+                  </div> 
+                </div>-->
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -202,7 +194,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </div>
@@ -237,7 +229,7 @@
               >
               <div class="modal-header"></div>
               <div class= "feed-post-container" >
-                <div class= "picture-container">
+                <div class= "picture-container"> -->
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -251,7 +243,7 @@
                     <b-dropdown-item href="#">Report</b-dropdown-item>
                   </b-dropdown> -->
 
-                  <div class="likes">
+                  <!-- <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
@@ -262,7 +254,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div>
+                  </div> -->
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -273,7 +265,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </div>
@@ -308,7 +300,7 @@
               >
               <div class="modal-header"></div>
               <div class= "feed-post-container">
-                <div class= "picture-container">
+                <div class= "picture-container"> -->
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -322,7 +314,7 @@
                     <b-dropdown-item href="#">Report</b-dropdown-item>
                   </b-dropdown> -->
 
-                  <div class="likes">
+                  <!-- <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
@@ -333,7 +325,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div>
+                  </div> -->
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -344,14 +336,14 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </section> -->
+  </section>
 </template>
 
 <script>
