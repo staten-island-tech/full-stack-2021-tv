@@ -139,7 +139,7 @@
 
 .user-profile-pic {
   height: 25rem;
-  width: 40%;
+  width: 25%;
   margin: 1rem;
   display: flex;
   border: 2px solid;
@@ -153,7 +153,7 @@
 
 .generic-info {
   height: 25rem;
-  width: 60%;
+  width: 33%;
   margin-right: 1rem;
   display: flex;
   flex-direction: column;
@@ -217,7 +217,7 @@
   display: flex;
   border: 2px solid;
   font-size: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   margin-bottom: 0rem;
   @include phone {
     display: none;
@@ -290,9 +290,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 35%;
   margin-right: 0rem;
-  margin-left: 0rem;
+  margin-left: 1.5rem;
   margin-top: 0rem;
   cursor: pointer;
   @include phone {

@@ -111,22 +111,103 @@
       <img class="user-profile-pic" v-bind:src="pfp" :key="pfp" />
 
       <div class="generic-info">
-        <div id="user-following-followers">
+        <!-- <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
-        </div>
+        </div> -->
 
         <h1 id="user-username-n-bio">Name : {{ dName }}</h1>
+      </div>
+
+      <div class="user-box-1">
+        <div class="w3-container">
+          <button
+            onclick="document.getElementById('id01').style.display='block', 
+              document.getElementById('profile').style.overflowY='hidden',
+              document.getElementById('profile').style.position='fixed'"
+            class="w3-button w3-black"
+          >
+            <div class="user-image-1">
+              <img
+                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                class="placeholder"
+              />
+            </div>
+            <h2 class="user-likes">
+              <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            </h2>
+          </button>
+        </div>
+
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span
+                onclick="document.getElementById('id01').style.display='none', 
+                  document.getElementById('profile').style.overflowY='scroll',
+                  document.getElementById('profile').style.position='static'"
+                class="w3-button w3-display-topright"
+                >&times;</span
+              >
+              <div class="modal-header"></div>
+              <div class= "feed-post-container">
+                <div class= "picture-container">
+                  <img
+                    class="expanded-image"
+                    src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                  />
+                  
+                  <!-- report button 
+                  <b-dropdown
+                    variant="none"
+                    class="report-button"
+                    size="lg"
+                    no-caret
+                  >
+                    <template #button-content>
+                      <span>...</span>
+                    </template>
+                    <b-dropdown-item href="#">Report</b-dropdown-item>
+                  </b-dropdown> -->
+
+                  <div class="likes">
+                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                  </div>
+                </div>
+
+                <div class="description-comment">
+                  <div class="description">
+                    <router-link to="/ProfileOther" class="username">
+                      Name
+                    </router-link>
+                    <p class="caption">caption</p>
+                  </div>
+                  <!-- <div class="comment-section">
+          <router-link
+            to="/ProfileOther"
+            id="comment-username"
+            class="username"
+          >
+            Name
+          </router-link>
+          <p class="comment">comment</p>
+        </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <h1 id="user-username-n-bio-phone">Name : {{ dName }}</h1>
 
-    <section class="user-banner-posts">
+    
+    <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
       <p id="user-banner-button">Private Posts</p>
       <p id="user-banner-button">Liked Posts</p>
-    </section>
+    </section> -->
 
     <section class="user-page-post">
       <div class="user-box-1">
