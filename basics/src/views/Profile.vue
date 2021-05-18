@@ -1,9 +1,10 @@
 <template>
   <section id="profile" class="profile">
+    <h1 style="display:none"> Profile Page </h1>
     <section class="user-banner-profile">
       <div id="logo-container">
-        <router-link to="/">
-          <img src="@/assets/tv.png" class="logo-png"/>
+        <router-link to="/" alt="Link to Home Page">
+          <img src="@/assets/tv.png" class="logo" alt="Site Logo: purple television icon"/>
         </router-link>
       </div>
       <p id="banner-middle"></p>
@@ -24,7 +25,7 @@
                 onclick="document.getElementById('id02').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="close-button w3-button w3-display-topright"
+                class="close-button"
               >
               &times;
               </span>
@@ -47,7 +48,7 @@
                           onclick="document.getElementById('id04').style.display='none', 
                             document.getElementById('profile').style.overflowY='scroll',
                             document.getElementById('profile').style.position='static'"
-                          class="close-button w3-button w3-display-topright"
+                          class="close-button"
                         >
                         &times;
                         </span>
@@ -86,7 +87,7 @@
                           onclick="document.getElementById('id03').style.display='none', 
                             document.getElementById('profile').style.overflowY='scrolled',
                             document.getElementById('profile').style.position='static'"
-                          class="close-button w3-button w3-display-topright">
+                          class="close-button">
                           &times;
                         </span>
                         <p class="settings-menu-header">Edit Bio</p>
@@ -111,25 +112,25 @@
     </section>
 
     <section class="info-about-user">
-      <img class="user-profile-pic" v-bind:src="pfp" :key="pfp" />
+      <img class="user-profile-pic" alt="User's Profile Picture" v-bind:src="pfp" :key="pfp" />
       <div class="generic-info">
-        <div id="user-following-followers">
+        <!-- <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
-        </div>
-        <h1 id="user-username-n-bio">Name: {{ dName }}</h1>
+        </div> -->
+        <h1 id="user-username-n-bio" alt="Profile Username">Name: {{ dName }}</h1>
       </div>
     </section>
     <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
 
-    <section class="user-banner-posts">
+    <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
       <p id="user-banner-button">Public Posts</p>
       <p id="user-banner-button">Private Posts</p>
       <p id="user-banner-button">Liked Posts</p>
-    </section>
+    </section> -->
 
-    <section class="user-page-post">
+    <!-- <section class="user-page-post">
       <div class="user-box-1">
         <div class="w3-container">
           <button
@@ -178,7 +179,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div>
+                  </div> -->
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -189,7 +190,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </div>
@@ -223,7 +224,7 @@
                 &times;
               </span>
               <div class= "feed-post-container" >
-                <div class= "picture-container">
+                <div class= "picture-container"> -->
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -237,7 +238,7 @@
                     <b-dropdown-item href="#">Report</b-dropdown-item>
                   </b-dropdown> -->
 
-                  <div class="likes">
+                  <!-- <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
@@ -248,7 +249,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div>
+                  </div> -->
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -259,7 +260,7 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </div>
@@ -293,7 +294,7 @@
                 &times;
               </span>
               <div class= "feed-post-container">
-                <div class= "picture-container">
+                <div class= "picture-container"> -->
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -307,7 +308,7 @@
                     <b-dropdown-item href="#">Report</b-dropdown-item>
                   </b-dropdown> -->
 
-                  <div class="likes">
+                  <!-- <div class="likes">
                     <b-icon variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
@@ -318,7 +319,7 @@
                       Name
                     </router-link>
                     <p class="caption">caption</p>
-                  </div>
+                  </div> -->
                   <!-- <div class="comment-section">
           <router-link
             to="/ProfileOther"
@@ -329,13 +330,13 @@
           </router-link>
           <p class="comment">comment</p>
         </div> -->
-                </div>
+                <!-- </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </section>
 </template>
 
