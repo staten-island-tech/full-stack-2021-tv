@@ -94,18 +94,26 @@
 }
 .close-button {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  cursor: pointer;
-  padding: 0px 10px 0px 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   font-size: 3rem;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
   z-index: 1;
 }
 .close-button:hover {
   background-color: lightgrey;
+}
+.close-post-button {
+  background-color: map-get($colors, primary);
+  opacity: 50%;
+}
+.close-post-button:hover {
+  opacity: 100%;
 }
 
 .settings-menu-header {
@@ -302,44 +310,44 @@
 .w3-container {
   padding: revert;
 }
-.user-banner-posts {
-  height: 4rem;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 81.5%;
-  @include phone {
-    width: 95%;
-    height: 2.5rem;
-  }
-}
+// .user-banner-posts {
+//   height: 4rem;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-evenly;
+//   text-align: center;
+//   margin-top: 1rem;
+//   margin-bottom: 2rem;
+//   width: 81.5%;
+//   @include phone {
+//     width: 95%;
+//     height: 2.5rem;
+//   }
+// }
 
-#user-banner-button {
-  width: 100%;
-  background-color: map-get($colors, primary);
-  // border: 1.35px solid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  // border-color: #DBDBDB;
-  font-size: 1.7rem;
-  font-weight: bold;
-  margin-bottom: 0rem;
-  padding: 1rem;
-  margin: auto;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  @include phone {
-    // margin-right: .1rem;
-    // margin-left: .1rem; 
-    font-size: .75rem;
-  }
-}
+// #user-banner-button {
+//   width: 100%;
+//   background-color: map-get($colors, primary);
+//   // border: 1.35px solid;
+//   -webkit-border-radius: 10px;
+//   -moz-border-radius: 10px;
+//   border-radius: 10px;
+//   // border-color: #DBDBDB;
+//   font-size: 1.7rem;
+//   font-weight: bold;
+//   margin-bottom: 0rem;
+//   padding: 1rem;
+//   margin: auto;
+//   margin-right: 1rem;
+//   margin-left: 1rem;
+//   cursor: pointer;
+//   @include phone {
+//     // margin-right: .1rem;
+//     // margin-left: .1rem; 
+//     font-size: .75rem;
+//   }
+// }
 
 .user-page-post {
   display: flex;

@@ -23,46 +23,46 @@
       </div>
 
       <div id="id01" class="w3-modal">
-        <div class="w3-modal-content">
+        <div class="new-post-modal-content">
           <div class="w3-container">
             <span
               onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
                 document.getElementById('home-page').style.position='static'"
-              class="w3-button w3-display-topright"
+              class="close-button"
               >&times;</span
             >
             <div class="modal-body">
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
-                <b-container class="mt-3" fluid>
+                <div class="select-image-container">
                   <b-form @submit.stop.prevent="onSubmit">
                     <div class="d-flex mb-3">
                       <b-form-file
                         v-model="image"
-                        placeholder="Choose an Image"
-                        class="w-auto flex-grow-1"
+                        placeholder="Or drop image here"
+                        drop-placeholder="Or drop image here..."
+                        class="select-image-form"
                         label="Choose an Image"
                       ></b-form-file>
-                      <b-button
+                      <span
                         v-if="hasImage"
                         variant="danger"
-                        class="ml-3"
+                        class="clear-image-button"
                         @click="clearImage"
-                        >Clear image</b-button
-                      >
+                        >Clear Image
+                      </span>
                     </div>
                     <b-img
                       id="select-image-upload"
                       v-if="hasImage"
                       :src="imageSrc"
-                      class="mb-3"
                     ></b-img>
                   </b-form>
-                </b-container>
+                </div>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption"></textarea>
+                <textarea placeholder="Caption" class="blog-caption" style="border: none"></textarea>
               </div>
 
               <div class="blog-bottom-row">
@@ -111,46 +111,46 @@
             />
 
           <div class="likes">
-          <div class = "likes-container">
-            <b-icon
-              variant="danger"
-              icon="heart"
-              v-on:click="likePress(sr.id, sr.likes)"
-              v-bind:key="sr.likes"
-            ></b-icon>
-            {{ sr.likes }} likes
-          </div>
+            <div class ="likes-container">
+              <b-icon
+                variant="danger"
+                icon="heart"
+                v-on:click="likePress(sr.id, sr.likes)"
+                v-bind:key="sr.likes"
+              ></b-icon>
+              {{ sr.likes }}  likes
+            </div>
           
-          <div class = "enlarge-container">
-            <button
-            onclick=" 
-            document.getElementById('home-page').style.overflowY='hidden',
-            document.getElementById('home-page').style.position='fixed'"
-            class="w3-button"
-            id="enlargeText"
-            v-on:click= "sr.disp = 'block'" 
-            > Full Image </button>
+            <div class="enlarge-container">
+              <button
+              onclick=" 
+              document.getElementById('home-page').style.overflowY='hidden',
+              document.getElementById('home-page').style.position='fixed'"
+              class="w3-button"
+              id="enlargeText"
+              v-on:click= "sr.disp = 'block'" 
+              > Full Image </button>
             
-            <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
-            <div class="w3-modal-content" id="pop-up-container">
-              <div class="w3-container">
-                <span
-                  onclick="
-                  document.getElementById('home-page').style.overflowY='scroll',
-                  document.getElementById('home-page').style.position='static'"
-                  class="w3-button w3-display-topright"
-                  v-on:click="sr.disp = 'none'"
-                  >&times;</span
-                >
-                <img class="image-popUp" v-bind:src="sr.durl" :key="sr.durl" />
+              <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
+                <div class="w3-modal-content" id="pop-up-container">
+                  <div class="w3-container">
+                    <span
+                      onclick="
+                      document.getElementById('home-page').style.overflowY='scroll',
+                      document.getElementById('home-page').style.position='static'"
+                      class="close-button close-post-button"
+                      v-on:click="sr.disp = 'none'"
+                      >&times;
+                    </span>
+                    <img class="image-popUp" v-bind:src="sr.durl" :key="sr.durl" />
+                  </div>
+                </div>
               </div>
             </div>
-            </div>
-          </div>
 
-          <div class="likes">
+          <!-- <div class="likes">
             <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = likekey ></b-icon> {{sr.likes}} likes   
-          </div>
+          </div> -->
         </div>
       </div>
 
