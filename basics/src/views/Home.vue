@@ -341,9 +341,6 @@ export default {
     hasImage() {
       return !!this.image;
     },
-    captionState() {
-      return this.caption.length < 150 ? true : false;
-    },
   },
 
   data() {

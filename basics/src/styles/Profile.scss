@@ -383,7 +383,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem 1rem;
   }
   @include tablet {
     width: 93%;
@@ -397,6 +396,8 @@
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
   }
   @include tablet {
     margin-right: .3rem;
