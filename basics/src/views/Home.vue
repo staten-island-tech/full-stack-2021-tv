@@ -36,38 +36,45 @@
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <div class="select-image-container">
+                  <b-container class="mt-3" fluid>
                   <b-form @submit.stop.prevent="onSubmit">
                     <div class="d-flex mb-3">
                       <b-form-file
+                        id = "postImg"
                         v-model="image"
                         placeholder="Or drop image here"
                         drop-placeholder="Or drop image here..."
-                        class="select-image-form"
+                        class="select-image-form w-auto flex-grow-1"
                         label="Choose an Image"
                       ></b-form-file>
-                      <span
+                      <b-button
                         v-if="hasImage"
                         variant="danger"
-                        class="clear-image-button"
+                        class="ml-3"
                         @click="clearImage"
-                        >Clear Image
-                      </span>
+                        >Clear image</b-button
+                      >
                     </div>
                     <b-img
                       id="select-image-upload"
                       v-if="hasImage"
                       :src="imageSrc"
+                      class="mb-3"
+                      fluid
+                      block
+                      rounded
                     ></b-img>
                   </b-form>
+                </b-container>
                 </div>
               </div>
               <div class="blog-comment">
-                <textarea maxlength="100" placeholder="Caption" class="blog-caption" style="border: none"></textarea>
+                <textarea maxlength="100" placeholder="Caption" class="blog-caption" style="border: none" id = "p-caption"></textarea>
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag">
-                  <option v-for="tag in tags" v-bind:key="tag">
+                <select class="blog-tag" v-model="blog.tag" id = "tag_select">
+                  <option v-for="tag in tags" v-bind:key="tag" >
                     {{ tag }}
                   </option>
                 </select>
