@@ -118,7 +118,7 @@
               v-on:click="likePress(sr.id, sr.likes)"
               v-bind:key="sr.likes"
             ></b-icon>
-            {{ sr.likes }} likes
+            {{ sr.likes }}  likes
           </div>
           
           <div class = "enlarge-container">
@@ -148,9 +148,9 @@
             </div>
           </div>
 
-          <div class="likes">
+          <!-- <div class="likes">
             <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = likekey ></b-icon> {{sr.likes}} likes   
-          </div>
+          </div> -->
         </div>
       </div>
 

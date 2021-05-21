@@ -302,44 +302,44 @@
 .w3-container {
   padding: revert;
 }
-.user-banner-posts {
-  height: 4rem;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 81.5%;
-  @include phone {
-    width: 95%;
-    height: 2.5rem;
-  }
-}
+// .user-banner-posts {
+//   height: 4rem;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-evenly;
+//   text-align: center;
+//   margin-top: 1rem;
+//   margin-bottom: 2rem;
+//   width: 81.5%;
+//   @include phone {
+//     width: 95%;
+//     height: 2.5rem;
+//   }
+// }
 
-#user-banner-button {
-  width: 100%;
-  background-color: map-get($colors, primary);
-  // border: 1.35px solid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  // border-color: #DBDBDB;
-  font-size: 1.7rem;
-  font-weight: bold;
-  margin-bottom: 0rem;
-  padding: 1rem;
-  margin: auto;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  @include phone {
-    // margin-right: .1rem;
-    // margin-left: .1rem; 
-    font-size: .75rem;
-  }
-}
+// #user-banner-button {
+//   width: 100%;
+//   background-color: map-get($colors, primary);
+//   // border: 1.35px solid;
+//   -webkit-border-radius: 10px;
+//   -moz-border-radius: 10px;
+//   border-radius: 10px;
+//   // border-color: #DBDBDB;
+//   font-size: 1.7rem;
+//   font-weight: bold;
+//   margin-bottom: 0rem;
+//   padding: 1rem;
+//   margin: auto;
+//   margin-right: 1rem;
+//   margin-left: 1rem;
+//   cursor: pointer;
+//   @include phone {
+//     // margin-right: .1rem;
+//     // margin-left: .1rem; 
+//     font-size: .75rem;
+//   }
+// }
 
 .user-page-post {
   display: flex;
