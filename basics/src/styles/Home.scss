@@ -451,3 +451,11 @@ body#pop-up-container {
   overflow: hidden;
 }
 
+.b-avatar {
+  margin-top: .5rem;
+  @include phone {
+    margin-top: 1rem;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+}

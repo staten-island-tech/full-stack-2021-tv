@@ -1,7 +1,7 @@
 @import "@/styles/_variables.scss";
 
 .profile {
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: map-get($colors, background-grey);
   font-family: $font;
@@ -220,7 +220,7 @@
   -moz-border-radius: 10px;
   border-radius: 10px;
   border-color: #DBDBDB;
-  margin-left: 0rem;
+  margin-left: 1rem;
   @include phone {
     height: 7rem;
     width: 35%;
@@ -298,7 +298,7 @@
 // }
 #user-username-n-bio {
   background-color: white;
-  width: 100%;
+  width: 60%;
   display: flex;
   border: 1.35px solid;
   -webkit-border-radius: 10px;
@@ -384,7 +384,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   height: auto;
-  width: 81.5%;
+  width: 80%;
   margin: auto;
   @include phone {
     width: 95%;

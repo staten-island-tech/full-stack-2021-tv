@@ -93,7 +93,8 @@
                         <p class="settings-menu-header">Edit Bio</p>
                         <textarea
                           class="bio-input"
-                          placeholder="Write Here...">
+                          placeholder="Write Here..."
+                          maxlength="150" >
                         </textarea>
                         <button class="save-button w3-button w3-white w3-border"> Save </button>
                       </div>

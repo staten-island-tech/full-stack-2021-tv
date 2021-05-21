@@ -1,7 +1,7 @@
 @import "@/styles/_variables.scss";
 
 .profile-other {
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: map-get($colors, background-grey);
   font-family: $font;
@@ -61,6 +61,7 @@ h1 {
 .avatar-icon {
   padding-bottom: 0.4rem;
   color: black;
+  margin-top: .5rem;
   @include phone {
     margin-left: 0rem;
   }
@@ -153,7 +154,7 @@ h1 {
   -moz-border-radius: 10px;
   border-radius: 10px;
   border-color: #DBDBDB;
-  margin-left: 0rem;
+  margin-left: 1rem;
   @include phone {
     height: 7rem;
     width: 35%;
@@ -230,11 +231,8 @@ h1 {
 
 #other-username-n-bio {
   background-color: white;
-  height: 25rem;
-  width: 100%;
-  margin: auto;
+  width: 60%;
   display: flex;
-  // margin-top: 1rem;
   border: 1.35px solid;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -242,14 +240,17 @@ h1 {
   border-color: #DBDBDB;
   padding: 1rem;
   font-size: 1.35rem;
+  margin: 1rem;
+  height: 25rem;
   @include phone {
     display: none;
     margin: 0rem 1rem 1rem;
   }
   @include tablet {
-    height: 25rem;
+    font-size: 1.3rem;
   }
 }
+
 #other-username-n-bio-phone {
   display: none;
   @include phone {
@@ -310,7 +311,7 @@ h1 {
   flex-direction: row;
   justify-content: space-evenly;
   height: auto;
-  width: 81.5%;
+  width: 80%;
   margin: auto;
   @include phone {
     width: 95%;
