@@ -148,6 +148,9 @@
             </div>
           </div>
 
+          <div class="likes">
+            <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = likekey ></b-icon> {{sr.likes}} likes   
+          </div>
         </div>
       </div>
 
@@ -253,78 +256,21 @@ export default {
           console.log(this.i_sr[i].tag);
           i++;
         });
-      });
-      datRef.on("value").then((sn) => {
-        sn.forEach((postChild) => {
-          let displ = "none";
-          console.log(i);
-          let dURL = postChild.child("url").val();
-          console.log(dURL);
-          let dn = postChild.child("dName").val();
-          let cp = postChild.child("caption").val();
-          let key = postChild.key;
-          let hearts = postChild.child("likes").val();
-          let tag = postChild.child("tag").val();
+        
 
-          Vue.set(this.i_sr, i, {
-            disp: displ,
-            durl: dURL,
-            dName: dn,
-            caption: cp,
-            id: key,
-            likes: hearts,
-            tag: tag,
-          });
-          //Vue.set(this.i_sr, i, {});
-
-          console.log(this.i_sr[i].durl);
-          console.log(this.i_sr[i].disp);
-          console.log(this.i_sr[i].dName);
-          console.log(this.i_sr[i].caption);
-          console.log(this.i_sr[i].id);
-          console.log(this.i_sr[i].likes);
-          console.log(this.i_sr[i].tag);
-          i++;
-        });
-      });
-      datRef.on("value").then((sn) => {
-        sn.forEach((postChild) => {
-          let displ = "none";
-          console.log(i);
-          let dURL = postChild.child("url").val();
-          console.log(dURL);
-          let dn = postChild.child("dName").val();
-          let cp = postChild.child("caption").val();
-          let key = postChild.key;
-          let hearts = postChild.child("likes").val();
-          let tag = postChild.child("tag").val();
-
-          Vue.set(this.i_sr, i, {
-            disp: displ,
-            durl: dURL,
-            dName: dn,
-            caption: cp,
-            id: key,
-            likes: hearts,
-            tag: tag,
-          });
-          //Vue.set(this.i_sr, i, {});
-
-          console.log(this.i_sr[i].durl);
-          console.log(this.i_sr[i].disp);
-          console.log(this.i_sr[i].dName);
-          console.log(this.i_sr[i].caption);
-          console.log(this.i_sr[i].id);
-          console.log(this.i_sr[i].likes);
-          console.log(this.i_sr[i].tag);
-          i++;
-        });
-      });
+        
     },
     likePress(id, c_likes) {
       let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
       let n_likes = c_likes + 1;
       datRef.set(n_likes);
+      this.getPostImg();
+      if(this.likekey === 0){
+        this.likekey ++;
+      
+      }else{
+        this.likekey = 0;
+      }
     },
     clearImage() {
       this.image = null;
@@ -356,6 +302,7 @@ export default {
         tag: "",
       },
       i_sr: {},
+      likekey: 0,
       options: [
         "Education",
         "Entertainment",
