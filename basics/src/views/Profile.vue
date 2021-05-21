@@ -96,7 +96,8 @@
                           placeholder="Write Here..."
                           maxlength="150" >
                         </textarea>
-                        <button class="save-button w3-button w3-white w3-border"> Save </button>
+                        <button class="save-button w3-button w3-white w3-border"
+                        onclick="document.getElementById('id03').style.display='none'"> Save </button>
                       </div>
                     </div>
                   </div>
