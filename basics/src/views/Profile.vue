@@ -118,10 +118,13 @@
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
         </div> -->
-        <h1 id="user-username-n-bio" alt="Profile Username">Name: {{ dName }}</h1>    
-        <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
-
+        <div class = "username-bio">
+        <h1 id="user-username" alt="Profile Username">{{ dName }}</h1>
+        <div class= "seperate-username-bio"> </div>
+        <p class="user-bio">sdhavbjsdbvj</p>
+        </div>
     </section>
+    <div class= "seperate-info-post"> </div>
 
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>

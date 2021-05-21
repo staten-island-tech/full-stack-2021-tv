@@ -32,10 +32,14 @@
           <p id="other-following">Following</p>
           <p id="other-followers">Followers</p>
         </div> -->
-        <h1 id="other-username-n-bio" alt="Profile Username"> Name : {{ dName }}</h1>
-        <h1 id="other-username-n-bio-phone">Name : {{ dName }}</h1>
-      </div>
+        <div class = "other-username-bio">
+        <h1 id="other-username" alt="Profile Username"> Name : {{ dName }}</h1>
+        <div class= "seperate-username-bio"> </div>
+        <p class="other-bio">sdhavbjsdbvj</p>
+        </div>
     </section>
+    <div class= "seperate-info-post"> </div>
+
 
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
