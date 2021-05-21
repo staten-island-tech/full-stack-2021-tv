@@ -94,18 +94,26 @@
 }
 .close-button {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  cursor: pointer;
-  padding: 0px 10px 0px 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   font-size: 3rem;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
   z-index: 1;
 }
 .close-button:hover {
   background-color: lightgrey;
+}
+.close-post-button {
+  background-color: map-get($colors, primary);
+  opacity: 50%;
+}
+.close-post-button:hover {
+  opacity: 100%;
 }
 
 .settings-menu-header {

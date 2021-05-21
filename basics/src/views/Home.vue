@@ -29,7 +29,7 @@
               onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
                 document.getElementById('home-page').style.position='static'"
-              class="w3-button w3-display-topright"
+              class="close-button"
               >&times;</span
             >
             <div class="modal-body">
@@ -40,7 +40,8 @@
                     <div class="d-flex mb-3">
                       <b-form-file
                         v-model="image"
-                        placeholder="Choose an Image"
+                        placeholder="Or drop image here"
+                        drop-placeholder="Or drop image here..."
                         class="w-auto flex-grow-1"
                         label="Choose an Image"
                       ></b-form-file>

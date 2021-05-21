@@ -67,7 +67,7 @@
                 onclick="document.getElementById('id01').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="close-button w3-button w3-display-topright">
+                class="close-button">
                 &times;
               </span>
               <div class="feed-post-container">
