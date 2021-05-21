@@ -7,56 +7,95 @@
 //   width: 6vh;
 // }
 #profile-other{
+  height: 100vh;
   width: 100%;
+  background-color: map-get($colors, background-grey);
+  font-family: $font;
+  padding-bottom: 2.5rem;
 }
 
 .other-banner-profile {
-  height: 6rem;
+  height: 5.3rem;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color: lavender;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: map-get($colors, primary);
 }
 
-#logo-for-feed {
-  width: 15%;
-  padding-left: 5rem;
-  border: 2px solid;
-  font-size: 0.75rem;
-  padding-top: 1.25rem;
-  @include phone{
-    width: 20%;
-    margin: 0 0 2px;
-  }
-}
-
-.logo{
-  margin: -0.5rem -5rem 0rem;
-  @include phone{
-    height: 70%;
-    width: 65%;
-  }
-}
-
-#other-profile-empty-space {
-  width: 90%;
-  border: 2px solid;
-  border-left: none;
+#logo-container {
+  padding: 0.25rem 1% 0 0;
   height: 100%;
+  width: 15%;
+  text-align: center;
+  @include phone {
+    padding: 0rem 0rem 0.25rem 0rem;
+  }
+}
+.logo-png {
+  height: 75%;
+  margin: 1.5% 0% 0% 10%;
+  @include phone {
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+#banner-middle {
+  height: 100%;
+  width: 70%;
   @include phone{
     width: 60%;
     margin: 0 0 2px;
   }
 }
 
+// #logo-for-feed {
+  // width: 15%;
+  // padding-left: 5rem;
+  // border: 2px solid;
+  // font-size: 0.75rem;
+  // padding-top: 1.25rem;
+  // @include phone{
+    // width: 20%;
+    // margin: 0 0 2px;
+  // }
+// }
+// 
+// .logo{
+  // margin: -0.5rem -5rem 0rem;
+  // @include phone{
+    // height: 70%;
+    // width: 65%;
+  // }
+// }
+// 
+// #other-profile-empty-space {
+  // width: 90%;
+  // border: 2px solid;
+  // border-left: none;
+  // height: 100%;
+  // @include phone{
+    // width: 60%;
+    // margin: 0 0 2px;
+  // }
+// }
+
 //avatar///
 
 #avatar {
   text-align: center;
   width: 15%;
-  border: 2px solid;
-  border-left: none;
+  // border: 2px solid;
+  // border-left: none;
+  @include phone {
+    width: 25%;
+  }
 }
 
 .avatar-icon {

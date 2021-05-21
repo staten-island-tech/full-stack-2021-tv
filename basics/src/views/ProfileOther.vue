@@ -1,12 +1,13 @@
 <template>
   <div id="profile-other" class="profile-other">
+    <h1 style="display:none"> ProfileOther </h1>
     <section class="other-banner-profile">
-      <div class="other-profile"></div>
-      <p id="logo-for-feed">
-        <router-link to="/"><img src="tv.jpg" class="logo"/></router-link>
-      </p>
-      <p id="other-profile-empty-space"></p>
-      
+      <div id="logo-container">
+        <router-link to="/" alt="Link to Home Page">
+          <img src="@/assets/tv.png" class="logo" alt="Site Logo: purple television icon"/>
+        </router-link>
+      </div>
+      <p id="banner-middle"></p>
       <div id="avatar">
         <router-link to="/profile">
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
