@@ -259,6 +259,7 @@ export default {
         
 
         
+      });
     },
     likePress(id, c_likes) {
       let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
