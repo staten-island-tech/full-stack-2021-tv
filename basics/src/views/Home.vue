@@ -77,7 +77,12 @@
                   <option value="2">Private</option>
                 </select>
 
-                <button class="blog-post" v-on:click="mPost()">Post</button>
+                <button 
+                class="blog-post" 
+                onclick="document.getElementById('id01').style.display='none',
+                document.getElementById('home-page').style.overflowY='scroll',
+                document.getElementById('home-page').style.position='static'"
+                v-on:click="mPost()">Post</button>
               </div>
             </div>
           </div>
