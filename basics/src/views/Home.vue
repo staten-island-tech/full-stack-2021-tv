@@ -23,7 +23,7 @@
       </div>
 
       <div id="id01" class="w3-modal">
-        <div class="w3-modal-content">
+        <div class="new-post-modal-content">
           <div class="w3-container">
             <span
               onclick="document.getElementById('id01').style.display='none',
@@ -35,35 +35,34 @@
             <div class="modal-body">
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
-                <b-container class="mt-3" fluid>
+                <div class="select-image-container">
                   <b-form @submit.stop.prevent="onSubmit">
                     <div class="d-flex mb-3">
                       <b-form-file
                         v-model="image"
                         placeholder="Or drop image here"
                         drop-placeholder="Or drop image here..."
-                        class="w-auto flex-grow-1"
+                        class="select-image-form"
                         label="Choose an Image"
                       ></b-form-file>
-                      <b-button
+                      <span
                         v-if="hasImage"
                         variant="danger"
-                        class="ml-3"
+                        class="clear-image-button"
                         @click="clearImage"
-                        >Clear image</b-button
-                      >
+                        >Clear Image
+                      </span>
                     </div>
                     <b-img
                       id="select-image-upload"
                       v-if="hasImage"
                       :src="imageSrc"
-                      class="mb-3"
                     ></b-img>
                   </b-form>
-                </b-container>
+                </div>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption"></textarea>
+                <textarea placeholder="Caption" class="blog-caption" style="border: none"></textarea>
               </div>
 
               <div class="blog-bottom-row">
