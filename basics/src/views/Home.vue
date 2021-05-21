@@ -81,7 +81,8 @@
                 class="blog-post" 
                 onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
-                document.getElementById('home-page').style.position='static'"
+                document.getElementById('home-page').style.position='static',
+                refreshPage()"
                 v-on:click="mPost()">Post</button>
               </div>
             </div>
