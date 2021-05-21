@@ -1,36 +1,41 @@
 <template>
   <section id="profile-other" class="profile-other">
-    <h1 style="display:none"> {{ dName }}'s Page </h1>
+    <h1 style="display:none">{{ dName }}'s Page</h1>
     <section class="other-banner-profile">
       <div id="logo-container">
         <router-link to="/" alt="Link to Home Page">
-          <img src="@/assets/tv.png" class="logo" alt="Site Logo: purple television icon"/>
+          <img
+            src="@/assets/tv.png"
+            class="logo"
+            alt="Site Logo: purple television icon"
+          />
         </router-link>
       </div>
       <p id="banner-middle"></p>
-      
+
       <div id="avatar">
-        <router-link to="/profile"> 
+        <router-link to="/profile">
           <p style="display:none">Profile Page</p>
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
         </router-link>
       </div>
     </section>
 
-
-
     <section class="info-about-other">
-      <img class="other-profile-pic" alt="Profile Picture" v-bind:src="pfp" :key="pfp" />
-      <div class="generic-info">
+      <img
+        class="other-profile-pic"
+        alt="Profile Picture"
+        v-bind:src="pfp"
+        :key="pfp"
+      />
         <!-- <div id="other-following-followers">
           <p id="other-following">Following</p>
           <p id="other-followers">Followers</p>
         </div> -->
-
-        <h1 id="other-username-n-bio" alt="Profile Username">Name : {{ dName }}</h1>
+        <h1 id="other-username-n-bio" alt="Profile Username"> Name : {{ dName }}</h1>
+        <h1 id="other-username-n-bio-phone">Name : {{ dName }}</h1>
       </div>
     </section>
-    <h1 id="other-username-n-bio-phone">Name : {{ dName }}</h1>
 
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
@@ -67,7 +72,8 @@
                 onclick="document.getElementById('id01').style.display='none', 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="close-button">
+                class="close-button"
+              >
                 &times;
               </span>
               <div class="feed-post-container">
@@ -78,7 +84,12 @@
                   />
 
                   <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                    <b-icon
+                      class="heart-icon"
+                      variant="danger"
+                      icon="heart"
+                    ></b-icon>
+                    1 like
                   </div>
                 </div>
 
@@ -129,11 +140,12 @@
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright">
+                class="w3-button w3-display-topright"
+              >
                 &times;
               </span>
-              <div class= "feed-post-container" >
-                <div class= "picture-container">
+              <div class="feed-post-container">
+                <div class="picture-container">
                   <!-- report button 
                   <b-dropdown
                     variant="none"
@@ -148,7 +160,12 @@
                   </b-dropdown> -->
 
                   <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                    <b-icon
+                      class="heart-icon"
+                      variant="danger"
+                      icon="heart"
+                    ></b-icon>
+                    1 like
                   </div>
                 </div>
 
@@ -199,11 +216,12 @@
             <div class="w3-container">
               <span
                 onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright">
+                class="w3-button w3-display-topright"
+              >
                 &times;
               </span>
-              <div class= "feed-post-container">
-                <div class= "picture-container">
+              <div class="feed-post-container">
+                <div class="picture-container">
                   <!-- report button 
                   <b-dropdown
                     variant="none"

@@ -138,6 +138,9 @@ h1 {
     height: 12rem;
     margin: -1rem 1rem -1rem;
   }
+  @include tablet {
+    width: 90%;
+  }
 }
 
 .other-profile-pic {
@@ -227,7 +230,7 @@ h1 {
 
 #other-username-n-bio {
   background-color: white;
-  height: 100%;
+  height: 25rem;
   width: 100%;
   margin: auto;
   display: flex;
@@ -243,17 +246,23 @@ h1 {
     display: none;
     margin: 0rem 1rem 1rem;
   }
+  @include tablet {
+    height: 25rem;
+  }
 }
 #other-username-n-bio-phone {
   display: none;
   @include phone {
-  height: 2rem;
-  width: 95%;
-  margin: auto;
-  display: flex;
-  border: 2px solid;
   font-size: 0.75rem;
   margin-bottom: 1rem;
+  height: 7rem;
+  width: 65%;
+  margin: 1rem;
+  display: flex;
+  border: 1.35px solid;
+  border-radius: 10px;
+  margin-left: 0rem;
+  padding: .5rem;
   }
 }
 
@@ -308,7 +317,9 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem 1rem;
+  }
+  @include tablet{ 
+      width: 93%;
   }
 }
 
@@ -319,6 +330,8 @@ h1 {
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
   }
 }
 .post-button {
@@ -337,6 +350,9 @@ h1 {
 
 .other-image-1 {
   height: 20rem;
+  @include tablet {
+    height: 15rem;
+  }
 }
 .placeholder {
   height: 100%;
@@ -359,18 +375,88 @@ h1 {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  height: 95%;
+  height: fit-content;
   width: fit-content;
   padding: 0;
+  margin-bottom: 1rem;
+  @include tablet {
+    width: 70%;
+    margin-top: 5rem;
+  }
+  @include phone {
+    margin-top: 5rem;
+  }
 }
 
 .picture-container {
   position: relative;
-
 }
+
 .expanded-image {
-  height: 40rem;
   object-fit: cover;
   border-top-left-radius: 10px 10px;
   border-top-right-radius: 10px 10px;
+  width: 100%;
+  @include phone {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// .other-post-column-2 {
+//   height: 25rem;
+//   width: 33.4%;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// #other-actual-post {
+//   height: 12rem;
+//   width: 100%;
+//   margin: auto;
+//   display: flex;
+//   align-items: center;
+//   //border-radius: 0.25rem;
+//   border: 2px solid;
+//   flex-direction: column;
+//   justify-content: center;
+//   font-size: 0.75rem;
+// }
+
+// #post-settings-with-empty-space {
+//   height: 5%;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-start;
+// }
+
+// #post-settings-empty-space {
+//   width: 90%;
+//   border: none;
+// }
+
+// #post-settings-button {
+//   width: 10%;
+//   border: 2px solid;
+//   border-right: none;
+//   font-size: 0.5rem;
+// }
+
+// #post-picture {
+//   height: 85%;
+// }
+
+// #post-likes {
+//   height: 10%;
+//   border: 2px solid;
+//   border-bottom: none;
+//   font-size: 0.75rem;
+// }
+
+.heart-icon {
+  margin-top: .5rem;
+  margin-right: 1rem;
 }

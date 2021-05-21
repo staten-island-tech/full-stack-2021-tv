@@ -62,7 +62,7 @@
                 </div>
               </div>
               <div class="blog-comment">
-                <textarea placeholder="Caption" class="blog-caption" style="border: none"></textarea>
+                <textarea maxlength="100" placeholder="Caption" class="blog-caption" style="border: none"></textarea>
               </div>
 
               <div class="blog-bottom-row">
@@ -72,10 +72,10 @@
                   </option>
                 </select>
 
-                <select class="blog-toggle-private-public">
+                <!-- <select class="blog-toggle-private-public">
                   <option value="1" selected>Public</option>
                   <option value="2">Private</option>
-                </select>
+                </select> -->
 
                 <button 
                 class="blog-post" 
@@ -292,9 +292,6 @@ export default {
   computed: {
     hasImage() {
       return !!this.image;
-    },
-    captionState() {
-      return this.caption.length < 150 ? true : false;
     },
   },
 
