@@ -91,7 +91,12 @@
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  @include tablet {
+    width: 70%;
+    margin-top: 15rem;
+  }
 }
+
 .close-button {
   position: absolute;
   top: 0px;
@@ -103,7 +108,14 @@
   border-radius: 10px;
   font-size: 3rem;
   z-index: 1;
+  @include tablet {
+    width: 15%;  }
+  @include phone {
+    font-size: 2rem;
+    width: 15%;
+  }
 }
+
 .close-button:hover {
   background-color: lightgrey;
 }
@@ -124,6 +136,9 @@
   -moz-border-radius: 10px;
   border-radius: 10px;
   font-size: 1.8rem;
+    @include phone {
+    font-size: 1.3rem;
+  }
 }
 .settings-menu-icon {
   margin-right: 1rem;
@@ -182,6 +197,9 @@
     height: 12rem;
     margin: -1rem 1rem -1rem;
   }
+  @include tablet {
+    width: 90%;
+  }
 }
 
 .user-profile-pic {
@@ -198,6 +216,9 @@
   @include phone {
     height: 7rem;
     width: 35%;
+  }
+  @include tablet {
+    width: 60%;
   }
 }
 
@@ -269,11 +290,8 @@
 // }
 #user-username-n-bio {
   background-color: white;
-  height: 100%;
   width: 100%;
-  margin: auto;
   display: flex;
-  // margin-top: 1rem;
   border: 1.35px solid;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -281,27 +299,39 @@
   border-color: #DBDBDB;
   padding: 1rem;
   font-size: 1.35rem;
+  margin: 1rem;
+  height: 25rem;
   @include phone {
     display: none;
     margin: 0rem 1rem 1rem;
+  }
+  @include tablet {
+    font-size: 1.3rem;
   }
 }
 #user-username-n-bio-phone {
   display: none;
   @include phone {
-  height: 2rem;
-  width: 95%;
-  margin: auto;
-  display: flex;
-  border: 2px solid;
   font-size: 0.75rem;
   margin-bottom: 1rem;
+  height: 7rem;
+  width: 65%;
+  margin: 1rem;
+  display: flex;
+  border: 1.35px solid;
+  border-radius: 10px;
+  margin-left: 0rem;
+  padding: .5rem;
   }
 }
 
 .w3-container {
   padding: revert;
+  @include tablet {
+    height: 95%;
+  }
 }
+
 .user-banner-posts {
   height: 4rem;
   margin: auto;
@@ -355,6 +385,9 @@
     justify-content: center;
     margin: 2rem 1rem;
   }
+  @include tablet {
+    width: 93%;
+  }
 }
 
 .user-box-1 {
@@ -364,6 +397,10 @@
   cursor: pointer;
   @include phone {
     margin-top: 0rem;
+  }
+  @include tablet {
+    margin-right: .3rem;
+    margin-left: .3rem;
   }
 }
 .post-button {
@@ -382,7 +419,11 @@
 
 .user-image-1 {
   height: 20rem;
+  @include tablet {
+    height: 15rem;
+  }
 }
+
 .placeholder {
   height: 100%;
   width: 100%;
@@ -407,6 +448,15 @@
   height: 95%;
   width: fit-content;
   padding: 0;
+  @include tablet {
+    height: 85%;
+    width: 70%;
+    margin-top: 5rem;
+  }
+  @include phone {
+    height: 75%;
+    margin-top: 5rem;
+  }
 }
 
 .picture-container {
@@ -414,8 +464,17 @@
 
 }
 .expanded-image {
-  height: 40rem;
   object-fit: cover;
   border-top-left-radius: 10px 10px;
   border-top-right-radius: 10px 10px;
+  width: 100%;
+  @include phone {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.heart-icon {
+  margin-top: .5rem;
+  margin-right: 1rem;
 }

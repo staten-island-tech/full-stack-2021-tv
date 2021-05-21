@@ -65,20 +65,8 @@
               <div class="modal-header"></div>
               <div class="feed-post">
                 <div class="picture">
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown>
-
                   <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                    <b-icon class = "heart-icon" variant="danger" icon="heart" ></b-icon> 1 like
                   </div>
                 </div>
 
@@ -143,7 +131,7 @@
                   </b-dropdown>
 
                   <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                    <b-icon class = "heart-icon" variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
 

@@ -72,10 +72,10 @@
                   </option>
                 </select>
 
-                <select class="blog-toggle-private-public">
+                <!-- <select class="blog-toggle-private-public">
                   <option value="1" selected>Public</option>
                   <option value="2">Private</option>
-                </select>
+                </select> -->
 
                 <button class="blog-post" v-on:click="mPost()">Post</button>
               </div>

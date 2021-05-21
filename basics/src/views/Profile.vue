@@ -113,15 +113,14 @@
 
     <section class="info-about-user">
       <img class="user-profile-pic" alt="User's Profile Picture" v-bind:src="pfp" :key="pfp" />
-      <div class="generic-info">
         <!-- <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
         </div> -->
-        <h1 id="user-username-n-bio" alt="Profile Username">Name: {{ dName }}</h1>
-      </div>
+        <h1 id="user-username-n-bio" alt="Profile Username">Name: {{ dName }}</h1>    
+        <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
+
     </section>
-    <h1 id="user-username-n-bio-phone">Name: {{ dName }}</h1>
 
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
@@ -169,7 +168,7 @@
                   />
 
                   <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
+                    <b-icon class = "heart-icon" variant="danger" icon="heart"></b-icon> 1 like
                   </div>
                 </div>
 
