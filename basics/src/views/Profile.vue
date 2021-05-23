@@ -54,13 +54,17 @@
                         </span>
                         <p class="settings-menu-header"> Change Profile Picture </p>
                         <div>
-                          <input type="file" id="pfpUpload" accept="image/*" />
+                          <input type="file" id="pfpUpload" class="form-control" accept="image/*" />
                           <button
                             type="button"
                             id="pfpUbutton"
+                            class="save-button w3-button w3-white w3-border"
                             v-on:click="changePfp()"
+                            onclick="document.getElementById('id04').style.display='none', 
+                            document.getElementById('profile').style.overflowY='scroll',
+                            document.getElementById('profile').style.position='static'"
                           >
-                            Change Profile
+                            Save
                           </button>
                         </div>
                       </div>
@@ -94,9 +98,15 @@
                         <textarea
                           class="bio-input"
                           placeholder="Write Here..."
-                          maxlength="150" >
+                          maxlength="150" 
+                          style="border: none">
                         </textarea>
-                        <button class="save-button w3-button w3-white w3-border"> Save </button>
+                        <button 
+                          class="save-button w3-button w3-white w3-border"
+                          onclick="document.getElementById('id03').style.display='none', 
+                            document.getElementById('profile').style.overflowY='scrolled',
+                            document.getElementById('profile').style.position='static'"
+                          > Save </button>
                       </div>
                     </div>
                   </div>

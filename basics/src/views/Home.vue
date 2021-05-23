@@ -36,53 +36,45 @@
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <div class="select-image-container">
-                  <b-container class="mt-3" fluid>
                   <b-form @submit.stop.prevent="onSubmit">
                     <div class="d-flex mb-3">
                       <b-form-file
-                        id = "postImg"
                         v-model="image"
                         placeholder="Or drop image here"
                         drop-placeholder="Or drop image here..."
-                        class="select-image-form w-auto flex-grow-1"
+                        class="select-image-form"
                         label="Choose an Image"
                       ></b-form-file>
-                      <b-button
+                      <span
                         v-if="hasImage"
                         variant="danger"
-                        class="ml-3"
+                        class="clear-image-button"
                         @click="clearImage"
-                        >Clear image</b-button
-                      >
+                        >Clear Image
+                      </span>
                     </div>
                     <b-img
                       id="select-image-upload"
                       v-if="hasImage"
                       :src="imageSrc"
-                      class="mb-3"
-                      fluid
-                      block
-                      rounded
                     ></b-img>
                   </b-form>
-                </b-container>
                 </div>
               </div>
               <div class="blog-comment">
                 <textarea maxlength="100" placeholder="Caption" class="blog-caption" style="border: none" id = "p-caption"></textarea>
               </div>
-
               <div class="blog-bottom-row">
                 <select class="blog-tag" v-model="blog.tag" id = "tag_select">
-                  <option v-for="tag in tags" v-bind:key="tag" >
+                  <option v-for="tag in tags" v-bind:key="tag">
                     {{ tag }}
                   </option>
                 </select>
 
-                <!-- <select class="blog-toggle-private-public">
+                <select class="blog-toggle-private-public">
                   <option value="1" selected>Public</option>
                   <option value="2">Private</option>
-                </select> -->
+                </select>
 
                 <button 
                 class="blog-post" 
@@ -96,6 +88,7 @@
           </div>
         </div>
       </div>
+
 
       <div id="avatar">
         <router-link to="/profile"> 

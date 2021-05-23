@@ -1,9 +1,10 @@
 @import "@/styles/_variables.scss";
 
 .home-page {
-  background-color: map-get($colors, light);
+  background-color: map-get($colors, background-grey);
   font-family: $font;
   width: 100%;
+  height: auto;
 }
 
 .user-banner-profile {
@@ -108,8 +109,6 @@
   left: 15%;
   height: 87vh;
   width: 70%;
-  // overflow:scroll;
-  // margin-bottom: 1rem;
   @include tablet {
     width: 90%;
   }
@@ -158,6 +157,7 @@
 .select-image-form {
   margin: 2rem 2rem 0rem 2rem;
 }
+
 .clear-image-button {
   position: absolute;
   top: 9.75rem;
@@ -175,7 +175,7 @@
   margin: 0rem 2rem 0rem 2rem;
   object-fit: contain;
   height: 20rem;
-  width: 93%;
+  width: 95.25%;
 }
 
 .blog-comment {
@@ -212,8 +212,7 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
   border-color: #DBDBDB;
-  width: 90%;
-
+  width: 76%;
   @include phone{
     width: 85%;
   }
@@ -229,16 +228,6 @@
   border-radius: 5px;
   border-color: #DBDBDB;
 }
-
-
-// .blog-toggle-private-public {
-//   border: 1.35px solid;
-//   border-left: none;
-//   width: 10%;
-//   @include tablet {
-//     width: 15%;
-//   }
-// }
 
 .blog-post {
   width: 10%;
@@ -400,11 +389,11 @@
 #pop-up-container {
   position: fixed;
   top: 14%;
+  left: 3%;
   height: 80%;
+  width: 94%;
   background-color: black;
   background-color: rgba(0,0,0,0);
-  width: 100%;
-  padding: 2rem;
   @include phone {
     margin-top: 5rem;
   }
@@ -437,10 +426,6 @@
   padding: 0rem;
 }
 
-#select-image-upload {
-  height: 50rem;
-  width: 100%;
-}
 
 .w3-display-topright {
   color: black;
