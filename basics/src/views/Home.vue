@@ -345,22 +345,6 @@ export default {
   },
 };
 
-//banner scroll effect
-let scrollPos = 0;
-
-window.addEventListener("scroll", function() {
-  const banner = document.querySelector(".user-banner-profile");
-  if (document.body.getBoundingClientRect().top > scrollPos) {
-    console.log("scrolled up");
-    banner.classList.remove("is-hidden");
-    banner.classList.add("is-visible");
-  } else {
-    console.log("scrolled down");
-    banner.classList.add("is-hidden");
-  }
-  scrollPos = document.body.getBoundingClientRect().top;
-});
-
 //upload image preview
 const base64Encode = (data) =>
   new Promise((resolve, reject) => {
