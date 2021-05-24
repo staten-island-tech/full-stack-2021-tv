@@ -1,0 +1,169 @@
+.logo {
+  width: 6vh;
+}
+.other-banner-profile {
+  height: 6rem;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#logo-for-feed {
+  width: 5%;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
+
+#other-profile-empty-space {
+  width: 90%;
+  border: 2px solid;
+  border-left: none;
+}
+
+#settings {
+  width: 5%;
+  border: 2px solid;
+  border-left: 0px;
+  font-size: 0.75rem;
+}
+
+.info-about-other {
+  height: 30rem;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-profile-pic {
+  height: 25rem;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  //border-radius: 0.25rem;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
+
+.generic-info {
+  height: 25rem;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#other-following-followers {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#other-following {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  //border-radius: 0.25rem;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
+
+#other-followers {
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  //border-radius: 0.25rem;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
+
+#other-username-n-bio {
+  height: 100%;
+  width: 100%;
+  //width: 10rem;
+  margin: auto;
+  display: flex;
+  //border-radius: 0.25rem;
+  border: 2px solid;
+  font-size: 0.75rem;
+}
+
+.other-posts {
+  height: 25rem;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-post-column {
+  height: 25rem;
+  width: 33.3%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-post-column-2 {
+  height: 25rem;
+  width: 33.4%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#other-actual-post {
+  height: 12rem;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  //border-radius: 0.25rem;
+  border: 2px solid;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+#post-settings-with-empty-space {
+  height: 5%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#post-settings-empty-space {
+  width: 90%;
+  border: none;
+}
+
+#post-settings-button {
+  width: 10%;
+  border: 2px solid;
+  border-right: none;
+  font-size: 0.5rem;
+}
+
+#post-picture {
+  height: 85%;
+}
+
+#post-likes {
+  height: 10%;
+  border: 2px solid;
+  border-bottom: none;
+  font-size: 0.75rem;
+}
