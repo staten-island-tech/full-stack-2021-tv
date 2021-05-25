@@ -328,6 +328,14 @@ export default {
   },
   watch: {
     image(newValue, oldValue) {
+      const base64Encode = (data) =>
+        new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(data);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      })
+
       if (newValue !== oldValue) {
         if (newValue) {
           base64Encode(newValue)
@@ -345,14 +353,6 @@ export default {
   },
 };
 
-//upload image preview
-const base64Encode = (data) =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(data);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = (error) => reject(error);
-  });
 </script>
 
 <style lang="scss">
