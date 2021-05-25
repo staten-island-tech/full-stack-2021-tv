@@ -99,11 +99,12 @@
                   onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
                 document.getElementById('home-page').style.position='static',
-                refreshPage()"
+                "
                   v-on:click="mPost()"
                 >
                   Post
                 </button>
+                <button class="blog-close" @click="reloadPage">Close</button>
               </div>
             </div>
           </div>
@@ -211,7 +212,6 @@ import Vue from "vue";
 export default {
   mounted() {
     this.getPostImg();
-    
   },
   methods: {
     mPost() {
@@ -226,18 +226,18 @@ export default {
       let storagePic = storageRef.child(
         "Posts/" + user.uid + "_" + p_img.name + "_" + servertime
       );
-      storagePic.put(p_img).then(data => {;
+      storagePic.put(p_img).then((data) => {
         console.log(data);
         let db = firebase.database();
         let dbRef = db.ref("Posts/");
         console.log(p_img.name);
-        try{
+        try {
           storagePic.getMetadata().then((meta) => {
             storagePic.getDownloadURL().then((durl) => {
               dbRef
                 .child(
                   `${p_img.name.replace(/[,.-:]/g, "") +
-                  meta.timeCreated.toString().replace(/[.-]/g, "")}`
+                    meta.timeCreated.toString().replace(/[.-]/g, "")}`
                 )
                 .set({
                   date: `${meta.timeCreated}`,
@@ -250,17 +250,16 @@ export default {
                 });
             });
           });
-        }catch(error){
+        } catch (error) {
           console.log(error);
-
-        };
+        }
       });
     },
-    otherPf(uid){
+    otherPf(uid) {
       let user = firebase.auth().currentUser;
       let userRef = firebase.database().ref(`UIDs/${user.uid}/interest`);
       userRef.set(uid);
-      this.$router.push('/ProfileOther');
+      this.$router.push("/ProfileOther");
     },
     getPostImg() {
       let datRef = firebase.database().ref("Posts/");
@@ -292,7 +291,7 @@ export default {
           //Vue.set(this.i_sr, i, {});
 
           console.log(this.i_sr[i].uid);
-         // console.log(this.i_sr[i].disp);
+          // console.log(this.i_sr[i].disp);
           //console.log(this.i_sr[i].dName);
           //console.log(this.i_sr[i].caption);
           //console.log(this.i_sr[i].id);
@@ -303,23 +302,18 @@ export default {
       });
     },
     likePress(id) {
-      
       let user = firebase.auth().currentUser;
       let userLikeRef = firebase.database().ref(`UIDs/${user.uid}/likes`);
       let postliked = false;
-      userLikeRef.once("value").then(lk => {
-        lk.forEach(postkey => {
-          
-          if(id === postkey.val()){
+      userLikeRef.once("value").then((lk) => {
+        lk.forEach((postkey) => {
+          if (id === postkey.val()) {
             postliked = true;
-            
-            
           }
-          
-        })
-        if(!postliked){
+        });
+        if (!postliked) {
           let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
-          datRef.once("value").then(likeSnapshot =>{
+          datRef.once("value").then((likeSnapshot) => {
             let n_likes = likeSnapshot.val() + 1;
             let dat = new Date();
             datRef.set(n_likes);
@@ -330,12 +324,9 @@ export default {
               this.likekey = 0;
             }
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
-          })
-          
-          
+          });
         }
       });
-      
     },
     clearImage() {
       this.image = null;
@@ -346,6 +337,9 @@ export default {
         return;
       }
       alert("Form submitted!");
+    },
+    reloadPage() {
+      window.location.reload();
     },
   },
   computed: {
