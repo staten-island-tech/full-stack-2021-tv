@@ -137,7 +137,7 @@
               <b-icon
                 variant="danger"
                 icon="heart"
-                v-on:click="likePress(sr.id, sr.likes)"
+                v-on:click="likePress(sr.id)"
                 v-bind:key="sr.likes"
               ></b-icon>
               {{ sr.likes }} likes
@@ -249,7 +249,7 @@ export default {
             });
           });
         }catch(error){
-          console.log("retrying databse DURL retrieval");
+          console.log(error);
 
         };
       });
@@ -261,9 +261,9 @@ export default {
       datRef.once("value").then((sn) => {
         sn.forEach((postChild) => {
           let displ = "none";
-          console.log(i);
+          //console.log(i);
           let dURL = postChild.child("url").val();
-          console.log(dURL);
+          //console.log(dURL);
           let dn = postChild.child("dName").val();
           let cp = postChild.child("caption").val();
           let key = postChild.key;
@@ -281,27 +281,51 @@ export default {
           });
           //Vue.set(this.i_sr, i, {});
 
-          console.log(this.i_sr[i].durl);
-          console.log(this.i_sr[i].disp);
-          console.log(this.i_sr[i].dName);
-          console.log(this.i_sr[i].caption);
-          console.log(this.i_sr[i].id);
-          console.log(this.i_sr[i].likes);
-          console.log(this.i_sr[i].tag);
+          //console.log(this.i_sr[i].durl);
+         // console.log(this.i_sr[i].disp);
+          //console.log(this.i_sr[i].dName);
+          //console.log(this.i_sr[i].caption);
+          //console.log(this.i_sr[i].id);
+          //console.log(this.i_sr[i].likes);
+          //console.log(this.i_sr[i].tag);
           i++;
         });
       });
     },
-    likePress(id, c_likes) {
-      let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
-      let n_likes = c_likes + 1;
-      datRef.set(n_likes);
-      this.getPostImg();
-      if (this.likekey === 0) {
-        this.likekey++;
-      } else {
-        this.likekey = 0;
-      }
+    likePress(id) {
+      
+      let user = firebase.auth().currentUser;
+      let userLikeRef = firebase.database().ref(`UIDs/${user.uid}/likes`);
+      let postliked = false;
+      userLikeRef.once("value").then(lk => {
+        lk.forEach(postkey => {
+          
+          if(id === postkey.val()){
+            postliked = true;
+            
+            
+          }
+          
+        })
+        if(!postliked){
+          let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+          datRef.once("value").then(likeSnapshot =>{
+            let n_likes = likeSnapshot.val() + 1;
+            let dat = new Date();
+            datRef.set(n_likes);
+            this.getPostImg();
+            if (this.likekey === 0) {
+              this.likekey++;
+            } else {
+              this.likekey = 0;
+            }
+            userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
+          })
+          
+          
+        }
+      });
+      
     },
     clearImage() {
       this.image = null;

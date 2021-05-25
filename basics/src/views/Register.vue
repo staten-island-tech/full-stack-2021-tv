@@ -61,7 +61,12 @@ export default {
             photoURL: url
           })
           });
-         
+          let db = firebase.database();
+          let dbRef = db.ref("UIDs/");
+          dbRef.child(`${user.uid}`).set({
+            status: `created`
+
+          });
           
           console.log("here");
           this.$router.replace({ name: "Home" });
