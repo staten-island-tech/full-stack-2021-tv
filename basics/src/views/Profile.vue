@@ -167,45 +167,49 @@
     </section> -->
 
     <section class="user-page-post">
-      <div class="user-box-1">
+      <div class="user-box-1" v-for="sr in i_sr" :key="sr.durl">
         <div class="w3-container">
           <button
-            onclick="document.getElementById('id01').style.display='block', 
+            onclick="
               document.getElementById('profile').style.overflowY='hidden',
               document.getElementById('profile').style.position='fixed'"
-            class="post-button"
+            class="post-button" v-on:click="sr.disp = 'block'"
           >
             <div class="user-image-1">
               <img
-                src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                v-bind:src="sr.durl"
+                :key="sr.durl"
                 class="placeholder"
               />
             </div>
             <h2 class="user-likes">
-              <b-icon variant="danger" icon="heart"></b-icon> 1 like
+              <b-icon variant="danger" icon="heart" v-on:click="likePress(sr.id)"
+                v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
             </h2>
           </button>
         </div>
 
-        <div id="id01" class="w3-modal">
+        <div id="id01" class="w3-modal"  :style="{ display: sr.disp }">
           <div class="w3-modal-content w3-animate-zoom modal-container">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id01').style.display='none', 
+                onclick=" 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="close-button close-post-button">
+                class="close-button close-post-button" v-on:click="sr.disp = 'none'">
                 &times;
               </span>
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
                     class="expanded-image"
-                    src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
+                    v-bind:src="sr.durl"
+                    :key="sr.durl"
                   />
 
                   <div class="likes">
-                    <b-icon class = "heart-icon" variant="danger" icon="heart"></b-icon> 1 like
+                    <b-icon class = "heart-icon" variant="danger" icon="heart" v-on:click="likePress(sr.id)"
+                    v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
                   </div>
                 </div>
 
@@ -233,155 +237,22 @@
         </div>
       </div>
 
-      <div class="user-box-1">
-        <div class="w3-container">
-          <button
-            onclick="document.getElementById('id01').style.display='block'"
-            class="post-button"
-          >
-            <div class="user-image-1">
-              <img
-                src="https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=1600&h=900"
-                class="placeholder"
-              />
-            </div>
-            <h2 class="user-likes">
-              <b-icon variant="danger" icon="heart"></b-icon> 1 like
-            </h2>
-          </button>
-        </div>
+      
 
-        <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
-            <div class="w3-container">
-              <span
-                onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright">
-                &times;
-              </span>
-              <div class= "feed-post-container" >
-                <div class= "picture-container">
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
-
-                  <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
-                  </div>
-                </div>
-
-                <div class="description-comment">
-                  <div class="description">
-                    <router-link to="/ProfileOther" class="username">
-                      Name
-                    </router-link>
-                    <p class="caption">caption</p>
-                  </div>
-                  <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="user-box-1">
-        <div class="w3-container">
-          <button
-            onclick="document.getElementById('id01').style.display='block'"
-            class="post-button"
-          >
-            <div class="user-image-1">
-              <img
-                src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg"
-                class="placeholder"
-              />
-            </div>
-            <h2 class="user-likes">
-              <b-icon variant="danger" icon="heart"></b-icon> 1 like
-            </h2>
-          </button>
-        </div>
-
-        <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
-            <div class="w3-container">
-              <span
-                onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright">
-                &times;
-              </span>
-              <div class= "feed-post-container">
-                <div class= "picture-container">
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
-
-                  <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
-                  </div>
-                </div>
-
-                <div class="description-comment">
-                  <div class="description">
-                    <router-link to="/ProfileOther" class="username">
-                      Name
-                    </router-link>
-                    <p class="caption">caption</p>
-                  </div>
-                  <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </section>
   </section>
 </template>
 
 <script>
 import firebase from "firebase/app";
+import Vue from "vue";
 require("firebase/auth");
 export default {
   mounted() {
-    this.getUserData(), this.setupFirebase();
+    this.getUserData();
+    //this.setupFirebase();
+    this.getPosts();
   },
   methods: {
     signOut() {
@@ -392,11 +263,78 @@ export default {
           this.$router.replace({ name: "login" });
         });
     },
+    likePress(id) {
+      let user = firebase.auth().currentUser;
+      let userLikeRef = firebase.database().ref(`UIDs/${user.uid}/likes`);
+      let postliked = false;
+      userLikeRef.once("value").then((lk) => {
+        lk.forEach((postkey) => {
+          if (id === postkey.val()) {
+            postliked = true;
+          }
+        });
+        if (!postliked) {
+          let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+          datRef.once("value").then((likeSnapshot) => {
+            let n_likes = likeSnapshot.val() + 1;
+            let dat = new Date();
+            datRef.set(n_likes);
+            this.getPostImg();
+            if (this.likekey === 0) {
+              this.likekey++;
+            } else {
+              this.likekey = 0;
+            }
+            userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
+          });
+        }
+      });
+    },
     getUserData() {
       let user = firebase.auth().currentUser;
       this.dName = user.displayName;
       this.pfp = user.photoURL;
       console.log(this.pfp);
+    },
+    getPosts() {
+      let datRef = firebase.database().ref("Posts/");
+      let i = 0;
+
+      datRef.once("value").then((sn) => {
+        sn.forEach((postChild) => {
+          let displ = "none";
+          //console.log(i);
+          let dURL = postChild.child("url").val();
+          //console.log(dURL);
+          let dn = postChild.child("dName").val();
+          let cp = postChild.child("caption").val();
+          let key = postChild.key;
+          let hearts = postChild.child("likes").val();
+          let tag = postChild.child("tag").val();
+          let postUID = postChild.child("UID").val();
+
+          Vue.set(this.i_sr, i, {
+            disp: displ,
+            durl: dURL,
+            dName: dn,
+            caption: cp,
+            id: key,
+            likes: hearts,
+            tag: tag,
+            uid: postUID,
+          });
+          //Vue.set(this.i_sr, i, {});
+
+          console.log(this.i_sr[i].uid);
+          // console.log(this.i_sr[i].disp);
+          //console.log(this.i_sr[i].dName);
+          //console.log(this.i_sr[i].caption);
+          //console.log(this.i_sr[i].id);
+          //console.log(this.i_sr[i].likes);
+          //console.log(this.i_sr[i].tag);
+          i++;
+        });
+      });
     },
     clearImage() {
       this.image = null;
@@ -455,6 +393,7 @@ export default {
       imageSrc: null,
       dName: "",
       pfp: null,
+      i_sr: {},
     };
   },
   watch: {

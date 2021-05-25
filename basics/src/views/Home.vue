@@ -156,7 +156,7 @@
                 Full Image
               </button>
 
-              <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
+              <div class="w3-modal"  :style="{ display: sr.disp }">
                 <div class="w3-modal-content" id="pop-up-container">
                   <div class="w3-container">
                     <span
