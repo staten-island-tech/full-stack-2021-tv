@@ -1,11 +1,11 @@
 @import "@/styles/_variables.scss";
 
 .profile {
-  height: 100vh;
+  height: 108vh;
   width: 100%;
   background-color: map-get($colors, background-grey);
   font-family: $font;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 
@@ -110,7 +110,9 @@
   cursor: pointer;
   z-index: 1;
   @include tablet {
-    width: 15%;  }
+    width: 5%;
+    border-radius: 15px;
+  }
   @include phone {
     font-size: 2rem;
     width: 15%;
@@ -133,6 +135,9 @@
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+  @include tablet {
+    font-size: 3.5rem;
+  }
 }
 .settings-menu {
   display: flex;
@@ -159,6 +164,11 @@
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  @include tablet {
+    margin-top: 20%;
+    height: 60%;
+    width: 70%;
+  }
 }
 #select-image-upload {
   display: block;
@@ -168,6 +178,12 @@
   height: 20rem;
   width: 20rem;
   border-radius: 20rem;
+  @include tablet {
+    margin-top: 2rem;
+    height: 30rem;
+    width: 30rem;
+    border-radius: 30rem;
+  }
 }
 .clear-image-button {
   position: absolute;
@@ -194,6 +210,11 @@
   -moz-border-radius: 10px;
   border-radius: 10px;
   background-color: map-get($colors, accent3);
+  @include tablet {
+    margin-top: 20%;
+    height: 35%;
+    width: 70%;
+  }
 }
 .bio-content-container {
   padding-top: 0rem;
