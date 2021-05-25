@@ -318,11 +318,7 @@ export default {
             let dat = new Date();
             datRef.set(n_likes);
             this.getPostImg();
-            if (this.likekey === 0) {
-              this.likekey++;
-            } else {
-              this.likekey = 0;
-            }
+            
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
