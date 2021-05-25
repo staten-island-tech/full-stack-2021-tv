@@ -272,10 +272,39 @@
 </template>
 
 <script>
-//import firebase from "firebase/app";
+import firebase from "firebase/app";
 //import Vue from "vue";
 export default {
-  
+  mounted() {
+    this.getUserData();
+  },
+  methods:{
+    getUserData() {
+      let user = firebase.auth().currentUser;
+      
+      let uidRef = firebase.database().ref(`UIDs/${user.uid}/interest`);
+      uidRef.once("value").then(uid =>{
+        let nUserRef = firebase.database().ref(`UIDs/${uid.val()}/`)
+        nUserRef.once("value").then(nuser =>{
+          this.dName = nuser.child("dName").val();
+          this.pfp = nuser.child("pfp").val();
+          console.log(this.pfp, this.dName);
+        })
+          
+       
+      });
+       
+      
+    },
+  },
+  data() {
+    return {
+      image: null,
+      imageSrc: null,
+      dName: "",
+      pfp: null,
+    };
+  },
 
 };
 </script>

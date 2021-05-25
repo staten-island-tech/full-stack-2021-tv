@@ -46,7 +46,7 @@ export default {
     pressed() {
       var storage = firebase.storage();
       var default_pfp_ref = storage.ref().child('User/pfp/iu.png');
-      
+      let db = firebase.database();
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
@@ -55,18 +55,21 @@ export default {
           let user = firebase.auth().currentUser;
           
           default_pfp_ref.getDownloadURL().then((url) =>{
-            
+            let dbRef = db.ref("UIDs/");
+            dbRef.child(`${user.uid}`).set({
+              status: `created`,
+              bio: ' ',
+              dName: `${this.username}`,
+              pfp: `${url}`,
+            });
             user.updateProfile({
             displayName: this.username,
             photoURL: url
-          })
+            
+            })
           });
-          let db = firebase.database();
-          let dbRef = db.ref("UIDs/");
-          dbRef.child(`${user.uid}`).set({
-            status: `created`
-
-          });
+          
+          
           
           console.log("here");
           this.$router.replace({ name: "Home" });

@@ -420,19 +420,26 @@ export default {
 
       UID.ref()
         .child("User/UID/" + user.uid + "/pfp")
-        .put(img);
-      let newpfp = UID.ref().child("User/UID/" + user.uid + "/pfp");
+        .put(img).then(data => {
+          console.log(data);
+            let newpfp = UID.ref().child("User/UID/" + user.uid + "/pfp");
 
-      newpfp.getDownloadURL().then((url) => {
-        console.log(url);
-        user.updateProfile({
-          photoURL: url,
+          newpfp.getDownloadURL().then((url) => {
+            console.log(url);
+              user.updateProfile({
+                photoURL: url,
+              });
+            dbRef.child(`${user.uid}/pfp`).set(
+            `${url}`,
+            );
+          });
+          let db = firebase.database();
+          this.pfp = user.photoURL;
+          let dbRef = db.ref("UIDs/");
+          
+          console.log(this.pfp);
         });
-      });
-
-      this.pfp = user.photoURL;
-
-      console.log(this.pfp);
+      
       
     },
   },
