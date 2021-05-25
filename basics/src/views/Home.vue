@@ -4,7 +4,11 @@
     <section class="user-banner-profile">
       <p id="logo-for-feed">
         <router-link to="/" alt="Link to Home Page">
-          <img src="@/assets/tv.png" class="logo" alt="Site Logo: purple television icon"/>
+          <img
+            src="@/assets/tv.png"
+            class="logo"
+            alt="Site Logo: purple television icon"
+          />
         </router-link>
       </p>
       <div id="select-tag-container">
@@ -36,62 +40,78 @@
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <div class="select-image-container">
-                  <b-form @submit.stop.prevent="onSubmit">
-                    <div class="d-flex mb-3">
-                      <b-form-file
-                        v-model="image"
-                        placeholder="Or drop image here"
-                        drop-placeholder="Or drop image here..."
-                        class="select-image-form"
-                        label="Choose an Image"
-                      ></b-form-file>
-                      <span
+                  <b-container class="mt-3" fluid>
+                    <b-form @submit.stop.prevent="onSubmit">
+                      <div class="d-flex mb-3">
+                        <b-form-file
+                          id="postImg"
+                          v-model="image"
+                          placeholder="Or drop image here"
+                          drop-placeholder="Or drop image here..."
+                          class="select-image-form w-auto flex-grow-1"
+                          label="Choose an Image"
+                        ></b-form-file>
+                        <b-button
+                          v-if="hasImage"
+                          variant="danger"
+                          class="ml-3"
+                          @click="clearImage"
+                          >Clear image</b-button
+                        >
+                      </div>
+                      <b-img
+                        id="select-image-upload"
                         v-if="hasImage"
-                        variant="danger"
-                        class="clear-image-button"
-                        @click="clearImage"
-                        >Clear Image
-                      </span>
-                    </div>
-                    <b-img
-                      id="select-image-upload"
-                      v-if="hasImage"
-                      :src="imageSrc"
-                    ></b-img>
-                  </b-form>
+                        :src="imageSrc"
+                        class="mb-3"
+                        fluid
+                        block
+                        rounded
+                      ></b-img>
+                    </b-form>
+                  </b-container>
                 </div>
               </div>
               <div class="blog-comment">
-                <textarea maxlength="100" placeholder="Caption" class="blog-caption" style="border: none" id = "p-caption"></textarea>
+                <textarea
+                  maxlength="100"
+                  placeholder="Caption"
+                  class="blog-caption"
+                  style="border: none"
+                  id="p-caption"
+                ></textarea>
               </div>
+
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag" id = "tag_select">
+                <select class="blog-tag" v-model="blog.tag" id="tag_select">
                   <option v-for="tag in tags" v-bind:key="tag">
                     {{ tag }}
                   </option>
                 </select>
 
-                <select class="blog-toggle-private-public">
+                <!-- <select class="blog-toggle-private-public">
                   <option value="1" selected>Public</option>
                   <option value="2">Private</option>
-                </select>
+                </select> -->
 
-                <button 
-                class="blog-post" 
-                onclick="document.getElementById('id01').style.display='none',
+                <button
+                  class="blog-post"
+                  onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
                 document.getElementById('home-page').style.position='static',
                 refreshPage()"
-                v-on:click="mPost()">Post</button>
+                  v-on:click="mPost()"
+                >
+                  Post
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-
       <div id="avatar">
-        <router-link to="/profile"> 
+        <router-link to="/profile">
           <p style="display:none">Profile Page</p>
           <b-avatar class="avatar-icon" size="4em"></b-avatar>
         </router-link>
@@ -110,33 +130,31 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-            <img
-              :src="sr.durl"
-              :key="sr.durl"
-              class="placeholder"
-            />
+          <img :src="sr.durl" :key="sr.durl" class="placeholder" />
 
           <div class="likes">
-            <div class ="likes-container">
+            <div class="likes-container">
               <b-icon
                 variant="danger"
                 icon="heart"
                 v-on:click="likePress(sr.id, sr.likes)"
                 v-bind:key="sr.likes"
               ></b-icon>
-              {{ sr.likes }}  likes
+              {{ sr.likes }} likes
             </div>
-          
+
             <div class="enlarge-container">
               <button
-              onclick=" 
+                onclick=" 
               document.getElementById('home-page').style.overflowY='hidden',
               document.getElementById('home-page').style.position='fixed'"
-              class="w3-button"
-              id="enlargeText"
-              v-on:click= "sr.disp = 'block'" 
-              > Full Image </button>
-            
+                class="w3-button"
+                id="enlargeText"
+                v-on:click="sr.disp = 'block'"
+              >
+                Full Image
+              </button>
+
               <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
                 <div class="w3-modal-content" id="pop-up-container">
                   <div class="w3-container">
@@ -148,17 +166,21 @@
                       v-on:click="sr.disp = 'none'"
                       >&times;
                     </span>
-                    <img class="image-popUp" v-bind:src="sr.durl" :key="sr.durl" />
+                    <img
+                      class="image-popUp"
+                      v-bind:src="sr.durl"
+                      :key="sr.durl"
+                    />
                   </div>
                 </div>
               </div>
             </div>
 
-          <!-- <div class="likes">
+            <!-- <div class="likes">
             <b-icon variant="danger" icon="heart" v-on:click ="likePress(sr.id, sr.likes)" v-bind:key = likekey ></b-icon> {{sr.likes}} likes   
           </div> -->
+          </div>
         </div>
-      </div>
 
         <div class="description-comment">
           <div class="description">
@@ -262,9 +284,6 @@ export default {
           console.log(this.i_sr[i].tag);
           i++;
         });
-        
-
-        
       });
     },
     likePress(id, c_likes) {
@@ -272,10 +291,9 @@ export default {
       let n_likes = c_likes + 1;
       datRef.set(n_likes);
       this.getPostImg();
-      if(this.likekey === 0){
-        this.likekey ++;
-      
-      }else{
+      if (this.likekey === 0) {
+        this.likekey++;
+      } else {
         this.likekey = 0;
       }
     },
@@ -330,11 +348,11 @@ export default {
     image(newValue, oldValue) {
       const base64Encode = (data) =>
         new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(data);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = (error) => reject(error);
-      })
+          const reader = new FileReader();
+          reader.readAsDataURL(data);
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = (error) => reject(error);
+        });
 
       if (newValue !== oldValue) {
         if (newValue) {
@@ -352,7 +370,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style lang="scss">
