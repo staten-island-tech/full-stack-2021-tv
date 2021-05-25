@@ -99,9 +99,9 @@
   background-color: map-get($colors, background-grey);
   position: absolute;
   top: 10%;
-  left: 15%;
   height: 87vh;
   width: 70%;
+  left: 15%;
   @include tablet {
     width: 90%;
   }
@@ -364,6 +364,7 @@
   font-size: 1.6rem;
   font-weight: bold;
   color: black;
+  width: fit-content;
   @include phone {
     font-size: 1.3rem;
   }
