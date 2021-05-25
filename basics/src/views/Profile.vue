@@ -54,7 +54,30 @@
                         </span>
                         <p class="settings-menu-header"> Change Profile Picture </p>
                         <div>
-                          <input type="file" id="pfpUpload" class="form-control" accept="image/*" />
+                          <b-form @submit.stop.prevent="onSubmit">
+                            <div class="d-flex mb-3">
+                              <b-form-file
+                                id="pfpUpload"
+                                v-model="image"
+                                placeholder="Or drop image here"
+                                drop-placeholder="Or drop image here..."
+                                class="select-image-form"
+                                label="Choose an Image"
+                              ></b-form-file>
+                              <span
+                                v-if="hasImage"
+                                variant="danger"
+                                class="clear-image-button"
+                                @click="clearImage"
+                              >Clear Image
+                              </span>
+                            </div>
+                            <b-img
+                              id="select-image-upload"
+                              v-if="hasImage"
+                              :src="imageSrc"
+                            ></b-img>
+                          </b-form>
                           <button
                             type="button"
                             id="pfpUbutton"
@@ -375,6 +398,16 @@ export default {
       this.pfp = user.photoURL;
       console.log(this.pfp);
     },
+    clearImage() {
+      this.image = null;
+    },
+    onSubmit() {
+      if (!this.image) {
+        alert("Please select an image.");
+        return;
+      }
+      alert("Form submitted!");
+    },
     changePfp() {
       //let uplbtn = document.getElementById("pfpUbutton");
       let imgInp = document.getElementById("pfpUpload");
@@ -403,12 +436,44 @@ export default {
       
     },
   },
+  computed: {
+    hasImage() {
+      return !!this.image;
+    },
+  },
 
   data() {
     return {
+      image: null,
+      imageSrc: null,
       dName: "",
       pfp: null,
     };
+  },
+  watch: {
+    image(newValue, oldValue) {
+      const base64Encode = (data) =>
+        new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(data);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      })
+
+      if (newValue !== oldValue) {
+        if (newValue) {
+          base64Encode(newValue)
+            .then((value) => {
+              this.imageSrc = value;
+            })
+            .catch(() => {
+              this.imageSrc = null;
+            });
+        } else {
+          this.imageSrc = null;
+        }
+      }
+    },
   },
 };
 </script>

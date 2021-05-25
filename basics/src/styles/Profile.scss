@@ -154,16 +154,33 @@
 }
 
 #pfp-content {
-  height: 43%;
+  height: 90%;
   width: 40%;
   background-color: map-get($colors, accent2);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.form-control {
-  margin-left: 3rem;
-  width: 88.25%;
+#select-image-upload {
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 20rem;
+}
+.clear-image-button {
+  position: absolute;
+  top: 9.75rem;
+  right: 3.75rem;
+  cursor: pointer;
+  padding: 7px 9px 7px 9px;
+  font-size: 1.5rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: map-get($colors, accent3);
 }
 #pfpUbutton {
   position: absolute;
@@ -172,7 +189,7 @@
 }
 
 #bio-content {
-  height: 62%;
+  height: 65%;
   width: 40%;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -533,13 +550,13 @@
 
 .picture-container {
   position: relative;
-
 }
 .expanded-image {
   object-fit: cover;
   border-top-left-radius: 10px 10px;
   border-top-right-radius: 10px 10px;
-  width: 100%;
+  max-height: 40rem;
+  max-width: 100%;
   @include phone {
     height: 100%;
     object-fit: cover;
