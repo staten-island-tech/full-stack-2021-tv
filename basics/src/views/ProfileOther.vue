@@ -272,7 +272,12 @@
 </template>
 
 <script>
-export default {};
+//import firebase from "firebase/app";
+//import Vue from "vue";
+export default {
+  
+
+};
 </script>
 
 <style lang="scss" scoped>

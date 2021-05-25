@@ -10,10 +10,12 @@
 <script>
 import firebase from "firebase/app";
 import TopHeader from "./components/Top-Header";
+
 export default {
   components: { "top-header": TopHeader },
   mounted() {
     this.getUserStatus();
+    
   },
   methods: {
     getUserStatus() {

@@ -184,9 +184,9 @@
 
         <div class="description-comment">
           <div class="description">
-            <router-link to="/ProfileOther" class="username">
+            <p class="username" v-on:click="otherPf(sr.uid)">
               {{ sr.dName }}
-            </router-link>
+            </p>
             <p class="caption">{{ sr.caption }}</p>
           </div>
           <!-- <div class="comment-section">
@@ -211,6 +211,7 @@ import Vue from "vue";
 export default {
   mounted() {
     this.getPostImg();
+    
   },
   methods: {
     mPost() {
@@ -254,6 +255,12 @@ export default {
 
         };
       });
+    },
+    otherPf(uid){
+      let user = firebase.auth().currentUser;
+      let userRef = firebase.database().ref(`UIDs/${user.uid}/interest`);
+      userRef.set(uid);
+      this.$router.push('/ProfileOther');
     },
     getPostImg() {
       let datRef = firebase.database().ref("Posts/");
