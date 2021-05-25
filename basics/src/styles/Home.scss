@@ -45,6 +45,10 @@
   .vs--searchable {
     font-size: 1.5rem;
     padding: 1rem;
+    @include phone {
+      font-size: 1rem;
+      margin-top: .7rem;
+    }
   }
   @include phone {
     width: 61%;
@@ -61,6 +65,7 @@
   @include phone {
     width: 10%;
     padding-right: 0.25rem;
+    height: 90%;
   }
   @include tablet {
     width: 5%;
@@ -68,7 +73,6 @@
 }
 .w3-black {
   margin-top: 0.9rem;
-  height: 62%;
   width: 100%;
   padding: 0rem;
   border: #BABAC9 solid 1px;
@@ -77,6 +81,12 @@
   font-weight: 800;
   font-size: 1.5em;
   border-radius: 5px;
+    margin-top: 1rem;
+    height: 55%;
+  @include phone{
+  margin-top: 1.5rem;
+  height: 50%;
+  }
 }
 
 #avatar {
@@ -99,7 +109,7 @@
   background-color: map-get($colors, background-grey);
   position: relative;
   margin-top: 2rem;
-  height: 100%;
+  height: fit-content;
   width: 70%;
   margin: auto;
   margin-bottom: 2rem;
@@ -133,24 +143,28 @@
   line-height: 3rem;
   font-size: 3rem;
   font-weight: bold;
+  @include phone {
+    font-size: 2.5rem;
+  }
 }
 .blog-picture {
   background-color: white;
   height: 48vh;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
   border: 1.35px solid;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   border-color: #DBDBDB;
+  margin-top: 1rem;
 }
 
-.select-image-container {
-  height: 45vh;
-}
 .select-image-form {
-  margin: 2rem 2rem 0rem 2rem;
+  @include phone {
+    margin: 0rem;
+    margin-right: .5rem;
+  }
 }
 
 .clear-image-button {
@@ -171,8 +185,25 @@
   margin: auto;
   margin-bottom: 2rem;
   object-fit: contain;
-  height: 18rem;
-  width: 95.25%;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 2rem !important;
+  @include phone {
+    padding-bottom: 0rem !important;
+    height: 80%;
+  }
+  @include tablet {
+    padding-bottom: 0rem !important;
+  }
+}
+
+.select-image-container {
+  height: 100%;
+}
+
+.select-image-upload-container {
+  height: 90%;
+  width: 100%;
 }
 
 .blog-comment {
@@ -184,21 +215,11 @@
   border-radius: 10px;
   border-color: #DBDBDB;
 }
-.blog-caption {
-  width: 100%;
-  height: 100%;
-  padding: 8px 0px 10px 10px;
-  // box-sizing: border-box;
-  font-size: 1.5rem;
-  resize: none;  
-  cursor: pointer;
-}
 
 .blog-bottom-row {
   display: flex;
   flex-direction: row;
   height: 6vh;
-  font-size: 1.5rem;
 }
 
 .blog-tag {
@@ -210,8 +231,13 @@
   border-radius: 5px;
   border-color: #DBDBDB;
   width: 76%;
+  font-size: 1.3rem;
   @include phone{
-    width: 85%;
+    width: 70%;
+    font-size: 1rem;
+  }
+  @include tablet {
+    width: 80%;
   }
 }
 
@@ -228,7 +254,6 @@
 
 .blog-post {
   width: 10%;
-  padding-left: 7px;
   background-color: map-get($colors, primary);
   border: 1.35px solid;
   -webkit-border-radius: 5px;
@@ -236,14 +261,18 @@
   border-radius: 5px;
   border-color: #DBDBDB;
   cursor: pointer;
+  font-size: 1.3rem;
   @include phone{
     width: 15%;
+    font-size: .9rem;
+  }
+  @include tablet {
+    font-size: 1.2rem;
   }
 }
 
 .blog-close {
-    width: 10%;
-  padding-left: 7px;
+  width: 10%;
   background-color: map-get($colors, primary);
   border: 1.35px solid;
   -webkit-border-radius: 5px;
@@ -252,22 +281,31 @@
   border-color: #DBDBDB;
   cursor: pointer;
   margin-left: .5rem;
+  font-size: 1.3rem;
   @include phone{
     width: 15%;
+    font-size: .9rem;
+  }
+  @include tablet {
+    font-size: 1.2rem;
   }
 }
 
 .blog-caption {
   width: 100%;
   height: 100%;
-  padding: 12px 20px;
+  padding: 1rem;
   box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   resize: none;  
-  padding-left: 7px;
+  border-radius: 10px;
   cursor: pointer;
   @include phone {
-    font-size: .8rem;
+    font-size: 1rem;
+  }
+  @include tablet {
+    font-size: 1.2rem;
+    padding: 1rem;
   }
 }
 
@@ -457,4 +495,31 @@ body#pop-up-container {
     width: 3rem !important;
     height: 3rem !important;
   }
+}
+
+.custom-file-label {
+  font-size: 1.5rem;
+  @include phone {
+    font-size: .9rem;
+  }
+  @include tablet {
+    font-size: 1.3rem;
+  }
+}
+
+#clearImage {
+  font-size: 1.5rem;
+  @include tablet {
+    height: 10%;
+    font-size: 1.3rem;
+  }
+  @include phone {
+  font-size: .8rem;
+  margin-left: 0rem !important;
+  height: 10%;
+  }
+}
+
+#mt3container {
+  height: 90%;
 }
