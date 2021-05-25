@@ -284,7 +284,7 @@ export default {
           });
           //Vue.set(this.i_sr, i, {});
 
-          //console.log(this.i_sr[i].durl);
+          console.log(this.i_sr[i].uid);
          // console.log(this.i_sr[i].disp);
           //console.log(this.i_sr[i].dName);
           //console.log(this.i_sr[i].caption);
