@@ -242,6 +242,7 @@ export default {
                   date: `${meta.timeCreated}`,
                   url: `${durl}`,
                   dName: `${user.displayName}`,
+                  UID: `${user.uid}`,
                   caption: `${p_caption}`,
                   likes: 0,
                   tag: `${c_tag}`,
@@ -269,6 +270,7 @@ export default {
           let key = postChild.key;
           let hearts = postChild.child("likes").val();
           let tag = postChild.child("tag").val();
+          let postUID = postChild.chil("UID").val();
 
           Vue.set(this.i_sr, i, {
             disp: displ,
@@ -278,6 +280,7 @@ export default {
             id: key,
             likes: hearts,
             tag: tag,
+            uid: postUID,
           });
           //Vue.set(this.i_sr, i, {});
 
