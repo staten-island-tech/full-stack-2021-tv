@@ -97,11 +97,12 @@
   -moz-border-radius: 10px;
   border-radius: 10px;
   background-color: map-get($colors, background-grey);
-  position: absolute;
-  top: 10%;
-  height: 87vh;
+  position: relative;
+  margin-top: 2rem;
+  height: 100%;
   width: 70%;
-  left: 15%;
+  margin: auto;
+  margin-bottom: 2rem;
   @include tablet {
     width: 90%;
   }
