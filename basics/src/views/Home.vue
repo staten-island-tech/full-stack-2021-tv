@@ -230,23 +230,28 @@ export default {
       let db = firebase.database();
       let dbRef = db.ref("Posts/");
       console.log(p_img.name);
-      storagePic.getMetadata().then((meta) => {
-        storagePic.getDownloadURL().then((durl) => {
-          dbRef
-            .child(
-              `${p_img.name.replace(/[,.-:]/g, "") +
-                meta.timeCreated.toString().replace(/[.-]/g, "")}`
-            )
-            .set({
-              date: `${meta.timeCreated}`,
-              url: `${durl}`,
-              dName: `${user.displayName}`,
-              caption: `${p_caption}`,
-              likes: 0,
-              tag: `${c_tag}`,
-            });
+      try{
+        storagePic.getMetadata().then((meta) => {
+          storagePic.getDownloadURL().then((durl) => {
+            dbRef
+              .child(
+                `${p_img.name.replace(/[,.-:]/g, "") +
+                 meta.timeCreated.toString().replace(/[.-]/g, "")}`
+              )
+              .set({
+                date: `${meta.timeCreated}`,
+                url: `${durl}`,
+                dName: `${user.displayName}`,
+                caption: `${p_caption}`,
+                likes: 0,
+                tag: `${c_tag}`,
+              });
+          });
         });
-      });
+      }catch(error){
+        console.log("retrying databse DURL retrieval");
+
+      }
     },
     getPostImg() {
       let datRef = firebase.database().ref("Posts/");
