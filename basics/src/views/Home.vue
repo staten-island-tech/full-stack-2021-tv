@@ -270,7 +270,7 @@ export default {
           let key = postChild.key;
           let hearts = postChild.child("likes").val();
           let tag = postChild.child("tag").val();
-          let postUID = postChild.chil("UID").val();
+          let postUID = postChild.child("UID").val();
 
           Vue.set(this.i_sr, i, {
             disp: displ,
