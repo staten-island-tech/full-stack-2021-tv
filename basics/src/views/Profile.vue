@@ -216,9 +216,9 @@
                 <div class="description-comment">
                   <div class="description">
                     <router-link to="/ProfileOther" class="username">
-                      Name
+                      
                     </router-link>
-                    <p class="caption">caption</p>
+                    <p class="caption">{{ sr.caption }}</p>
                   </div>
                   <!-- <div class="comment-section">
           <router-link
@@ -279,12 +279,8 @@ export default {
             let n_likes = likeSnapshot.val() + 1;
             let dat = new Date();
             datRef.set(n_likes);
-            this.getPostImg();
-            if (this.likekey === 0) {
-              this.likekey++;
-            } else {
-              this.likekey = 0;
-            }
+            this.getPosts();
+            
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
@@ -298,34 +294,39 @@ export default {
     },
     getPosts() {
       let datRef = firebase.database().ref("Posts/");
+      let user = firebase.auth().currentUser;
       let i = 0;
 
       datRef.once("value").then((sn) => {
         sn.forEach((postChild) => {
-          let displ = "none";
-          //console.log(i);
-          let dURL = postChild.child("url").val();
-          //console.log(dURL);
-          let dn = postChild.child("dName").val();
-          let cp = postChild.child("caption").val();
-          let key = postChild.key;
-          let hearts = postChild.child("likes").val();
-          let tag = postChild.child("tag").val();
           let postUID = postChild.child("UID").val();
+          if(postUID === user.uid){
+            let displ = "none";
+            //console.log(i);
+            let dURL = postChild.child("url").val();
+            //console.log(dURL);
+            let dn = postChild.child("dName").val();
+            let cp = postChild.child("caption").val();
+            let key = postChild.key;
+            let hearts = postChild.child("likes").val();
+            let tag = postChild.child("tag").val();
+          
 
-          Vue.set(this.i_sr, i, {
-            disp: displ,
-            durl: dURL,
-            dName: dn,
-            caption: cp,
-            id: key,
-            likes: hearts,
-            tag: tag,
-            uid: postUID,
-          });
-          //Vue.set(this.i_sr, i, {});
+            Vue.set(this.i_sr, i, {
+              disp: displ,
+              durl: dURL,
+              dName: dn,
+              caption: cp,
+              id: key,
+              likes: hearts,
+              tag: tag,
+              uid: postUID,
+            });
+            //Vue.set(this.i_sr, i, {});
 
-          console.log(this.i_sr[i].uid);
+            console.log(this.i_sr[i].uid);
+          }
+          
           // console.log(this.i_sr[i].disp);
           //console.log(this.i_sr[i].dName);
           //console.log(this.i_sr[i].caption);

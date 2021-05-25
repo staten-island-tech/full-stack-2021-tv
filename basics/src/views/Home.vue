@@ -156,7 +156,7 @@
                 Full Image
               </button>
 
-              <div class="w3-modal"  :style="{ display: sr.disp }">
+              <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
                 <div class="w3-modal-content" id="pop-up-container">
                   <div class="w3-container">
                     <span
@@ -318,11 +318,7 @@ export default {
             let dat = new Date();
             datRef.set(n_likes);
             this.getPostImg();
-            if (this.likekey === 0) {
-              this.likekey++;
-            } else {
-              this.likekey = 0;
-            }
+            
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
