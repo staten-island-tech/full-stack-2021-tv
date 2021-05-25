@@ -177,6 +177,7 @@
           >
             <div class="user-image-1">
               <img
+                alt=""
                 src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                 class="placeholder"
               />
@@ -200,6 +201,7 @@
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
+                    alt=""
                     class="expanded-image"
                     src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                   />
@@ -241,6 +243,7 @@
           >
             <div class="user-image-1">
               <img
+                alt=""
                 src="https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=1600&h=900"
                 class="placeholder"
               />
@@ -311,6 +314,7 @@
           >
             <div class="user-image-1">
               <img
+                alt=""
                 src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg"
                 class="placeholder"
               />
