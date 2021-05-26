@@ -12,7 +12,11 @@
         </router-link>
       </p>
       <div id="select-tag-container">
-        <v-select id="mySelect" :options="options" alt="Post Tags" v-on:click="console.log(c_tag)"></v-select>
+        <select v-model="feed.select" id="mySelect">
+          <option v-for="select in selects" v-bind:key="select">
+            {{ select }}
+          </option>
+        </select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
@@ -268,7 +272,7 @@ export default {
       datRef.once("value").then((sn) => {
         sn.forEach((postChild) => {
           let tag = postChild.child("tag").val();
-          if(c_tag === "" || c_tag === tag){
+          if (c_tag === "" || c_tag === tag) {
             let displ = "none";
             //console.log(i);
             let dURL = postChild.child("url").val();
@@ -277,7 +281,7 @@ export default {
             let cp = postChild.child("caption").val();
             let key = postChild.key;
             let hearts = postChild.child("likes").val();
-          
+
             let postUID = postChild.child("UID").val();
 
             Vue.set(this.i_sr, i, {
@@ -290,10 +294,8 @@ export default {
               tag: tag,
               uid: postUID,
             });
-            
-            
           }
-          
+
           //Vue.set(this.i_sr, i, {});
 
           console.log(this.i_sr[i].uid);
@@ -324,13 +326,13 @@ export default {
             let dat = new Date();
             datRef.set(n_likes);
             this.getPostImg(this.c_tag);
-            
+
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
       });
     },
-    tagChange(){
+    tagChange() {
       let tagdoc = document.getElementById("mySelect");
       this.c_tag = tagdoc.value;
       console.log(this.c_tag);
@@ -365,9 +367,14 @@ export default {
       blog: {
         tag: "",
       },
+      feed: {
+        select: "",
+      },
       i_sr: {},
       likekey: 0,
-      options: [
+      c_tag: "",
+      selects: [
+        "Pick a Tag",
         "Education",
         "Entertainment",
         "Sports",
@@ -375,7 +382,6 @@ export default {
         "Games",
         "Others",
       ],
-      c_tag: "",
       tags: [
         "Pick a Tag",
         "Education",
