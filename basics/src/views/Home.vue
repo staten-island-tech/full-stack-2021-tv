@@ -100,7 +100,6 @@
 
                 <button
                   class="blog-post"
-                "
                   onclick=","
                   v-on:click="mPost()"
                   >
