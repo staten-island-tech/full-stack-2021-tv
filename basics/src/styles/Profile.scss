@@ -1,7 +1,7 @@
 @import "@/styles/_variables.scss";
 
 .profile {
-  height: 108vh;
+  height: auto;
   width: 100%;
   background-color: map-get($colors, background-grey);
   font-family: $font;
@@ -500,7 +500,7 @@
 }
 
 .user-box-1 {
-  width: 30%;
+  width: 31%;
   margin: 1rem;
   cursor: pointer;
   @include phone {
@@ -529,6 +529,7 @@
 
 .user-image-1 {
   height: 20rem;
+  width: 31rem;
   @include tablet {
     height: 15rem;
   }
