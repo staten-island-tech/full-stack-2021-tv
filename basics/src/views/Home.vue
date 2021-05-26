@@ -22,8 +22,7 @@
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 
-          document.getElementById('home-page').style.overflowY='hidden',
-          document.getElementById('home-page').style.position='fixed'"
+          document.getElementById('home-page').style.overflowY='hidden'"
           class="w3-button w3-black"
         >
           +
@@ -151,8 +150,7 @@
             <div class="enlarge-container">
               <button
                 onclick=" 
-              document.getElementById('home-page').style.overflowY='hidden',
-              document.getElementById('home-page').style.position='fixed'"
+              document.getElementById('home-page').style.overflowY='hidden''"
                 class="w3-button"
                 id="enlargeText"
                 v-on:click="sr.disp = 'block'"
@@ -268,7 +266,7 @@ export default {
     getPostImg(c_tag) {
       let datRef = firebase.database().ref("Posts/");
       let i = 0;
-      this.i_sr = {};
+      
       datRef.once("value").then((sn) => {
         
         sn.forEach((postChild) => {
@@ -333,6 +331,7 @@ export default {
             this.getPostImg(this.c_tag);
             //this.likekey = n_likes;
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
+            
           });
         }
       });
@@ -341,6 +340,7 @@ export default {
       let tagdoc = document.getElementById("mySelect");
       this.c_tag = tagdoc.value;
       console.log(this.c_tag);
+      this.i_sr = {};
       this.getPostImg(this.c_tag);
     },
     clearImage() {
