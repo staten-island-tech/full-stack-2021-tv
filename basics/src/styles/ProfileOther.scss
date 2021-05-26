@@ -387,7 +387,7 @@ h1 {
   margin: auto;
   @include phone {
     margin-top: 0rem;
-    width: auto;
+    width: 100%;
     margin:auto;
     margin-bottom: 1rem;
   }
@@ -419,9 +419,6 @@ h1 {
   display: block;
   @include tablet {
     height: 15rem;
-  }
-  @include phone {
-    width: 24rem;
   }
 }
 
@@ -463,4 +460,7 @@ h1 {
 .heart-icon {
   margin-top: .5rem;
   margin-right: 1rem;
+  @include phone {
+    margin-top: .3rem;
+  }
 }
