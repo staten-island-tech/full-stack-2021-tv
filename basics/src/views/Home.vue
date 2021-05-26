@@ -12,7 +12,7 @@
         </router-link>
       </p>
       <div id="select-tag-container">
-        <v-select id="mySelect" :options="options" alt="Post Tags"></v-select>
+        <v-select id="mySelect" :options="options" alt="Post Tags" v-on:click="console.log(c_tag)"></v-select>
       </div>
       <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
@@ -211,7 +211,7 @@ import firebase from "firebase/app";
 import Vue from "vue";
 export default {
   mounted() {
-    this.getPostImg();
+    this.getPostImg(this.c_tag);
   },
   methods: {
     mPost() {
@@ -261,33 +261,39 @@ export default {
       userRef.set(uid);
       this.$router.push("/ProfileOther");
     },
-    getPostImg() {
+    getPostImg(c_tag) {
       let datRef = firebase.database().ref("Posts/");
       let i = 0;
 
       datRef.once("value").then((sn) => {
         sn.forEach((postChild) => {
-          let displ = "none";
-          //console.log(i);
-          let dURL = postChild.child("url").val();
-          //console.log(dURL);
-          let dn = postChild.child("dName").val();
-          let cp = postChild.child("caption").val();
-          let key = postChild.key;
-          let hearts = postChild.child("likes").val();
           let tag = postChild.child("tag").val();
-          let postUID = postChild.child("UID").val();
+          if(c_tag === "" || c_tag === tag){
+            let displ = "none";
+            //console.log(i);
+            let dURL = postChild.child("url").val();
+            //console.log(dURL);
+            let dn = postChild.child("dName").val();
+            let cp = postChild.child("caption").val();
+            let key = postChild.key;
+            let hearts = postChild.child("likes").val();
+          
+            let postUID = postChild.child("UID").val();
 
-          Vue.set(this.i_sr, i, {
-            disp: displ,
-            durl: dURL,
-            dName: dn,
-            caption: cp,
-            id: key,
-            likes: hearts,
-            tag: tag,
-            uid: postUID,
-          });
+            Vue.set(this.i_sr, i, {
+              disp: displ,
+              durl: dURL,
+              dName: dn,
+              caption: cp,
+              id: key,
+              likes: hearts,
+              tag: tag,
+              uid: postUID,
+            });
+            
+            
+          }
+          
           //Vue.set(this.i_sr, i, {});
 
           console.log(this.i_sr[i].uid);
@@ -317,12 +323,18 @@ export default {
             let n_likes = likeSnapshot.val() + 1;
             let dat = new Date();
             datRef.set(n_likes);
-            this.getPostImg();
+            this.getPostImg(this.c_tag);
             
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
       });
+    },
+    tagChange(){
+      let tagdoc = document.getElementById("mySelect");
+      this.c_tag = tagdoc.value;
+      console.log(this.c_tag);
+      this.getPostImg(this.c_tag);
     },
     clearImage() {
       this.image = null;
@@ -363,6 +375,7 @@ export default {
         "Games",
         "Others",
       ],
+      c_tag: "",
       tags: [
         "Pick a Tag",
         "Education",
