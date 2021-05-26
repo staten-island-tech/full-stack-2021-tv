@@ -80,7 +80,7 @@ h1 {
   cursor: pointer;
   z-index: 1;
   background-color: map-get($colors, primary);
-  opacity: 50%;
+  opacity: 100%;
 }
 .close-button:hover {
   opacity: 100%;
@@ -407,10 +407,12 @@ h1 {
 
 .other-image-1 {
   height: 20rem;
+  width: 31rem;
   @include tablet {
     height: 15rem;
   }
 }
+
 .placeholder {
   height: 100%;
   width: 100%;
