@@ -105,8 +105,9 @@
                 document.getElementById('home-page').style.position='static',
                 "
                   v-on:click="mPost()"
-                >
+                  @click="reloadPage">
                   Post
+                
                 </button>
                 <button class="blog-close" 
                 onclick="document.getElementById('id01').style.display='none',
@@ -385,7 +386,7 @@ export default {
       likekey: 0,
       c_tag: "",
       selects: [
-        "Pick a Tag",
+        "All Tags",
         "Education",
         "Entertainment",
         "Sports",

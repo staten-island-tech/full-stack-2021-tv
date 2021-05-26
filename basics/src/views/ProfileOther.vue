@@ -87,7 +87,7 @@
                     class="placeholder"
                     v-bind:src="sr.durl"
                     :key="sr.durl"
-                    v-on:click="sr.disp = 'none'"
+                    
                   />
 
                   <div class="likes">
