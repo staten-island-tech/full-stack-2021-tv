@@ -73,13 +73,15 @@
                 </div>
               </div>
               <div class="blog-comment">
-                <textarea
-                  maxlength="100"
-                  placeholder="Caption"
-                  class="blog-caption"
-                  style="border: none"
-                  id="p-caption"
-                ></textarea>
+                  <textarea
+                    maxlength="100"
+                    placeholder="Caption"
+                    class="blog-caption"
+                    style="border: none"
+                    id="p-caption"
+                    aria-label="p-caption"
+                    title="p-caption"
+                  ></textarea>
               </div>
 
               <div class="blog-bottom-row">

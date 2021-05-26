@@ -14,8 +14,10 @@
             document.getElementById('profile').style.overflowY='hidden',
             document.getElementById('profile').style.position='fixed'"
           id="settings-button"
+          aria-label="settings-button" 
+          title="settings-button"
         >
-          <b-icon icon="gear" id="settings-button-png"></b-icon>
+          <b-icon icon="gear" id="settings-button-png" ></b-icon>
         </button>
 
         <div id="id02" class="w3-modal">
@@ -122,7 +124,9 @@
                           class="bio-input"
                           placeholder="Write Here..."
                           maxlength="150" 
-                          style="border: none">
+                          style="border: none"
+                          aria-label="bio-input"
+                          title="bio-input">
                         </textarea>
                         <button 
                           class="save-button w3-button w3-white w3-border"
