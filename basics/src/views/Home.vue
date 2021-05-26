@@ -100,19 +100,17 @@
 
                 <button
                   class="blog-post"
-                  onclick="document.getElementById('id01').style.display='none',
-                document.getElementById('home-page').style.overflowY='scroll',
-                document.getElementById('home-page').style.position='static',
                 "
+                  onclick=","
                   v-on:click="mPost()"
-                  @click="reloadPage">
+                  >
                   Post
                 
                 </button>
                 <button class="blog-close" 
                 onclick="document.getElementById('id01').style.display='none',
                 document.getElementById('home-page').style.overflowY='scroll',
-                document.getElementById('home-page').style.position='static'">Close</button>
+                document.getElementById('home-page').style.position='static'" @click="reloadPage">Close</button>
               </div>
             </div>
           </div>
@@ -223,6 +221,9 @@ export default {
   },
   methods: {
     mPost() {
+      document.getElementById('id01').style.display='none';
+      document.getElementById('home-page').style.overflowY='scroll';
+      document.getElementById('home-page').style.position='static';
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
       console.log(user);
@@ -256,6 +257,7 @@ export default {
                   likes: 0,
                   tag: `${c_tag}`,
                 });
+                this.reloadPage();
             });
           });
         } catch (error) {
