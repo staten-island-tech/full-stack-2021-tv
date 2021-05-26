@@ -524,8 +524,9 @@
   cursor: pointer;
   //flex: 1 0 33%; 
   margin-bottom: 1rem !important;
-  margin: auto;
   width: calc(100% * (1/3) - 10px - 1px);
+  margin-right: .3rem;
+  margin-left: .3rem;
   @include phone {
     margin-top: 0rem;
     width: 100%;
