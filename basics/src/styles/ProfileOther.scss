@@ -385,9 +385,9 @@ h1 {
   margin-bottom: 1rem;
   @include phone {
     margin-top: 0rem;
-    margin-right: 0rem;
-    margin-left: 0rem;
     width: auto;
+    margin:auto;
+    margin-bottom: 1rem;
   }
   @include tablet {
     margin-right: .3rem;
