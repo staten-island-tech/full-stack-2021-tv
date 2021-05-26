@@ -199,6 +199,20 @@
   }
 }
 
+#mySelect {
+  width: 95%;
+  height: 62%;
+  margin-top: 0.9rem;
+  font-size: 1.5em;
+  border-radius: 5px;
+  border: #BABAC9 solid 1px;
+  padding-left: 10px;
+  @include phone{
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    width: 85%;
+  }
+}
 
 .blog-comment {
   height: 12vh;

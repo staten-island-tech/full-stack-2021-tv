@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <top-header></top-header>
-      <div id="nav">
-      </div>
+    <div id="nav"></div>
     <router-view />
   </div>
 </template>
@@ -15,7 +14,6 @@ export default {
   components: { "top-header": TopHeader },
   mounted() {
     this.getUserStatus();
-    
   },
   methods: {
     getUserStatus() {
