@@ -73,7 +73,6 @@
 
         <div id="id01" class="w3-modal"  :style="{ display: sr.disp }">
           <div class="w3-modal-content w3-animate-zoom modal-container">
-            <div class="w3-container">
               <span
                 onclick=" 
                   document.getElementById('profile').style.overflowY='scroll',
@@ -103,19 +102,8 @@
                     </router-link>
                     <p class="caption">{{ sr.caption }}</p>
                   </div>
-                  <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>

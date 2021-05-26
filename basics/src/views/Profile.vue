@@ -172,7 +172,6 @@
 
     <section class="user-page-post">
       <div class="user-box-1" v-for="sr in i_sr" :key="sr.durl">
-        <div class="w3-container">
           <button
             onclick="
               document.getElementById('profile').style.overflowY='hidden',
@@ -192,7 +191,6 @@
                 v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
             </h2>
           </button>
-        </div>
 
         <div id="id01" class="w3-modal"  :style="{ display: sr.disp }">
           <div class="w3-modal-content w3-animate-zoom modal-container">

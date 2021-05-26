@@ -379,7 +379,8 @@ h1 {
 
 .other-box-1 {
   cursor: pointer;
-  flex: 1 0 33%; 
+  // flex: 1 0 33%; 
+  margin-bottom: 1rem;
   @include phone {
     margin-top: 0rem;
     margin-right: 0rem;
@@ -407,9 +408,13 @@ h1 {
 
 .other-image-1 {
   height: 20rem;
-  width: 31rem;
+  width:  30rem;
   @include tablet {
     height: 15rem;
+    width: 20rem;
+  }
+  @include phone {
+    width: 24rem;
   }
 }
 

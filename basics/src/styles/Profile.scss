@@ -434,13 +434,6 @@
   }
 }
 
-.w3-container {
-  padding: revert;
-  @include tablet {
-    height: 95%;
-  }
-}
-
 .user-banner-posts {
   height: 4rem;
   margin: auto;
@@ -501,7 +494,8 @@
 
 .user-box-1 {
   cursor: pointer;
-  flex: 1 0 33%; 
+  // flex: 1 0 33%; 
+  margin-bottom: 1rem;
   @include phone {
     margin-top: 0rem;
     margin-right: 0rem;
@@ -528,9 +522,13 @@
 
 .user-image-1 {
   height: 20rem;
-  width: 31rem;
+  width:  30rem;
   @include tablet {
     height: 15rem;
+    width: 20rem;
+  }
+  @include phone {
+    width: 24rem;
   }
 }
 
