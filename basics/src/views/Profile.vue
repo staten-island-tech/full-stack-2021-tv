@@ -66,13 +66,6 @@
                                 class="select-image-form"
                                 label="Choose an Image"
                               ></b-form-file>
-                              <span
-                                v-if="hasImage"
-                                variant="danger"
-                                class="clear-image-button"
-                                @click="clearImage"
-                              >Clear Image
-                              </span>
                             </div>
                             <b-img
                               id="select-image-upload"
@@ -80,17 +73,26 @@
                               :src="imageSrc"
                             ></b-img>
                           </b-form>
-                          <button
-                            type="button"
-                            id="pfpUbutton"
-                            class="save-button w3-button w3-white w3-border"
-                            v-on:click="changePfp()"
-                            onclick="document.getElementById('id04').style.display='none', 
-                            document.getElementById('profile').style.overflowY='scroll',
-                            document.getElementById('profile').style.position='static'"
-                          >
-                            Save
-                          </button>
+                          <div class= "pfpUbutton-container"> 
+                              <button
+                                v-if="hasImage"
+                                variant="danger"
+                                class="clear-image-button"
+                                id="clear-image-button"
+                                @click="clearImage"
+                              >Clear Image
+                              </button>
+                            <button
+                              type="button"
+                              id="pfpUbutton"
+                              class="save-button w3-button w3-white w3-border"
+                              v-on:click="changePfp()"
+                              onclick="document.getElementById('id04').style.display='none', 
+                              document.getElementById('profile').style.overflowY='scroll',
+                              document.getElementById('profile').style.position='static'">
+                              Save
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -120,6 +122,7 @@
                           &times;
                         </span>
                         <h3 class="settings-menu-header">Edit Bio</h3>
+                        <div class="bio-input-container">
                         <textarea
                           class="bio-input"
                           id = "biofield"
@@ -128,12 +131,15 @@
                           style="border: none"
                           aria-label="bio-input">
                         </textarea>
+                        </div>
+                        <div class= "save-button-container"> 
                         <button 
                           class="save-button w3-button w3-white w3-border"
                           onclick="document.getElementById('id03').style.display='none', 
                             document.getElementById('profile').style.overflowY='scrolled',
                             document.getElementById('profile').style.position='static'" v-on:click="changeBio()"
                           > Save </button>
+                          </div>
                       </div>
                     </div>
                   </div>
