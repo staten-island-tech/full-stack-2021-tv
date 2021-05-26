@@ -131,7 +131,7 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <img :src="sr.durl" :key="sr.durl" class="placeholder" />
+          <img :src="sr.durl" :key="sr.durl" class="placeholder" alt=""/>
 
           <div class="likes">
             <div class="likes-container">
@@ -168,6 +168,7 @@
                       >&times;
                     </span>
                     <img
+                      alt=""
                       class="image-popUp"
                       v-bind:src="sr.durl"
                       :key="sr.durl"
