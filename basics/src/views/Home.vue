@@ -1,5 +1,5 @@
 <template>
-  <section id="home-page" class="home-page">
+  <section id="home-page" class="home-page" :key="c_tag">
     <h1 style="display:none">Home Page</h1>
     <section class="user-banner-profile">
       <p id="logo-for-feed">
@@ -12,7 +12,7 @@
         </router-link>
       </p>
       <div id="select-tag-container">
-        <select v-model="feed.select" id="mySelect">
+        <select v-model="feed.select" id="mySelect" v-on:change="tagChange()">
           <option v-for="select in selects" v-bind:key="select">
             {{ select }}
           </option>
@@ -268,11 +268,15 @@ export default {
     getPostImg(c_tag) {
       let datRef = firebase.database().ref("Posts/");
       let i = 0;
-
+      this.i_sr = {};
       datRef.once("value").then((sn) => {
+        
         sn.forEach((postChild) => {
           let tag = postChild.child("tag").val();
-          if (c_tag === "" || c_tag === tag) {
+          
+            
+          
+          if (c_tag === "" || c_tag === tag || c_tag === "Pick a Tag") {
             let displ = "none";
             //console.log(i);
             let dURL = postChild.child("url").val();
@@ -294,11 +298,12 @@ export default {
               tag: tag,
               uid: postUID,
             });
+            console.log(this.i_sr[i].tag);
           }
 
           //Vue.set(this.i_sr, i, {});
 
-          console.log(this.i_sr[i].uid);
+          
           // console.log(this.i_sr[i].disp);
           //console.log(this.i_sr[i].dName);
           //console.log(this.i_sr[i].caption);
