@@ -373,18 +373,20 @@ h1 {
     justify-content: center;
   }
   @include tablet {
-    width: 93%;
+    width: 100%;
   }
 }
 
 .other-box-1 {
   cursor: pointer;
+  width: 30%;
   // flex: 1 0 33%; 
   margin-bottom: 1rem;
   @include phone {
     margin-top: 0rem;
     margin-right: 0rem;
     margin-left: 0rem;
+    width: auto;
   }
   @include tablet {
     margin-right: .3rem;
@@ -400,6 +402,8 @@ h1 {
   border-color: #DBDBDB;
   padding: 0;
   font-size: 1.8rem;
+  width: 100%;
+  display: block;
 }
 
 .post-button:hover {
@@ -408,10 +412,10 @@ h1 {
 
 .other-image-1 {
   height: 20rem;
-  width:  30rem;
+  width:  auto;
+  display: block;
   @include tablet {
     height: 15rem;
-    width: 20rem;
   }
   @include phone {
     width: 24rem;
@@ -420,7 +424,7 @@ h1 {
 
 .placeholder {
   height: 100%;
-  width: 100%;
+  display: block;
   object-fit: cover;
   border-radius: revert;
   border-top-left-radius: 10px 10px;
