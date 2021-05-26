@@ -354,7 +354,8 @@ export default {
       alert("Form submitted!");
     },
     reloadPage() {
-      window.location.reload();
+      this.i_sr = {};
+      this.getPostImg(this.c_tag);
     },
   },
   computed: {
