@@ -1,5 +1,5 @@
 <template>
-  <section id="profile" class="profile">
+  <section id="profile" class="profile" v-if="loggedIn">
     <h1 style="display:none"> Profile Page </h1>
     <section class="user-banner-profile">
       <div id="logo-container">
@@ -221,9 +221,7 @@
 
                 <div class="description-comment">
                   <div class="description">
-                    <router-link to="/ProfileOther" class="username">
-                      
-                    </router-link>
+                    
                     <p class="caption">{{ sr.caption }}</p>
                   </div>
                   <!-- <div class="comment-section">
@@ -244,6 +242,9 @@
       </div>
       
     </section>
+  </section>
+  <section v-else>
+    <router-link to="/login">You are not logged in, click here to do so</router-link>
   </section>
 </template>
 
