@@ -3,27 +3,34 @@
 .login-box {
   width: 90vh;
   margin: auto;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
+  border: 1px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   padding: 2rem;
   margin-top: 8%;
-  background-color: map-get($colors, primary-light); //testing variables
+  background-color: map-get($colors, primary);
   font-family: $font;
-
   @include phone {
-    width: 45vh;
-    background-color: map-get($colors, orange);
+    margin-top: 6vh;
+    width: 80%;
   }
   @include tablet {
-    width: 70vh;
-    background-color: map-get($colors, light-blue);
+    margin-top: 15vh;
+    width: 60vh;
     font-size: 2.5rem;
   }
 }
 
 .login-title {
   text-align: center;
+  @include phone {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  @include tablet {
+    font-size: 5rem;
+  }
 }
 
 .login-signup-btn {
