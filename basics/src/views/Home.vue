@@ -83,6 +83,7 @@
                   class="blog-caption"
                   style="border: none"
                   id="p-caption"
+                  aria-label="p-caption"
                 ></textarea>
               </div>
 
@@ -139,7 +140,7 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <img :src="sr.durl" :key="sr.durl" class="placeholder" />
+          <img :src="sr.durl" :key="sr.durl" class="placeholder" alt="" />
 
           <div class="likes">
             <div class="likes-container">
@@ -179,6 +180,7 @@
                       v-bind:src="sr.durl"
                       :key="sr.durl"
                       v-on:click="sr.disp = 'none'"
+                      alt=""
                     />
                   </div>
                 </div>

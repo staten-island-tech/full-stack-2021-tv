@@ -58,7 +58,7 @@
             v-on:click="sr.disp = 'block'"
           >
             <div class="other-image-1">
-              <img v-bind:src="sr.durl" :key="sr.durl" class="placeholder" />
+              <img v-bind:src="sr.durl" :key="sr.durl" class="placeholder" alt=""/>
             </div>
             <h2 class="other-likes">
               <b-icon

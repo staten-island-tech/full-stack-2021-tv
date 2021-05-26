@@ -9,6 +9,8 @@
             type="email"
             v-model="email"
             class="form-control form-control-lg"
+            aria-labelledby=""
+            
           />
         </div>
 
@@ -18,6 +20,8 @@
             type="password"
             v-model="password"
             class="form-control form-control-lg"
+            aria-labelledby=""
+            
           />
         </div>
         <div class="login-signup-btn">
