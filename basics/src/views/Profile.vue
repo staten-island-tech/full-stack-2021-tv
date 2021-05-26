@@ -31,7 +31,7 @@
               >
               &times;
               </span>
-              <p class="settings-menu-header">Account Settings</p>
+              <h2 class="settings-menu-header">Account Settings</h2>
               <div class="settings-menu">
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
@@ -54,7 +54,7 @@
                         >
                         &times;
                         </span>
-                        <p class="settings-menu-header"> Change Profile Picture </p>
+                        <h3 class="settings-menu-header"> Change Profile Picture </h3>
                         <div>
                           <b-form @submit.stop.prevent="onSubmit">
                             <div class="d-flex mb-3">
@@ -119,14 +119,13 @@
                           class="close-button">
                           &times;
                         </span>
-                        <p class="settings-menu-header">Edit Bio</p>
+                        <h3 class="settings-menu-header">Edit Bio</h3>
                         <textarea
                           class="bio-input"
                           placeholder="Write Here..."
                           maxlength="150" 
                           style="border: none"
-                          aria-label="bio-input"
-                          title="bio-input">
+                          aria-label="bio-input">
                         </textarea>
                         <button 
                           class="save-button w3-button w3-white w3-border"

@@ -14,7 +14,6 @@
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options" alt="Post Tags"></v-select>
       </div>
-      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 
@@ -80,12 +79,11 @@
                     style="border: none"
                     id="p-caption"
                     aria-label="p-caption"
-                    title="p-caption"
                   ></textarea>
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag" id="tag_select">
+                <select class="blog-tag" v-model="blog.tag" id="tag_select" aria-label="blog-tag">
                   <option v-for="tag in tags" v-bind:key="tag">
                     {{ tag }}
                   </option>
