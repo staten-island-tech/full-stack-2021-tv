@@ -486,8 +486,8 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   height: auto;
-  width: 80%;
   margin: auto;
+  width: 99%;
   @include phone {
     width: 95%;
     display: flex;
@@ -500,9 +500,8 @@
 }
 
 .user-box-1 {
-  width: 31%;
-  margin: 1rem;
   cursor: pointer;
+  flex: 1 0 33%; 
   @include phone {
     margin-top: 0rem;
     margin-right: 0rem;

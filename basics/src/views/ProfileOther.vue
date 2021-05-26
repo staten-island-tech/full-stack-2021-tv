@@ -49,7 +49,7 @@
     </section> -->
 
     <section class="other-page-post">
-      <div class="user-box-1" v-for="sr in i_sr" :key="sr.durl">
+      <div class="other-box-1" v-for="sr in i_sr" :key="sr.durl">
         <div class="w3-container">
           <button
             onclick="
@@ -57,14 +57,14 @@
               document.getElementById('profile').style.position='fixed'"
             class="post-button" v-on:click="sr.disp = 'block'"
           >
-            <div class="user-image-1">
+            <div class="other-image-1">
               <img
                 v-bind:src="sr.durl"
                 :key="sr.durl"
                 class="placeholder"
               />
             </div>
-            <h2 class="user-likes">
+            <h2 class="other-likes">
               <b-icon variant="danger" icon="heart" v-on:click="likePress(sr.id)"
                 v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
             </h2>

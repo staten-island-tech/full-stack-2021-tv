@@ -5,7 +5,7 @@
   width: 100%;
   background-color: map-get($colors, background-grey);
   font-family: $font;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 h1 {
   font-size: 100%;
@@ -364,8 +364,8 @@ h1 {
   justify-content: space-evenly;
   flex-wrap: wrap;
   height: auto;
-  width: 80%;
   margin: auto;
+  width: 99%;
   @include phone {
     width: 95%;
     display: flex;
@@ -378,9 +378,8 @@ h1 {
 }
 
 .other-box-1 {
-  width: 31%;
-  margin: 1rem;
   cursor: pointer;
+  flex: 1 0 33%; 
   @include phone {
     margin-top: 0rem;
     margin-right: 0rem;
@@ -391,7 +390,6 @@ h1 {
     margin-left: .3rem;
   }
 }
-
 .post-button {
   background-color: white;
   border: 1.35px solid;
