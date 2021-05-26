@@ -28,18 +28,17 @@
         v-bind:src="pfp"
         :key="pfp"
       />
-        <!-- <div id="other-following-followers">
+      <!-- <div id="other-following-followers">
           <p id="other-following">Following</p>
           <p id="other-followers">Followers</p>
         </div> -->
-        <div class = "other-username-bio">
-        <h1 id="other-username" alt="Profile Username"> Name : {{ dName }}</h1>
-        <div class= "seperate-username-bio"> </div>
-        <p class="other-bio">{{bio}}</p>
-        </div>
+      <div class="other-username-bio">
+        <h1 id="other-username" alt="Profile Username">{{ dName }}</h1>
+        <div class="seperate-username-bio"></div>
+        <p class="other-bio">{{ bio }}</p>
+      </div>
     </section>
-    <div class= "seperate-info-post"> </div>
-
+    <div class="seperate-info-post"></div>
 
     <!-- <section class="user-banner-posts">
       <div class="user-posts/likes"></div>
@@ -55,56 +54,62 @@
             onclick="
               document.getElementById('profile').style.overflowY='hidden',
               document.getElementById('profile').style.position='fixed'"
-            class="post-button" v-on:click="sr.disp = 'block'"
+            class="post-button"
+            v-on:click="sr.disp = 'block'"
           >
             <div class="other-image-1">
-              <img
-                v-bind:src="sr.durl"
-                :key="sr.durl"
-                class="placeholder"
-              />
+              <img v-bind:src="sr.durl" :key="sr.durl" class="placeholder" />
             </div>
             <h2 class="other-likes">
-              <b-icon variant="danger" icon="heart" v-on:click="likePress(sr.id)"
-                v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
+              <b-icon
+                variant="danger"
+                icon="heart"
+                v-on:click="likePress(sr.id)"
+                v-bind:key="sr.likes"
+              ></b-icon>
+              {{ sr.likes }} likes
             </h2>
           </button>
         </div>
 
-        <div id="id01" class="w3-modal"  :style="{ display: sr.disp }">
+        <div id="id01" class="w3-modal" :style="{ display: sr.disp }">
           <div class="w3-modal-content w3-animate-zoom modal-container">
-              <!-- <span
+            <!-- <span
                 onclick=" 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
                 class="close-button close-post-button" v-on:click="sr.disp = 'none'">
                 &times;
               </span> -->
-              <div class="feed-post">
-                <div class="picture">
-                  <img
-                    alt=""
-                    class="placeholder"
-                    v-bind:src="sr.durl"
-                    :key="sr.durl"
-                    
-                  />
+            <div class="feed-post">
+              <div class="picture">
+                <img
+                  alt=""
+                  class="placeholder"
+                  v-bind:src="sr.durl"
+                  :key="sr.durl"
+                />
 
-                  <div class="likes">
-                    <b-icon class = "heart-icon" variant="danger" icon="heart" v-on:click="likePress(sr.id)"
-                    v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
-                  </div>
-                </div>
-
-                <div class="description-comment">
-                  <div class="description">
-                    <router-link to="/ProfileOther" class="username">
-                      
-                    </router-link>
-                    <p class="caption">{{ sr.caption }}</p>
-                  </div>
+                <div class="likes">
+                  <b-icon
+                    class="heart-icon"
+                    variant="danger"
+                    icon="heart"
+                    v-on:click="likePress(sr.id)"
+                    v-bind:key="sr.likes"
+                  ></b-icon>
+                  {{ sr.likes }} likes
                 </div>
               </div>
+
+              <div class="description-comment">
+                <div class="description">
+                  <router-link to="/ProfileOther" class="username">
+                  </router-link>
+                  <p class="caption">{{ sr.caption }}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -120,7 +125,7 @@ export default {
     this.getUserData();
     this.getPosts();
   },
-  methods:{
+  methods: {
     likePress(id) {
       let user = firebase.auth().currentUser;
       let userLikeRef = firebase.database().ref(`UIDs/${user.uid}/likes`);
@@ -138,7 +143,7 @@ export default {
             let dat = new Date();
             datRef.set(n_likes);
             this.getPosts();
-            
+
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
@@ -151,10 +156,10 @@ export default {
 
       datRef.once("value").then((sn) => {
         let uidRef = firebase.database().ref(`UIDs/${user.uid}/interest`);
-        uidRef.once("value").then(uid =>{
+        uidRef.once("value").then((uid) => {
           sn.forEach((postChild) => {
             let postUID = postChild.child("UID").val();
-            if(postUID === uid.val()){
+            if (postUID === uid.val()) {
               let displ = "none";
               //console.log(i);
               let dURL = postChild.child("url").val();
@@ -164,7 +169,6 @@ export default {
               let key = postChild.key;
               let hearts = postChild.child("likes").val();
               let tag = postChild.child("tag").val();
-          
 
               Vue.set(this.i_sr, i, {
                 disp: displ,
@@ -180,7 +184,7 @@ export default {
 
               console.log(this.i_sr[i].uid);
             }
-          
+
             // console.log(this.i_sr[i].disp);
             //console.log(this.i_sr[i].dName);
             //console.log(this.i_sr[i].caption);
@@ -194,21 +198,17 @@ export default {
     },
     getUserData() {
       let user = firebase.auth().currentUser;
-      
+
       let uidRef = firebase.database().ref(`UIDs/${user.uid}/interest`);
-      uidRef.once("value").then(uid =>{
-        let nUserRef = firebase.database().ref(`UIDs/${uid.val()}/`)
-        nUserRef.once("value").then(nuser =>{
+      uidRef.once("value").then((uid) => {
+        let nUserRef = firebase.database().ref(`UIDs/${uid.val()}/`);
+        nUserRef.once("value").then((nuser) => {
           this.dName = nuser.child("dName").val();
           this.pfp = nuser.child("pfp").val();
           this.bio = nuser.child("bio").val();
           console.log(this.pfp, this.dName);
-        })
-          
-       
+        });
       });
-       
-      
     },
   },
   data() {
@@ -221,7 +221,6 @@ export default {
       bio: "",
     };
   },
-
 };
 </script>
 
