@@ -235,7 +235,7 @@ export default {
         "Posts/" + user.uid + "_" + p_img.name + "_" + servertime
       );
       storagePic.put(p_img).then((data) => {
-        //console.log(data);
+        console.log(data);
         let db = firebase.database();
         let dbRef = db.ref("Posts/");
         //console.log(p_img.name);
