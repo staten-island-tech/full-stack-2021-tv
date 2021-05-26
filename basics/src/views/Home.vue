@@ -18,6 +18,7 @@
           </option>
         </select>
       </div>
+      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 
@@ -43,8 +44,8 @@
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <div class="select-image-container">
-                  <b-container id= "mt3container" class="mt-3" fluid>
-                    <b-form class= "select-image-container"  @submit.stop.prevent="onSubmit">
+                  <b-container class="mt-3" fluid>
+                    <b-form @submit.stop.prevent="onSubmit">
                       <div class="d-flex mb-3">
                         <b-form-file
                           id="postImg"
@@ -58,12 +59,10 @@
                           v-if="hasImage"
                           variant="danger"
                           class="ml-3"
-                          id= "clearImage"
                           @click="clearImage"
                           >Clear image</b-button
                         >
                       </div>
-                      <div class= "select-image-upload-container">
                       <b-img
                         id="select-image-upload"
                         v-if="hasImage"
@@ -73,24 +72,22 @@
                         block
                         rounded
                       ></b-img>
-                      </div>
                     </b-form>
                   </b-container>
                 </div>
               </div>
               <div class="blog-comment">
-                  <textarea
-                    maxlength="100"
-                    placeholder="Caption"
-                    class="blog-caption"
-                    style="border: none"
-                    id="p-caption"
-                    aria-label="p-caption"
-                  ></textarea>
+                <textarea
+                  maxlength="100"
+                  placeholder="Caption"
+                  class="blog-caption"
+                  style="border: none"
+                  id="p-caption"
+                ></textarea>
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag" id="tag_select" aria-label="blog-tag">
+                <select class="blog-tag" v-model="blog.tag" id="tag_select">
                   <option v-for="tag in tags" v-bind:key="tag">
                     {{ tag }}
                   </option>
@@ -138,7 +135,7 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <img :src="sr.durl" :key="sr.durl" class="placeholder" alt=""/>
+          <img :src="sr.durl" :key="sr.durl" class="placeholder" />
 
           <div class="likes">
             <div class="likes-container">
@@ -146,7 +143,7 @@
                 variant="danger"
                 icon="heart"
                 v-on:click="likePress(sr.id)"
-                v-bind:key="sr.likes"
+                :key="sr.likes"
               ></b-icon>
               {{ sr.likes }} likes
             </div>
@@ -175,7 +172,6 @@
                       >&times;
                     </span>
                     <img
-                      alt=""
                       class="image-popUp"
                       v-bind:src="sr.durl"
                       :key="sr.durl"
@@ -335,7 +331,7 @@ export default {
             let dat = new Date();
             datRef.set(n_likes);
             this.getPostImg(this.c_tag);
-
+            //this.likekey = n_likes;
             userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
           });
         }
