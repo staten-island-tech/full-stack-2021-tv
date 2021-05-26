@@ -280,7 +280,7 @@ export default {
           
             
           
-          if (c_tag === "" || c_tag === tag || c_tag === "Pick a Tag") {
+          if (c_tag === "" || c_tag === tag || c_tag === "All Tags") {
             let displ = "none";
             //console.log(i);
             let dURL = postChild.child("url").val();
