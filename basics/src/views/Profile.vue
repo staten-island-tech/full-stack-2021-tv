@@ -120,6 +120,7 @@
                         <p class="settings-menu-header">Edit Bio</p>
                         <textarea
                           class="bio-input"
+                          id = "biofield"
                           placeholder="Write Here..."
                           maxlength="150" 
                           style="border: none">
@@ -128,7 +129,7 @@
                           class="save-button w3-button w3-white w3-border"
                           onclick="document.getElementById('id03').style.display='none', 
                             document.getElementById('profile').style.overflowY='scrolled',
-                            document.getElementById('profile').style.position='static'"
+                            document.getElementById('profile').style.position='static'" v-on:click="changeBio()"
                           > Save </button>
                       </div>
                     </div>
@@ -146,7 +147,7 @@
     </section>
 
     <section class="info-about-user">
-      <img class="user-profile-pic" alt="User's Profile Picture" v-bind:src="pfp" :key="pfp" />
+      <img class="user-profile-pic" alt="User's Profile Picture" v-bind:src="pfp" :key="pfp.toString()" />
         <!-- <div id="user-following-followers">
           <p id="user-following">Following</p>
           <p id="user-followers">Followers</p>
@@ -154,7 +155,7 @@
         <div class = "username-bio">
         <h1 id="user-username" alt="Profile Username">{{ dName }}</h1>
         <div class= "seperate-username-bio"> </div>
-        <p class="user-bio">sdhavbjsdbvj</p>
+        <p class="user-bio" :key="bio">{{bio}}</p>
         </div>
     </section>
     <div class= "seperate-info-post"> </div>
@@ -290,6 +291,13 @@ export default {
       let user = firebase.auth().currentUser;
       this.dName = user.displayName;
       this.pfp = user.photoURL;
+      let db = firebase.database();
+      
+      let bioRef = db.ref(`UIDs/${user.uid}/bio`);
+
+      bioRef.once("value").then(b =>{
+        this.bio = b.val();
+      });
       console.log(this.pfp);
     },
     getPosts() {
@@ -347,6 +355,16 @@ export default {
       }
       alert("Form submitted!");
     },
+    changeBio(){
+      let bio = document.getElementById("biofield").value;
+      let db = firebase.database();
+      let user = firebase.auth().currentUser;
+      let bioRef = db.ref(`UIDs/${user.uid}/bio`);
+      bioRef.set(bio);
+
+      this.getUserData();
+
+    },
     changePfp() {
       //let uplbtn = document.getElementById("pfpUbutton");
       let imgInp = document.getElementById("pfpUpload");
@@ -365,6 +383,7 @@ export default {
 
           newpfp.getDownloadURL().then((url) => {
             console.log(url);
+            this.pfp = url;
               user.updateProfile({
                 photoURL: url,
               });
@@ -373,12 +392,13 @@ export default {
             );
           });
           let db = firebase.database();
-          this.pfp = user.photoURL;
+          
           let dbRef = db.ref("UIDs/");
           
           console.log(this.pfp);
         });
-      
+
+      ;
       
     },
   },
@@ -395,6 +415,7 @@ export default {
       dName: "",
       pfp: null,
       i_sr: {},
+      bio: "",
     };
   },
   watch: {
