@@ -107,7 +107,10 @@
                 >
                   Post
                 </button>
-                <button class="blog-close" @click="reloadPage">Close</button>
+                <button class="blog-close" 
+                onclick="document.getElementById('id01').style.display='none',
+                document.getElementById('home-page').style.overflowY='scroll',
+                document.getElementById('home-page').style.position='static'">Close</button>
               </div>
             </div>
           </div>
