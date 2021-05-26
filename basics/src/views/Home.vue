@@ -43,8 +43,8 @@
               <div class="modal-header">New Post</div>
               <div class="blog-picture">
                 <div class="select-image-container">
-                  <b-container class="mt-3" fluid>
-                    <b-form @submit.stop.prevent="onSubmit">
+                  <b-container id= "mt3container" class="mt-3" fluid>
+                    <b-form class= "select-image-container"  @submit.stop.prevent="onSubmit">
                       <div class="d-flex mb-3">
                         <b-form-file
                           id="postImg"
@@ -58,10 +58,12 @@
                           v-if="hasImage"
                           variant="danger"
                           class="ml-3"
+                          id= "clearImage"
                           @click="clearImage"
                           >Clear image</b-button
                         >
                       </div>
+                      <div class= "select-image-upload-container">
                       <b-img
                         id="select-image-upload"
                         v-if="hasImage"
@@ -71,6 +73,7 @@
                         block
                         rounded
                       ></b-img>
+                      </div>
                     </b-form>
                   </b-container>
                 </div>
