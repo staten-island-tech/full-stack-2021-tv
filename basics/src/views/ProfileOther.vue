@@ -35,7 +35,7 @@
         <div class = "other-username-bio">
         <h1 id="other-username" alt="Profile Username"> Name : {{ dName }}</h1>
         <div class= "seperate-username-bio"> </div>
-        <p class="other-bio">sdhavbjsdbvj</p>
+        <p class="other-bio">{{bio}}</p>
         </div>
     </section>
     <div class= "seperate-info-post"> </div>
@@ -49,207 +49,58 @@
     </section> -->
 
     <section class="other-page-post">
-      <div class="other-box-1">
+      <div class="user-box-1" v-for="sr in i_sr" :key="sr.durl">
         <div class="w3-container">
           <button
-            onclick="document.getElementById('id01').style.display='block', 
+            onclick="
               document.getElementById('profile').style.overflowY='hidden',
               document.getElementById('profile').style.position='fixed'"
-            class="post-button"
+            class="post-button" v-on:click="sr.disp = 'block'"
           >
-            <div class="other-image-1">
+            <div class="user-image-1">
               <img
-                src="https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/dogs_1280p_0.jpg?itok=PWGpcKuD"
+                v-bind:src="sr.durl"
+                :key="sr.durl"
                 class="placeholder"
               />
             </div>
-            <h2 class="other-likes">
-              <b-icon variant="danger" icon="heart"></b-icon> 1 like
+            <h2 class="user-likes">
+              <b-icon variant="danger" icon="heart" v-on:click="likePress(sr.id)"
+                v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
             </h2>
           </button>
         </div>
 
-        <div id="id01" class="w3-modal">
+        <div id="id01" class="w3-modal"  :style="{ display: sr.disp }">
           <div class="w3-modal-content w3-animate-zoom modal-container">
             <div class="w3-container">
               <span
-                onclick="document.getElementById('id01').style.display='none', 
+                onclick=" 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
-                class="close-button"
-              >
+                class="close-button close-post-button" v-on:click="sr.disp = 'none'">
                 &times;
               </span>
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
                     class="expanded-image"
-                    src="https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/dogs_1280p_0.jpg?itok=PWGpcKuD"
+                    v-bind:src="sr.durl"
+                    :key="sr.durl"
                   />
 
                   <div class="likes">
-                    <b-icon
-                      class="heart-icon"
-                      variant="danger"
-                      icon="heart"
-                    ></b-icon>
-                    1 like
+                    <b-icon class = "heart-icon" variant="danger" icon="heart" v-on:click="likePress(sr.id)"
+                    v-bind:key="sr.likes"></b-icon> {{ sr.likes }} likes
                   </div>
                 </div>
 
                 <div class="description-comment">
                   <div class="description">
                     <router-link to="/ProfileOther" class="username">
-                      Name
+                      
                     </router-link>
-                    <p class="caption">caption</p>
-                  </div>
-                  <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="other-box-1">
-        <div class="w3-container">
-          <button
-            onclick="document.getElementById('id01').style.display='block'"
-            class="post-button"
-          >
-            <div class="other-image-1">
-              <img
-                src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F10%2F13%2Fcorgi-dog-POPDOGNAME1020.jpg"
-                class="placeholder"
-              />
-            </div>
-            <h2 class="other-likes">
-              <b-icon variant="danger" icon="heart"></b-icon> 1 like
-            </h2>
-          </button>
-        </div>
-
-        <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
-            <div class="w3-container">
-              <span
-                onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright"
-              >
-                &times;
-              </span>
-              <div class="feed-post-container">
-                <div class="picture-container">
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
-
-                  <div class="likes">
-                    <b-icon
-                      class="heart-icon"
-                      variant="danger"
-                      icon="heart"
-                    ></b-icon>
-                    1 like
-                  </div>
-                </div>
-
-                <div class="description-comment">
-                  <div class="description">
-                    <router-link to="/ProfileOther" class="username">
-                      Name
-                    </router-link>
-                    <p class="caption">caption</p>
-                  </div>
-                  <!-- <div class="comment-section">
-          <router-link
-            to="/ProfileOther"
-            id="comment-username"
-            class="username"
-          >
-            Name
-          </router-link>
-          <p class="comment">comment</p>
-        </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="other-box-1">
-        <div class="w3-container">
-          <button
-            onclick="document.getElementById('id01').style.display='block'"
-            class="post-button"
-          >
-            <div class="other-image-1">
-              <img
-                src="https://petcheckurgentcare.com/wp-content/uploads/2020/10/autism-in-dogs.jpg"
-                class="placeholder"
-              />
-            </div>
-            <h2 class="other-likes">
-              <b-icon variant="danger" icon="heart"></b-icon> 1 like
-            </h2>
-          </button>
-        </div>
-
-        <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
-            <div class="w3-container">
-              <span
-                onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright"
-              >
-                &times;
-              </span>
-              <div class="feed-post-container">
-                <div class="picture-container">
-                  <!-- report button 
-                  <b-dropdown
-                    variant="none"
-                    class="report-button"
-                    size="lg"
-                    no-caret
-                  >
-                    <template #button-content>
-                      <span>...</span>
-                    </template>
-                    <b-dropdown-item href="#">Report</b-dropdown-item>
-                  </b-dropdown> -->
-
-                  <div class="likes">
-                    <b-icon variant="danger" icon="heart"></b-icon> 1 like
-                  </div>
-                </div>
-
-                <div class="description-comment">
-                  <div class="description">
-                    <router-link to="/ProfileOther" class="username">
-                      Name
-                    </router-link>
-                    <p class="caption">caption</p>
+                    <p class="caption">{{ sr.caption }}</p>
                   </div>
                   <!-- <div class="comment-section">
           <router-link
@@ -273,12 +124,84 @@
 
 <script>
 import firebase from "firebase/app";
-//import Vue from "vue";
+import Vue from "vue";
 export default {
   mounted() {
     this.getUserData();
+    this.getPosts();
   },
   methods:{
+    likePress(id) {
+      let user = firebase.auth().currentUser;
+      let userLikeRef = firebase.database().ref(`UIDs/${user.uid}/likes`);
+      let postliked = false;
+      userLikeRef.once("value").then((lk) => {
+        lk.forEach((postkey) => {
+          if (id === postkey.val()) {
+            postliked = true;
+          }
+        });
+        if (!postliked) {
+          let datRef = firebase.database().ref(`Posts/${id.toString()}/likes`);
+          datRef.once("value").then((likeSnapshot) => {
+            let n_likes = likeSnapshot.val() + 1;
+            let dat = new Date();
+            datRef.set(n_likes);
+            this.getPosts();
+            
+            userLikeRef.child(`${dat.getTime()}`).set(`${id}`);
+          });
+        }
+      });
+    },
+    getPosts() {
+      let datRef = firebase.database().ref("Posts/");
+      let user = firebase.auth().currentUser;
+      let i = 0;
+
+      datRef.once("value").then((sn) => {
+        let uidRef = firebase.database().ref(`UIDs/${user.uid}/interest`);
+        uidRef.once("value").then(uid =>{
+          sn.forEach((postChild) => {
+            let postUID = postChild.child("UID").val();
+            if(postUID === uid.val()){
+              let displ = "none";
+              //console.log(i);
+              let dURL = postChild.child("url").val();
+              //console.log(dURL);
+              let dn = postChild.child("dName").val();
+              let cp = postChild.child("caption").val();
+              let key = postChild.key;
+              let hearts = postChild.child("likes").val();
+              let tag = postChild.child("tag").val();
+          
+
+              Vue.set(this.i_sr, i, {
+                disp: displ,
+                durl: dURL,
+                dName: dn,
+                caption: cp,
+                id: key,
+                likes: hearts,
+                tag: tag,
+                uid: postUID,
+              });
+              //Vue.set(this.i_sr, i, {});
+
+              console.log(this.i_sr[i].uid);
+            }
+          
+            // console.log(this.i_sr[i].disp);
+            //console.log(this.i_sr[i].dName);
+            //console.log(this.i_sr[i].caption);
+            //console.log(this.i_sr[i].id);
+            //console.log(this.i_sr[i].likes);
+            //console.log(this.i_sr[i].tag);
+            i++;
+          });
+        });
+      });
+    },
     getUserData() {
       let user = firebase.auth().currentUser;
       
@@ -288,6 +211,7 @@ export default {
         nUserRef.once("value").then(nuser =>{
           this.dName = nuser.child("dName").val();
           this.pfp = nuser.child("pfp").val();
+          this.bio = nuser.child("bio").val();
           console.log(this.pfp, this.dName);
         })
           
@@ -303,6 +227,8 @@ export default {
       imageSrc: null,
       dName: "",
       pfp: null,
+      i_sr: {},
+      bio: "",
     };
   },
 
