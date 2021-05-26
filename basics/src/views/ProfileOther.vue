@@ -35,7 +35,7 @@
         <div class = "other-username-bio">
         <h1 id="other-username" alt="Profile Username"> Name : {{ dName }}</h1>
         <div class= "seperate-username-bio"> </div>
-        <p class="other-bio">sdhavbjsdbvj</p>
+        <p class="other-bio">{{bio}}</p>
         </div>
     </section>
     <div class= "seperate-info-post"> </div>
@@ -211,6 +211,7 @@ export default {
         nUserRef.once("value").then(nuser =>{
           this.dName = nuser.child("dName").val();
           this.pfp = nuser.child("pfp").val();
+          this.bio = nuser.child("bio").val();
           console.log(this.pfp, this.dName);
         })
           
@@ -227,6 +228,7 @@ export default {
       dName: "",
       pfp: null,
       i_sr: {},
+      bio: "",
     };
   },
 
