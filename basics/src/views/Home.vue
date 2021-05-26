@@ -165,18 +165,19 @@
               <div class="w3-modal" :id="sr.durl" :style="{ display: sr.disp }">
                 <div class="w3-modal-content" id="pop-up-container">
                   <div class="w3-container">
-                    <span
+                    <!-- <span
                       onclick="
                       document.getElementById('home-page').style.overflowY='scroll',
                       document.getElementById('home-page').style.position='static'"
                       class="close-button close-post-button"
                       v-on:click="sr.disp = 'none'"
                       >&times;
-                    </span>
+                    </span> -->
                     <img
                       class="image-popUp"
                       v-bind:src="sr.durl"
                       :key="sr.durl"
+                      v-on:click="sr.disp = 'none'"
                     />
                   </div>
                 </div>

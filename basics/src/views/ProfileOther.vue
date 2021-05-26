@@ -73,13 +73,13 @@
 
         <div id="id01" class="w3-modal"  :style="{ display: sr.disp }">
           <div class="w3-modal-content w3-animate-zoom modal-container">
-              <span
+              <!-- <span
                 onclick=" 
                   document.getElementById('profile').style.overflowY='scroll',
                   document.getElementById('profile').style.position='static'"
                 class="close-button close-post-button" v-on:click="sr.disp = 'none'">
                 &times;
-              </span>
+              </span> -->
               <div class="feed-post">
                 <div class="picture">
                   <img
@@ -87,6 +87,7 @@
                     class="placeholder"
                     v-bind:src="sr.durl"
                     :key="sr.durl"
+                    v-on:click="sr.disp = 'none'"
                   />
 
                   <div class="likes">
