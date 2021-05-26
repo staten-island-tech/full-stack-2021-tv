@@ -1,5 +1,5 @@
 <template>
-  <section id="profile" class="profile" v-if="loggedIn">
+  <section id="profile" class="profile" v-if="loggedIn != null ">
     <h1 style="display:none"> Profile Page </h1>
     <section class="user-banner-profile">
       <div id="logo-container">
@@ -257,6 +257,7 @@ export default {
     this.getUserData();
     //this.setupFirebase();
     this.getPosts();
+    this.getUserStatus();
   },
   methods: {
     signOut() {
@@ -351,6 +352,10 @@ export default {
     clearImage() {
       this.image = null;
     },
+    getUserStatus() {
+      this.loggedIn = firebase.auth().currentUser;
+      console.log(this.loggedIn);
+    },
     onSubmit() {
       if (!this.image) {
         alert("Please select an image.");
@@ -419,6 +424,7 @@ export default {
       pfp: null,
       i_sr: {},
       bio: "",
+      loggedIn: null
     };
   },
   watch: {
