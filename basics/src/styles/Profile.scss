@@ -561,6 +561,7 @@
   width: fit-content;
   margin-bottom: 1rem;
   padding: 0;
+  background-color: transparent;
   @include tablet {
     width: 70%;
     margin-top: 5rem;
@@ -570,20 +571,6 @@
   }
 }
 
-.picture-container {
-  position: relative;
-}
-.expanded-image {
-  object-fit: cover;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
-  max-height: 40rem;
-  max-width: 100%;
-  @include phone {
-    height: 100%;
-    object-fit: cover;
-  }
-}
 
 .heart-icon {
   margin-top: .5rem;

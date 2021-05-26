@@ -1,5 +1,5 @@
 <template>
-  <section id="profile" class="profile" v-if="loggedIn != null ">
+  <section  class="profile" v-if="loggedIn != null ">
     <h1 style="display:none"> Profile Page </h1>
     <section class="user-banner-profile">
       <div id="logo-container">
@@ -202,11 +202,11 @@
                 class="close-button close-post-button" v-on:click="sr.disp = 'none'">
                 &times;
               </span>
-              <div class="feed-post-container">
-                <div class="picture-container">
+              <div class="feed-post">
+                <div class="picture">
                   <img
                     alt=""
-                    class="expanded-image"
+                    class="placeholder"
                     v-bind:src="sr.durl"
                     :key="sr.durl"
                   />
@@ -455,4 +455,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/Profile.scss";
+@import "@/styles/Home.scss";
 </style>

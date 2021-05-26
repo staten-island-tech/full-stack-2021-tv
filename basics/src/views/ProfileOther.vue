@@ -80,11 +80,11 @@
                 class="close-button close-post-button" v-on:click="sr.disp = 'none'">
                 &times;
               </span>
-              <div class="feed-post-container">
-                <div class="picture-container">
+              <div class="feed-post">
+                <div class="picture">
                   <img
                     alt=""
-                    class="expanded-image"
+                    class="placeholder"
                     v-bind:src="sr.durl"
                     :key="sr.durl"
                   />
@@ -226,4 +226,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/ProfileOther.scss";
+@import "@/styles/Home.scss";
 </style>
