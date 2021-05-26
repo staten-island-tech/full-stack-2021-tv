@@ -225,7 +225,7 @@ export default {
       document.getElementById('home-page').style.position='static';
       let user = firebase.auth().currentUser;
       let storageRef = firebase.storage().ref();
-      console.log(user);
+      //console.log(user);
       let c_tag = document.getElementById("tag_select").value;
       let p_img = document.getElementById("postImg").files[0];
       let p_caption = document.getElementById("p-caption").value;
@@ -235,10 +235,10 @@ export default {
         "Posts/" + user.uid + "_" + p_img.name + "_" + servertime
       );
       storagePic.put(p_img).then((data) => {
-        console.log(data);
+        //console.log(data);
         let db = firebase.database();
         let dbRef = db.ref("Posts/");
-        console.log(p_img.name);
+        //console.log(p_img.name);
         try {
           storagePic.getMetadata().then((meta) => {
             storagePic.getDownloadURL().then((durl) => {
@@ -303,7 +303,7 @@ export default {
               tag: tag,
               uid: postUID,
             });
-            console.log(this.i_sr[i].tag);
+            //console.log(this.i_sr[i].tag);
           }
 
           //Vue.set(this.i_sr, i, {});
