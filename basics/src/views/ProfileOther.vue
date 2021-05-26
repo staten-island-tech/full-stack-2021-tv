@@ -84,6 +84,7 @@
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
+                    alt=""
                     class="expanded-image"
                     v-bind:src="sr.durl"
                     :key="sr.durl"

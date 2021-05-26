@@ -14,8 +14,10 @@
             document.getElementById('profile').style.overflowY='hidden',
             document.getElementById('profile').style.position='fixed'"
           id="settings-button"
+          aria-label="settings-button" 
+          title="settings-button"
         >
-          <b-icon icon="gear" id="settings-button-png"></b-icon>
+          <b-icon icon="gear" id="settings-button-png" ></b-icon>
         </button>
 
         <div id="id02" class="w3-modal">
@@ -29,7 +31,7 @@
               >
               &times;
               </span>
-              <p class="settings-menu-header">Account Settings</p>
+              <h2 class="settings-menu-header">Account Settings</h2>
               <div class="settings-menu">
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
@@ -52,7 +54,7 @@
                         >
                         &times;
                         </span>
-                        <p class="settings-menu-header"> Change Profile Picture </p>
+                        <h3 class="settings-menu-header"> Change Profile Picture </h3>
                         <div>
                           <b-form @submit.stop.prevent="onSubmit">
                             <div class="d-flex mb-3">
@@ -117,13 +119,14 @@
                           class="close-button">
                           &times;
                         </span>
-                        <p class="settings-menu-header">Edit Bio</p>
+                        <h3 class="settings-menu-header">Edit Bio</h3>
                         <textarea
                           class="bio-input"
                           id = "biofield"
                           placeholder="Write Here..."
                           maxlength="150" 
-                          style="border: none">
+                          style="border: none"
+                          aria-label="bio-input">
                         </textarea>
                         <button 
                           class="save-button w3-button w3-white w3-border"
@@ -180,6 +183,7 @@
               <img
                 v-bind:src="sr.durl"
                 :key="sr.durl"
+                alt=""
                 class="placeholder"
               />
             </div>
@@ -203,6 +207,7 @@
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
+                    alt=""
                     class="expanded-image"
                     v-bind:src="sr.durl"
                     :key="sr.durl"
@@ -237,9 +242,6 @@
           </div>
         </div>
       </div>
-
-      
-
       
     </section>
   </section>
