@@ -59,6 +59,7 @@
           >
             <div class="other-image-1">
               <img
+                alt=""
                 src="https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/dogs_1280p_0.jpg?itok=PWGpcKuD"
                 class="placeholder"
               />
@@ -83,6 +84,7 @@
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
+                    alt=""
                     class="expanded-image"
                     src="https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/dogs_1280p_0.jpg?itok=PWGpcKuD"
                   />
@@ -129,6 +131,7 @@
           >
             <div class="other-image-1">
               <img
+                alt=""
                 src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F10%2F13%2Fcorgi-dog-POPDOGNAME1020.jpg"
                 class="placeholder"
               />
@@ -205,6 +208,7 @@
           >
             <div class="other-image-1">
               <img
+                alt=""
                 src="https://petcheckurgentcare.com/wp-content/uploads/2020/10/autism-in-dogs.jpg"
                 class="placeholder"
               />

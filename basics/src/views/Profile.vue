@@ -14,8 +14,10 @@
             document.getElementById('profile').style.overflowY='hidden',
             document.getElementById('profile').style.position='fixed'"
           id="settings-button"
+          aria-label="settings-button" 
+          title="settings-button"
         >
-          <b-icon icon="gear" id="settings-button-png"></b-icon>
+          <b-icon icon="gear" id="settings-button-png" ></b-icon>
         </button>
 
         <div id="id02" class="w3-modal">
@@ -29,7 +31,7 @@
               >
               &times;
               </span>
-              <p class="settings-menu-header">Account Settings</p>
+              <h2 class="settings-menu-header">Account Settings</h2>
               <div class="settings-menu">
                 <div id="change-pfp-button-div" class="w3-container">
                   <button
@@ -52,7 +54,7 @@
                         >
                         &times;
                         </span>
-                        <p class="settings-menu-header"> Change Profile Picture </p>
+                        <h3 class="settings-menu-header"> Change Profile Picture </h3>
                         <div>
                           <b-form @submit.stop.prevent="onSubmit">
                             <div class="d-flex mb-3">
@@ -117,12 +119,13 @@
                           class="close-button">
                           &times;
                         </span>
-                        <p class="settings-menu-header">Edit Bio</p>
+                        <h3 class="settings-menu-header">Edit Bio</h3>
                         <textarea
                           class="bio-input"
                           placeholder="Write Here..."
                           maxlength="150" 
-                          style="border: none">
+                          style="border: none"
+                          aria-label="bio-input">
                         </textarea>
                         <button 
                           class="save-button w3-button w3-white w3-border"
@@ -177,6 +180,7 @@
           >
             <div class="user-image-1">
               <img
+                alt=""
                 src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                 class="placeholder"
               />
@@ -200,6 +204,7 @@
               <div class="feed-post-container">
                 <div class="picture-container">
                   <img
+                    alt=""
                     class="expanded-image"
                     src="https://www.guidedogs.org/wp-content/uploads/2019/11/website-donate-mobile.jpg"
                   />
@@ -241,6 +246,7 @@
           >
             <div class="user-image-1">
               <img
+                alt=""
                 src="https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=1600&h=900"
                 class="placeholder"
               />
@@ -311,6 +317,7 @@
           >
             <div class="user-image-1">
               <img
+                alt=""
                 src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg"
                 class="placeholder"
               />

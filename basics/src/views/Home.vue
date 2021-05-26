@@ -14,7 +14,6 @@
       <div id="select-tag-container">
         <v-select id="mySelect" :options="options" alt="Post Tags"></v-select>
       </div>
-      <!-- <v-select id="select-tag-container" :options="options"></v-select> -->
       <div id="button-container">
         <button
           onclick="document.getElementById('id01').style.display='block', 
@@ -74,17 +73,18 @@
                   </b-container>
               </div>
               <div class="blog-comment">
-                <textarea
-                  maxlength="100"
-                  placeholder="Caption"
-                  class="blog-caption"
-                  style="border: none"
-                  id="p-caption"
-                ></textarea>
+                  <textarea
+                    maxlength="100"
+                    placeholder="Caption"
+                    class="blog-caption"
+                    style="border: none"
+                    id="p-caption"
+                    aria-label="p-caption"
+                  ></textarea>
               </div>
 
               <div class="blog-bottom-row">
-                <select class="blog-tag" v-model="blog.tag" id="tag_select">
+                <select class="blog-tag" v-model="blog.tag" id="tag_select" aria-label="blog-tag">
                   <option v-for="tag in tags" v-bind:key="tag">
                     {{ tag }}
                   </option>
@@ -132,7 +132,7 @@
             <b-dropdown-item href="#">Report</b-dropdown-item>
           </b-dropdown> -->
 
-          <img :src="sr.durl" :key="sr.durl" class="placeholder" />
+          <img :src="sr.durl" :key="sr.durl" class="placeholder" alt=""/>
 
           <div class="likes">
             <div class="likes-container">
@@ -169,6 +169,7 @@
                       >&times;
                     </span>
                     <img
+                      alt=""
                       class="image-popUp"
                       v-bind:src="sr.durl"
                       :key="sr.durl"
